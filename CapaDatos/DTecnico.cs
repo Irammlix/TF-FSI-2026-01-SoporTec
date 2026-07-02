@@ -53,6 +53,7 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     Tecnico tecnico_temporal = context.Tecnico.Find(tecnico.IdTecnico);
+
                     tecnico_temporal.CTecnico = tecnico.CTecnico;
                     tecnico_temporal.DNombres = tecnico.DNombres;
                     tecnico_temporal.DApellidos = tecnico.DApellidos;
@@ -77,6 +78,7 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     Tecnico tecnico_temporal = context.Tecnico.Find(idTecnico);
+
                     tecnico_temporal.DActivo = false;
                     context.SaveChanges();
                 }
