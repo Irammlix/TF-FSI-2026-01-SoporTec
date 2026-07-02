@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="FormRecuperarContrasenia.Designer.cs">
       <DependentUpon>FormRecuperarContrasenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSolicitante.cs">
       <SubType>Form</SubType>
@@ -75,11 +87,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRecuperarContrasenia.resx">
       <DependentUpon>FormRecuperarContrasenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSolicitante.resx">
       <DependentUpon>FormSolicitante.cs</DependentUpon>
