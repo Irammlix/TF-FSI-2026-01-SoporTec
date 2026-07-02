@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbSistema_TecnicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdministrador" />
+          </Key>
+          <Property Name="IdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAdministrador" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DNombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DApellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DContrasena" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+          <Property Name="DCorreo" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="IdEspecialidad" />
+          </Key>
+          <Property Name="IdEspecialidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pabellon">
+          <Key>
+            <PropertyRef Name="IdPabellon" />
+          </Key>
+          <Property Name="IdPabellon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNombrePabellon" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="IdSede" />
+          </Key>
+          <Property Name="IdSede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNombreSede" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Solicitante">
+          <Key>
+            <PropertyRef Name="IdSolicitante" />
+          </Key>
+          <Property Name="IdSolicitante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CSolicitante" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DNombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DApellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DContrasena" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FCreacion" Type="datetime" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+          <Property Name="DCorreo" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tecnico">
+          <Key>
+            <PropertyRef Name="IdTecnico" />
+          </Key>
+          <Property Name="IdTecnico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CTecnico" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DNombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DApellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DContrasena" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IdEspecialidad" Type="int" Nullable="false" />
+          <Property Name="IdSede" Type="int" Nullable="false" />
+          <Property Name="FCreacion" Type="datetime" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+          <Property Name="DCorreo" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="IdTicket" />
+          </Key>
+          <Property Name="IdTicket" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DTitulo" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdTipoSolicitud" Type="int" Nullable="false" />
+          <Property Name="DDescripcion" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="IdSede" Type="int" Nullable="false" />
+          <Property Name="IdPabellon" Type="int" Nullable="false" />
+          <Property Name="DEstado" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DPrioridad" Type="varchar" MaxLength="10" />
+          <Property Name="DComentario" Type="varchar" MaxLength="500" />
+          <Property Name="FCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FActualizacion" Type="datetime" />
+          <Property Name="IdCreadoPor" Type="int" Nullable="false" />
+          <Property Name="IdAtendidoPor" Type="int" />
+          <Property Name="IdAsignadoPor" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoSolicitud">
+          <Key>
+            <PropertyRef Name="IdTipoSolicitud" />
+          </Key>
+          <Property Name="IdTipoSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tecnico_Especialidad">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1" />
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="IdEspecialidad" />
+            </Principal>
+            <Dependent Role="Tecnico">
+              <PropertyRef Name="IdEspecialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tecnico_Sede">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="IdSede" />
+            </Principal>
+            <Dependent Role="Tecnico">
+              <PropertyRef Name="IdSede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdAsignadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Pabellon">
+          <End Role="Pabellon" Type="Self.Pabellon" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pabellon">
+              <PropertyRef Name="IdPabellon" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdPabellon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Sede">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="IdSede" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdSede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Solicitante">
+          <End Role="Solicitante" Type="Self.Solicitante" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitante">
+              <PropertyRef Name="IdSolicitante" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdCreadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Tecnico">
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnico">
+              <PropertyRef Name="IdTecnico" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdAtendidoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TipoSolicitud">
+          <End Role="TipoSolicitud" Type="Self.TipoSolicitud" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSolicitud">
+              <PropertyRef Name="IdTipoSolicitud" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdTipoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbSistema_TecnicoModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pabellon" EntityType="Self.Pabellon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sede" EntityType="Self.Sede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitante" EntityType="Self.Solicitante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tecnico" EntityType="Self.Tecnico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoSolicitud" EntityType="Self.TipoSolicitud" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tecnico_Especialidad" Association="Self.FK_Tecnico_Especialidad">
+            <End Role="Especialidad" EntitySet="Especialidad" />
+            <End Role="Tecnico" EntitySet="Tecnico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tecnico_Sede" Association="Self.FK_Tecnico_Sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Tecnico" EntitySet="Tecnico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Administrador" Association="Self.FK_Ticket_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Pabellon" Association="Self.FK_Ticket_Pabellon">
+            <End Role="Pabellon" EntitySet="Pabellon" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Sede" Association="Self.FK_Ticket_Sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Solicitante" Association="Self.FK_Ticket_Solicitante">
+            <End Role="Solicitante" EntitySet="Solicitante" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Tecnico" Association="Self.FK_Ticket_Tecnico">
+            <End Role="Tecnico" EntitySet="Tecnico" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TipoSolicitud" Association="Self.FK_Ticket_TipoSolicitud">
+            <End Role="TipoSolicitud" EntitySet="TipoSolicitud" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbSistema_TecnicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdministrador" />
+          </Key>
+          <Property Name="IdAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAdministrador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DNombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DApellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DContrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Administrador" FromRole="Administrador" ToRole="Ticket" />
+          <Property Name="DCorreo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="IdEspecialidad" />
+          </Key>
+          <Property Name="IdEspecialidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Tecnico" Relationship="Self.FK_Tecnico_Especialidad" FromRole="Especialidad" ToRole="Tecnico" />
+        </EntityType>
+        <EntityType Name="Pabellon">
+          <Key>
+            <PropertyRef Name="IdPabellon" />
+          </Key>
+          <Property Name="IdPabellon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNombrePabellon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Pabellon" FromRole="Pabellon" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Sede">
+          <Key>
+            <PropertyRef Name="IdSede" />
+          </Key>
+          <Property Name="IdSede" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNombreSede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Tecnico" Relationship="Self.FK_Tecnico_Sede" FromRole="Sede" ToRole="Tecnico" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Sede" FromRole="Sede" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Solicitante">
+          <Key>
+            <PropertyRef Name="IdSolicitante" />
+          </Key>
+          <Property Name="IdSolicitante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CSolicitante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DNombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DApellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DContrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Solicitante" FromRole="Solicitante" ToRole="Ticket" />
+          <Property Name="DCorreo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tecnico">
+          <Key>
+            <PropertyRef Name="IdTecnico" />
+          </Key>
+          <Property Name="IdTecnico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CTecnico" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DNombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DApellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DContrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdEspecialidad" Type="Int32" Nullable="false" />
+          <Property Name="IdSede" Type="Int32" Nullable="false" />
+          <Property Name="FCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Especialidad" Relationship="Self.FK_Tecnico_Especialidad" FromRole="Tecnico" ToRole="Especialidad" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK_Tecnico_Sede" FromRole="Tecnico" ToRole="Sede" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Tecnico" FromRole="Tecnico" ToRole="Ticket" />
+          <Property Name="DCorreo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="IdTicket" />
+          </Key>
+          <Property Name="IdTicket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DTitulo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdTipoSolicitud" Type="Int32" Nullable="false" />
+          <Property Name="DDescripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSede" Type="Int32" Nullable="false" />
+          <Property Name="IdPabellon" Type="Int32" Nullable="false" />
+          <Property Name="DEstado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DPrioridad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DComentario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="IdCreadoPor" Type="Int32" Nullable="false" />
+          <Property Name="IdAtendidoPor" Type="Int32" />
+          <Property Name="IdAsignadoPor" Type="Int32" />
+          <NavigationProperty Name="Administrador" Relationship="Self.FK_Ticket_Administrador" FromRole="Ticket" ToRole="Administrador" />
+          <NavigationProperty Name="Pabellon" Relationship="Self.FK_Ticket_Pabellon" FromRole="Ticket" ToRole="Pabellon" />
+          <NavigationProperty Name="Sede" Relationship="Self.FK_Ticket_Sede" FromRole="Ticket" ToRole="Sede" />
+          <NavigationProperty Name="Solicitante" Relationship="Self.FK_Ticket_Solicitante" FromRole="Ticket" ToRole="Solicitante" />
+          <NavigationProperty Name="Tecnico" Relationship="Self.FK_Ticket_Tecnico" FromRole="Ticket" ToRole="Tecnico" />
+          <NavigationProperty Name="TipoSolicitud" Relationship="Self.FK_Ticket_TipoSolicitud" FromRole="Ticket" ToRole="TipoSolicitud" />
+        </EntityType>
+        <EntityType Name="TipoSolicitud">
+          <Key>
+            <PropertyRef Name="IdTipoSolicitud" />
+          </Key>
+          <Property Name="IdTipoSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_TipoSolicitud" FromRole="TipoSolicitud" ToRole="Ticket" />
+        </EntityType>
+        <Association Name="FK_Ticket_Administrador">
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdAsignadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tecnico_Especialidad">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1" />
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="IdEspecialidad" />
+            </Principal>
+            <Dependent Role="Tecnico">
+              <PropertyRef Name="IdEspecialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Pabellon">
+          <End Role="Pabellon" Type="Self.Pabellon" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pabellon">
+              <PropertyRef Name="IdPabellon" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdPabellon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tecnico_Sede">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="IdSede" />
+            </Principal>
+            <Dependent Role="Tecnico">
+              <PropertyRef Name="IdSede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Sede">
+          <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sede">
+              <PropertyRef Name="IdSede" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdSede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Solicitante">
+          <End Role="Solicitante" Type="Self.Solicitante" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitante">
+              <PropertyRef Name="IdSolicitante" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdCreadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Tecnico">
+          <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnico">
+              <PropertyRef Name="IdTecnico" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdAtendidoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TipoSolicitud">
+          <End Role="TipoSolicitud" Type="Self.TipoSolicitud" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSolicitud">
+              <PropertyRef Name="IdTipoSolicitud" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="IdTipoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbSistema_TecnicoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" />
+          <EntitySet Name="Pabellon" EntityType="Self.Pabellon" />
+          <EntitySet Name="Sede" EntityType="Self.Sede" />
+          <EntitySet Name="Solicitante" EntityType="Self.Solicitante" />
+          <EntitySet Name="Tecnico" EntityType="Self.Tecnico" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+          <EntitySet Name="TipoSolicitud" EntityType="Self.TipoSolicitud" />
+          <AssociationSet Name="FK_Ticket_Administrador" Association="Self.FK_Ticket_Administrador">
+            <End Role="Administrador" EntitySet="Administrador" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tecnico_Especialidad" Association="Self.FK_Tecnico_Especialidad">
+            <End Role="Especialidad" EntitySet="Especialidad" />
+            <End Role="Tecnico" EntitySet="Tecnico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Pabellon" Association="Self.FK_Ticket_Pabellon">
+            <End Role="Pabellon" EntitySet="Pabellon" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tecnico_Sede" Association="Self.FK_Tecnico_Sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Tecnico" EntitySet="Tecnico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Sede" Association="Self.FK_Ticket_Sede">
+            <End Role="Sede" EntitySet="Sede" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Solicitante" Association="Self.FK_Ticket_Solicitante">
+            <End Role="Solicitante" EntitySet="Solicitante" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Tecnico" Association="Self.FK_Ticket_Tecnico">
+            <End Role="Tecnico" EntitySet="Tecnico" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TipoSolicitud" Association="Self.FK_Ticket_TipoSolicitud">
+            <End Role="TipoSolicitud" EntitySet="TipoSolicitud" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbSistema_TecnicoModelStoreContainer" CdmEntityContainer="dbSistema_TecnicoEntities">
+          <EntitySetMapping Name="Administrador">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="DCorreo" ColumnName="DCorreo" />
+                <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+                <ScalarProperty Name="CAdministrador" ColumnName="CAdministrador" />
+                <ScalarProperty Name="DNombres" ColumnName="DNombres" />
+                <ScalarProperty Name="DApellidos" ColumnName="DApellidos" />
+                <ScalarProperty Name="DContrasena" ColumnName="DContrasena" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidad">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Especialidad">
+              <MappingFragment StoreEntitySet="Especialidad">
+                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+                <ScalarProperty Name="DNombre" ColumnName="DNombre" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pabellon">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Pabellon">
+              <MappingFragment StoreEntitySet="Pabellon">
+                <ScalarProperty Name="IdPabellon" ColumnName="IdPabellon" />
+                <ScalarProperty Name="DNombrePabellon" ColumnName="DNombrePabellon" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sede">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Sede">
+              <MappingFragment StoreEntitySet="Sede">
+                <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+                <ScalarProperty Name="DNombreSede" ColumnName="DNombreSede" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitante">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Solicitante">
+              <MappingFragment StoreEntitySet="Solicitante">
+                <ScalarProperty Name="DCorreo" ColumnName="DCorreo" />
+                <ScalarProperty Name="IdSolicitante" ColumnName="IdSolicitante" />
+                <ScalarProperty Name="CSolicitante" ColumnName="CSolicitante" />
+                <ScalarProperty Name="DNombres" ColumnName="DNombres" />
+                <ScalarProperty Name="DApellidos" ColumnName="DApellidos" />
+                <ScalarProperty Name="DContrasena" ColumnName="DContrasena" />
+                <ScalarProperty Name="FCreacion" ColumnName="FCreacion" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tecnico">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Tecnico">
+              <MappingFragment StoreEntitySet="Tecnico">
+                <ScalarProperty Name="DCorreo" ColumnName="DCorreo" />
+                <ScalarProperty Name="IdTecnico" ColumnName="IdTecnico" />
+                <ScalarProperty Name="CTecnico" ColumnName="CTecnico" />
+                <ScalarProperty Name="DNombres" ColumnName="DNombres" />
+                <ScalarProperty Name="DApellidos" ColumnName="DApellidos" />
+                <ScalarProperty Name="DContrasena" ColumnName="DContrasena" />
+                <ScalarProperty Name="IdEspecialidad" ColumnName="IdEspecialidad" />
+                <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+                <ScalarProperty Name="FCreacion" ColumnName="FCreacion" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="IdTicket" ColumnName="IdTicket" />
+                <ScalarProperty Name="DTitulo" ColumnName="DTitulo" />
+                <ScalarProperty Name="IdTipoSolicitud" ColumnName="IdTipoSolicitud" />
+                <ScalarProperty Name="DDescripcion" ColumnName="DDescripcion" />
+                <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+                <ScalarProperty Name="IdPabellon" ColumnName="IdPabellon" />
+                <ScalarProperty Name="DEstado" ColumnName="DEstado" />
+                <ScalarProperty Name="DPrioridad" ColumnName="DPrioridad" />
+                <ScalarProperty Name="DComentario" ColumnName="DComentario" />
+                <ScalarProperty Name="FCreacion" ColumnName="FCreacion" />
+                <ScalarProperty Name="FActualizacion" ColumnName="FActualizacion" />
+                <ScalarProperty Name="IdCreadoPor" ColumnName="IdCreadoPor" />
+                <ScalarProperty Name="IdAtendidoPor" ColumnName="IdAtendidoPor" />
+                <ScalarProperty Name="IdAsignadoPor" ColumnName="IdAsignadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoSolicitud">
+            <EntityTypeMapping TypeName="dbSistema_TecnicoModel.TipoSolicitud">
+              <MappingFragment StoreEntitySet="TipoSolicitud">
+                <ScalarProperty Name="IdTipoSolicitud" ColumnName="IdTipoSolicitud" />
+                <ScalarProperty Name="DNombre" ColumnName="DNombre" />
+                <ScalarProperty Name="DActivo" ColumnName="DActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
