@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,10 @@ namespace CapaPresentacion
     public partial class FormTecnico : Form
     {
         private Tecnico tecnicoActual;
+
+        private NTecnico nTecnico= new NTecnico();
+        private NTicket nTicket = new NTicket();
+
         private bool _sidebarAbierto = false;
         private Timer _timerSidebar = new Timer();
 
@@ -23,8 +28,35 @@ namespace CapaPresentacion
             tecnicoActual = tecnico;
             lb_Codigo.Text = tecnicoActual.CTecnico;
             MostrarPanel(pnl_TicketsAsignados);
+            cbEstadoFiltro.SelectedIndex = 0;
+            cbPrioridadFiltro.SelectedIndex = 0;
             InicializarSidebar();
 
+            MostrarTickets();
+        }
+
+        private void MostrarTickets()
+        {
+            string prioridad = cbPrioridadFiltro.Text;
+            string estado = cbEstadoFiltro.Text;
+            dg_Tickets.DataSource = null;
+            List<Ticket> lTickets = nTicket.ListarPorTecnico(tecnicoActual.IdTecnico, prioridad, estado);
+
+            if (lTickets.Count > 0)
+            {
+                dg_Tickets.DataSource = lTickets;
+                dg_Tickets.Columns["Administrador"].Visible = false;
+                dg_Tickets.Columns["Pabellon"].Visible = false;
+                dg_Tickets.Columns["Sede"].Visible = false;
+                dg_Tickets.Columns["Solicitante"].Visible = false;
+                dg_Tickets.Columns["Tecnico"].Visible = false;
+                dg_Tickets.Columns["TipoSolicitud"].Visible = false;
+                dg_Tickets.Columns["FActualizacion"].Visible = false;
+                dg_Tickets.Columns["IdAtendidoPor"].Visible = false;
+                dg_Tickets.Columns["IdAsignadoPor"].Visible = false;
+
+                dg_Tickets.Columns["IdCreadoPor"].HeaderText = "Solicitante";
+            }
         }
         private void MostrarPanel(Panel panel)
         {
@@ -116,6 +148,16 @@ namespace CapaPresentacion
             // MessageBox.Show(mensaje);
 
             MessageBox.Show("Pendiente conectar NTicket");
+        }
+
+        private void cbPrioridadFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarTickets();
+        }
+
+        private void cbEstadoFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarTickets();
         }
     }
 }

@@ -42,8 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NAdmin.cs" />
+    <Compile Include="NEspecialidad.cs" />
+    <Compile Include="NPabellon.cs" />
+    <Compile Include="NSede.cs" />
     <Compile Include="NSolicitante.cs" />
     <Compile Include="NTecnico.cs" />
+    <Compile Include="NTicket.cs" />
+    <Compile Include="NTipoSolicitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -45,10 +45,10 @@
             this.btn_DescargarListado = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_FiltrarxPrioridad = new System.Windows.Forms.ComboBox();
+            this.cbPrioridadFiltro = new System.Windows.Forms.ComboBox();
             this.pnl_Filtros = new System.Windows.Forms.Panel();
             this.lbl_Filtrar = new System.Windows.Forms.Label();
-            this.cmb_FiltrarxEstado = new System.Windows.Forms.ComboBox();
+            this.cbEstadoFiltro = new System.Windows.Forms.ComboBox();
             this.btn_VerDetalle = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dg_Tickets = new System.Windows.Forms.DataGridView();
@@ -323,7 +323,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cmb_FiltrarxPrioridad);
+            this.panel2.Controls.Add(this.cbPrioridadFiltro);
             this.panel2.Location = new System.Drawing.Point(4, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -341,19 +341,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar por Prioridad:";
             // 
-            // cmb_FiltrarxPrioridad
+            // cbPrioridadFiltro
             // 
-            this.cmb_FiltrarxPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_FiltrarxPrioridad.Location = new System.Drawing.Point(217, 6);
-            this.cmb_FiltrarxPrioridad.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_FiltrarxPrioridad.Name = "cmb_FiltrarxPrioridad";
-            this.cmb_FiltrarxPrioridad.Size = new System.Drawing.Size(159, 24);
-            this.cmb_FiltrarxPrioridad.TabIndex = 0;
+            this.cbPrioridadFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPrioridadFiltro.Items.AddRange(new object[] {
+            "Todos",
+            "Alta",
+            "Media",
+            "Baja"});
+            this.cbPrioridadFiltro.Location = new System.Drawing.Point(217, 6);
+            this.cbPrioridadFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPrioridadFiltro.Name = "cbPrioridadFiltro";
+            this.cbPrioridadFiltro.Size = new System.Drawing.Size(159, 24);
+            this.cbPrioridadFiltro.TabIndex = 0;
+            this.cbPrioridadFiltro.SelectedIndexChanged += new System.EventHandler(this.cbPrioridadFiltro_SelectedIndexChanged);
             // 
             // pnl_Filtros
             // 
             this.pnl_Filtros.Controls.Add(this.lbl_Filtrar);
-            this.pnl_Filtros.Controls.Add(this.cmb_FiltrarxEstado);
+            this.pnl_Filtros.Controls.Add(this.cbEstadoFiltro);
             this.pnl_Filtros.Location = new System.Drawing.Point(402, 4);
             this.pnl_Filtros.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Filtros.Name = "pnl_Filtros";
@@ -371,14 +377,20 @@
             this.lbl_Filtrar.TabIndex = 0;
             this.lbl_Filtrar.Text = "Filtrar por Estado:";
             // 
-            // cmb_FiltrarxEstado
+            // cbEstadoFiltro
             // 
-            this.cmb_FiltrarxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_FiltrarxEstado.Location = new System.Drawing.Point(204, 6);
-            this.cmb_FiltrarxEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_FiltrarxEstado.Name = "cmb_FiltrarxEstado";
-            this.cmb_FiltrarxEstado.Size = new System.Drawing.Size(172, 24);
-            this.cmb_FiltrarxEstado.TabIndex = 0;
+            this.cbEstadoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstadoFiltro.Items.AddRange(new object[] {
+            "Todos",
+            "Asignado",
+            "En Proceso",
+            "Resuelto"});
+            this.cbEstadoFiltro.Location = new System.Drawing.Point(204, 6);
+            this.cbEstadoFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEstadoFiltro.Name = "cbEstadoFiltro";
+            this.cbEstadoFiltro.Size = new System.Drawing.Size(172, 24);
+            this.cbEstadoFiltro.TabIndex = 0;
+            this.cbEstadoFiltro.SelectedIndexChanged += new System.EventHandler(this.cbEstadoFiltro_SelectedIndexChanged);
             // 
             // btn_VerDetalle
             // 
@@ -1176,9 +1188,9 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Panel pnl_Filtros;
         private System.Windows.Forms.Label lbl_Filtrar;
-        private System.Windows.Forms.ComboBox cmb_FiltrarxEstado;
+        private System.Windows.Forms.ComboBox cbEstadoFiltro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_FiltrarxPrioridad;
+        private System.Windows.Forms.ComboBox cbPrioridadFiltro;
     }
 }
