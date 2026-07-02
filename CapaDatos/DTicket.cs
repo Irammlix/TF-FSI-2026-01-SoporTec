@@ -3,11 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace CapaDatos
 {
     public class DTicket
     {
+        public Ticket ObtenerPorId(int idTicket)
+        {
+            Ticket ticket = null;
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    ticket = context.Ticket
+                        .Include(t => t.Pabellon)
+                        .Include(t => t.Sede)
+                        .Include(t => t.TipoSolicitud)
+                        .Include(t => t.Administrador)
+                        .Include(t => t.Solicitante)
+                        .Where(t => t.IdTicket == idTicket)
+                        .FirstOrDefault();
+                }
+
+                return ticket;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         // INICIO: TECNICO
         private int OrdenEstado(string estado)
         {
@@ -74,6 +102,28 @@ namespace CapaDatos
             {
                 Console.WriteLine(ex.Message);
                 return LTickets;
+            }
+        }
+        public string ActualizarTicketTecnico(int idTicket, string estado, string comentario)
+        {
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    Ticket ticket = context.Ticket.Find(idTicket);
+
+                    ticket.DEstado = estado;
+                    ticket.DComentario = comentario;
+                    ticket.FActualizacion = DateTime.Now;
+
+                    context.SaveChanges();
+                }
+
+                return "Ticket actualizado correctamente";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
             }
         }
 
