@@ -70,7 +70,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.tb_DetPabellon = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.tb_NombreSolicitante = new System.Windows.Forms.TextBox();
+            this.tb_CodigoSolicitante = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.tb_DetTitulo = new System.Windows.Forms.TextBox();
@@ -94,6 +94,7 @@
             this.btn_DescargarDetalle = new System.Windows.Forms.Button();
             this.btn_ActualizarTicket = new System.Windows.Forms.Button();
             this.lb_NumTicket = new System.Windows.Forms.Label();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.Header.SuspendLayout();
@@ -516,6 +517,7 @@
             this.btn_Cerrar.TabIndex = 56;
             this.btn_Cerrar.Text = "CERRAR";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // tblcolumnas
             // 
@@ -536,7 +538,7 @@
             this.tblcolumnas.Controls.Add(this.label33, 0, 0);
             this.tblcolumnas.Controls.Add(this.tb_DetPabellon, 0, 12);
             this.tblcolumnas.Controls.Add(this.label28, 1, 0);
-            this.tblcolumnas.Controls.Add(this.tb_NombreSolicitante, 1, 9);
+            this.tblcolumnas.Controls.Add(this.tb_CodigoSolicitante, 1, 9);
             this.tblcolumnas.Controls.Add(this.label24, 1, 11);
             this.tblcolumnas.Controls.Add(this.panel24, 1, 10);
             this.tblcolumnas.Controls.Add(this.tb_DetTitulo, 0, 1);
@@ -593,6 +595,10 @@
             this.cb_EstadoActual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_EstadoActual.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_EstadoActual.FormattingEnabled = true;
+            this.cb_EstadoActual.Items.AddRange(new object[] {
+            "Asignado",
+            "En Proceso",
+            "Resuelto"});
             this.cb_EstadoActual.Location = new System.Drawing.Point(618, 502);
             this.cb_EstadoActual.Margin = new System.Windows.Forms.Padding(4);
             this.cb_EstadoActual.Name = "cb_EstadoActual";
@@ -744,20 +750,20 @@
             this.label28.Text = "Última Fecha de Actualización";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tb_NombreSolicitante
+            // tb_CodigoSolicitante
             // 
-            this.tb_NombreSolicitante.BackColor = System.Drawing.Color.White;
-            this.tb_NombreSolicitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_NombreSolicitante.Cursor = System.Windows.Forms.Cursors.No;
-            this.tb_NombreSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_NombreSolicitante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NombreSolicitante.Location = new System.Drawing.Point(618, 374);
-            this.tb_NombreSolicitante.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_NombreSolicitante.Name = "tb_NombreSolicitante";
-            this.tb_NombreSolicitante.ReadOnly = true;
-            this.tb_NombreSolicitante.Size = new System.Drawing.Size(594, 25);
-            this.tb_NombreSolicitante.TabIndex = 50;
-            this.tb_NombreSolicitante.TabStop = false;
+            this.tb_CodigoSolicitante.BackColor = System.Drawing.Color.White;
+            this.tb_CodigoSolicitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_CodigoSolicitante.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_CodigoSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_CodigoSolicitante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CodigoSolicitante.Location = new System.Drawing.Point(618, 374);
+            this.tb_CodigoSolicitante.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_CodigoSolicitante.Name = "tb_CodigoSolicitante";
+            this.tb_CodigoSolicitante.ReadOnly = true;
+            this.tb_CodigoSolicitante.Size = new System.Drawing.Size(594, 25);
+            this.tb_CodigoSolicitante.TabIndex = 50;
+            this.tb_CodigoSolicitante.TabStop = false;
             // 
             // label24
             // 
@@ -1081,13 +1087,23 @@
             this.lb_NumTicket.Text = "Detalle del Ticket N°X";
             this.lb_NumTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // FormTecnico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 985);
-            this.Controls.Add(this.pnl_TicketsAsignados);
             this.Controls.Add(this.pnl_DetalleTicket);
+            this.Controls.Add(this.pnl_TicketsAsignados);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1158,7 +1174,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox tb_DetPabellon;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox tb_NombreSolicitante;
+        private System.Windows.Forms.TextBox tb_CodigoSolicitante;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TextBox tb_DetTitulo;
@@ -1192,5 +1208,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbPrioridadFiltro;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
