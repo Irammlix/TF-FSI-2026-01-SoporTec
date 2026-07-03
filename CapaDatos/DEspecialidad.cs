@@ -8,5 +8,24 @@ namespace CapaDatos
 {
     public class DEspecialidad
     {
+        public List<Especialidad> ListarTodo()
+        {
+            List<Especialidad> especialidades = new List<Especialidad>();
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    especialidades = context.Especialidad
+                        .Where(e => e.DActivo == true)
+                        .ToList();
+                }
+                return especialidades;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return especialidades;
+            }
+        }
     }
 }

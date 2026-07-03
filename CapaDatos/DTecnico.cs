@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Web;
 
 namespace CapaDatos
 {
@@ -25,6 +27,22 @@ namespace CapaDatos
             {
                 Console.WriteLine(ex.Message);
                 return tecnicos;
+            }
+        }
+
+        public bool ExisteCodigo(string codigo)
+        {
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    return context.Tecnico.Any(t => t.CTecnico == codigo);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
 
@@ -54,12 +72,11 @@ namespace CapaDatos
                 {
                     Tecnico tecnico_temporal = context.Tecnico.Find(tecnico.IdTecnico);
 
-                    tecnico_temporal.CTecnico = tecnico.CTecnico;
                     tecnico_temporal.DNombres = tecnico.DNombres;
                     tecnico_temporal.DApellidos = tecnico.DApellidos;
-                    tecnico_temporal.DContrasena = tecnico.DContrasena;
                     tecnico_temporal.IdEspecialidad = tecnico.IdEspecialidad;
                     tecnico_temporal.IdSede = tecnico.IdSede;
+                    tecnico_temporal.DCorreo = tecnico.DCorreo;
                     context.SaveChanges();
                 }
                 return "Modificado exitosamente";
@@ -158,5 +175,61 @@ namespace CapaDatos
           return ex.Message;
           }
         }
+        public List<Tecnico> ListarConDetalle(string txtbusqueda, string ordenarpor)
+        {
+            List<Tecnico> tecnicos= new List<Tecnico>();
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    tecnicos = context.Tecnico
+                        .Include(t=>t.Especialidad)
+                        .Include(t=>t.Sede)
+                        .Include(t=>t.Ticket)
+                        .Where(t=>t.DActivo==true)
+                        .ToList();
+                    if (!string.IsNullOrWhiteSpace(txtbusqueda))
+                    {
+                        int idBusqueda;
+                        if (int.TryParse(txtbusqueda, out idBusqueda))
+                        {
+                            tecnicos = tecnicos
+                                .Where(t => t.IdTecnico == idBusqueda || t.CTecnico.Contains(txtbusqueda))
+                                .ToList();
+                        }
+                        else
+                        {
+                            tecnicos=tecnicos
+                                .Where(t=>(t.DNombres+" "+t.DApellidos)
+                                .ToLower()
+                                .Contains(txtbusqueda.ToLower()))
+                                .ToList();
+                        }
+                    }
+                    switch (ordenarpor)
+                    {
+                        case "Especialidad":
+                            tecnicos = tecnicos.OrderBy(t => t.Especialidad.DNombre).ToList(); break;
+                        case "Sede":
+                            tecnicos = tecnicos.OrderBy(t=>t.Sede.DNombreSede).ToList(); break;
+                        case "Cantidad de Tickets":
+                            tecnicos=tecnicos.OrderByDescending(t=>t.Ticket.Count).ToList(); break;
+                        default:
+                            tecnicos=tecnicos.OrderBy(t=>t.DNombres).ThenBy(t=>t.DApellidos).ToList(); break;
+
+                            
+                    }
+                }
+                return tecnicos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return tecnicos;
+            }
+            
+        }
+
+
     }
 }
