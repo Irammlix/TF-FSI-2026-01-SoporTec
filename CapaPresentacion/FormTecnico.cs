@@ -30,13 +30,17 @@ namespace CapaPresentacion
         public FormTecnico(Tecnico tecnico)
         {
             InitializeComponent();
+
+            dg_Tickets.CellFormatting += dg_Tickets_CellFormatting;
+
             tecnicoActual = tecnico;
             lb_Codigo.Text = tecnicoActual.CTecnico;
+
             MostrarPanel(pnl_TicketsAsignados);
             cbEstadoFiltro.SelectedIndex = 0;
             cbPrioridadFiltro.SelectedIndex = 0;
-            InicializarSidebar();
 
+            InicializarSidebar();
             MostrarTickets();
         }
 
@@ -136,6 +140,43 @@ namespace CapaPresentacion
             this.Close();
         }
 
+        private void dg_Tickets_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dg_Tickets.Rows[e.RowIndex].DataBoundItem == null)
+                return;
+
+            Ticket ticket = dg_Tickets.Rows[e.RowIndex].DataBoundItem as Ticket;
+
+            if (ticket == null)
+                return;
+
+            string nombreColumna = dg_Tickets.Columns[e.ColumnIndex].Name;
+
+            if (nombreColumna == "IdTipoSolicitud")
+            {
+                e.Value = ticket.TipoSolicitud.DNombre;
+                e.FormattingApplied = true;
+            }
+
+            if (nombreColumna == "IdSede")
+            {
+                e.Value = ticket.Sede.DNombreSede;
+                e.FormattingApplied = true;
+            }
+
+            if (nombreColumna == "IdPabellon")
+            {
+                e.Value = ticket.Pabellon.DNombrePabellon;
+                e.FormattingApplied = true;
+            }
+
+            if (nombreColumna == "IdCreadoPor")
+            {
+                e.Value = ticket.Solicitante.CSolicitante;
+                e.FormattingApplied = true;
+            }
+        }
+
         //----------------------------------------------------------------------------------
 
         // para solo el panel de vista general de los tickets
@@ -153,23 +194,42 @@ namespace CapaPresentacion
         {
             string prioridad = cbPrioridadFiltro.Text;
             string estado = cbEstadoFiltro.Text;
+
             dg_Tickets.DataSource = null;
-            List<Ticket> lTickets = nTicket.ListarPorTecnico(tecnicoActual.IdTecnico, prioridad, estado);
+
+            List<Ticket> lTickets = nTicket.ListarPorTecnico(
+                tecnicoActual.IdTecnico,
+                prioridad,
+                estado
+            );
 
             if (lTickets.Count > 0)
             {
                 dg_Tickets.DataSource = lTickets;
+
                 dg_Tickets.Columns["Administrador"].Visible = false;
                 dg_Tickets.Columns["Pabellon"].Visible = false;
                 dg_Tickets.Columns["Sede"].Visible = false;
                 dg_Tickets.Columns["Solicitante"].Visible = false;
                 dg_Tickets.Columns["Tecnico"].Visible = false;
                 dg_Tickets.Columns["TipoSolicitud"].Visible = false;
+
                 dg_Tickets.Columns["FActualizacion"].Visible = false;
                 dg_Tickets.Columns["IdAtendidoPor"].Visible = false;
                 dg_Tickets.Columns["IdAsignadoPor"].Visible = false;
 
+                dg_Tickets.Columns["IdTipoSolicitud"].HeaderText = "Tipo Solicitud";
+                dg_Tickets.Columns["IdSede"].HeaderText = "Sede";
+                dg_Tickets.Columns["IdPabellon"].HeaderText = "Pabellón";
                 dg_Tickets.Columns["IdCreadoPor"].HeaderText = "Solicitante";
+
+                dg_Tickets.Columns["IdTicket"].HeaderText = "N° Ticket";
+                dg_Tickets.Columns["DTitulo"].HeaderText = "Título";
+                dg_Tickets.Columns["DDescripcion"].HeaderText = "Descripción";
+                dg_Tickets.Columns["DEstado"].HeaderText = "Estado";
+                dg_Tickets.Columns["DPrioridad"].HeaderText = "Prioridad";
+                dg_Tickets.Columns["DComentario"].HeaderText = "Comentario";
+                dg_Tickets.Columns["FCreacion"].HeaderText = "Fecha Creación";
             }
         }
 
@@ -201,7 +261,7 @@ namespace CapaPresentacion
             tb_FechaActualizacion.Text = objTicket.FActualizacion.ToString();
             tb_FechaCreacion.Text = objTicket.FCreacion.ToString();
             tb_Comentario.Text = objTicket.DComentario ?? "";
-            tb_CodigoSolicitante.Text = objTicket.Solicitante.DNombres.ToString();
+            tb_CodigoSolicitante.Text = objTicket.Solicitante.CSolicitante.ToString();
             tb_Prioridad.Text = objTicket.DPrioridad;
             cb_EstadoActual.Text = objTicket.DEstado.ToString();
 
@@ -389,11 +449,6 @@ namespace CapaPresentacion
                 ExportadorTickets.ExportarPdfTicket(objTicket, guardar.FileName);
                 MessageBox.Show("PDF descargado correctamente");
             }
-        }
-
-        private void dg_Tickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

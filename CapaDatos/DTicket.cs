@@ -75,7 +75,10 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     LTickets = context.Ticket
-                        .Include(t=>t.TipoSolicitud)
+                        .Include(t => t.Pabellon)
+                        .Include(t => t.Sede)
+                        .Include(t => t.TipoSolicitud)
+                        .Include(t => t.Solicitante)
                         .Where(t => t.IdAtendidoPor == idTecnico)
                         .ToList();
 

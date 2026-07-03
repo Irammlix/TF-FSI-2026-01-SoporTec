@@ -446,7 +446,6 @@
             this.dg_Tickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_Tickets.Size = new System.Drawing.Size(1189, 600);
             this.dg_Tickets.TabIndex = 0;
-            this.dg_Tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Tickets_CellContentClick);
             // 
             // pnl_DetalleTicket
             // 
