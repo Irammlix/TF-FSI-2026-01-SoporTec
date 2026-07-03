@@ -16,14 +16,20 @@ namespace CapaNegocio
             return dTecnico.ListarTodo();
         }
 
+        public bool ExisteCodigo(string codigo)
+        {
+            return dTecnico.ExisteCodigo(codigo);
+        }
+
         public string Registrar(Tecnico tecnico)
         {
-            // en capa negocio se setea DActivo = true al registrar
-            tecnico.DActivo = true; 
+            if (ExisteCodigo(tecnico.CTecnico))
+                return "El código ya está en uso";
+
+            tecnico.DActivo = true;
             tecnico.FCreacion = DateTime.Now;
             return dTecnico.Registrar(tecnico);
         }
-
         public string Modificar(Tecnico tecnico)
         {
             return dTecnico.Modificar(tecnico);
@@ -51,6 +57,9 @@ namespace CapaNegocio
 
             return dTecnico.reactivarTecnico(id);
         }
-
+        public List<Tecnico> ListarConDetalle(string txtbusqueda, string ordenarpor)
+        {
+            return dTecnico.ListarConDetalle(txtbusqueda, ordenarpor);
+        }
     }
 }
