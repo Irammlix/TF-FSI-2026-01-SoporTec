@@ -390,5 +390,10 @@ namespace CapaPresentacion
                 MessageBox.Show("PDF descargado correctamente");
             }
         }
+
+        private void dg_Tickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

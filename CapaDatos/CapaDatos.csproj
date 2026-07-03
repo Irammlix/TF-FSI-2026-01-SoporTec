@@ -52,6 +52,7 @@
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
     <Compile Include="DAdmin.cs" />
+    <Compile Include="DClasesAuxiliares.cs" />
     <Compile Include="DEspecialidad.cs" />
     <Compile Include="DPabellon.cs" />
     <Compile Include="DSede.cs" />

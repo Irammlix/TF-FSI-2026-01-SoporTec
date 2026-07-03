@@ -446,6 +446,7 @@
             this.dg_Tickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_Tickets.Size = new System.Drawing.Size(1189, 600);
             this.dg_Tickets.TabIndex = 0;
+            this.dg_Tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_Tickets_CellContentClick);
             // 
             // pnl_DetalleTicket
             // 
@@ -1104,8 +1105,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 985);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_TicketsAsignados);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
