@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaPresentacion
 {
@@ -46,6 +47,9 @@ namespace CapaPresentacion
             CargarGridTecnicos();
             LimpiarFormulario();
 
+            MostrarTickets();
+
+           
             btn_CancelarEdicion.Click += btn_CancelarEdicion_Click;
             this.FormClosing += FormAdministrador_FormClosing;
         }
@@ -56,6 +60,7 @@ namespace CapaPresentacion
             OcultarTextoSidebar();
             _timerSidebar.Interval = 5;
             _timerSidebar.Tick += TimerSidebar_Tick;
+            
         }
 
         private void OcultarTextoSidebar()
@@ -96,12 +101,29 @@ namespace CapaPresentacion
 
 
         //=====================================para navegar entre las secciones del sidebar
+        private void MostrarTickets()
+        {
+            
+            dg_Tickets.DataSource = null;
+            List<TicketVistaAdmin> lTickets = nTicket.ListarTodoAdministrador();
+
+            if (lTickets.Count > 0)
+            {
+        
+                dg_Tickets.DataSource = lTickets;
+                dg_Tickets.Columns["FCreacion"].HeaderText = "Fecha de Creacion";
+                dg_Tickets.Columns["FActualizacion"].HeaderText = "Fecha de Actualizacion";
+                dg_Tickets.Columns["NombreTecnicoAsignado"].HeaderText = "Tecnico Asignado";
+            }
+        }
         private void btn_NuevaSolicitud_Click_1(object sender, EventArgs e)
         {
             if (!ConfirmarSalidaSinGuardar())
                 return;
-
+            tb_TicketsBuscarID.Text = "";
+            cb_FiltroEstado.SelectedIndex = -1;
             MostrarPanel(pnl_Tickets);
+            MostrarTickets();
         }
 
         private void btn_Reportes_Click_1(object sender, EventArgs e)
@@ -468,5 +490,38 @@ namespace CapaPresentacion
                 e.Cancel = true;
         }
 
+        private void btn_VerDetalle_Click(object sender, EventArgs e)
+        {
+            if(dg_Tickets.Rows.Count == 0)
+            {
+                return;
+            }
+            if(dg_Tickets.SelectedRows.Count<1)
+            {
+                MessageBox.Show("Seleccione una fila ticket para ver el detalle");
+            }
+
+        }
+
+        private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if(cb_FiltroEstado.Text.Equals("Listar Todos Los Estados"))
+            {
+                MostrarTickets();
+                return;
+            }
+           
+            dg_Tickets.DataSource=nTicket.ListarTicketsEstado(cb_FiltroEstado.Text);
+            
+
+        }
+
+        private void tb_TicketsBuscarID_TextChanged(object sender, EventArgs e)
+        {
+           
+            dg_Tickets.DataSource=nTicket.ObtenerTitutloOID(tb_TicketsBuscarID.Text);
+
+        }
     }
 }

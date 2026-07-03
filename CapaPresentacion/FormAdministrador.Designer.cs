@@ -38,14 +38,10 @@
             this.btn_Hamburguesa = new System.Windows.Forms.PictureBox();
             this.btn_NuevaSolicitud = new System.Windows.Forms.Button();
             this.pnl_Filtros = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_TicketsBuscarID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Filtrar = new System.Windows.Forms.Label();
             this.cb_FiltroEstado = new System.Windows.Forms.ComboBox();
-            this.pnl_Paginacion = new System.Windows.Forms.Panel();
-            this.btn_PagAnterior = new System.Windows.Forms.Button();
-            this.lb_Pagina = new System.Windows.Forms.Label();
-            this.btn_PagSiguiente = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
             this.btn_Notificaciones = new System.Windows.Forms.Button();
             this.SoporTec = new System.Windows.Forms.Label();
@@ -61,6 +57,7 @@
             this.dg_Tickets = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.pnl_Card = new System.Windows.Forms.Panel();
+            this.btn_CancelarEdicion = new System.Windows.Forms.Button();
             this.tb_ApellidosTecnico = new System.Windows.Forms.TextBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -247,11 +244,9 @@
             this.btn_Reporte1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.panel61 = new System.Windows.Forms.Panel();
-            this.btn_CancelarEdicion = new System.Windows.Forms.Button();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.pnl_Filtros.SuspendLayout();
-            this.pnl_Paginacion.SuspendLayout();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_Tickets.SuspendLayout();
@@ -448,22 +443,23 @@
             // 
             // pnl_Filtros
             // 
-            this.pnl_Filtros.Controls.Add(this.textBox1);
+            this.pnl_Filtros.Controls.Add(this.tb_TicketsBuscarID);
             this.pnl_Filtros.Controls.Add(this.label1);
             this.pnl_Filtros.Controls.Add(this.lbl_Filtrar);
             this.pnl_Filtros.Controls.Add(this.cb_FiltroEstado);
             this.pnl_Filtros.Location = new System.Drawing.Point(13, 6);
             this.pnl_Filtros.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Filtros.Name = "pnl_Filtros";
-            this.pnl_Filtros.Size = new System.Drawing.Size(514, 43);
+            this.pnl_Filtros.Size = new System.Drawing.Size(569, 43);
             this.pnl_Filtros.TabIndex = 10;
             // 
-            // textBox1
+            // tb_TicketsBuscarID
             // 
-            this.textBox1.Location = new System.Drawing.Point(332, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 22);
-            this.textBox1.TabIndex = 3;
+            this.tb_TicketsBuscarID.Location = new System.Drawing.Point(383, 10);
+            this.tb_TicketsBuscarID.Name = "tb_TicketsBuscarID";
+            this.tb_TicketsBuscarID.Size = new System.Drawing.Size(168, 22);
+            this.tb_TicketsBuscarID.TabIndex = 3;
+            this.tb_TicketsBuscarID.TextChanged += new System.EventHandler(this.tb_TicketsBuscarID_TextChanged);
             // 
             // label1
             // 
@@ -472,9 +468,9 @@
             this.label1.Location = new System.Drawing.Point(247, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar ID:";
+            this.label1.Text = "Buscar ID o Titulo:";
             // 
             // lbl_Filtrar
             // 
@@ -490,55 +486,19 @@
             // cb_FiltroEstado
             // 
             this.cb_FiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FiltroEstado.Items.AddRange(new object[] {
+            "Sin Asignar",
+            "Asignado",
+            "En Proceso",
+            "Resuelto",
+            "Cancelado",
+            "Listar Todos Los Estados"});
             this.cb_FiltroEstado.Location = new System.Drawing.Point(67, 9);
             this.cb_FiltroEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cb_FiltroEstado.Name = "cb_FiltroEstado";
             this.cb_FiltroEstado.Size = new System.Drawing.Size(172, 24);
             this.cb_FiltroEstado.TabIndex = 0;
-            // 
-            // pnl_Paginacion
-            // 
-            this.pnl_Paginacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Paginacion.Controls.Add(this.btn_PagAnterior);
-            this.pnl_Paginacion.Controls.Add(this.lb_Pagina);
-            this.pnl_Paginacion.Controls.Add(this.btn_PagSiguiente);
-            this.pnl_Paginacion.Location = new System.Drawing.Point(440, 922);
-            this.pnl_Paginacion.Margin = new System.Windows.Forms.Padding(4);
-            this.pnl_Paginacion.Name = "pnl_Paginacion";
-            this.pnl_Paginacion.Size = new System.Drawing.Size(377, 37);
-            this.pnl_Paginacion.TabIndex = 11;
-            // 
-            // btn_PagAnterior
-            // 
-            this.btn_PagAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_PagAnterior.Location = new System.Drawing.Point(0, 2);
-            this.btn_PagAnterior.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_PagAnterior.Name = "btn_PagAnterior";
-            this.btn_PagAnterior.Size = new System.Drawing.Size(47, 32);
-            this.btn_PagAnterior.TabIndex = 0;
-            this.btn_PagAnterior.Text = "◀";
-            // 
-            // lb_Pagina
-            // 
-            this.lb_Pagina.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lb_Pagina.Location = new System.Drawing.Point(53, 6);
-            this.lb_Pagina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_Pagina.Name = "lb_Pagina";
-            this.lb_Pagina.Size = new System.Drawing.Size(93, 25);
-            this.lb_Pagina.TabIndex = 1;
-            this.lb_Pagina.Text = "1/1";
-            this.lb_Pagina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_PagSiguiente
-            // 
-            this.btn_PagSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_PagSiguiente.Location = new System.Drawing.Point(153, 2);
-            this.btn_PagSiguiente.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_PagSiguiente.Name = "btn_PagSiguiente";
-            this.btn_PagSiguiente.Size = new System.Drawing.Size(47, 32);
-            this.btn_PagSiguiente.TabIndex = 2;
-            this.btn_PagSiguiente.Text = "▶";
+            this.cb_FiltroEstado.SelectedIndexChanged += new System.EventHandler(this.cb_FiltroEstado_SelectedIndexChanged);
             // 
             // Header
             // 
@@ -611,7 +571,6 @@
             // 
             this.pnl_Tickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.pnl_Tickets.Controls.Add(this.pnl_Filtros);
-            this.pnl_Tickets.Controls.Add(this.pnl_Paginacion);
             this.pnl_Tickets.Controls.Add(this.label9);
             this.pnl_Tickets.Controls.Add(this.panel6);
             this.pnl_Tickets.Controls.Add(this.panel7);
@@ -697,6 +656,7 @@
             this.btn_VerDetalle.TabIndex = 31;
             this.btn_VerDetalle.Text = "VER DETALLE";
             this.btn_VerDetalle.UseVisualStyleBackColor = false;
+            this.btn_VerDetalle.Click += new System.EventHandler(this.btn_VerDetalle_Click);
             // 
             // panel8
             // 
@@ -716,7 +676,8 @@
             // 
             this.dg_Tickets.AllowUserToAddRows = false;
             this.dg_Tickets.AllowUserToDeleteRows = false;
-            this.dg_Tickets.AllowUserToOrderColumns = true;
+            this.dg_Tickets.AllowUserToResizeColumns = false;
+            this.dg_Tickets.AllowUserToResizeRows = false;
             this.dg_Tickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_Tickets.BackgroundColor = System.Drawing.Color.White;
             this.dg_Tickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -725,6 +686,7 @@
             this.dg_Tickets.GridColor = System.Drawing.Color.White;
             this.dg_Tickets.Location = new System.Drawing.Point(3, 2);
             this.dg_Tickets.Margin = new System.Windows.Forms.Padding(4);
+            this.dg_Tickets.MultiSelect = false;
             this.dg_Tickets.Name = "dg_Tickets";
             this.dg_Tickets.ReadOnly = true;
             this.dg_Tickets.RowHeadersVisible = false;
@@ -786,6 +748,26 @@
             this.pnl_Card.Name = "pnl_Card";
             this.pnl_Card.Size = new System.Drawing.Size(1197, 873);
             this.pnl_Card.TabIndex = 5;
+            // 
+            // btn_CancelarEdicion
+            // 
+            this.btn_CancelarEdicion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CancelarEdicion.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CancelarEdicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelarEdicion.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btn_CancelarEdicion.FlatAppearance.BorderSize = 3;
+            this.btn_CancelarEdicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CancelarEdicion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelarEdicion.ForeColor = System.Drawing.Color.Navy;
+            this.btn_CancelarEdicion.Location = new System.Drawing.Point(26, 793);
+            this.btn_CancelarEdicion.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_CancelarEdicion.Name = "btn_CancelarEdicion";
+            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1117, 44);
+            this.btn_CancelarEdicion.TabIndex = 47;
+            this.btn_CancelarEdicion.Text = "CANCELAR EDICIÓN";
+            this.btn_CancelarEdicion.UseVisualStyleBackColor = false;
+            this.btn_CancelarEdicion.Visible = false;
             // 
             // tb_ApellidosTecnico
             // 
@@ -3469,35 +3451,15 @@
             this.panel61.Size = new System.Drawing.Size(176, 2);
             this.panel61.TabIndex = 4;
             // 
-            // btn_CancelarEdicion
-            // 
-            this.btn_CancelarEdicion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CancelarEdicion.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CancelarEdicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_CancelarEdicion.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
-            this.btn_CancelarEdicion.FlatAppearance.BorderSize = 3;
-            this.btn_CancelarEdicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CancelarEdicion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CancelarEdicion.ForeColor = System.Drawing.Color.Navy;
-            this.btn_CancelarEdicion.Location = new System.Drawing.Point(26, 793);
-            this.btn_CancelarEdicion.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_CancelarEdicion.Name = "btn_CancelarEdicion";
-            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1117, 44);
-            this.btn_CancelarEdicion.TabIndex = 47;
-            this.btn_CancelarEdicion.Text = "CANCELAR EDICIÓN";
-            this.btn_CancelarEdicion.UseVisualStyleBackColor = false;
-            this.btn_CancelarEdicion.Visible = false;
-            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 1055);
+            this.Controls.Add(this.pnl_Tickets);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
             this.Controls.Add(this.pnl_MisTecnicos);
-            this.Controls.Add(this.pnl_Tickets);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_DetalleTicket);
@@ -3513,7 +3475,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).EndInit();
             this.pnl_Filtros.ResumeLayout(false);
             this.pnl_Filtros.PerformLayout();
-            this.pnl_Paginacion.ResumeLayout(false);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -3604,10 +3565,6 @@
         private System.Windows.Forms.Panel pnl_Filtros;
         private System.Windows.Forms.Label lbl_Filtrar;
         private System.Windows.Forms.ComboBox cb_FiltroEstado;
-        private System.Windows.Forms.Panel pnl_Paginacion;
-        private System.Windows.Forms.Button btn_PagAnterior;
-        private System.Windows.Forms.Label lb_Pagina;
-        private System.Windows.Forms.Button btn_PagSiguiente;
         private System.Windows.Forms.PictureBox btn_Hamburguesa;
         private System.Windows.Forms.Panel pnl_Tickets;
         private System.Windows.Forms.Label label9;
@@ -3644,7 +3601,7 @@
         private System.Windows.Forms.TextBox tb_Contraseña;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_TicketsBuscarID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
