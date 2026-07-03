@@ -320,6 +320,7 @@
             this.btn_DescargarListado.TabIndex = 34;
             this.btn_DescargarListado.Text = "DESCARGAR LISTADO (EXCEL)";
             this.btn_DescargarListado.UseVisualStyleBackColor = false;
+            this.btn_DescargarListado.Click += new System.EventHandler(this.btn_DescargarListado_Click);
             // 
             // panel2
             // 
@@ -1052,6 +1053,7 @@
             this.btn_DescargarDetalle.TabIndex = 46;
             this.btn_DescargarDetalle.Text = "DESCARGAR DETALLE (PDF)";
             this.btn_DescargarDetalle.UseVisualStyleBackColor = false;
+            this.btn_DescargarDetalle.Click += new System.EventHandler(this.btn_DescargarDetalle_Click);
             // 
             // btn_ActualizarTicket
             // 
