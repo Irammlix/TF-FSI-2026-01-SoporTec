@@ -140,7 +140,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.btn_AsignarTicket = new System.Windows.Forms.Panel();
-            this.btn_AsignarTick = new System.Windows.Forms.Button();
             this.btn_VerDetall = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
             this.dg_MisTecnicos = new System.Windows.Forms.DataGridView();
@@ -237,6 +236,7 @@
             this.btn_Reporte1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.panel61 = new System.Windows.Forms.Panel();
+            this.btn_AsignarTick = new System.Windows.Forms.Button();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.pnl_Filtros.SuspendLayout();
@@ -633,6 +633,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.btn_AsignarTick);
             this.panel7.Controls.Add(this.btn_VerDetalle);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label15);
@@ -1873,7 +1874,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AsignarTicket.BackColor = System.Drawing.Color.White;
-            this.btn_AsignarTicket.Controls.Add(this.btn_AsignarTick);
             this.btn_AsignarTicket.Controls.Add(this.btn_VerDetall);
             this.btn_AsignarTicket.Controls.Add(this.panel23);
             this.btn_AsignarTicket.Controls.Add(this.label20);
@@ -1882,24 +1882,6 @@
             this.btn_AsignarTicket.Name = "btn_AsignarTicket";
             this.btn_AsignarTicket.Size = new System.Drawing.Size(1197, 873);
             this.btn_AsignarTicket.TabIndex = 5;
-            // 
-            // btn_AsignarTick
-            // 
-            this.btn_AsignarTick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AsignarTick.BackColor = System.Drawing.Color.Navy;
-            this.btn_AsignarTick.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AsignarTick.FlatAppearance.BorderSize = 0;
-            this.btn_AsignarTick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AsignarTick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AsignarTick.ForeColor = System.Drawing.Color.White;
-            this.btn_AsignarTick.Location = new System.Drawing.Point(770, 17);
-            this.btn_AsignarTick.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_AsignarTick.Name = "btn_AsignarTick";
-            this.btn_AsignarTick.Size = new System.Drawing.Size(383, 44);
-            this.btn_AsignarTick.TabIndex = 32;
-            this.btn_AsignarTick.Text = "ASIGNAR TICKET";
-            this.btn_AsignarTick.UseVisualStyleBackColor = false;
             // 
             // btn_VerDetall
             // 
@@ -3288,15 +3270,33 @@
             this.panel61.Size = new System.Drawing.Size(176, 2);
             this.panel61.TabIndex = 4;
             // 
+            // btn_AsignarTick
+            // 
+            this.btn_AsignarTick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AsignarTick.BackColor = System.Drawing.Color.Navy;
+            this.btn_AsignarTick.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AsignarTick.FlatAppearance.BorderSize = 0;
+            this.btn_AsignarTick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AsignarTick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AsignarTick.ForeColor = System.Drawing.Color.White;
+            this.btn_AsignarTick.Location = new System.Drawing.Point(770, 17);
+            this.btn_AsignarTick.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AsignarTick.Name = "btn_AsignarTick";
+            this.btn_AsignarTick.Size = new System.Drawing.Size(383, 44);
+            this.btn_AsignarTick.TabIndex = 33;
+            this.btn_AsignarTick.Text = "ASIGNAR TICKET";
+            this.btn_AsignarTick.UseVisualStyleBackColor = false;
+            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1524, 1055);
+            this.Controls.Add(this.pnl_Tickets);
             this.Controls.Add(this.pnl_MisTecnicos);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
-            this.Controls.Add(this.pnl_Tickets);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_DetalleTicket);
