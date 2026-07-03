@@ -29,8 +29,15 @@ namespace CapaPresentacion
         private readonly Color _colorBotonActivo = Color.Navy;
         private readonly Color _colorBotonDeshabilitado = Color.FromArgb(228, 228, 231);
 
-        public FormAdministrador()
+        private Administrador adminActual;
+
+        public FormAdministrador() : this(null)
         {
+        }
+
+        public FormAdministrador(Administrador administrador)
+        {
+            adminActual = administrador;
             InitializeComponent();
             InicializarSidebar();
             CargarComboFiltro();
@@ -124,7 +131,11 @@ namespace CapaPresentacion
 
         private void btn_CerrarSesion_Click(object sender, EventArgs e)
         {
-
+            if (!ConfirmarSalidaSinGuardar())
+                return;
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+            this.Close();
         }
         //============================================= para panel mis tecnicos
         private void CargarComboFiltro()

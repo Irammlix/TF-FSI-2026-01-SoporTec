@@ -173,19 +173,17 @@ namespace CapaPresentacion
                 return;
             }
 
-            // Administrador admin = nAdministrador.ValidarLogin(tb_CodigoAdmin.Text, tb_ContraAdmin.Text);
-            // if (admin != null)
-            // {
-            //     FormAdmin formAdmin = new FormAdmin(admin);
-            //     formAdmin.Show();
-            //     this.Hide();
-            // }
-            // else
-            // {
-            //     MessageBox.Show("Código o contraseña incorrectos");
-            // }
-
-            MessageBox.Show("Login admin — pendiente conectar NAdministrador");
+            Administrador admin = nAdministrador.ValidarLogin(tb_CodigoAdmin.Text, tb_ContraAdmin.Text);
+            if (admin != null)
+            {
+                FormAdministrador formAdministrador = new FormAdministrador(admin);
+                formAdministrador.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Código o contraseña incorrectos");
+            }
         }
 
         private void lnk_OlvidarContraAdmin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
