@@ -254,26 +254,15 @@ namespace CapaDatos
                 return LTickets;
             }
         }
-        
-        public List<TicketVistaAdmin> ListarTicketsEstado(string estadoSeleccionado)
-        {
-            List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
 
-            try
-            {
-                LTickets = LTickets.Where(t => t.Estado.Equals(estadoSeleccionado)).ToList();
 
-                return LTickets;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return LTickets;
-            }
-        }
-        public List<TicketVistaAdmin> ObtenerTitutloOID(string idOTitulo)
+        public List<TicketVistaAdmin> ObtenerTitutloOID(string idOTitulo, List<TicketVistaAdmin> lista)
         {
-            List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
+            List<TicketVistaAdmin> LTickets = lista;
+            if (lista == null)
+            {
+                LTickets = ListarTodoAdministrador();
+            }
             try
             {
                 if (idOTitulo.Equals(""))
@@ -283,6 +272,63 @@ namespace CapaDatos
                 List<TicketVistaAdmin> TicketsFiltrados = LTickets.Where(t => t.Titulo.Contains(idOTitulo) || t.IdTicket.ToString().StartsWith(idOTitulo)).ToList();
 
                 return TicketsFiltrados;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTickets;
+            }
+        }
+        public List<TicketVistaAdmin> ListarTicketsEstadoPrioridadNombre(string estadoSeleccionado, string prioridadSeleccionada, string NombreOId)
+        {
+            List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
+            try
+            {
+                if (NombreOId == "")
+                {
+                    if (prioridadSeleccionada != "Todos")
+                    {
+                        LTickets = LTickets
+                            .Where(t => t.Prioridad == prioridadSeleccionada)
+                            .ToList();
+                    }
+
+                    if (estadoSeleccionado != "Todos")
+                    {
+                        LTickets = LTickets
+                            .Where(t => t.Estado == estadoSeleccionado)
+                            .ToList();
+                    }
+
+                    LTickets = LTickets
+                        .OrderBy(t => OrdenEstado(t.Estado))
+                        .ThenBy(t => OrdenPrioridad(t.Prioridad))
+                        .ToList();
+                    return LTickets;
+                }
+
+                    if (prioridadSeleccionada != "Todos")
+                    {
+                        LTickets = LTickets
+                            .Where(t => t.Prioridad == prioridadSeleccionada)
+                            .ToList();
+                    }
+
+                    if (estadoSeleccionado != "Todos")
+                    {
+                        LTickets = LTickets
+                            .Where(t => t.Estado == estadoSeleccionado)
+                            .ToList();
+                    }
+                    
+                LTickets = LTickets
+                    .OrderBy(t => OrdenEstado(t.Estado))
+                    .ThenBy(t => OrdenPrioridad(t.Prioridad))
+                    .ToList();
+                LTickets = ObtenerTitutloOID(NombreOId, LTickets);
+
+
+                return LTickets;
             }
             catch (Exception ex)
             {

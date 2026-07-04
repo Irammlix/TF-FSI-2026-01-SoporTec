@@ -49,7 +49,8 @@ namespace CapaPresentacion
             CargarGridTecnicos();
             LimpiarFormulario();
 
-            MostrarTickets();
+            dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
+            lb_Codigo.Text = adminActual.CAdministrador;
 
            
             btn_CancelarEdicion.Click += btn_CancelarEdicion_Click;
@@ -61,6 +62,9 @@ namespace CapaPresentacion
             btn_Reporte4.Click += btn_Reporte4_Click;
             btn_Reporte5.Click += btn_Reporte5_Click;
             btn_Reporte6.Click += btn_Reporte6_Click;
+
+            cb_FiltrarPrioridad.SelectedIndex = 0;
+            cb_FiltroEstado.SelectedIndex = 0;
         }
 
         //=========== para el panel de Reportes
@@ -166,10 +170,13 @@ namespace CapaPresentacion
         {
             if (!ConfirmarSalidaSinGuardar())
                 return;
+
             tb_TicketsBuscarID.Text = "";
-            cb_FiltroEstado.SelectedIndex = -1;
+            cb_FiltrarPrioridad.SelectedIndex = 0;
+            cb_FiltroEstado.SelectedIndex = 0;
             MostrarPanel(pnl_Tickets);
-            MostrarTickets();
+            dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
+
         }
 
         private void btn_Reportes_Click_1(object sender, EventArgs e)
@@ -601,14 +608,8 @@ namespace CapaPresentacion
 
         private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if(cb_FiltroEstado.Text.Equals("Listar Todos Los Estados"))
-            {
-                MostrarTickets();
-                return;
-            }
-           
-            dg_Tickets.DataSource=nTicket.ListarTicketsEstado(cb_FiltroEstado.Text);
+                   
+            dg_Tickets.DataSource=nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text,cb_FiltrarPrioridad.Text,tb_TicketsBuscarID.Text);
             
 
         }
@@ -616,7 +617,7 @@ namespace CapaPresentacion
         private void tb_TicketsBuscarID_TextChanged(object sender, EventArgs e)
         {
            
-            dg_Tickets.DataSource=nTicket.ObtenerTitutloOID(tb_TicketsBuscarID.Text);
+            dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
 
         }
 
@@ -701,6 +702,11 @@ namespace CapaPresentacion
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
             pnl_Tickets.BringToFront();
+        }
+
+        private void cb_FiltrarPrioridad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
         }
     }
 }
