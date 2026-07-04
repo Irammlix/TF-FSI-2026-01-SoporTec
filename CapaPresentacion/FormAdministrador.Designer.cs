@@ -43,7 +43,6 @@
             this.lbl_Filtrar = new System.Windows.Forms.Label();
             this.cb_FiltroEstado = new System.Windows.Forms.ComboBox();
             this.Header = new System.Windows.Forms.Panel();
-            this.btn_Notificaciones = new System.Windows.Forms.Button();
             this.SoporTec = new System.Windows.Forms.Label();
             this.lb_Codigo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -513,7 +512,6 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.White;
-            this.Header.Controls.Add(this.btn_Notificaciones);
             this.Header.Controls.Add(this.SoporTec);
             this.Header.Controls.Add(this.lb_Codigo);
             this.Header.Controls.Add(this.pictureBox2);
@@ -523,22 +521,7 @@
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1661, 86);
             this.Header.TabIndex = 1;
-            // 
-            // btn_Notificaciones
-            // 
-            this.btn_Notificaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Notificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Notificaciones.FlatAppearance.BorderSize = 0;
-            this.btn_Notificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Notificaciones.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btn_Notificaciones.Location = new System.Drawing.Point(1364, 18);
-            this.btn_Notificaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_Notificaciones.Name = "btn_Notificaciones";
-            this.btn_Notificaciones.Size = new System.Drawing.Size(56, 47);
-            this.btn_Notificaciones.TabIndex = 5;
-            this.btn_Notificaciones.Text = "🔔";
-            this.btn_Notificaciones.UseVisualStyleBackColor = true;
-            // 
+            //
             // SoporTec
             // 
             this.SoporTec.AutoSize = true;
@@ -3714,7 +3697,6 @@
         private System.Windows.Forms.Label SoporTec;
         private System.Windows.Forms.Button btn_RegistrarTecnico;
         private System.Windows.Forms.Label lbl_IconoPerfil;
-        private System.Windows.Forms.Button btn_Notificaciones;
         private System.Windows.Forms.Panel pnl_Filtros;
         private System.Windows.Forms.Label lbl_Filtrar;
         private System.Windows.Forms.ComboBox cb_FiltroEstado;

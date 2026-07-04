@@ -63,8 +63,66 @@ namespace CapaPresentacion
             btn_Reporte5.Click += btn_Reporte5_Click;
             btn_Reporte6.Click += btn_Reporte6_Click;
 
+            DecorarTarjetasReporte();
+
             cb_FiltrarPrioridad.SelectedIndex = 0;
             cb_FiltroEstado.SelectedIndex = 0;
+        }
+
+        //=========== Portada de las tarjetas de reportes (emoji + nombre + descripción)
+        private void DecorarTarjetasReporte()
+        {
+            // Escapes Unicode para no depender de la codificación del archivo.
+            DecorarTarjeta(pictureBox4, "\U0001F4CA", "RF-16 · Estado",
+                "Distribución de tickets por estado actual");
+            DecorarTarjeta(pictureBox1, "\U0001F6A6", "RF-17 · Prioridad",
+                "Tickets activos por nivel de prioridad");
+            DecorarTarjeta(pictureBox3, "\U0001F6E0️", "RF-18 · Técnicos",
+                "Resueltos vs pendientes por técnico");
+            DecorarTarjeta(pictureBox7, "\U0001F3E2", "RF-19 · Sede y Pabellón",
+                "Concentración de incidencias por pabellón");
+            DecorarTarjeta(pictureBox6, "\U0001F5A5️", "RF-20 · Tipo de falla",
+                "Distribución por tipo de incidencia");
+            DecorarTarjeta(pictureBox5, "\U0001F4C8", "RF-21 · Evolución",
+                "Ingresados vs resueltos por mes");
+        }
+
+        private void DecorarTarjeta(PictureBox pb, string emoji, string titulo, string descripcion)
+        {
+            pb.BackColor = Color.White;
+            pb.BorderStyle = BorderStyle.FixedSingle;
+            pb.Controls.Clear();
+
+            Label lblDescripcion = new Label
+            {
+                Dock = DockStyle.Fill,
+                Text = descripcion,
+                Font = new Font("Segoe UI", 10.5F),
+                ForeColor = Color.FromArgb(90, 90, 90),
+                TextAlign = ContentAlignment.TopCenter,
+                Padding = new Padding(14, 2, 14, 14)
+            };
+            Label lblTitulo = new Label
+            {
+                Dock = DockStyle.Top,
+                Height = 36,
+                Text = titulo,
+                Font = new Font("Segoe UI", 12.5F, FontStyle.Bold),
+                ForeColor = Color.Navy,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label lblEmoji = new Label
+            {
+                Dock = DockStyle.Top,
+                Height = 150,
+                Text = emoji,
+                Font = new Font("Segoe UI Emoji", 58F),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+
+            pb.Controls.Add(lblDescripcion);
+            pb.Controls.Add(lblTitulo);
+            pb.Controls.Add(lblEmoji);
         }
 
         //=========== para el panel de Reportes
