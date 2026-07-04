@@ -24,6 +24,12 @@ namespace CapaPresentacion
             this.Resize += (s, e) => CentrarPanel();
             CentrarPanel();
             MostrarPanel(pnl_PaginaPrincipal);
+
+            UIHelper.AgregarTogglePassword(tb_ContraSoli);
+            UIHelper.AgregarTogglePassword(tb_ContraTecnico);
+            UIHelper.AgregarTogglePassword(tb_ContraAdmin);
+            UIHelper.AgregarTogglePassword(tb_ContraNuevoSoli);
+            UIHelper.AgregarTogglePassword(tb_ConfirmarContraSoli);
         }
         private void MostrarPanel(Panel panel)
         {
@@ -100,15 +106,57 @@ namespace CapaPresentacion
                 return;
             }
             Solicitante solicitante = nSolicitante.ValidarLogin(tb_CodigoSoli.Text, tb_ContraSoli.Text);
-            if (solicitante != null)
-            {
-                FormSolicitante formSolicitante = new FormSolicitante(solicitante);
-                formSolicitante.Show();
-                this.Hide();
-            }
-            else
+            if (solicitante == null)
             {
                 MessageBox.Show("Código o contraseña incorrectos");
+                return;
+            }
+
+            if (!VerificarCodigo2FA(solicitante))
+                return;
+
+            FormSolicitante formSolicitante = new FormSolicitante(solicitante);
+            formSolicitante.Show();
+            this.Hide();
+        }
+
+        private bool VerificarCodigo2FA(Solicitante solicitante)
+        {
+            if (string.IsNullOrWhiteSpace(solicitante.DCorreo))
+                return true;
+
+            string codigo = Autenticacion2FA.GenerarYAlmacenar(solicitante.CSolicitante);
+            if (!ServicioCorreo.EnviarCodigo2FA(solicitante.DCorreo, codigo))
+            {
+                MessageBox.Show("No se pudo enviar el código de verificación. Intenta más tarde.");
+                return false;
+            }
+
+            string correoOculto = Autenticacion2FA.OcultarCorreo(solicitante.DCorreo);
+            while (true)
+            {
+                using (FormVerificarCodigo formCodigo = new FormVerificarCodigo(correoOculto))
+                {
+                    DialogResult resultado = formCodigo.ShowDialog();
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        if (Autenticacion2FA.Verificar(solicitante.CSolicitante, formCodigo.CodigoIngresado))
+                            return true;
+
+                        MessageBox.Show("Código incorrecto o expirado");
+                        return false;
+                    }
+
+                    if (resultado == DialogResult.Retry)
+                    {
+                        codigo = Autenticacion2FA.GenerarYAlmacenar(solicitante.CSolicitante);
+                        ServicioCorreo.EnviarCodigo2FA(solicitante.DCorreo, codigo);
+                        continue;
+                    }
+
+                    return false;
+                }
             }
         }
 

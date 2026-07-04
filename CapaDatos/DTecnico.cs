@@ -131,7 +131,7 @@ namespace CapaDatos
             }
         }
 
-        public Tecnico ValidarCredenciales(string codigo, string contrasena)
+        public Tecnico ObtenerPorCodigo(string codigo)
         {
             Tecnico tecnico = null;
             try
@@ -140,7 +140,6 @@ namespace CapaDatos
                 {
                     tecnico = context.Tecnico
                         .Where(t => t.CTecnico == codigo)
-                        .Where(t => t.DContrasena == contrasena)
                         .Where(t => t.DActivo == true)
                         .FirstOrDefault();
                 }
