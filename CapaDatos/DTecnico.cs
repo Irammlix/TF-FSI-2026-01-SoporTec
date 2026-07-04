@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using System.Web;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaDatos
 {
@@ -43,6 +44,28 @@ namespace CapaDatos
             {
                 Console.WriteLine(ex.Message);
                 return false;
+            }
+        }
+        public Tecnico ObtenerPorId(int idTecnico)
+        {
+            Tecnico tecnico = null;
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    tecnico = context.Tecnico
+                        .Include(t => t.Ticket)
+                           .Where(t => t.IdTecnico == idTecnico)
+                        .FirstOrDefault();
+                }
+
+                return tecnico;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
@@ -228,6 +251,39 @@ namespace CapaDatos
                 return tecnicos;
             }
             
+        }
+        public List<TecnicosVistaAdmin> ListarTecnicosAsignar()
+        {
+            List<TecnicosVistaAdmin> LTecnico = new List<TecnicosVistaAdmin>();
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    LTecnico = context.Tecnico
+                .Include(t => t.Especialidad)
+                .Include(t => t.Sede)
+
+                .Select(t => new TecnicosVistaAdmin
+                {
+                    IdTecnico = t.IdTecnico,
+                    NombreTecnico = t.DNombres,
+                    Usuario = t.CTecnico,
+                    SedeTecnico = t.Sede.DNombreSede,
+                    Especialidad = t.Especialidad.DNombre,
+                    Correo = t.DCorreo
+
+                })
+                .ToList();
+                }
+
+                return LTecnico;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTecnico;
+            }
         }
 
 
