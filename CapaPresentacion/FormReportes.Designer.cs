@@ -19,51 +19,51 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes));
             this.pnl_Top = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SoporTec = new System.Windows.Forms.Label();
             this.pnl_Bottom = new System.Windows.Forms.Panel();
             this.pnl_Reporte6 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnldatagriew = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.filtros = new System.Windows.Forms.TableLayoutPanel();
+            this.filtros_especificos = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.grafica = new System.Windows.Forms.Panel();
             this.sdr_botones = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_MisTickets = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pnl_titulo_reporte = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.indicadores = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_MisTickets = new System.Windows.Forms.Button();
             this.titulo_indicadores = new System.Windows.Forms.TableLayoutPanel();
-            this.titulo_metricas = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.indicadores = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.grafica = new System.Windows.Forms.Panel();
-            this.filtros = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.filtros_especificos = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnldatagriew = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.titulo_metricas = new System.Windows.Forms.Label();
+            this.pnl_titulo_reporte = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Reporte5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -276,23 +276,23 @@ namespace CapaPresentacion
             this.label89 = new System.Windows.Forms.Label();
             this.pnl_Top.SuspendLayout();
             this.pnl_Reporte6.SuspendLayout();
-            this.sdr_botones.SuspendLayout();
-            this.pnl_titulo_reporte.SuspendLayout();
-            this.indicadores.SuspendLayout();
-            this.titulo_indicadores.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.filtros.SuspendLayout();
-            this.filtros_especificos.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.pnldatagriew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.filtros.SuspendLayout();
+            this.filtros_especificos.SuspendLayout();
+            this.sdr_botones.SuspendLayout();
+            this.titulo_indicadores.SuspendLayout();
+            this.indicadores.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnl_titulo_reporte.SuspendLayout();
             this.pnl_Reporte5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -396,6 +396,15 @@ namespace CapaPresentacion
             this.pnl_Top.Size = new System.Drawing.Size(1682, 87);
             this.pnl_Top.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1682, 10);
+            this.panel1.TabIndex = 4;
+            // 
             // SoporTec
             // 
             this.SoporTec.AutoSize = true;
@@ -434,14 +443,185 @@ namespace CapaPresentacion
             this.pnl_Reporte6.Size = new System.Drawing.Size(1682, 756);
             this.pnl_Reporte6.TabIndex = 5;
             // 
-            // panel1
+            // pnldatagriew
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 77);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1682, 10);
-            this.panel1.TabIndex = 4;
+            this.pnldatagriew.Controls.Add(this.dataGridView1);
+            this.pnldatagriew.Location = new System.Drawing.Point(903, 411);
+            this.pnldatagriew.Name = "pnldatagriew";
+            this.pnldatagriew.Size = new System.Drawing.Size(764, 330);
+            this.pnldatagriew.TabIndex = 8;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(764, 330);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(904, 316);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(766, 77);
+            this.tableLayoutPanel5.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 37);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Leyenda:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 40);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(757, 34);
+            this.panel2.TabIndex = 2;
+            // 
+            // filtros
+            // 
+            this.filtros.ColumnCount = 1;
+            this.filtros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.filtros.Controls.Add(this.filtros_especificos, 0, 1);
+            this.filtros.Controls.Add(this.label10, 0, 0);
+            this.filtros.Location = new System.Drawing.Point(904, 197);
+            this.filtros.Name = "filtros";
+            this.filtros.RowCount = 2;
+            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.12621F));
+            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.87379F));
+            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.filtros.Size = new System.Drawing.Size(766, 103);
+            this.filtros.TabIndex = 6;
+            // 
+            // filtros_especificos
+            // 
+            this.filtros_especificos.ColumnCount = 3;
+            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.filtros_especificos.Controls.Add(this.comboBox2, 1, 1);
+            this.filtros_especificos.Controls.Add(this.label13, 2, 0);
+            this.filtros_especificos.Controls.Add(this.label12, 1, 0);
+            this.filtros_especificos.Controls.Add(this.label11, 0, 0);
+            this.filtros_especificos.Controls.Add(this.comboBox1, 0, 1);
+            this.filtros_especificos.Controls.Add(this.textBox1, 2, 1);
+            this.filtros_especificos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filtros_especificos.Location = new System.Drawing.Point(3, 32);
+            this.filtros_especificos.Name = "filtros_especificos";
+            this.filtros_especificos.RowCount = 2;
+            this.filtros_especificos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
+            this.filtros_especificos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
+            this.filtros_especificos.Size = new System.Drawing.Size(760, 68);
+            this.filtros_especificos.TabIndex = 7;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(256, 44);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(247, 24);
+            this.comboBox2.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(509, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 41);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Filtro 3:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(256, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 41);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Filtro 2:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 41);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Filtro 1:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(3, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(247, 24);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(509, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 22);
+            this.textBox1.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 29);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Filtros:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // grafica
+            // 
+            this.grafica.Location = new System.Drawing.Point(125, 197);
+            this.grafica.Name = "grafica";
+            this.grafica.Size = new System.Drawing.Size(766, 544);
+            this.grafica.TabIndex = 5;
             // 
             // sdr_botones
             // 
@@ -462,43 +642,24 @@ namespace CapaPresentacion
             this.sdr_botones.Size = new System.Drawing.Size(114, 756);
             this.sdr_botones.TabIndex = 1;
             // 
-            // btn_MisTickets
+            // button3
             // 
-            this.btn_MisTickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_MisTickets.FlatAppearance.BorderSize = 0;
-            this.btn_MisTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_MisTickets.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MisTickets.ForeColor = System.Drawing.Color.White;
-            this.btn_MisTickets.Image = ((System.Drawing.Image)(resources.GetObject("btn_MisTickets.Image")));
-            this.btn_MisTickets.Location = new System.Drawing.Point(4, 4);
-            this.btn_MisTickets.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_MisTickets.Name = "btn_MisTickets";
-            this.btn_MisTickets.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btn_MisTickets.Size = new System.Drawing.Size(106, 181);
-            this.btn_MisTickets.TabIndex = 3;
-            this.btn_MisTickets.Text = "Refrescar";
-            this.btn_MisTickets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_MisTickets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_MisTickets.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(4, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.button1.Size = new System.Drawing.Size(106, 181);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Exportar PDF";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(4, 571);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.button3.Size = new System.Drawing.Size(106, 181);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Salir";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -519,50 +680,57 @@ namespace CapaPresentacion
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button1
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(4, 571);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.button3.Size = new System.Drawing.Size(106, 181);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Salir";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(4, 193);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.button1.Size = new System.Drawing.Size(106, 181);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Exportar PDF";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // pnl_titulo_reporte
+            // btn_MisTickets
             // 
-            this.pnl_titulo_reporte.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_titulo_reporte.Controls.Add(this.label1);
-            this.pnl_titulo_reporte.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnl_titulo_reporte.Location = new System.Drawing.Point(109, 0);
-            this.pnl_titulo_reporte.Name = "pnl_titulo_reporte";
-            this.pnl_titulo_reporte.Size = new System.Drawing.Size(1573, 50);
-            this.pnl_titulo_reporte.TabIndex = 2;
+            this.btn_MisTickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_MisTickets.FlatAppearance.BorderSize = 0;
+            this.btn_MisTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MisTickets.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MisTickets.ForeColor = System.Drawing.Color.White;
+            this.btn_MisTickets.Image = ((System.Drawing.Image)(resources.GetObject("btn_MisTickets.Image")));
+            this.btn_MisTickets.Location = new System.Drawing.Point(4, 4);
+            this.btn_MisTickets.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_MisTickets.Name = "btn_MisTickets";
+            this.btn_MisTickets.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btn_MisTickets.Size = new System.Drawing.Size(106, 181);
+            this.btn_MisTickets.TabIndex = 3;
+            this.btn_MisTickets.Text = "Refrescar";
+            this.btn_MisTickets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_MisTickets.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_MisTickets.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // titulo_indicadores
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(628, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 37);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nombre del reporte ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titulo_indicadores.ColumnCount = 1;
+            this.titulo_indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.titulo_indicadores.Controls.Add(this.indicadores, 0, 1);
+            this.titulo_indicadores.Controls.Add(this.titulo_metricas, 0, 0);
+            this.titulo_indicadores.Location = new System.Drawing.Point(112, 52);
+            this.titulo_indicadores.Name = "titulo_indicadores";
+            this.titulo_indicadores.RowCount = 2;
+            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741F));
+            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259F));
+            this.titulo_indicadores.Size = new System.Drawing.Size(1573, 133);
+            this.titulo_indicadores.TabIndex = 4;
             // 
             // indicadores
             // 
@@ -582,187 +750,6 @@ namespace CapaPresentacion
             this.indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.indicadores.Size = new System.Drawing.Size(1567, 84);
             this.indicadores.TabIndex = 3;
-            // 
-            // titulo_indicadores
-            // 
-            this.titulo_indicadores.ColumnCount = 1;
-            this.titulo_indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.titulo_indicadores.Controls.Add(this.indicadores, 0, 1);
-            this.titulo_indicadores.Controls.Add(this.titulo_metricas, 0, 0);
-            this.titulo_indicadores.Location = new System.Drawing.Point(112, 52);
-            this.titulo_indicadores.Name = "titulo_indicadores";
-            this.titulo_indicadores.RowCount = 2;
-            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741F));
-            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259F));
-            this.titulo_indicadores.Size = new System.Drawing.Size(1573, 133);
-            this.titulo_indicadores.TabIndex = 4;
-            // 
-            // titulo_metricas
-            // 
-            this.titulo_metricas.AutoSize = true;
-            this.titulo_metricas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titulo_metricas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.titulo_metricas.ForeColor = System.Drawing.Color.Black;
-            this.titulo_metricas.Location = new System.Drawing.Point(4, 0);
-            this.titulo_metricas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.titulo_metricas.Name = "titulo_metricas";
-            this.titulo_metricas.Size = new System.Drawing.Size(1565, 43);
-            this.titulo_metricas.TabIndex = 6;
-            this.titulo_metricas.Text = "Resumen de BLA   BLA BLA";
-            this.titulo_metricas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(379, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "cantidad de tickets";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(3, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(379, 18);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "10";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(394, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(379, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(3, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(379, 18);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(785, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel3.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(379, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "label6";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(3, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(379, 18);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "label7";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
             // 
             // tableLayoutPanel4
             // 
@@ -815,185 +802,198 @@ namespace CapaPresentacion
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // grafica
+            // tableLayoutPanel3
             // 
-            this.grafica.Location = new System.Drawing.Point(125, 197);
-            this.grafica.Name = "grafica";
-            this.grafica.Size = new System.Drawing.Size(766, 544);
-            this.grafica.TabIndex = 5;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(785, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel3.TabIndex = 7;
             // 
-            // filtros
+            // label6
             // 
-            this.filtros.ColumnCount = 1;
-            this.filtros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.filtros.Controls.Add(this.filtros_especificos, 0, 1);
-            this.filtros.Controls.Add(this.label10, 0, 0);
-            this.filtros.Location = new System.Drawing.Point(904, 197);
-            this.filtros.Name = "filtros";
-            this.filtros.RowCount = 2;
-            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.12621F));
-            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.87379F));
-            this.filtros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.filtros.Size = new System.Drawing.Size(766, 103);
-            this.filtros.TabIndex = 6;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(379, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "label6";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // label7
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 30);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Filtros:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(379, 18);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "label7";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // filtros_especificos
+            // pictureBox3
             // 
-            this.filtros_especificos.ColumnCount = 3;
-            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.filtros_especificos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.filtros_especificos.Controls.Add(this.comboBox2, 1, 1);
-            this.filtros_especificos.Controls.Add(this.label13, 2, 0);
-            this.filtros_especificos.Controls.Add(this.label12, 1, 0);
-            this.filtros_especificos.Controls.Add(this.label11, 0, 0);
-            this.filtros_especificos.Controls.Add(this.comboBox1, 0, 1);
-            this.filtros_especificos.Controls.Add(this.textBox1, 2, 1);
-            this.filtros_especificos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filtros_especificos.Location = new System.Drawing.Point(3, 33);
-            this.filtros_especificos.Name = "filtros_especificos";
-            this.filtros_especificos.RowCount = 2;
-            this.filtros_especificos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
-            this.filtros_especificos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.filtros_especificos.Size = new System.Drawing.Size(760, 67);
-            this.filtros_especificos.TabIndex = 7;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(379, 37);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
-            // label11
+            // tableLayoutPanel2
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 40);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Filtro 1:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(394, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // label13
+            // label4
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(509, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 40);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Filtro 3:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(379, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // label5
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 24);
-            this.comboBox1.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(3, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(379, 18);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "label5";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // pictureBox2
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(509, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 22);
-            this.textBox1.TabIndex = 7;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(379, 37);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanel1
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(904, 316);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(766, 77);
-            this.tableLayoutPanel5.TabIndex = 7;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // label17
+            // label2
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(3, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 37);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Leyenda:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(379, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "cantidad de tickets";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // label3
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(757, 34);
-            this.panel2.TabIndex = 2;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(3, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(379, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "10";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnldatagriew
+            // pictureBox1
             // 
-            this.pnldatagriew.Controls.Add(this.dataGridView1);
-            this.pnldatagriew.Location = new System.Drawing.Point(903, 411);
-            this.pnldatagriew.Name = "pnldatagriew";
-            this.pnldatagriew.Size = new System.Drawing.Size(764, 330);
-            this.pnldatagriew.TabIndex = 8;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 37);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // titulo_metricas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 330);
-            this.dataGridView1.TabIndex = 0;
+            this.titulo_metricas.AutoSize = true;
+            this.titulo_metricas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titulo_metricas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.titulo_metricas.ForeColor = System.Drawing.Color.Black;
+            this.titulo_metricas.Location = new System.Drawing.Point(4, 0);
+            this.titulo_metricas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titulo_metricas.Name = "titulo_metricas";
+            this.titulo_metricas.Size = new System.Drawing.Size(1565, 43);
+            this.titulo_metricas.TabIndex = 6;
+            this.titulo_metricas.Text = "Resumen de BLA   BLA BLA";
+            this.titulo_metricas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // pnl_titulo_reporte
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(256, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 40);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Filtro 2:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnl_titulo_reporte.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_titulo_reporte.Controls.Add(this.label1);
+            this.pnl_titulo_reporte.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnl_titulo_reporte.Location = new System.Drawing.Point(109, 0);
+            this.pnl_titulo_reporte.Name = "pnl_titulo_reporte";
+            this.pnl_titulo_reporte.Size = new System.Drawing.Size(1573, 50);
+            this.pnl_titulo_reporte.TabIndex = 2;
             // 
-            // comboBox2
+            // label1
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(256, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 24);
-            this.comboBox2.TabIndex = 6;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(628, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 37);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nombre del reporte ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_Reporte5
             // 
@@ -1096,12 +1096,12 @@ namespace CapaPresentacion
             this.tableLayoutPanel8.Controls.Add(this.comboBox4, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.textBox2, 2, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(760, 67);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
             // comboBox3
@@ -1109,7 +1109,7 @@ namespace CapaPresentacion
             this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(256, 43);
+            this.comboBox3.Location = new System.Drawing.Point(256, 44);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(247, 24);
             this.comboBox3.TabIndex = 6;
@@ -1122,7 +1122,7 @@ namespace CapaPresentacion
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label15.Location = new System.Drawing.Point(509, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 40);
+            this.label15.Size = new System.Drawing.Size(73, 41);
             this.label15.TabIndex = 4;
             this.label15.Text = "Filtro 3:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1135,7 +1135,7 @@ namespace CapaPresentacion
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(256, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 40);
+            this.label16.Size = new System.Drawing.Size(73, 41);
             this.label16.TabIndex = 3;
             this.label16.Text = "Filtro 2:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1148,7 +1148,7 @@ namespace CapaPresentacion
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(3, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 40);
+            this.label18.Size = new System.Drawing.Size(73, 41);
             this.label18.TabIndex = 2;
             this.label18.Text = "Filtro 1:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1158,7 +1158,7 @@ namespace CapaPresentacion
             this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(3, 43);
+            this.comboBox4.Location = new System.Drawing.Point(3, 44);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(247, 24);
             this.comboBox4.TabIndex = 5;
@@ -1166,7 +1166,7 @@ namespace CapaPresentacion
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(509, 43);
+            this.textBox2.Location = new System.Drawing.Point(509, 44);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(248, 22);
             this.textBox2.TabIndex = 7;
@@ -1179,7 +1179,7 @@ namespace CapaPresentacion
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(3, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(76, 30);
+            this.label19.Size = new System.Drawing.Size(76, 29);
             this.label19.TabIndex = 1;
             this.label19.Text = "Filtros:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1664,12 +1664,12 @@ namespace CapaPresentacion
             this.tableLayoutPanel18.Controls.Add(this.comboBox6, 0, 1);
             this.tableLayoutPanel18.Controls.Add(this.textBox3, 2, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(760, 67);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel18.TabIndex = 7;
             // 
             // comboBox5
@@ -1677,7 +1677,7 @@ namespace CapaPresentacion
             this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(256, 43);
+            this.comboBox5.Location = new System.Drawing.Point(256, 44);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(247, 24);
             this.comboBox5.TabIndex = 6;
@@ -1690,7 +1690,7 @@ namespace CapaPresentacion
             this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label31.Location = new System.Drawing.Point(509, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(73, 40);
+            this.label31.Size = new System.Drawing.Size(73, 41);
             this.label31.TabIndex = 4;
             this.label31.Text = "Filtro 3:";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1703,7 +1703,7 @@ namespace CapaPresentacion
             this.label32.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label32.Location = new System.Drawing.Point(256, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(73, 40);
+            this.label32.Size = new System.Drawing.Size(73, 41);
             this.label32.TabIndex = 3;
             this.label32.Text = "Filtro 2:";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1716,7 +1716,7 @@ namespace CapaPresentacion
             this.label33.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label33.Location = new System.Drawing.Point(3, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(73, 40);
+            this.label33.Size = new System.Drawing.Size(73, 41);
             this.label33.TabIndex = 2;
             this.label33.Text = "Filtro 1:";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1726,7 +1726,7 @@ namespace CapaPresentacion
             this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(3, 43);
+            this.comboBox6.Location = new System.Drawing.Point(3, 44);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(247, 24);
             this.comboBox6.TabIndex = 5;
@@ -1734,7 +1734,7 @@ namespace CapaPresentacion
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(509, 43);
+            this.textBox3.Location = new System.Drawing.Point(509, 44);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(248, 22);
             this.textBox3.TabIndex = 7;
@@ -1747,7 +1747,7 @@ namespace CapaPresentacion
             this.label34.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label34.Location = new System.Drawing.Point(3, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(76, 30);
+            this.label34.Size = new System.Drawing.Size(76, 29);
             this.label34.TabIndex = 1;
             this.label34.Text = "Filtros:";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2232,12 +2232,12 @@ namespace CapaPresentacion
             this.tableLayoutPanel28.Controls.Add(this.comboBox8, 0, 1);
             this.tableLayoutPanel28.Controls.Add(this.textBox4, 2, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
             this.tableLayoutPanel28.RowCount = 2;
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(760, 67);
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel28.TabIndex = 7;
             // 
             // comboBox7
@@ -2245,7 +2245,7 @@ namespace CapaPresentacion
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(256, 43);
+            this.comboBox7.Location = new System.Drawing.Point(256, 44);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(247, 24);
             this.comboBox7.TabIndex = 6;
@@ -2258,7 +2258,7 @@ namespace CapaPresentacion
             this.label46.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label46.Location = new System.Drawing.Point(509, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(73, 40);
+            this.label46.Size = new System.Drawing.Size(73, 41);
             this.label46.TabIndex = 4;
             this.label46.Text = "Filtro 3:";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2271,7 +2271,7 @@ namespace CapaPresentacion
             this.label47.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label47.Location = new System.Drawing.Point(256, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(73, 40);
+            this.label47.Size = new System.Drawing.Size(73, 41);
             this.label47.TabIndex = 3;
             this.label47.Text = "Filtro 2:";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2284,7 +2284,7 @@ namespace CapaPresentacion
             this.label48.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label48.Location = new System.Drawing.Point(3, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(73, 40);
+            this.label48.Size = new System.Drawing.Size(73, 41);
             this.label48.TabIndex = 2;
             this.label48.Text = "Filtro 1:";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2294,7 +2294,7 @@ namespace CapaPresentacion
             this.comboBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(3, 43);
+            this.comboBox8.Location = new System.Drawing.Point(3, 44);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(247, 24);
             this.comboBox8.TabIndex = 5;
@@ -2302,7 +2302,7 @@ namespace CapaPresentacion
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(509, 43);
+            this.textBox4.Location = new System.Drawing.Point(509, 44);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(248, 22);
             this.textBox4.TabIndex = 7;
@@ -2315,7 +2315,7 @@ namespace CapaPresentacion
             this.label49.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label49.Location = new System.Drawing.Point(3, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(76, 30);
+            this.label49.Size = new System.Drawing.Size(76, 29);
             this.label49.TabIndex = 1;
             this.label49.Text = "Filtros:";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2800,12 +2800,12 @@ namespace CapaPresentacion
             this.tableLayoutPanel38.Controls.Add(this.comboBox10, 0, 1);
             this.tableLayoutPanel38.Controls.Add(this.textBox5, 2, 1);
             this.tableLayoutPanel38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel38.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel38.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel38.Name = "tableLayoutPanel38";
             this.tableLayoutPanel38.RowCount = 2;
             this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
             this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.tableLayoutPanel38.Size = new System.Drawing.Size(760, 67);
+            this.tableLayoutPanel38.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel38.TabIndex = 7;
             // 
             // comboBox9
@@ -2813,7 +2813,7 @@ namespace CapaPresentacion
             this.comboBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(256, 43);
+            this.comboBox9.Location = new System.Drawing.Point(256, 44);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(247, 24);
             this.comboBox9.TabIndex = 6;
@@ -2826,7 +2826,7 @@ namespace CapaPresentacion
             this.label61.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label61.Location = new System.Drawing.Point(509, 0);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(73, 40);
+            this.label61.Size = new System.Drawing.Size(73, 41);
             this.label61.TabIndex = 4;
             this.label61.Text = "Filtro 3:";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2839,7 +2839,7 @@ namespace CapaPresentacion
             this.label62.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label62.Location = new System.Drawing.Point(256, 0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(73, 40);
+            this.label62.Size = new System.Drawing.Size(73, 41);
             this.label62.TabIndex = 3;
             this.label62.Text = "Filtro 2:";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2852,7 +2852,7 @@ namespace CapaPresentacion
             this.label63.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label63.Location = new System.Drawing.Point(3, 0);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(73, 40);
+            this.label63.Size = new System.Drawing.Size(73, 41);
             this.label63.TabIndex = 2;
             this.label63.Text = "Filtro 1:";
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2862,7 +2862,7 @@ namespace CapaPresentacion
             this.comboBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(3, 43);
+            this.comboBox10.Location = new System.Drawing.Point(3, 44);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(247, 24);
             this.comboBox10.TabIndex = 5;
@@ -2870,7 +2870,7 @@ namespace CapaPresentacion
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(509, 43);
+            this.textBox5.Location = new System.Drawing.Point(509, 44);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(248, 22);
             this.textBox5.TabIndex = 7;
@@ -2883,7 +2883,7 @@ namespace CapaPresentacion
             this.label64.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label64.Location = new System.Drawing.Point(3, 0);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(76, 30);
+            this.label64.Size = new System.Drawing.Size(76, 29);
             this.label64.TabIndex = 1;
             this.label64.Text = "Filtros:";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3368,12 +3368,12 @@ namespace CapaPresentacion
             this.tableLayoutPanel48.Controls.Add(this.comboBox12, 0, 1);
             this.tableLayoutPanel48.Controls.Add(this.textBox6, 2, 1);
             this.tableLayoutPanel48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel48.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel48.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel48.Name = "tableLayoutPanel48";
             this.tableLayoutPanel48.RowCount = 2;
             this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
             this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
-            this.tableLayoutPanel48.Size = new System.Drawing.Size(760, 67);
+            this.tableLayoutPanel48.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel48.TabIndex = 7;
             // 
             // comboBox11
@@ -3381,7 +3381,7 @@ namespace CapaPresentacion
             this.comboBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(256, 43);
+            this.comboBox11.Location = new System.Drawing.Point(256, 44);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(247, 24);
             this.comboBox11.TabIndex = 6;
@@ -3394,7 +3394,7 @@ namespace CapaPresentacion
             this.label76.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label76.Location = new System.Drawing.Point(509, 0);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(73, 40);
+            this.label76.Size = new System.Drawing.Size(73, 41);
             this.label76.TabIndex = 4;
             this.label76.Text = "Filtro 3:";
             this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3407,7 +3407,7 @@ namespace CapaPresentacion
             this.label77.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label77.Location = new System.Drawing.Point(256, 0);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(73, 40);
+            this.label77.Size = new System.Drawing.Size(73, 41);
             this.label77.TabIndex = 3;
             this.label77.Text = "Filtro 2:";
             this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3420,7 +3420,7 @@ namespace CapaPresentacion
             this.label78.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label78.Location = new System.Drawing.Point(3, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(73, 40);
+            this.label78.Size = new System.Drawing.Size(73, 41);
             this.label78.TabIndex = 2;
             this.label78.Text = "Filtro 1:";
             this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3430,7 +3430,7 @@ namespace CapaPresentacion
             this.comboBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(3, 43);
+            this.comboBox12.Location = new System.Drawing.Point(3, 44);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(247, 24);
             this.comboBox12.TabIndex = 5;
@@ -3438,7 +3438,7 @@ namespace CapaPresentacion
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(509, 43);
+            this.textBox6.Location = new System.Drawing.Point(509, 44);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(248, 22);
             this.textBox6.TabIndex = 7;
@@ -3451,7 +3451,7 @@ namespace CapaPresentacion
             this.label79.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label79.Location = new System.Drawing.Point(3, 0);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(76, 30);
+            this.label79.Size = new System.Drawing.Size(76, 29);
             this.label79.TabIndex = 1;
             this.label79.Text = "Filtros:";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3859,32 +3859,32 @@ namespace CapaPresentacion
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
             this.pnl_Reporte6.ResumeLayout(false);
-            this.sdr_botones.ResumeLayout(false);
-            this.pnl_titulo_reporte.ResumeLayout(false);
-            this.pnl_titulo_reporte.PerformLayout();
-            this.indicadores.ResumeLayout(false);
-            this.titulo_indicadores.ResumeLayout(false);
-            this.titulo_indicadores.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnldatagriew.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.filtros.ResumeLayout(false);
             this.filtros.PerformLayout();
             this.filtros_especificos.ResumeLayout(false);
             this.filtros_especificos.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.pnldatagriew.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.sdr_botones.ResumeLayout(false);
+            this.titulo_indicadores.ResumeLayout(false);
+            this.titulo_indicadores.PerformLayout();
+            this.indicadores.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnl_titulo_reporte.ResumeLayout(false);
+            this.pnl_titulo_reporte.PerformLayout();
             this.pnl_Reporte5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

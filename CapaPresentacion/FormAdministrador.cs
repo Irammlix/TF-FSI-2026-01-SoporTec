@@ -54,6 +54,50 @@ namespace CapaPresentacion
            
             btn_CancelarEdicion.Click += btn_CancelarEdicion_Click;
             this.FormClosing += FormAdministrador_FormClosing;
+
+            btn_Reporte1.Click += btn_Reporte1_Click;
+            btn_Reporte2.Click += btn_Reporte2_Click;
+            btn_Reporte3.Click += btn_Reporte3_Click;
+            btn_Reporte4.Click += btn_Reporte4_Click;
+            btn_Reporte5.Click += btn_Reporte5_Click;
+            btn_Reporte6.Click += btn_Reporte6_Click;
+        }
+
+        //=========== para el panel de Reportes
+        private void AbrirFormReportes(int numeroReporte)
+        {
+            FormReportes formReportes = new FormReportes(numeroReporte);
+            formReportes.ShowDialog(this);
+        }
+
+        private void btn_Reporte1_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(1);
+        }
+
+        private void btn_Reporte2_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(2);
+        }
+
+        private void btn_Reporte3_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(3);
+        }
+
+        private void btn_Reporte4_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(4);
+        }
+
+        private void btn_Reporte5_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(5);
+        }
+
+        private void btn_Reporte6_Click(object sender, EventArgs e)
+        {
+            AbrirFormReportes(6);
         }
 
         private void InicializarSidebar()
