@@ -511,6 +511,7 @@ namespace CapaPresentacion
             Ticket ticket = nTicket.ObtenerPorId(IdSeleccionadoTicket);
             if(ticket.IdAtendidoPor==null)
             {
+                pnl_DetalleTicket.Visible = true;
                 pnl_DetalleTicket.BringToFront();
                 tb_DetTitulo.Text = ticket.DTitulo;
                 tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
@@ -529,6 +530,7 @@ namespace CapaPresentacion
                 tb_DetEstado.Text = ticket.DEstado;
                 return;
             }
+            pnl_DetalleTicket.Visible = true;
             pnl_DetalleTicket.BringToFront();
             tb_DetTitulo.Text = ticket.DTitulo;
             tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
@@ -593,6 +595,7 @@ namespace CapaPresentacion
             lb_idTicket.Text = "" + dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString();
             int IdSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
             Ticket ticket = nTicket.ObtenerPorId(IdSeleccionadoTicket);
+            pnl_AsignarTicket.Visible = true;
             pnl_AsignarTicket.BringToFront();
             tb_AsigTituloSol.Text = ticket.DTitulo;
             tb_AsigUltimaFechaActu.Text=ticket.FActualizacion.ToString();
