@@ -8,5 +8,24 @@ namespace CapaDatos
 {
     public class DTipoSolicitud
     {
+        public List<TipoSolicitud> ListarTodo()
+        {
+            List<TipoSolicitud> tipoSolicitud = new List<TipoSolicitud>();
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    tipoSolicitud = context.TipoSolicitud
+                        .Where(t => t.DActivo == true)
+                        .ToList();
+                }
+                return tipoSolicitud;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return tipoSolicitud;
+            }
+        }
     }
 }

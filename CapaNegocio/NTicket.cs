@@ -19,6 +19,31 @@ namespace CapaNegocio
         {
             return dTicket.ListarPorTecnico(idTecnico, prioridad, estado);
         }
+
+        public List<Ticket> ListarPorSolicitante(int idSolicitante, string estado)
+        {
+            return dTicket.ListarPorSolicitante(idSolicitante, estado);
+        }
+
+        public string Registrar(Ticket ticket)
+        {
+            ticket.DEstado = "Sin Asignar";
+            ticket.FCreacion = DateTime.Now;
+            ticket.FActualizacion = null;
+            ticket.DPrioridad = null;
+            return dTicket.Registrar(ticket);
+           
+
+        }
+
+        public string CancelarTicket(int idTicket, string estadoActual)
+        {
+            if (estadoActual != "Sin Asignar")
+            {
+                return "Solo se pueden cancelar tickets que aún no han sido asignados.";
+            }
+            return dTicket.CancelarTicket(idTicket);
+        }
         public string ActualizarTicketTecnico(int idTicket, string estado, string comentario)
         {
             return dTicket.ActualizarTicketTecnico(idTicket, estado, comentario);
