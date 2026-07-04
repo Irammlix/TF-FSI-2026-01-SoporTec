@@ -255,14 +255,19 @@ namespace CapaPresentacion
             this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
             this.label84 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
             this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
+            this.lblCantTickets = new System.Windows.Forms.Label();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.label88 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label89 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel32 = new System.Windows.Forms.TableLayoutPanel();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.lblPorcentajeSinAsignar = new System.Windows.Forms.Label();
             this.pnl_Top.SuspendLayout();
             this.pnl_Reporte6.SuspendLayout();
             this.pnldatagriew.SuspendLayout();
@@ -360,10 +365,11 @@ namespace CapaPresentacion
             this.tableLayoutPanel53.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.tableLayoutPanel54.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             this.tableLayoutPanel55.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.panel23.SuspendLayout();
+            this.tableLayoutPanel32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Top
@@ -3168,7 +3174,7 @@ namespace CapaPresentacion
             this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel46.Controls.Add(this.label75, 0, 0);
             this.tableLayoutPanel46.Controls.Add(this.panel21, 0, 1);
-            this.tableLayoutPanel46.Location = new System.Drawing.Point(904, 316);
+            this.tableLayoutPanel46.Location = new System.Drawing.Point(901, 341);
             this.tableLayoutPanel46.Name = "tableLayoutPanel46";
             this.tableLayoutPanel46.RowCount = 2;
             this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
@@ -3202,7 +3208,7 @@ namespace CapaPresentacion
             this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel47.Controls.Add(this.tableLayoutPanel48, 0, 1);
             this.tableLayoutPanel47.Controls.Add(this.label79, 0, 0);
-            this.tableLayoutPanel47.Location = new System.Drawing.Point(904, 197);
+            this.tableLayoutPanel47.Location = new System.Drawing.Point(901, 232);
             this.tableLayoutPanel47.Name = "tableLayoutPanel47";
             this.tableLayoutPanel47.RowCount = 2;
             this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.12621F));
@@ -3314,9 +3320,9 @@ namespace CapaPresentacion
             // 
             // panel22
             // 
-            this.panel22.Location = new System.Drawing.Point(125, 197);
+            this.panel22.Location = new System.Drawing.Point(125, 232);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(766, 544);
+            this.panel22.Size = new System.Drawing.Size(766, 509);
             this.panel22.TabIndex = 5;
             // 
             // tableLayoutPanel49
@@ -3417,34 +3423,39 @@ namespace CapaPresentacion
             // tableLayoutPanel50
             // 
             this.tableLayoutPanel50.ColumnCount = 1;
-            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel50.Controls.Add(this.tableLayoutPanel51, 0, 1);
-            this.tableLayoutPanel50.Controls.Add(this.label88, 0, 0);
-            this.tableLayoutPanel50.Location = new System.Drawing.Point(112, 52);
+            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel50.Controls.Add(this.tableLayoutPanel51, 0, 3);
+            this.tableLayoutPanel50.Controls.Add(this.label88, 0, 1);
+            this.tableLayoutPanel50.Controls.Add(this.label46, 0, 2);
+            this.tableLayoutPanel50.Location = new System.Drawing.Point(112, 49);
             this.tableLayoutPanel50.Name = "tableLayoutPanel50";
-            this.tableLayoutPanel50.RowCount = 2;
-            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741F));
-            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259F));
-            this.tableLayoutPanel50.Size = new System.Drawing.Size(1573, 133);
+            this.tableLayoutPanel50.RowCount = 4;
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.77922F));
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.22078F));
+            this.tableLayoutPanel50.Size = new System.Drawing.Size(1573, 177);
             this.tableLayoutPanel50.TabIndex = 4;
             // 
             // tableLayoutPanel51
             // 
-            this.tableLayoutPanel51.ColumnCount = 4;
-            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel51.ColumnCount = 5;
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.35929F));
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.65475F));
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.91002F));
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.2508F));
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.82514F));
+            this.tableLayoutPanel51.Controls.Add(this.tableLayoutPanel32, 4, 0);
             this.tableLayoutPanel51.Controls.Add(this.tableLayoutPanel52, 3, 0);
             this.tableLayoutPanel51.Controls.Add(this.tableLayoutPanel53, 2, 0);
             this.tableLayoutPanel51.Controls.Add(this.tableLayoutPanel54, 1, 0);
             this.tableLayoutPanel51.Controls.Add(this.tableLayoutPanel55, 0, 0);
             this.tableLayoutPanel51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel51.Location = new System.Drawing.Point(3, 46);
+            this.tableLayoutPanel51.Location = new System.Drawing.Point(3, 58);
             this.tableLayoutPanel51.Name = "tableLayoutPanel51";
             this.tableLayoutPanel51.RowCount = 1;
             this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel51.Size = new System.Drawing.Size(1567, 84);
+            this.tableLayoutPanel51.Size = new System.Drawing.Size(1567, 116);
             this.tableLayoutPanel51.TabIndex = 3;
             // 
             // tableLayoutPanel52
@@ -3455,14 +3466,14 @@ namespace CapaPresentacion
             this.tableLayoutPanel52.Controls.Add(this.label81, 0, 2);
             this.tableLayoutPanel52.Controls.Add(this.pictureBox21, 0, 1);
             this.tableLayoutPanel52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel52.Location = new System.Drawing.Point(1176, 3);
+            this.tableLayoutPanel52.Location = new System.Drawing.Point(895, 3);
             this.tableLayoutPanel52.Name = "tableLayoutPanel52";
             this.tableLayoutPanel52.RowCount = 3;
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel52.Size = new System.Drawing.Size(388, 78);
+            this.tableLayoutPanel52.Size = new System.Drawing.Size(327, 110);
             this.tableLayoutPanel52.TabIndex = 8;
             // 
             // label80
@@ -3472,7 +3483,7 @@ namespace CapaPresentacion
             this.label80.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label80.Location = new System.Drawing.Point(3, 0);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(382, 17);
+            this.label80.Size = new System.Drawing.Size(321, 24);
             this.label80.TabIndex = 0;
             this.label80.Text = "label80";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3482,9 +3493,9 @@ namespace CapaPresentacion
             this.label81.AutoSize = true;
             this.label81.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label81.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label81.Location = new System.Drawing.Point(3, 60);
+            this.label81.Location = new System.Drawing.Point(3, 85);
             this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(382, 18);
+            this.label81.Size = new System.Drawing.Size(321, 25);
             this.label81.TabIndex = 1;
             this.label81.Text = "label81";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3492,9 +3503,9 @@ namespace CapaPresentacion
             // pictureBox21
             // 
             this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox21.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox21.Location = new System.Drawing.Point(3, 27);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(382, 37);
+            this.pictureBox21.Size = new System.Drawing.Size(321, 55);
             this.pictureBox21.TabIndex = 2;
             this.pictureBox21.TabStop = false;
             // 
@@ -3506,14 +3517,14 @@ namespace CapaPresentacion
             this.tableLayoutPanel53.Controls.Add(this.label83, 0, 2);
             this.tableLayoutPanel53.Controls.Add(this.pictureBox22, 0, 1);
             this.tableLayoutPanel53.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel53.Location = new System.Drawing.Point(785, 3);
+            this.tableLayoutPanel53.Location = new System.Drawing.Point(536, 3);
             this.tableLayoutPanel53.Name = "tableLayoutPanel53";
             this.tableLayoutPanel53.RowCount = 3;
             this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel53.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel53.Size = new System.Drawing.Size(353, 110);
             this.tableLayoutPanel53.TabIndex = 7;
             // 
             // label82
@@ -3523,7 +3534,7 @@ namespace CapaPresentacion
             this.label82.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label82.Location = new System.Drawing.Point(3, 0);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(379, 17);
+            this.label82.Size = new System.Drawing.Size(347, 24);
             this.label82.TabIndex = 0;
             this.label82.Text = "label82";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3533,9 +3544,9 @@ namespace CapaPresentacion
             this.label83.AutoSize = true;
             this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label83.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label83.Location = new System.Drawing.Point(3, 60);
+            this.label83.Location = new System.Drawing.Point(3, 85);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(379, 18);
+            this.label83.Size = new System.Drawing.Size(347, 25);
             this.label83.TabIndex = 1;
             this.label83.Text = "label83";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3543,28 +3554,29 @@ namespace CapaPresentacion
             // pictureBox22
             // 
             this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox22.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox22.Location = new System.Drawing.Point(3, 27);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(379, 37);
+            this.pictureBox22.Size = new System.Drawing.Size(347, 55);
             this.pictureBox22.TabIndex = 2;
             this.pictureBox22.TabStop = false;
             // 
             // tableLayoutPanel54
             // 
+            this.tableLayoutPanel54.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tableLayoutPanel54.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel54.ColumnCount = 1;
             this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel54.Controls.Add(this.label84, 0, 0);
             this.tableLayoutPanel54.Controls.Add(this.label85, 0, 2);
-            this.tableLayoutPanel54.Controls.Add(this.pictureBox23, 0, 1);
+            this.tableLayoutPanel54.Controls.Add(this.lblPorcentajeSinAsignar, 0, 1);
             this.tableLayoutPanel54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel54.Location = new System.Drawing.Point(394, 3);
+            this.tableLayoutPanel54.Location = new System.Drawing.Point(181, 3);
             this.tableLayoutPanel54.Name = "tableLayoutPanel54";
             this.tableLayoutPanel54.RowCount = 3;
             this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel54.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel54.Size = new System.Drawing.Size(349, 110);
             this.tableLayoutPanel54.TabIndex = 6;
             // 
             // label84
@@ -3572,11 +3584,11 @@ namespace CapaPresentacion
             this.label84.AutoSize = true;
             this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label84.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label84.Location = new System.Drawing.Point(3, 0);
+            this.label84.Location = new System.Drawing.Point(4, 1);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(379, 17);
+            this.label84.Size = new System.Drawing.Size(341, 23);
             this.label84.TabIndex = 0;
-            this.label84.Text = "label84";
+            this.label84.Text = "Sin Asignar";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label85
@@ -3584,38 +3596,29 @@ namespace CapaPresentacion
             this.label85.AutoSize = true;
             this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label85.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label85.Location = new System.Drawing.Point(3, 60);
+            this.label85.Location = new System.Drawing.Point(4, 84);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(379, 18);
+            this.label85.Size = new System.Drawing.Size(341, 25);
             this.label85.TabIndex = 1;
             this.label85.Text = "label85";
             this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox23.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox23.TabIndex = 2;
-            this.pictureBox23.TabStop = false;
             // 
             // tableLayoutPanel55
             // 
             this.tableLayoutPanel55.ColumnCount = 1;
             this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel55.Controls.Add(this.label86, 0, 0);
-            this.tableLayoutPanel55.Controls.Add(this.label87, 0, 2);
+            this.tableLayoutPanel55.Controls.Add(this.lblCantTickets, 0, 2);
             this.tableLayoutPanel55.Controls.Add(this.pictureBox24, 0, 1);
             this.tableLayoutPanel55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel55.Name = "tableLayoutPanel55";
             this.tableLayoutPanel55.RowCount = 3;
             this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.63636F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.54545F));
             this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel55.Size = new System.Drawing.Size(385, 78);
+            this.tableLayoutPanel55.Size = new System.Drawing.Size(172, 110);
             this.tableLayoutPanel55.TabIndex = 5;
             // 
             // label86
@@ -3625,29 +3628,29 @@ namespace CapaPresentacion
             this.label86.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label86.Location = new System.Drawing.Point(3, 0);
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(379, 17);
+            this.label86.Size = new System.Drawing.Size(166, 24);
             this.label86.TabIndex = 0;
-            this.label86.Text = "cantidad de tickets";
+            this.label86.Text = "N° de Tickets";
             this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label87
+            // lblCantTickets
             // 
-            this.label87.AutoSize = true;
-            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label87.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label87.Location = new System.Drawing.Point(3, 60);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(379, 18);
-            this.label87.TabIndex = 1;
-            this.label87.Text = "10";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCantTickets.AutoSize = true;
+            this.lblCantTickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCantTickets.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblCantTickets.Location = new System.Drawing.Point(3, 82);
+            this.lblCantTickets.Name = "lblCantTickets";
+            this.lblCantTickets.Size = new System.Drawing.Size(166, 28);
+            this.lblCantTickets.TabIndex = 1;
+            this.lblCantTickets.Text = "-";
+            this.lblCantTickets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox24
             // 
             this.pictureBox24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox24.Location = new System.Drawing.Point(3, 20);
+            this.pictureBox24.Location = new System.Drawing.Point(3, 27);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(379, 37);
+            this.pictureBox24.Size = new System.Drawing.Size(166, 52);
             this.pictureBox24.TabIndex = 2;
             this.pictureBox24.TabStop = false;
             // 
@@ -3655,15 +3658,31 @@ namespace CapaPresentacion
             // 
             this.label88.AutoSize = true;
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label88.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label88.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label88.ForeColor = System.Drawing.Color.Black;
             this.label88.Location = new System.Drawing.Point(4, 0);
             this.label88.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(1565, 43);
+            this.label88.Size = new System.Drawing.Size(1565, 23);
             this.label88.TabIndex = 6;
-            this.label88.Text = "Resumen de BLA   BLA BLA";
-            this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label88.Text = "Este reporte muestra la distribución actual de los tickets registrados según su e" +
+    "stado, permitiendo identificar cuántos se encuentran sin asignar, asignados, en " +
+    "proceso o resueltos.";
+            this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.AliceBlue;
+            this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.Navy;
+            this.label46.Location = new System.Drawing.Point(3, 23);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(1567, 32);
+            this.label46.TabIndex = 0;
+            this.label46.Text = "Fecha de Generacion: --";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel23
             // 
@@ -3683,13 +3702,77 @@ namespace CapaPresentacion
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.label89.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label89.Location = new System.Drawing.Point(628, 9);
+            this.label89.Location = new System.Drawing.Point(5, 4);
             this.label89.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(282, 37);
+            this.label89.Size = new System.Drawing.Size(455, 37);
             this.label89.TabIndex = 5;
-            this.label89.Text = "Nombre del reporte ";
-            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label89.Text = "Distribución de Tickets por Estado";
+            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel32
+            // 
+            this.tableLayoutPanel32.ColumnCount = 1;
+            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel32.Controls.Add(this.label87, 0, 0);
+            this.tableLayoutPanel32.Controls.Add(this.label90, 0, 2);
+            this.tableLayoutPanel32.Controls.Add(this.pictureBox13, 0, 1);
+            this.tableLayoutPanel32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel32.Location = new System.Drawing.Point(1228, 3);
+            this.tableLayoutPanel32.Name = "tableLayoutPanel32";
+            this.tableLayoutPanel32.RowCount = 3;
+            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel32.Size = new System.Drawing.Size(336, 110);
+            this.tableLayoutPanel32.TabIndex = 9;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label87.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label87.Location = new System.Drawing.Point(3, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(330, 24);
+            this.label87.TabIndex = 0;
+            this.label87.Text = "label87";
+            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label90.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label90.Location = new System.Drawing.Point(3, 85);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(330, 25);
+            this.label90.TabIndex = 1;
+            this.label90.Text = "label90";
+            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox13.Location = new System.Drawing.Point(3, 27);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(330, 55);
+            this.pictureBox13.TabIndex = 2;
+            this.pictureBox13.TabStop = false;
+            // 
+            // lblPorcentajeSinAsignar
+            // 
+            this.lblPorcentajeSinAsignar.AutoSize = true;
+            this.lblPorcentajeSinAsignar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPorcentajeSinAsignar.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorcentajeSinAsignar.ForeColor = System.Drawing.Color.Red;
+            this.lblPorcentajeSinAsignar.Location = new System.Drawing.Point(4, 25);
+            this.lblPorcentajeSinAsignar.Name = "lblPorcentajeSinAsignar";
+            this.lblPorcentajeSinAsignar.Size = new System.Drawing.Size(341, 58);
+            this.lblPorcentajeSinAsignar.TabIndex = 2;
+            this.lblPorcentajeSinAsignar.Text = "30%";
+            this.lblPorcentajeSinAsignar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormReportes
             // 
@@ -3697,8 +3780,8 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1682, 853);
-            this.Controls.Add(this.pnl_Reporte3);
             this.Controls.Add(this.pnl_Reporte1);
+            this.Controls.Add(this.pnl_Reporte3);
             this.Controls.Add(this.pnl_Reporte2);
             this.Controls.Add(this.pnl_Reporte4);
             this.Controls.Add(this.pnl_Reporte5);
@@ -3860,12 +3943,14 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.tableLayoutPanel54.ResumeLayout(false);
             this.tableLayoutPanel54.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             this.tableLayoutPanel55.ResumeLayout(false);
             this.tableLayoutPanel55.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            this.tableLayoutPanel32.ResumeLayout(false);
+            this.tableLayoutPanel32.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4101,10 +4186,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label87;
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Panel panel23;
@@ -4117,5 +4200,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label lblCantTickets;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel32;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Label lblPorcentajeSinAsignar;
     }
 }
