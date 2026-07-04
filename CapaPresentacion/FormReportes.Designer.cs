@@ -153,15 +153,12 @@ namespace CapaPresentacion
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.label45 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
@@ -171,22 +168,14 @@ namespace CapaPresentacion
             this.button15 = new System.Windows.Forms.Button();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel31 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel32 = new System.Windows.Forms.TableLayoutPanel();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel33 = new System.Windows.Forms.TableLayoutPanel();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel34 = new System.Windows.Forms.TableLayoutPanel();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel35 = new System.Windows.Forms.TableLayoutPanel();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label58 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label59 = new System.Windows.Forms.Label();
@@ -338,14 +327,6 @@ namespace CapaPresentacion
             this.tableLayoutPanel29.SuspendLayout();
             this.tableLayoutPanel30.SuspendLayout();
             this.tableLayoutPanel31.SuspendLayout();
-            this.tableLayoutPanel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.tableLayoutPanel33.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.tableLayoutPanel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.tableLayoutPanel35.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.panel15.SuspendLayout();
             this.pnl_Reporte2.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -2159,7 +2140,8 @@ namespace CapaPresentacion
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
@@ -2173,15 +2155,14 @@ namespace CapaPresentacion
             // tableLayoutPanel26
             // 
             this.tableLayoutPanel26.ColumnCount = 1;
-            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel26.Controls.Add(this.label45, 0, 0);
-            this.tableLayoutPanel26.Controls.Add(this.panel13, 0, 1);
             this.tableLayoutPanel26.Location = new System.Drawing.Point(904, 316);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
-            this.tableLayoutPanel26.RowCount = 2;
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(766, 77);
+            this.tableLayoutPanel26.RowCount = 1;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(766, 48);
             this.tableLayoutPanel26.TabIndex = 7;
             // 
             // label45
@@ -2189,20 +2170,14 @@ namespace CapaPresentacion
             this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label45.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label45.Location = new System.Drawing.Point(3, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(95, 37);
+            this.label45.Size = new System.Drawing.Size(63, 48);
             this.label45.TabIndex = 1;
             this.label45.Text = "Leyenda:";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel13
-            // 
-            this.panel13.Location = new System.Drawing.Point(3, 40);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(757, 34);
-            this.panel13.TabIndex = 2;
             // 
             // tableLayoutPanel27
             // 
@@ -2221,59 +2196,44 @@ namespace CapaPresentacion
             // 
             // tableLayoutPanel28
             // 
-            this.tableLayoutPanel28.ColumnCount = 3;
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel28.ColumnCount = 2;
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.99999F));
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.00001F));
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel28.Controls.Add(this.comboBox7, 1, 1);
-            this.tableLayoutPanel28.Controls.Add(this.label46, 2, 0);
             this.tableLayoutPanel28.Controls.Add(this.label47, 1, 0);
             this.tableLayoutPanel28.Controls.Add(this.label48, 0, 0);
             this.tableLayoutPanel28.Controls.Add(this.comboBox8, 0, 1);
-            this.tableLayoutPanel28.Controls.Add(this.textBox4, 2, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
             this.tableLayoutPanel28.RowCount = 2;
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.56338F));
-            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.43662F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.52941F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.47059F));
             this.tableLayoutPanel28.Size = new System.Drawing.Size(760, 68);
             this.tableLayoutPanel28.TabIndex = 7;
             // 
             // comboBox7
             // 
             this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(256, 44);
+            this.comboBox7.Location = new System.Drawing.Point(382, 38);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(247, 24);
+            this.comboBox7.Size = new System.Drawing.Size(375, 24);
             this.comboBox7.TabIndex = 6;
-            // 
-            // label46
-            // 
-            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label46.Location = new System.Drawing.Point(509, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(73, 41);
-            this.label46.TabIndex = 4;
-            this.label46.Text = "Filtro 3:";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label47
             // 
             this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label47.Location = new System.Drawing.Point(256, 0);
+            this.label47.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label47.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label47.Location = new System.Drawing.Point(382, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(73, 41);
+            this.label47.Size = new System.Drawing.Size(50, 33);
             this.label47.TabIndex = 3;
-            this.label47.Text = "Filtro 2:";
+            this.label47.Text = "Estado";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label48
@@ -2281,41 +2241,34 @@ namespace CapaPresentacion
             this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label48.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label48.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label48.Location = new System.Drawing.Point(3, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(73, 41);
+            this.label48.Size = new System.Drawing.Size(53, 33);
             this.label48.TabIndex = 2;
-            this.label48.Text = "Filtro 1:";
+            this.label48.Text = "Técnico";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox8
             // 
             this.comboBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(3, 44);
+            this.comboBox8.Location = new System.Drawing.Point(3, 38);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(247, 24);
+            this.comboBox8.Size = new System.Drawing.Size(373, 24);
             this.comboBox8.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(509, 44);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(248, 22);
-            this.textBox4.TabIndex = 7;
             // 
             // label49
             // 
             this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label49.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label49.Location = new System.Drawing.Point(3, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(76, 29);
+            this.label49.Size = new System.Drawing.Size(52, 29);
             this.label49.TabIndex = 1;
             this.label49.Text = "Filtros:";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2433,6 +2386,7 @@ namespace CapaPresentacion
             this.tableLayoutPanel30.RowCount = 2;
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741F));
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel30.Size = new System.Drawing.Size(1573, 133);
             this.tableLayoutPanel30.TabIndex = 4;
             // 
@@ -2443,235 +2397,137 @@ namespace CapaPresentacion
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel32, 3, 0);
-            this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel33, 2, 0);
-            this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel34, 1, 0);
-            this.tableLayoutPanel31.Controls.Add(this.tableLayoutPanel35, 0, 0);
+            this.tableLayoutPanel31.Controls.Add(this.label50, 0, 0);
+            this.tableLayoutPanel31.Controls.Add(this.label51, 0, 1);
+            this.tableLayoutPanel31.Controls.Add(this.label52, 1, 0);
+            this.tableLayoutPanel31.Controls.Add(this.label53, 1, 1);
+            this.tableLayoutPanel31.Controls.Add(this.label54, 2, 0);
+            this.tableLayoutPanel31.Controls.Add(this.label55, 3, 0);
+            this.tableLayoutPanel31.Controls.Add(this.label56, 2, 1);
+            this.tableLayoutPanel31.Controls.Add(this.label57, 3, 1);
             this.tableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel31.Location = new System.Drawing.Point(3, 46);
             this.tableLayoutPanel31.Name = "tableLayoutPanel31";
-            this.tableLayoutPanel31.RowCount = 1;
-            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel31.RowCount = 2;
+            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel31.Size = new System.Drawing.Size(1567, 84);
             this.tableLayoutPanel31.TabIndex = 3;
-            // 
-            // tableLayoutPanel32
-            // 
-            this.tableLayoutPanel32.ColumnCount = 1;
-            this.tableLayoutPanel32.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel32.Controls.Add(this.label50, 0, 0);
-            this.tableLayoutPanel32.Controls.Add(this.label51, 0, 2);
-            this.tableLayoutPanel32.Controls.Add(this.pictureBox13, 0, 1);
-            this.tableLayoutPanel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel32.Location = new System.Drawing.Point(1176, 3);
-            this.tableLayoutPanel32.Name = "tableLayoutPanel32";
-            this.tableLayoutPanel32.RowCount = 3;
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel32.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel32.Size = new System.Drawing.Size(388, 78);
-            this.tableLayoutPanel32.TabIndex = 8;
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label50.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label50.Location = new System.Drawing.Point(3, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(382, 17);
+            this.label50.Size = new System.Drawing.Size(385, 33);
             this.label50.TabIndex = 0;
-            this.label50.Text = "label50";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label50.Text = "Cantidad de tickets";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label51
             // 
             this.label51.AutoSize = true;
             this.label51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label51.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label51.Location = new System.Drawing.Point(3, 60);
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(3, 33);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(382, 18);
+            this.label51.Size = new System.Drawing.Size(385, 51);
             this.label51.TabIndex = 1;
             this.label51.Text = "label51";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox13.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(382, 37);
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
-            // 
-            // tableLayoutPanel33
-            // 
-            this.tableLayoutPanel33.ColumnCount = 1;
-            this.tableLayoutPanel33.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel33.Controls.Add(this.label52, 0, 0);
-            this.tableLayoutPanel33.Controls.Add(this.label53, 0, 2);
-            this.tableLayoutPanel33.Controls.Add(this.pictureBox14, 0, 1);
-            this.tableLayoutPanel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel33.Location = new System.Drawing.Point(785, 3);
-            this.tableLayoutPanel33.Name = "tableLayoutPanel33";
-            this.tableLayoutPanel33.RowCount = 3;
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel33.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel33.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel33.TabIndex = 7;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label52.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label52.Location = new System.Drawing.Point(3, 0);
+            this.label52.Font = new System.Drawing.Font("Noto Sans Lao", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label52.Location = new System.Drawing.Point(394, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(379, 17);
-            this.label52.TabIndex = 0;
-            this.label52.Text = "label52";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label52.Size = new System.Drawing.Size(385, 33);
+            this.label52.TabIndex = 2;
+            this.label52.Text = "Total Resueltos";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label53
             // 
             this.label53.AutoSize = true;
             this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label53.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label53.Location = new System.Drawing.Point(3, 60);
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.ForeColor = System.Drawing.Color.Navy;
+            this.label53.Location = new System.Drawing.Point(394, 33);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(379, 18);
-            this.label53.TabIndex = 1;
+            this.label53.Size = new System.Drawing.Size(385, 51);
+            this.label53.TabIndex = 3;
             this.label53.Text = "label53";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox14.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            // 
-            // tableLayoutPanel34
-            // 
-            this.tableLayoutPanel34.ColumnCount = 1;
-            this.tableLayoutPanel34.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel34.Controls.Add(this.label54, 0, 0);
-            this.tableLayoutPanel34.Controls.Add(this.label55, 0, 2);
-            this.tableLayoutPanel34.Controls.Add(this.pictureBox15, 0, 1);
-            this.tableLayoutPanel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel34.Location = new System.Drawing.Point(394, 3);
-            this.tableLayoutPanel34.Name = "tableLayoutPanel34";
-            this.tableLayoutPanel34.RowCount = 3;
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel34.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel34.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel34.TabIndex = 6;
             // 
             // label54
             // 
             this.label54.AutoSize = true;
             this.label54.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label54.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label54.Location = new System.Drawing.Point(3, 0);
+            this.label54.Font = new System.Drawing.Font("Noto Sans Lao", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label54.Location = new System.Drawing.Point(785, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(379, 17);
-            this.label54.TabIndex = 0;
-            this.label54.Text = "label54";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label54.Size = new System.Drawing.Size(385, 33);
+            this.label54.TabIndex = 4;
+            this.label54.Text = "Total Pendientes";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
             this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label55.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label55.Location = new System.Drawing.Point(3, 60);
+            this.label55.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label55.Location = new System.Drawing.Point(1176, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(379, 18);
-            this.label55.TabIndex = 1;
-            this.label55.Text = "label55";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox15.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox15.TabIndex = 2;
-            this.pictureBox15.TabStop = false;
-            // 
-            // tableLayoutPanel35
-            // 
-            this.tableLayoutPanel35.ColumnCount = 1;
-            this.tableLayoutPanel35.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel35.Controls.Add(this.label56, 0, 0);
-            this.tableLayoutPanel35.Controls.Add(this.label57, 0, 2);
-            this.tableLayoutPanel35.Controls.Add(this.pictureBox16, 0, 1);
-            this.tableLayoutPanel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel35.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel35.Name = "tableLayoutPanel35";
-            this.tableLayoutPanel35.RowCount = 3;
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel35.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel35.Size = new System.Drawing.Size(385, 78);
-            this.tableLayoutPanel35.TabIndex = 5;
+            this.label55.Size = new System.Drawing.Size(388, 33);
+            this.label55.TabIndex = 5;
+            this.label55.Text = "Cuello de botella";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label56
             // 
             this.label56.AutoSize = true;
             this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label56.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label56.Location = new System.Drawing.Point(3, 0);
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.Brown;
+            this.label56.Location = new System.Drawing.Point(785, 33);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(379, 17);
-            this.label56.TabIndex = 0;
-            this.label56.Text = "cantidad de tickets";
+            this.label56.Size = new System.Drawing.Size(385, 51);
+            this.label56.TabIndex = 6;
+            this.label56.Text = "label56";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
             this.label57.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label57.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label57.Location = new System.Drawing.Point(3, 60);
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(1176, 33);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(379, 18);
-            this.label57.TabIndex = 1;
-            this.label57.Text = "10";
+            this.label57.Size = new System.Drawing.Size(388, 51);
+            this.label57.TabIndex = 7;
+            this.label57.Text = "label57";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox16.Location = new System.Drawing.Point(3, 20);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(379, 37);
-            this.pictureBox16.TabIndex = 2;
-            this.pictureBox16.TabStop = false;
             // 
             // label58
             // 
             this.label58.AutoSize = true;
             this.label58.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label58.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.ForeColor = System.Drawing.Color.Black;
             this.label58.Location = new System.Drawing.Point(4, 0);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(1565, 43);
             this.label58.TabIndex = 6;
-            this.label58.Text = "Resumen de BLA   BLA BLA";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label58.Text = "Comparativo de tickets resueltos y pendientes por técnico";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel15
             // 
@@ -2690,13 +2546,13 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label59.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label59.Location = new System.Drawing.Point(628, 9);
+            this.label59.ForeColor = System.Drawing.Color.Navy;
+            this.label59.Location = new System.Drawing.Point(9, 4);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(282, 37);
+            this.label59.Size = new System.Drawing.Size(744, 37);
             this.label59.TabIndex = 5;
-            this.label59.Text = "Nombre del reporte ";
+            this.label59.Text = "Rendimiento de Técnicos: Tickets Asignados vs Resueltos";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_Reporte2
@@ -3841,9 +3697,9 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1682, 853);
+            this.Controls.Add(this.pnl_Reporte3);
             this.Controls.Add(this.pnl_Reporte1);
             this.Controls.Add(this.pnl_Reporte2);
-            this.Controls.Add(this.pnl_Reporte3);
             this.Controls.Add(this.pnl_Reporte4);
             this.Controls.Add(this.pnl_Reporte5);
             this.Controls.Add(this.pnl_Reporte6);
@@ -3856,6 +3712,7 @@ namespace CapaPresentacion
             this.Name = "FormReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SoporTec - Reportes";
+            this.Load += new System.EventHandler(this.FormReportes_Load);
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
             this.pnl_Reporte6.ResumeLayout(false);
@@ -3952,18 +3809,7 @@ namespace CapaPresentacion
             this.tableLayoutPanel30.ResumeLayout(false);
             this.tableLayoutPanel30.PerformLayout();
             this.tableLayoutPanel31.ResumeLayout(false);
-            this.tableLayoutPanel32.ResumeLayout(false);
-            this.tableLayoutPanel32.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.tableLayoutPanel33.ResumeLayout(false);
-            this.tableLayoutPanel33.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.tableLayoutPanel34.ResumeLayout(false);
-            this.tableLayoutPanel34.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.tableLayoutPanel35.ResumeLayout(false);
-            this.tableLayoutPanel35.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.tableLayoutPanel31.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.pnl_Reporte2.ResumeLayout(false);
@@ -4161,15 +4007,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
@@ -4179,22 +4022,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel31;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel32;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel33;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label59;
@@ -4282,5 +4109,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
     }
 }

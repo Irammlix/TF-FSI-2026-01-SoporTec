@@ -45,6 +45,7 @@
     <Compile Include="NAdmin.cs" />
     <Compile Include="NEspecialidad.cs" />
     <Compile Include="NPabellon.cs" />
+    <Compile Include="NReporte.cs" />
     <Compile Include="NSede.cs" />
     <Compile Include="NSolicitante.cs" />
     <Compile Include="NTecnico.cs" />
