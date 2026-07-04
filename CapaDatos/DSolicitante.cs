@@ -45,7 +45,7 @@ namespace CapaDatos
             }
         }
 
-        public Solicitante ValidarCredenciales(string codigo, string contrasena)
+        public Solicitante ObtenerPorCodigo(string codigo)
         {
             Solicitante solicitante = null;
             try
@@ -54,7 +54,6 @@ namespace CapaDatos
                 {
                     solicitante = context.Solicitante
                         .Where(s => s.CSolicitante == codigo)
-                        .Where(s => s.DContrasena == contrasena)
                         .FirstOrDefault();
                 }
                 return solicitante;

@@ -1108,11 +1108,12 @@
             this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "FormTecnico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormTecnico";
+            this.Text = "SoporTec - Técnico";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).EndInit();

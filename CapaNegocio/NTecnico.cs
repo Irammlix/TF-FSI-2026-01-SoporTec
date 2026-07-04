@@ -29,6 +29,7 @@ namespace CapaNegocio
 
             tecnico.DActivo = true;
             tecnico.FCreacion = DateTime.Now;
+            tecnico.DContrasena = SeguridadHelper.HashPassword(tecnico.DContrasena);
             return dTecnico.Registrar(tecnico);
         }
         public string Modificar(Tecnico tecnico)
@@ -43,11 +44,27 @@ namespace CapaNegocio
 
         public Tecnico ValidarLogin(string codigo, string contrasena)
         {
-            return dTecnico.ValidarCredenciales(codigo, contrasena);
+            Tecnico tecnico = dTecnico.ObtenerPorCodigo(codigo);
+            if (tecnico == null)
+                return null;
+
+            if (SeguridadHelper.VerificarPassword(contrasena, tecnico.DContrasena))
+                return tecnico;
+
+            // Cuenta antigua con contraseña en texto plano: valida y migra al hash.
+            if (tecnico.DContrasena == contrasena)
+            {
+                string hash = SeguridadHelper.HashPassword(contrasena);
+                dTecnico.CambiarContrasena(codigo, hash);
+                tecnico.DContrasena = hash;
+                return tecnico;
+            }
+
+            return null;
         }
         public string CambiarContrasena(string codigo, string nuevaContrasena)
         {
-            return dTecnico.CambiarContrasena(codigo, nuevaContrasena);
+            return dTecnico.CambiarContrasena(codigo, SeguridadHelper.HashPassword(nuevaContrasena));
         }
         public List<TecnicosVistaAdmin> AsigListarTecnicos()
         {

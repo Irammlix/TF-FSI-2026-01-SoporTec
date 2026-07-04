@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autenticacion2FA.cs" />
     <Compile Include="NAdmin.cs" />
     <Compile Include="NEspecialidad.cs" />
     <Compile Include="NPabellon.cs" />
@@ -50,6 +51,8 @@
     <Compile Include="NTicket.cs" />
     <Compile Include="NTipoSolicitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeguridadHelper.cs" />
+    <Compile Include="ServicioCorreo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">

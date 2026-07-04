@@ -646,7 +646,8 @@
             this.btn_RecuperarAdmin.TabIndex = 10;
             this.btn_RecuperarAdmin.Text = "RECUPERAR";
             this.btn_RecuperarAdmin.UseVisualStyleBackColor = false;
-            // 
+            this.btn_RecuperarAdmin.Click += new System.EventHandler(this.btn_RecuperarAdmin_Click);
+            //
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -706,7 +707,8 @@
             this.btn_VolverSesionAdmin.Size = new System.Drawing.Size(75, 23);
             this.btn_VolverSesionAdmin.TabIndex = 0;
             this.btn_VolverSesionAdmin.Text = "←Volver";
-            // 
+            this.btn_VolverSesionAdmin.Click += new System.EventHandler(this.btn_VolverSesionAdmin_Click);
+            //
             // FormRecuperarContrasenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -717,11 +719,12 @@
             this.Controls.Add(this.pnl_RecuperarTecnico);
             this.Controls.Add(this.pnl_RecuperarSolicitante);
             this.Controls.Add(this.pnl_RecuperarAdmin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.MinimumSize = new System.Drawing.Size(900, 650);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormRecuperarContrasenia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormRecuperarContrasenia";
+            this.Text = "SoporTec - Recuperar Contraseña";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnl_RecuperarSolicitante.ResumeLayout(false);
             this.pnl_cuadro.ResumeLayout(false);

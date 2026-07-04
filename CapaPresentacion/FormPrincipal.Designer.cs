@@ -1089,11 +1089,12 @@
             this.Controls.Add(this.pnl_LoginTecnico);
             this.Controls.Add(this.pnl_LoginSolicitante);
             this.Controls.Add(this.pnl_PaginaPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SoporTec";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnl_PaginaPrincipal.ResumeLayout(false);
             this.pnl_PaginaPrincipal.PerformLayout();
