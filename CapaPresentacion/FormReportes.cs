@@ -5,6 +5,9 @@ namespace CapaPresentacion
 {
     public partial class FormReportes : Form
     {
-        
+        public FormReportes()
+        {
+            InitializeComponent();
+        }
     }
 }
