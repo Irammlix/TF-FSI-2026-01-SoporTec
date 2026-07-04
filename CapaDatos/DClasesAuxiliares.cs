@@ -20,7 +20,18 @@ namespace CapaDatos
             public Nullable<System.DateTime> FActualizacion { get; set; }
 
             public string NombreTecnicoAsignado { get; set; }
-            // Agrega los demás campos que necesites mostrar...
+           
+        }
+        public class TecnicosVistaAdmin
+        {
+            public int IdTecnico { get; set; }
+            public string Usuario { get; set; }
+            public string NombreTecnico { get; set; }
+            public string SedeTecnico { get; set; }
+            public string Especialidad { get; set; }
+            public string Correo { get; set; }
+           
+            //
         }
     }
 }

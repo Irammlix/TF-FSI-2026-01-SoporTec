@@ -28,6 +28,28 @@ namespace CapaDatos
                 Console.WriteLine(ex.Message);
                 return null;
             }
+
+        }
+        public int ObtenerId(string codigo)
+        {
+            Administrador admin = null;
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    admin = context.Administrador
+                           .Where(t => t.CAdministrador.Equals(codigo))
+                        .FirstOrDefault();
+                }
+
+                return admin.IdAdministrador;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 1;
+            }
         }
     }
 }

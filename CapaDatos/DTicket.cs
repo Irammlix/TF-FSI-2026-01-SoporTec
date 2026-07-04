@@ -254,6 +254,7 @@ namespace CapaDatos
                 return LTickets;
             }
         }
+        
         public List<TicketVistaAdmin> ListarTicketsEstado(string estadoSeleccionado)
         {
             List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
@@ -289,6 +290,38 @@ namespace CapaDatos
                 return LTickets;
             }
         }
+        public string AsignarTicket(int idTecnico, int idTicket, int administradorActual,string Prioridad)
+        {
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    Ticket ticket = context.Ticket.Find(idTicket);
+
+                    ticket.IdAtendidoPor = idTecnico;
+                    ticket.IdAsignadoPor = administradorActual;
+                    ticket.DPrioridad = Prioridad;
+                    ticket.DEstado = "Asignado";
+                    ticket.FActualizacion = DateTime.Now;
+
+                    context.SaveChanges();
+                }
+
+                return "Ticket asignado correctamente";
+            }
+            catch (Exception ex)
+            {
+                // Buscamos el error más profundo y específico que nos manda SQL Server
+                Exception errorReal = ex;
+                while (errorReal.InnerException != null)
+                {
+                    errorReal = errorReal.InnerException;
+                }
+
+                return "Error en BD: " + errorReal.Message;
+            }
+        }
+
 
     }
 }
