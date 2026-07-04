@@ -3578,13 +3578,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_Tickets);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_MisTecnicos);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
-            this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.Margin = new System.Windows.Forms.Padding(4);

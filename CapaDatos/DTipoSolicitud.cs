@@ -16,7 +16,6 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     tipoSolicitud = context.TipoSolicitud
-                        .Where(t => t.DActivo == true)
                         .ToList();
                 }
                 return tipoSolicitud;

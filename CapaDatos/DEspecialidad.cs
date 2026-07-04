@@ -16,7 +16,6 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     especialidades = context.Especialidad
-                        .Where(e => e.DActivo == true)
                         .ToList();
                 }
                 return especialidades;

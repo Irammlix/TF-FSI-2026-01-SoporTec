@@ -15,7 +15,6 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     sedes = context.Sede
-                        .Where(s => s.DActivo == true)
                         .ToList();
                 }
                 return sedes;
