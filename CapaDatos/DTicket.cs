@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Validation;
 using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaDatos
@@ -25,7 +26,7 @@ namespace CapaDatos
                         .Include(t => t.TipoSolicitud)
                         .Include(t => t.Administrador)
                         .Include(t => t.Solicitante)
-                        .Include(t=>t.Tecnico)
+                        .Include(t => t.Tecnico)
                         .Where(t => t.IdTicket == idTicket)
                         .FirstOrDefault();
                 }
@@ -111,7 +112,86 @@ namespace CapaDatos
                 return LTickets;
             }
         }
-        
+
+        //listar por solicitante
+        public List<Ticket> ListarPorSolicitante(int idSolicitante, string estado)
+        {
+            List<Ticket> LTickets = new List<Ticket>();
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    LTickets = context.Ticket
+                        .Include(t => t.TipoSolicitud)
+                        .Include(t => t.Sede)
+                        .Include(t => t.Pabellon)
+                        .Where(t => t.IdCreadoPor == idSolicitante)
+                        .ToList();
+
+                    if (estado != "Todos")
+                    {
+                        LTickets = LTickets
+                            .Where(t => t.DEstado == estado)
+                            .ToList();
+                    }
+
+                    LTickets = LTickets
+                        .OrderBy(t => OrdenEstado(t.DEstado))
+                        .ThenBy(t => OrdenPrioridad(t.DPrioridad))
+                        .ToList();
+                }
+
+                return LTickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTickets;
+            }
+        }
+
+        //Cancelar Ticket
+        public string CancelarTicket(int idTicket)
+        {
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    Ticket ticket = context.Ticket.Find(idTicket);
+
+                    ticket.DEstado = "Cancelado";
+                    ticket.FActualizacion = DateTime.Now;
+
+                    context.SaveChanges();
+                }
+
+                return "Ticket cancelado correctamente";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        //registrar tecnico
+        public string Registrar(Ticket ticket)
+        {
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    context.Ticket.Add(ticket);
+                    context.SaveChanges();
+                }
+                return "Registrado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return ex.Message;
+            }
+        }
         public string ActualizarTicketTecnico(int idTicket, string estado, string comentario)
         {
             try
@@ -149,20 +229,19 @@ namespace CapaDatos
                     LTickets = context.Ticket
                 .Include(t => t.Pabellon)
                 .Include(t => t.Sede)
-                .Include(t=>t.Solicitante)
-                .Include(t=>t.Tecnico)
-                // Aplanamos la información directamente en la Capa de Datos
+                .Include(t => t.Solicitante)
+                .Include(t => t.Tecnico)
                 .Select(t => new TicketVistaAdmin
                 {
                     IdTicket = t.IdTicket,
                     Titulo = t.DTitulo,
-                    Sede=t.Sede.DNombreSede,
-                    Pabellon=t.Pabellon.DNombrePabellon,
-                    Prioridad=t.DPrioridad,
-                    FCreacion=t.FCreacion,
-                    FActualizacion=t.FActualizacion,
-                    Estado=t.DEstado,
-                    NombreTecnicoAsignado=t.Tecnico.DNombres,
+                    Sede = t.Sede.DNombreSede,
+                    Pabellon = t.Pabellon.DNombrePabellon,
+                    Prioridad = t.DPrioridad,
+                    FCreacion = t.FCreacion,
+                    FActualizacion = t.FActualizacion,
+                    Estado = t.DEstado,
+                    NombreTecnicoAsignado = t.Tecnico.DNombres,
                 })
                 .ToList();
                 }

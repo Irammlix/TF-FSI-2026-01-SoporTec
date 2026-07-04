@@ -346,6 +346,7 @@
             this.cb_FiltroEstado.Name = "cb_FiltroEstado";
             this.cb_FiltroEstado.Size = new System.Drawing.Size(172, 24);
             this.cb_FiltroEstado.TabIndex = 0;
+            this.cb_FiltroEstado.SelectedIndexChanged += new System.EventHandler(this.cb_FiltroEstado_SelectedIndexChanged);
             // 
             // panel8
             // 
@@ -442,6 +443,7 @@
             this.btn_RegistrarSolicitud.TabIndex = 31;
             this.btn_RegistrarSolicitud.Text = "REGISTRAR SOLICITUD";
             this.btn_RegistrarSolicitud.UseVisualStyleBackColor = false;
+            this.btn_RegistrarSolicitud.Click += new System.EventHandler(this.btn_RegistrarSolicitud_Click);
             // 
             // Descripcion
             // 
@@ -771,6 +773,7 @@
             this.btn_CancelarTicket.TabIndex = 56;
             this.btn_CancelarTicket.Text = "CANCELAR TICKET";
             this.btn_CancelarTicket.UseVisualStyleBackColor = false;
+            this.btn_CancelarTicket.Click += new System.EventHandler(this.btn_CancelarTicket_Click);
             // 
             // tblcolumnas
             // 
@@ -1253,6 +1256,7 @@
             this.btn_CerrarDetalle.TabIndex = 46;
             this.btn_CerrarDetalle.Text = "CERRAR";
             this.btn_CerrarDetalle.UseVisualStyleBackColor = false;
+            this.btn_CerrarDetalle.Click += new System.EventHandler(this.btn_CerrarDetalle_Click);
             // 
             // btn_DescargarDetalle
             // 
@@ -1271,6 +1275,7 @@
             this.btn_DescargarDetalle.TabIndex = 31;
             this.btn_DescargarDetalle.Text = "DESCARGAR DETALLE (PDF)";
             this.btn_DescargarDetalle.UseVisualStyleBackColor = false;
+            this.btn_DescargarDetalle.Click += new System.EventHandler(this.btn_DescargarDetalle_Click);
             // 
             // lb_NumTicket
             // 
