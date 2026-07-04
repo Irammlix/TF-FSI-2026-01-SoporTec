@@ -55,7 +55,6 @@
             this.btn_VerDetalle = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dg_Tickets = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
             this.pnl_Card = new System.Windows.Forms.Panel();
             this.btn_CancelarEdicion = new System.Windows.Forms.Button();
             this.tb_ApellidosTecnico = new System.Windows.Forms.TextBox();
@@ -251,6 +250,8 @@
             this.btn_Reporte1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.panel61 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cb_FiltrarPrioridad = new System.Windows.Forms.ComboBox();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.pnl_Filtros.SuspendLayout();
@@ -449,19 +450,32 @@
             // 
             // pnl_Filtros
             // 
+            this.pnl_Filtros.Controls.Add(this.label15);
+            this.pnl_Filtros.Controls.Add(this.cb_FiltrarPrioridad);
             this.pnl_Filtros.Controls.Add(this.tb_TicketsBuscarID);
             this.pnl_Filtros.Controls.Add(this.label1);
             this.pnl_Filtros.Controls.Add(this.lbl_Filtrar);
             this.pnl_Filtros.Controls.Add(this.cb_FiltroEstado);
+<<<<<<< HEAD
             this.pnl_Filtros.Location = new System.Drawing.Point(13, 6);
             this.pnl_Filtros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_Filtros.Name = "pnl_Filtros";
             this.pnl_Filtros.Size = new System.Drawing.Size(569, 43);
+=======
+            this.pnl_Filtros.Location = new System.Drawing.Point(33, 13);
+            this.pnl_Filtros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Filtros.Name = "pnl_Filtros";
+            this.pnl_Filtros.Size = new System.Drawing.Size(1132, 43);
+>>>>>>> developer
             this.pnl_Filtros.TabIndex = 10;
             // 
             // tb_TicketsBuscarID
             // 
+<<<<<<< HEAD
             this.tb_TicketsBuscarID.Location = new System.Drawing.Point(383, 10);
+=======
+            this.tb_TicketsBuscarID.Location = new System.Drawing.Point(958, 13);
+>>>>>>> developer
             this.tb_TicketsBuscarID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_TicketsBuscarID.Name = "tb_TicketsBuscarID";
             this.tb_TicketsBuscarID.Size = new System.Drawing.Size(168, 22);
@@ -471,36 +485,58 @@
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label1.Location = new System.Drawing.Point(247, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
+=======
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(764, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 28);
+>>>>>>> developer
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar ID o Titulo:";
             // 
             // lbl_Filtrar
             // 
             this.lbl_Filtrar.AutoSize = true;
+<<<<<<< HEAD
             this.lbl_Filtrar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_Filtrar.Location = new System.Drawing.Point(7, 10);
             this.lbl_Filtrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Filtrar.Name = "lbl_Filtrar";
             this.lbl_Filtrar.Size = new System.Drawing.Size(50, 20);
+=======
+            this.lbl_Filtrar.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Bold);
+            this.lbl_Filtrar.Location = new System.Drawing.Point(4, 10);
+            this.lbl_Filtrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Filtrar.Name = "lbl_Filtrar";
+            this.lbl_Filtrar.Size = new System.Drawing.Size(180, 28);
+>>>>>>> developer
             this.lbl_Filtrar.TabIndex = 0;
-            this.lbl_Filtrar.Text = "Filtrar:";
+            this.lbl_Filtrar.Text = "Filtrar Por Estado:";
             // 
             // cb_FiltroEstado
             // 
             this.cb_FiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_FiltroEstado.Items.AddRange(new object[] {
+            "Todos",
             "Sin Asignar",
             "Asignado",
             "En Proceso",
             "Resuelto",
+<<<<<<< HEAD
             "Cancelado",
             "Listar Todos Los Estados"});
             this.cb_FiltroEstado.Location = new System.Drawing.Point(67, 9);
+=======
+            "Cancelado"});
+            this.cb_FiltroEstado.Location = new System.Drawing.Point(184, 13);
+>>>>>>> developer
             this.cb_FiltroEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_FiltroEstado.Name = "cb_FiltroEstado";
             this.cb_FiltroEstado.Size = new System.Drawing.Size(172, 24);
@@ -577,7 +613,6 @@
             // pnl_Tickets
             // 
             this.pnl_Tickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.pnl_Tickets.Controls.Add(this.pnl_Filtros);
             this.pnl_Tickets.Controls.Add(this.label9);
             this.pnl_Tickets.Controls.Add(this.panel6);
             this.pnl_Tickets.Controls.Add(this.panel7);
@@ -592,24 +627,40 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+<<<<<<< HEAD
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
             this.label9.Location = new System.Drawing.Point(63, 14);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 28);
+=======
+            this.label9.ForeColor = System.Drawing.Color.Navy;
+            this.label9.Location = new System.Drawing.Point(63, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 28);
+>>>>>>> developer
             this.label9.TabIndex = 3;
-            this.label9.Text = "Mis Tickets";
+            this.label9.Text = "Tickets";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(35)))), ((int)(((byte)(45)))));
+            this.panel6.BackColor = System.Drawing.Color.Navy;
             this.panel6.Enabled = false;
+<<<<<<< HEAD
             this.panel6.ForeColor = System.Drawing.Color.Coral;
             this.panel6.Location = new System.Drawing.Point(35, 43);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(176, 2);
+=======
+            this.panel6.ForeColor = System.Drawing.Color.Navy;
+            this.panel6.Location = new System.Drawing.Point(35, 43);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(140, 2);
+>>>>>>> developer
             this.panel6.TabIndex = 4;
             // 
             // panel7
@@ -618,10 +669,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.pnl_Filtros);
             this.panel7.Controls.Add(this.btn_AsignarTick);
             this.panel7.Controls.Add(this.btn_VerDetalle);
             this.panel7.Controls.Add(this.panel8);
+<<<<<<< HEAD
             this.panel7.Controls.Add(this.label15);
+=======
+>>>>>>> developer
             this.panel7.Location = new System.Drawing.Point(32, 57);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
@@ -637,7 +692,11 @@
             this.btn_AsignarTick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AsignarTick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AsignarTick.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btn_AsignarTick.Location = new System.Drawing.Point(1173, 21);
+=======
+            this.btn_AsignarTick.Location = new System.Drawing.Point(1173, 18);
+>>>>>>> developer
             this.btn_AsignarTick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_AsignarTick.Name = "btn_AsignarTick";
             this.btn_AsignarTick.Size = new System.Drawing.Size(383, 44);
@@ -702,6 +761,7 @@
             this.dg_Tickets.Size = new System.Drawing.Size(1517, 718);
             this.dg_Tickets.TabIndex = 0;
             // 
+<<<<<<< HEAD
             // label15
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -717,6 +777,8 @@
             this.label15.Text = "Tickets";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+=======
+>>>>>>> developer
             // pnl_Card
             // 
             this.pnl_Card.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -767,7 +829,11 @@
             this.btn_CancelarEdicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelarEdicion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelarEdicion.ForeColor = System.Drawing.Color.Navy;
+<<<<<<< HEAD
             this.btn_CancelarEdicion.Location = new System.Drawing.Point(27, 793);
+=======
+            this.btn_CancelarEdicion.Location = new System.Drawing.Point(27, 759);
+>>>>>>> developer
             this.btn_CancelarEdicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_CancelarEdicion.Name = "btn_CancelarEdicion";
             this.btn_CancelarEdicion.Size = new System.Drawing.Size(1517, 44);
@@ -867,7 +933,11 @@
             this.btn_ModificarTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ModificarTecnico.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ModificarTecnico.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btn_ModificarTecnico.Location = new System.Drawing.Point(27, 738);
+=======
+            this.btn_ModificarTecnico.Location = new System.Drawing.Point(27, 704);
+>>>>>>> developer
             this.btn_ModificarTecnico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ModificarTecnico.Name = "btn_ModificarTecnico";
             this.btn_ModificarTecnico.Size = new System.Drawing.Size(1517, 44);
@@ -878,12 +948,15 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(651, 25);
+=======
+            this.label2.Location = new System.Drawing.Point(1006, 45);
+>>>>>>> developer
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 28);
@@ -893,16 +966,22 @@
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Navy;
             this.panel5.Controls.Add(this.dataGridView1);
+<<<<<<< HEAD
             this.panel5.Location = new System.Drawing.Point(655, 80);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Size = new System.Drawing.Size(867, 546);
+=======
+            this.panel5.Location = new System.Drawing.Point(1008, 81);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Size = new System.Drawing.Size(514, 545);
+>>>>>>> developer
             this.panel5.TabIndex = 41;
             // 
             // dataGridView1
@@ -923,7 +1002,11 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+<<<<<<< HEAD
             this.dataGridView1.Size = new System.Drawing.Size(861, 542);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(508, 541);
+>>>>>>> developer
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -1054,7 +1137,11 @@
             this.btn_RegistrarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_RegistrarSolicitud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RegistrarSolicitud.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btn_RegistrarSolicitud.Location = new System.Drawing.Point(27, 687);
+=======
+            this.btn_RegistrarSolicitud.Location = new System.Drawing.Point(27, 653);
+>>>>>>> developer
             this.btn_RegistrarSolicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_RegistrarSolicitud.Name = "btn_RegistrarSolicitud";
             this.btn_RegistrarSolicitud.Size = new System.Drawing.Size(1517, 44);
@@ -2868,6 +2955,7 @@
             // 
             // cb_AsigPrioridad
             // 
+            this.cb_AsigPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_AsigPrioridad.Items.AddRange(new object[] {
             "Alta",
             "Media",
@@ -3595,17 +3683,47 @@
             this.panel61.Size = new System.Drawing.Size(176, 2);
             this.panel61.TabIndex = 4;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(372, 10);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(196, 28);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Filtrar Por Prioidad:";
+            // 
+            // cb_FiltrarPrioridad
+            // 
+            this.cb_FiltrarPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_FiltrarPrioridad.Items.AddRange(new object[] {
+            "Todos",
+            "Alta",
+            "Media",
+            "Baja"});
+            this.cb_FiltrarPrioridad.Location = new System.Drawing.Point(575, 13);
+            this.cb_FiltrarPrioridad.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_FiltrarPrioridad.Name = "cb_FiltrarPrioridad";
+            this.cb_FiltrarPrioridad.Size = new System.Drawing.Size(172, 24);
+            this.cb_FiltrarPrioridad.TabIndex = 5;
+            this.cb_FiltrarPrioridad.SelectedIndexChanged += new System.EventHandler(this.cb_FiltrarPrioridad_SelectedIndexChanged);
+            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+<<<<<<< HEAD
             this.Controls.Add(this.pnl_Reportes);
+=======
+>>>>>>> developer
             this.Controls.Add(this.pnl_Tickets);
-            this.Controls.Add(this.pnl_RegistrarTecnico);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_AsignarTicket);
+            this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pnl_MisTecnicos);
+            this.Controls.Add(this.pnl_Reportes);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
@@ -3626,7 +3744,6 @@
             this.pnl_Tickets.ResumeLayout(false);
             this.pnl_Tickets.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_Tickets)).EndInit();
             this.pnl_Card.ResumeLayout(false);
@@ -3714,7 +3831,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btn_VerDetalle;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dg_Tickets;
         private System.Windows.Forms.Panel pnl_Card;
@@ -3917,5 +4033,7 @@
         private System.Windows.Forms.Panel panel40;
         private System.Windows.Forms.TextBox tb_DetPrioridad;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cb_FiltrarPrioridad;
     }
 }
