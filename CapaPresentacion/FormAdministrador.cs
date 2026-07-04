@@ -49,24 +49,19 @@ namespace CapaPresentacion
             CargarGridTecnicos();
             LimpiarFormulario();
 
-            dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
             lb_Codigo.Text = adminActual.CAdministrador;
 
            
             btn_CancelarEdicion.Click += btn_CancelarEdicion_Click;
             this.FormClosing += FormAdministrador_FormClosing;
 
-            btn_Reporte1.Click += btn_Reporte1_Click;
-            btn_Reporte2.Click += btn_Reporte2_Click;
-            btn_Reporte3.Click += btn_Reporte3_Click;
-            btn_Reporte4.Click += btn_Reporte4_Click;
-            btn_Reporte5.Click += btn_Reporte5_Click;
-            btn_Reporte6.Click += btn_Reporte6_Click;
+           
 
             DecorarTarjetasReporte();
 
             cb_FiltrarPrioridad.SelectedIndex = 0;
             cb_FiltroEstado.SelectedIndex = 0;
+            MostrarTickets();
         }
 
         //=========== Portada de las tarjetas de reportes (emoji + nombre + descripción)
@@ -126,42 +121,9 @@ namespace CapaPresentacion
         }
 
         //=========== para el panel de Reportes
-        private void AbrirFormReportes(int numeroReporte)
-        {
-            FormReportes formReportes = new FormReportes(numeroReporte);
-            formReportes.ShowDialog(this);
-        }
+        
 
-        private void btn_Reporte1_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(1);
-        }
-
-        private void btn_Reporte2_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(2);
-        }
-
-        private void btn_Reporte3_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(3);
-        }
-
-        private void btn_Reporte4_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(4);
-        }
-
-        private void btn_Reporte5_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(5);
-        }
-
-        private void btn_Reporte6_Click(object sender, EventArgs e)
-        {
-            AbrirFormReportes(6);
-        }
-
+        
         private void InicializarSidebar()
         {
             Sidebar.Width = SIDEBAR_CERRADO;
@@ -213,8 +175,8 @@ namespace CapaPresentacion
         {
             
             dg_Tickets.DataSource = null;
-            List<TicketVistaAdmin> lTickets = nTicket.ListarTodoAdministrador();
-
+            List<TicketVistaAdmin> lTickets = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
+      
             if (lTickets.Count > 0)
             {
         
@@ -222,6 +184,8 @@ namespace CapaPresentacion
                 dg_Tickets.Columns["FCreacion"].HeaderText = "Fecha de Creacion";
                 dg_Tickets.Columns["FActualizacion"].HeaderText = "Fecha de Actualizacion";
                 dg_Tickets.Columns["NombreTecnicoAsignado"].HeaderText = "Tecnico Asignado";
+
+                dg_Tickets.Columns["IdTecnico"].DefaultCellStyle.Format = "0;;0";
             }
         }
         private void btn_NuevaSolicitud_Click_1(object sender, EventArgs e)
@@ -666,17 +630,15 @@ namespace CapaPresentacion
 
         private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-                   
-            dg_Tickets.DataSource=nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text,cb_FiltrarPrioridad.Text,tb_TicketsBuscarID.Text);
-            
+
+            MostrarTickets();            
 
         }
 
         private void tb_TicketsBuscarID_TextChanged(object sender, EventArgs e)
         {
-           
-            dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
 
+            MostrarTickets();
         }
 
         private void btn_AsignarTick_Click(object sender, EventArgs e)
@@ -764,7 +726,79 @@ namespace CapaPresentacion
 
         private void cb_FiltrarPrioridad_SelectedIndexChanged(object sender, EventArgs e)
         {
-             dg_Tickets.DataSource = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
+            MostrarTickets();
+        }
+
+        private void btn_TicketsDescargarListado_Click(object sender, EventArgs e)
+        {
+            string prioridad = cb_FiltrarPrioridad.Text;
+            string estado = cb_FiltroEstado.Text;
+
+            List<TicketVistaAdmin> lTickets = nTicket.ListarTicketsEstadoPrioridad(cb_FiltroEstado.Text, cb_FiltrarPrioridad.Text, tb_TicketsBuscarID.Text);
+
+            if (lTickets.Count == 0)
+            {
+                MessageBox.Show("No hay tickets para exportar con los filtros seleccionados");
+                return;
+            }
+
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.Filter = "Archivo CSV|*.csv";
+            guardar.Title = "Guardar reporte de tickets";
+            guardar.FileName = "Tickets_Administrador.csv";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+
+                ExportadorTickets.ExportarCsvAdministrador(lTickets, guardar.FileName);
+
+                MessageBox.Show("Reporte CSV descargado correctamente");
+            }
+        }
+
+        private void dg_Tickets_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dg_Tickets.Columns[e.ColumnIndex].Name == "IdTecnico" && e.Value?.ToString() == "-1")
+            {
+                e.Value = "";
+                e.FormattingApplied = true;
+            }
+        }
+
+        private void btn_Reporte1_Click_1(object sender, EventArgs e)
+        {
+            FormReportes fr = new FormReportes();
+            fr.ShowDialog();
+        }
+
+        private void btn_Reporte2_Click_1(object sender, EventArgs e)
+        {
+            FormReportes2 fr = new FormReportes2();
+            fr.ShowDialog();
+        }
+
+        private void btn_Reporte3_Click_1(object sender, EventArgs e)
+        {
+            FormReportes3 fr = new FormReportes3();
+            fr.ShowDialog();
+        }
+
+        private void btn_Reporte4_Click_1(object sender, EventArgs e)
+        {
+            FormReportes4 fr = new FormReportes4();
+            fr.ShowDialog();
+        }
+
+        private void btn_Reporte5_Click_1(object sender, EventArgs e)
+        {
+            FormReportes5 fr = new FormReportes5();
+            fr.ShowDialog();
+        }
+
+        private void btn_Reporte6_Click_1(object sender, EventArgs e)
+        {
+            FormReportes6 fr = new FormReportes6();
+            fr.ShowDialog();
         }
     }
 }

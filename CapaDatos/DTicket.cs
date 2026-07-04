@@ -230,7 +230,7 @@ namespace CapaDatos
                 .Include(t => t.Pabellon)
                 .Include(t => t.Sede)
                 .Include(t => t.Solicitante)
-                .Include(t => t.Tecnico)
+                .Include(t => t.Tecnico).ToList()
                 .Select(t => new TicketVistaAdmin
                 {
                     IdTicket = t.IdTicket,
@@ -241,7 +241,10 @@ namespace CapaDatos
                     FCreacion = t.FCreacion,
                     FActualizacion = t.FActualizacion,
                     Estado = t.DEstado,
-                    NombreTecnicoAsignado = t.Tecnico.DNombres,
+                    NombreTecnicoAsignado = t.Tecnico == null ? "" : t.Tecnico.DNombres,
+                    IdSolicitante = t.IdCreadoPor,
+                    IdTecnico = t.IdAtendidoPor.GetValueOrDefault(-1)
+                 
                 })
                 .ToList();
                 }
@@ -307,20 +310,20 @@ namespace CapaDatos
                     return LTickets;
                 }
 
-                    if (prioridadSeleccionada != "Todos")
-                    {
-                        LTickets = LTickets
-                            .Where(t => t.Prioridad == prioridadSeleccionada)
-                            .ToList();
-                    }
+                if (prioridadSeleccionada != "Todos")
+                {
+                    LTickets = LTickets
+                        .Where(t => t.Prioridad == prioridadSeleccionada)
+                        .ToList();
+                }
 
-                    if (estadoSeleccionado != "Todos")
-                    {
-                        LTickets = LTickets
-                            .Where(t => t.Estado == estadoSeleccionado)
-                            .ToList();
-                    }
-                    
+                if (estadoSeleccionado != "Todos")
+                {
+                    LTickets = LTickets
+                        .Where(t => t.Estado == estadoSeleccionado)
+                        .ToList();
+                }
+
                 LTickets = LTickets
                     .OrderBy(t => OrdenEstado(t.Estado))
                     .ThenBy(t => OrdenPrioridad(t.Prioridad))
