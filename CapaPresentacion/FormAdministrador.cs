@@ -13,8 +13,10 @@ namespace CapaPresentacion
     {
         private NTecnico nTecnico = new NTecnico();
         private NTicket nTicket = new NTicket();
+        private NAdmin nAdmin = new NAdmin();
         private NEspecialidad nEspecialidad = new NEspecialidad();
         private NSede nSede = new NSede();
+
         //===========
 
         private List<Tecnico> _listaMisTecnicos = new List<Tecnico>();
@@ -284,6 +286,7 @@ namespace CapaPresentacion
                 })
                 .ToList();
         }
+        
         private void LimpiarFormulario()
         {
             tb_CodigoTecnico.Text = "";
@@ -498,10 +501,57 @@ namespace CapaPresentacion
             }
             if(dg_Tickets.SelectedRows.Count<1)
             {
+                
                 MessageBox.Show("Seleccione una fila ticket para ver el detalle");
+                return;
             }
+            
+            lb_IdTicketDet.Text = "" + dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString();
+            int IdSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
+            Ticket ticket = nTicket.ObtenerPorId(IdSeleccionadoTicket);
+            if(ticket.IdAtendidoPor==null)
+            {
+                pnl_DetalleTicket.BringToFront();
+                tb_DetTitulo.Text = ticket.DTitulo;
+                tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
+                tb_DetDescripcion.Text = ticket.DDescripcion;
+                tb_DetSede.Text = ticket.Sede.DNombreSede;
+                tb_DetPabellon.Text = ticket.Pabellon.DNombrePabellon;
+                tb_DetCodigoTec.Text = "Ticket Sin Asignar";
+                tb_DetCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
+                tb_DetFechaActualizacion.Text = ticket.FActualizacion.ToString();
+                tb_FechaCreacion.Text = ticket.FActualizacion.ToString();
+                tb_DetComentario.Text = "Ticket Sin Asignar";
+                tb_DetPrioridad.Text = "Ticket Sin Asignar";
+                tb_DetCodigoSol.Text = ticket.IdCreadoPor.ToString();
+                tb_DetNombreTec.Text = "Ticket Sin Asignar";
+                tb_DetNombreSol.Text = ticket.Solicitante.DNombres;
+                tb_DetEstado.Text = ticket.DEstado;
+                return;
+            }
+            pnl_DetalleTicket.BringToFront();
+            tb_DetTitulo.Text = ticket.DTitulo;
+            tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
+            tb_DetDescripcion.Text = ticket.DDescripcion;
+            tb_DetSede.Text = ticket.Sede.DNombreSede;
+            tb_DetPabellon.Text = ticket.Pabellon.DNombrePabellon;
+            tb_DetCodigoTec.Text = ticket.Tecnico.IdTecnico.ToString();
+            tb_DetCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
+            tb_DetFechaActualizacion.Text = ticket.FActualizacion.ToString();
+            tb_DetPrioridad.Text = ticket.DPrioridad;
+            tb_FechaCreacion.Text = ticket.FActualizacion.ToString();
+            tb_DetComentario.Text=ticket.DComentario;
+            tb_DetCodigoSol.Text = ticket.IdCreadoPor.ToString();
+            tb_DetNombreTec.Text = ticket.Tecnico.DNombres;
+            tb_DetNombreSol.Text = ticket.Solicitante.DNombres;
+            tb_DetEstado.Text = ticket.DEstado;
+
+
+
 
         }
+
+  
 
         private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -522,6 +572,88 @@ namespace CapaPresentacion
            
             dg_Tickets.DataSource=nTicket.ObtenerTitutloOID(tb_TicketsBuscarID.Text);
 
+        }
+
+        private void btn_AsignarTick_Click(object sender, EventArgs e)
+        {
+            if (dg_Tickets.Rows.Count == 0)
+            {
+                return;
+            }
+            if (dg_Tickets.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Seleccione una fila ticket para abrir el panel y asignar a un tecnico");
+                return;
+            }
+            if (dg_Tickets.SelectedRows[0].Cells["Estado"].Value.ToString()!="Sin Asignar")
+            {
+                MessageBox.Show("El ticket tiene un estado distinto a 'Sin Asignar'");
+                return;
+            }
+            lb_idTicket.Text = "" + dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString();
+            int IdSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
+            Ticket ticket = nTicket.ObtenerPorId(IdSeleccionadoTicket);
+            pnl_AsignarTicket.BringToFront();
+            tb_AsigTituloSol.Text = ticket.DTitulo;
+            tb_AsigUltimaFechaActu.Text=ticket.FActualizacion.ToString();
+            tb_AsigTipoSol.Text = ticket.TipoSolicitud.DNombre;
+            tb_AsigFechaCrea.Text=ticket.FCreacion.ToString();
+            tb_AsigDescripcion.Text = ticket.DDescripcion;
+            tb_AsigSede.Text=ticket.Sede.DNombreSede;
+            tb_AsigPabellon.Text = ticket.Pabellon.DNombrePabellon;
+            tb_AsigCodigoTec.Text = ticket.IdAtendidoPor.ToString();
+            tb_AsigCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
+            tb_AsigNombreSol.Text = ticket.Solicitante.DNombres;
+
+            dg_AsignarListaTecnicos.DataSource = nTecnico.AsigListarTecnicos();
+
+
+        }
+
+        private void btn_CancelarAsignarTick_Click(object sender, EventArgs e)
+        {
+            pnl_Tickets.BringToFront();
+        }
+
+        private void dg_AsignarListaTecnicos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dg_AsignarListaTecnicos.SelectedRows.Count > 0)
+            {
+                int idTecnico = int.Parse(dg_AsignarListaTecnicos.SelectedRows[0].Cells["IdTecnico"].Value.ToString());
+                Tecnico tecnico=nTecnico.ObtenerPorId(idTecnico);
+                tb_AsigNombreTec.Text = tecnico.DNombres;
+                tb_AsigCodigoTec.Text = tecnico.IdTecnico.ToString();
+            }
+        }
+
+        private void btn_AsignarTicke_Click(object sender, EventArgs e)
+        {
+            if (cb_AsigPrioridad.Text=="")
+            {
+                MessageBox.Show("Seleccione una prioridad para Asignar el Ticket");
+                return;
+            }
+            
+            if (dg_Tickets.SelectedRows.Count > 0)
+            {
+                int codigoAdministrador = adminActual.IdAdministrador;
+                int idTecnico = int.Parse(dg_AsignarListaTecnicos.SelectedRows[0].Cells["IdTecnico"].Value.ToString());
+                int IdSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
+                MessageBox.Show(nTicket.AsignarTicket(idTecnico, IdSeleccionadoTicket, codigoAdministrador,cb_AsigPrioridad.Text));
+                pnl_Tickets.BringToFront();
+                MostrarTickets();
+
+            }
+        }
+
+        private void FormAdministrador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            pnl_Tickets.BringToFront();
         }
     }
 }

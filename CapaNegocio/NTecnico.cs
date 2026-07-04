@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaNegocio
 {
@@ -48,7 +49,14 @@ namespace CapaNegocio
         {
             return dTecnico.CambiarContrasena(codigo, nuevaContrasena);
         }
-
+        public List<TecnicosVistaAdmin> AsigListarTecnicos()
+        {
+            return dTecnico.ListarTecnicosAsignar();
+        }
+        public Tecnico ObtenerPorId(int idTecnico)
+        {
+            return dTecnico.ObtenerPorId(idTecnico);    
+        }
         //ver si mantener 
         public String reactivarTecnico(int id)
         {

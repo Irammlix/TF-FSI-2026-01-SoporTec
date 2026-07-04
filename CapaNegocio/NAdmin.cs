@@ -15,5 +15,9 @@ namespace CapaNegocio
         {
             return dAdmin.ValidarCredenciales(codigo, contrasena);
         }
+        public int ObtenerId(string codigo)
+        {
+            return dAdmin.ObtenerId(codigo);
+        }
     }
 }

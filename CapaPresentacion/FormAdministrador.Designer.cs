@@ -115,14 +115,14 @@
             this.label33 = new System.Windows.Forms.Label();
             this.tb_DetPabellon = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.tb_NombreSolicitante = new System.Windows.Forms.TextBox();
+            this.tb_DetEstado = new System.Windows.Forms.TextBox();
             this.panel24 = new System.Windows.Forms.Panel();
             this.tb_DetTitulo = new System.Windows.Forms.TextBox();
             this.tb_DetSede = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.tb_FechaActualizacion = new System.Windows.Forms.TextBox();
+            this.tb_DetFechaActualizacion = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.tb_Comentario = new System.Windows.Forms.TextBox();
+            this.tb_DetComentario = new System.Windows.Forms.TextBox();
             this.tb_FechaCreacion = new System.Windows.Forms.TextBox();
             this.panel31 = new System.Windows.Forms.Panel();
             this.tb_DetTipo = new System.Windows.Forms.TextBox();
@@ -153,10 +153,15 @@
             this.dg_MisTecnicos = new System.Windows.Forms.DataGridView();
             this.pnl_AsignarTicket = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
+            this.lb_idTicket = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.panel46 = new System.Windows.Forms.Panel();
             this.dg_AsignarListaTecnicos = new System.Windows.Forms.DataGridView();
             this.btn_CancelarAsignarTick = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label53 = new System.Windows.Forms.Label();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
             this.tb_AsigNombreSol = new System.Windows.Forms.TextBox();
@@ -174,25 +179,23 @@
             this.panel37 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tb_AsigPabellon = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.tb_AsigTituloSol = new System.Windows.Forms.TextBox();
             this.tb_AsigSede = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.tb_AsigUltimaFechaActu = new System.Windows.Forms.TextBox();
-            this.panel40 = new System.Windows.Forms.Panel();
-            this.tb_AsigComenTec = new System.Windows.Forms.TextBox();
             this.tb_AsigFechaCrea = new System.Windows.Forms.TextBox();
             this.panel41 = new System.Windows.Forms.Panel();
             this.tb_AsigTipoSol = new System.Windows.Forms.TextBox();
             this.panel42 = new System.Windows.Forms.Panel();
             this.panel43 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.panel44 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
+            this.cb_AsigPrioridad = new System.Windows.Forms.ComboBox();
             this.btn_AsignarTicke = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
@@ -244,6 +247,10 @@
             this.btn_Reporte1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.panel61 = new System.Windows.Forms.Panel();
+            this.lb_IdTicketDet = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tb_DetPrioridad = new System.Windows.Forms.TextBox();
+            this.panel40 = new System.Windows.Forms.Panel();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.pnl_Filtros.SuspendLayout();
@@ -275,7 +282,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_AsignarListaTecnicos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel36.SuspendLayout();
-            this.panel40.SuspendLayout();
             this.pbl_TicketsDeTecnico.SuspendLayout();
             this.panel39.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -511,7 +517,7 @@
             this.Header.Location = new System.Drawing.Point(263, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1261, 86);
+            this.Header.Size = new System.Drawing.Size(1661, 86);
             this.Header.TabIndex = 1;
             // 
             // btn_Notificaciones
@@ -521,7 +527,7 @@
             this.btn_Notificaciones.FlatAppearance.BorderSize = 0;
             this.btn_Notificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Notificaciones.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.btn_Notificaciones.Location = new System.Drawing.Point(964, 18);
+            this.btn_Notificaciones.Location = new System.Drawing.Point(1364, 18);
             this.btn_Notificaciones.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Notificaciones.Name = "btn_Notificaciones";
             this.btn_Notificaciones.Size = new System.Drawing.Size(56, 47);
@@ -547,7 +553,7 @@
             this.lb_Codigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Codigo.AutoSize = true;
             this.lb_Codigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lb_Codigo.Location = new System.Drawing.Point(1104, 31);
+            this.lb_Codigo.Location = new System.Drawing.Point(1504, 31);
             this.lb_Codigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Codigo.Name = "lb_Codigo";
             this.lb_Codigo.Size = new System.Drawing.Size(133, 28);
@@ -559,7 +565,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1040, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1440, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 86);
@@ -578,7 +584,7 @@
             this.pnl_Tickets.Location = new System.Drawing.Point(263, 86);
             this.pnl_Tickets.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Tickets.Name = "pnl_Tickets";
-            this.pnl_Tickets.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_Tickets.Size = new System.Drawing.Size(1661, 969);
             this.pnl_Tickets.TabIndex = 3;
             // 
             // label9
@@ -618,26 +624,26 @@
             this.panel7.Location = new System.Drawing.Point(32, 57);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1197, 873);
+            this.panel7.Size = new System.Drawing.Size(1597, 873);
             this.panel7.TabIndex = 5;
             // 
             // btn_AsignarTick
             // 
-            this.btn_AsignarTick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AsignarTick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AsignarTick.BackColor = System.Drawing.Color.Navy;
             this.btn_AsignarTick.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AsignarTick.FlatAppearance.BorderSize = 0;
             this.btn_AsignarTick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AsignarTick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AsignarTick.ForeColor = System.Drawing.Color.White;
-            this.btn_AsignarTick.Location = new System.Drawing.Point(770, 17);
+            this.btn_AsignarTick.Location = new System.Drawing.Point(1173, 21);
             this.btn_AsignarTick.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AsignarTick.Name = "btn_AsignarTick";
             this.btn_AsignarTick.Size = new System.Drawing.Size(383, 44);
             this.btn_AsignarTick.TabIndex = 33;
             this.btn_AsignarTick.Text = "ASIGNAR TICKET";
             this.btn_AsignarTick.UseVisualStyleBackColor = false;
+            this.btn_AsignarTick.Click += new System.EventHandler(this.btn_AsignarTick_Click);
             // 
             // btn_VerDetalle
             // 
@@ -652,7 +658,7 @@
             this.btn_VerDetalle.Location = new System.Drawing.Point(36, 799);
             this.btn_VerDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btn_VerDetalle.Name = "btn_VerDetalle";
-            this.btn_VerDetalle.Size = new System.Drawing.Size(1117, 44);
+            this.btn_VerDetalle.Size = new System.Drawing.Size(1517, 44);
             this.btn_VerDetalle.TabIndex = 31;
             this.btn_VerDetalle.Text = "VER DETALLE";
             this.btn_VerDetalle.UseVisualStyleBackColor = false;
@@ -669,7 +675,7 @@
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Size = new System.Drawing.Size(1123, 722);
+            this.panel8.Size = new System.Drawing.Size(1523, 722);
             this.panel8.TabIndex = 30;
             // 
             // dg_Tickets
@@ -692,7 +698,7 @@
             this.dg_Tickets.RowHeadersVisible = false;
             this.dg_Tickets.RowHeadersWidth = 51;
             this.dg_Tickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_Tickets.Size = new System.Drawing.Size(1117, 718);
+            this.dg_Tickets.Size = new System.Drawing.Size(1517, 718);
             this.dg_Tickets.TabIndex = 0;
             // 
             // label15
@@ -746,7 +752,7 @@
             this.pnl_Card.Location = new System.Drawing.Point(32, 57);
             this.pnl_Card.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Card.Name = "pnl_Card";
-            this.pnl_Card.Size = new System.Drawing.Size(1197, 873);
+            this.pnl_Card.Size = new System.Drawing.Size(1597, 873);
             this.pnl_Card.TabIndex = 5;
             // 
             // btn_CancelarEdicion
@@ -763,7 +769,7 @@
             this.btn_CancelarEdicion.Location = new System.Drawing.Point(26, 793);
             this.btn_CancelarEdicion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CancelarEdicion.Name = "btn_CancelarEdicion";
-            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1117, 44);
+            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1517, 44);
             this.btn_CancelarEdicion.TabIndex = 47;
             this.btn_CancelarEdicion.Text = "CANCELAR EDICIÓN";
             this.btn_CancelarEdicion.UseVisualStyleBackColor = false;
@@ -778,7 +784,7 @@
             this.tb_ApellidosTecnico.Location = new System.Drawing.Point(35, 198);
             this.tb_ApellidosTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.tb_ApellidosTecnico.Name = "tb_ApellidosTecnico";
-            this.tb_ApellidosTecnico.Size = new System.Drawing.Size(564, 22);
+            this.tb_ApellidosTecnico.Size = new System.Drawing.Size(964, 22);
             this.tb_ApellidosTecnico.TabIndex = 46;
             // 
             // panel18
@@ -793,7 +799,7 @@
             this.panel18.Location = new System.Drawing.Point(35, 225);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(564, 2);
+            this.panel18.Size = new System.Drawing.Size(964, 2);
             this.panel18.TabIndex = 45;
             // 
             // textBox4
@@ -805,7 +811,7 @@
             this.textBox4.Location = new System.Drawing.Point(0, 5);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(564, 22);
+            this.textBox4.Size = new System.Drawing.Size(964, 22);
             this.textBox4.TabIndex = 28;
             // 
             // panel21
@@ -817,7 +823,7 @@
             this.panel21.Location = new System.Drawing.Point(0, 32);
             this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(564, 2);
+            this.panel21.Size = new System.Drawing.Size(964, 2);
             this.panel21.TabIndex = 27;
             // 
             // label20
@@ -863,7 +869,7 @@
             this.btn_ModificarTecnico.Location = new System.Drawing.Point(26, 739);
             this.btn_ModificarTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ModificarTecnico.Name = "btn_ModificarTecnico";
-            this.btn_ModificarTecnico.Size = new System.Drawing.Size(1117, 44);
+            this.btn_ModificarTecnico.Size = new System.Drawing.Size(1517, 44);
             this.btn_ModificarTecnico.TabIndex = 43;
             this.btn_ModificarTecnico.Text = "MODIFICAR TECNICO";
             this.btn_ModificarTecnico.UseVisualStyleBackColor = false;
@@ -895,7 +901,7 @@
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel5.Size = new System.Drawing.Size(467, 546);
+            this.panel5.Size = new System.Drawing.Size(867, 546);
             this.panel5.TabIndex = 41;
             // 
             // dataGridView1
@@ -916,7 +922,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(461, 542);
+            this.dataGridView1.Size = new System.Drawing.Size(861, 542);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -929,7 +935,7 @@
             this.tb_Contraseña.Location = new System.Drawing.Point(34, 441);
             this.tb_Contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Contraseña.Name = "tb_Contraseña";
-            this.tb_Contraseña.Size = new System.Drawing.Size(564, 22);
+            this.tb_Contraseña.Size = new System.Drawing.Size(964, 22);
             this.tb_Contraseña.TabIndex = 40;
             // 
             // panel11
@@ -941,7 +947,7 @@
             this.panel11.Location = new System.Drawing.Point(34, 464);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(564, 2);
+            this.panel11.Size = new System.Drawing.Size(964, 2);
             this.panel11.TabIndex = 39;
             // 
             // label10
@@ -968,7 +974,7 @@
             this.tb_Correo.Location = new System.Drawing.Point(32, 360);
             this.tb_Correo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Correo.Name = "tb_Correo";
-            this.tb_Correo.Size = new System.Drawing.Size(564, 22);
+            this.tb_Correo.Size = new System.Drawing.Size(964, 22);
             this.tb_Correo.TabIndex = 37;
             // 
             // panel9
@@ -980,7 +986,7 @@
             this.panel9.Location = new System.Drawing.Point(32, 383);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(564, 2);
+            this.panel9.Size = new System.Drawing.Size(964, 2);
             this.panel9.TabIndex = 36;
             // 
             // label6
@@ -1007,7 +1013,7 @@
             this.tb_CodigoTecnico.Location = new System.Drawing.Point(32, 279);
             this.tb_CodigoTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.tb_CodigoTecnico.Name = "tb_CodigoTecnico";
-            this.tb_CodigoTecnico.Size = new System.Drawing.Size(564, 22);
+            this.tb_CodigoTecnico.Size = new System.Drawing.Size(964, 22);
             this.tb_CodigoTecnico.TabIndex = 34;
             // 
             // panel2
@@ -1019,7 +1025,7 @@
             this.panel2.Location = new System.Drawing.Point(32, 304);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 2);
+            this.panel2.Size = new System.Drawing.Size(964, 2);
             this.panel2.TabIndex = 33;
             // 
             // label5
@@ -1050,7 +1056,7 @@
             this.btn_RegistrarSolicitud.Location = new System.Drawing.Point(27, 687);
             this.btn_RegistrarSolicitud.Margin = new System.Windows.Forms.Padding(4);
             this.btn_RegistrarSolicitud.Name = "btn_RegistrarSolicitud";
-            this.btn_RegistrarSolicitud.Size = new System.Drawing.Size(1117, 44);
+            this.btn_RegistrarSolicitud.Size = new System.Drawing.Size(1517, 44);
             this.btn_RegistrarSolicitud.TabIndex = 31;
             this.btn_RegistrarSolicitud.Text = "REGISTRAR TECNICO";
             this.btn_RegistrarSolicitud.UseVisualStyleBackColor = false;
@@ -1067,7 +1073,7 @@
             this.cb_Especialidad.Location = new System.Drawing.Point(33, 586);
             this.cb_Especialidad.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Especialidad.Name = "cb_Especialidad";
-            this.cb_Especialidad.Size = new System.Drawing.Size(566, 29);
+            this.cb_Especialidad.Size = new System.Drawing.Size(966, 29);
             this.cb_Especialidad.TabIndex = 28;
             // 
             // panel4
@@ -1079,7 +1085,7 @@
             this.panel4.Location = new System.Drawing.Point(33, 619);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(564, 2);
+            this.panel4.Size = new System.Drawing.Size(964, 2);
             this.panel4.TabIndex = 27;
             // 
             // cb_Sede
@@ -1093,7 +1099,7 @@
             this.cb_Sede.Location = new System.Drawing.Point(33, 508);
             this.cb_Sede.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Sede.Name = "cb_Sede";
-            this.cb_Sede.Size = new System.Drawing.Size(566, 29);
+            this.cb_Sede.Size = new System.Drawing.Size(966, 29);
             this.cb_Sede.TabIndex = 26;
             // 
             // panel3
@@ -1105,7 +1111,7 @@
             this.panel3.Location = new System.Drawing.Point(33, 540);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(564, 2);
+            this.panel3.Size = new System.Drawing.Size(964, 2);
             this.panel3.TabIndex = 25;
             // 
             // tb_NombreTec
@@ -1117,7 +1123,7 @@
             this.tb_NombreTec.Location = new System.Drawing.Point(33, 123);
             this.tb_NombreTec.Margin = new System.Windows.Forms.Padding(4);
             this.tb_NombreTec.Name = "tb_NombreTec";
-            this.tb_NombreTec.Size = new System.Drawing.Size(564, 22);
+            this.tb_NombreTec.Size = new System.Drawing.Size(964, 22);
             this.tb_NombreTec.TabIndex = 25;
             // 
             // panel1
@@ -1132,7 +1138,7 @@
             this.panel1.Location = new System.Drawing.Point(33, 150);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 2);
+            this.panel1.Size = new System.Drawing.Size(964, 2);
             this.panel1.TabIndex = 21;
             // 
             // textBox2
@@ -1144,7 +1150,7 @@
             this.textBox2.Location = new System.Drawing.Point(0, 5);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(564, 22);
+            this.textBox2.Size = new System.Drawing.Size(964, 22);
             this.textBox2.TabIndex = 28;
             // 
             // panel16
@@ -1156,7 +1162,7 @@
             this.panel16.Location = new System.Drawing.Point(0, 32);
             this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(564, 2);
+            this.panel16.Size = new System.Drawing.Size(964, 2);
             this.panel16.TabIndex = 27;
             // 
             // label18
@@ -1242,7 +1248,7 @@
             this.pnl_RegistrarTecnico.Location = new System.Drawing.Point(263, 86);
             this.pnl_RegistrarTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_RegistrarTecnico.Name = "pnl_RegistrarTecnico";
-            this.pnl_RegistrarTecnico.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_RegistrarTecnico.Size = new System.Drawing.Size(1661, 969);
             this.pnl_RegistrarTecnico.TabIndex = 2;
             // 
             // pnl_DetalleTicket
@@ -1255,12 +1261,13 @@
             this.pnl_DetalleTicket.Location = new System.Drawing.Point(263, 86);
             this.pnl_DetalleTicket.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_DetalleTicket.Name = "pnl_DetalleTicket";
-            this.pnl_DetalleTicket.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_DetalleTicket.Size = new System.Drawing.Size(1661, 969);
             this.pnl_DetalleTicket.TabIndex = 5;
             // 
             // panelcard
             // 
             this.panelcard.BackColor = System.Drawing.Color.White;
+            this.panelcard.Controls.Add(this.lb_IdTicketDet);
             this.panelcard.Controls.Add(this.btn_Cerrar);
             this.panelcard.Controls.Add(this.tblcolumnas);
             this.panelcard.Controls.Add(this.btn_DescargarInfo);
@@ -1288,6 +1295,7 @@
             this.btn_Cerrar.TabIndex = 56;
             this.btn_Cerrar.Text = "CERRAR";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
             // 
             // tblcolumnas
             // 
@@ -1297,6 +1305,9 @@
             this.tblcolumnas.ColumnCount = 2;
             this.tblcolumnas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblcolumnas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblcolumnas.Controls.Add(this.panel40, 1, 13);
+            this.tblcolumnas.Controls.Add(this.tb_DetPrioridad, 1, 12);
+            this.tblcolumnas.Controls.Add(this.label46, 1, 11);
             this.tblcolumnas.Controls.Add(this.panel15, 1, 19);
             this.tblcolumnas.Controls.Add(this.panel14, 0, 19);
             this.tblcolumnas.Controls.Add(this.tb_DetNombreSol, 1, 18);
@@ -1315,12 +1326,12 @@
             this.tblcolumnas.Controls.Add(this.label33, 0, 0);
             this.tblcolumnas.Controls.Add(this.tb_DetPabellon, 0, 12);
             this.tblcolumnas.Controls.Add(this.label28, 1, 0);
-            this.tblcolumnas.Controls.Add(this.tb_NombreSolicitante, 1, 9);
+            this.tblcolumnas.Controls.Add(this.tb_DetEstado, 1, 9);
             this.tblcolumnas.Controls.Add(this.panel24, 1, 10);
             this.tblcolumnas.Controls.Add(this.tb_DetTitulo, 0, 1);
             this.tblcolumnas.Controls.Add(this.tb_DetSede, 0, 9);
             this.tblcolumnas.Controls.Add(this.label29, 0, 11);
-            this.tblcolumnas.Controls.Add(this.tb_FechaActualizacion, 1, 1);
+            this.tblcolumnas.Controls.Add(this.tb_DetFechaActualizacion, 1, 1);
             this.tblcolumnas.Controls.Add(this.panel22, 1, 7);
             this.tblcolumnas.Controls.Add(this.tb_FechaCreacion, 1, 4);
             this.tblcolumnas.Controls.Add(this.panel31, 0, 2);
@@ -1394,6 +1405,7 @@
             this.tb_DetNombreSol.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetNombreSol.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetNombreSol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetNombreSol.Enabled = false;
             this.tb_DetNombreSol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetNombreSol.Location = new System.Drawing.Point(596, 566);
             this.tb_DetNombreSol.Margin = new System.Windows.Forms.Padding(4);
@@ -1409,6 +1421,7 @@
             this.tb_DetCodigoSol.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetCodigoSol.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetCodigoSol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetCodigoSol.Enabled = false;
             this.tb_DetCodigoSol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetCodigoSol.Location = new System.Drawing.Point(17, 566);
             this.tb_DetCodigoSol.Margin = new System.Windows.Forms.Padding(4);
@@ -1463,6 +1476,7 @@
             this.tb_DetNombreTec.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetNombreTec.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetNombreTec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetNombreTec.Enabled = false;
             this.tb_DetNombreTec.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetNombreTec.Location = new System.Drawing.Point(596, 502);
             this.tb_DetNombreTec.Margin = new System.Windows.Forms.Padding(4);
@@ -1478,6 +1492,7 @@
             this.tb_DetCodigoTec.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetCodigoTec.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetCodigoTec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetCodigoTec.Enabled = false;
             this.tb_DetCodigoTec.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetCodigoTec.Location = new System.Drawing.Point(17, 502);
             this.tb_DetCodigoTec.Margin = new System.Windows.Forms.Padding(4);
@@ -1544,6 +1559,7 @@
             this.tb_DetDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetDescripcion.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetDescripcion.Enabled = false;
             this.tb_DetDescripcion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetDescripcion.Location = new System.Drawing.Point(3, 2);
             this.tb_DetDescripcion.Margin = new System.Windows.Forms.Padding(4);
@@ -1597,6 +1613,7 @@
             this.tb_DetPabellon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetPabellon.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetPabellon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetPabellon.Enabled = false;
             this.tb_DetPabellon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetPabellon.Location = new System.Drawing.Point(17, 438);
             this.tb_DetPabellon.Margin = new System.Windows.Forms.Padding(4);
@@ -1620,20 +1637,21 @@
             this.label28.Text = "Última Fecha de Actualización";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tb_NombreSolicitante
+            // tb_DetEstado
             // 
-            this.tb_NombreSolicitante.BackColor = System.Drawing.Color.White;
-            this.tb_NombreSolicitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_NombreSolicitante.Cursor = System.Windows.Forms.Cursors.No;
-            this.tb_NombreSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_NombreSolicitante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NombreSolicitante.Location = new System.Drawing.Point(596, 374);
-            this.tb_NombreSolicitante.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_NombreSolicitante.Name = "tb_NombreSolicitante";
-            this.tb_NombreSolicitante.ReadOnly = true;
-            this.tb_NombreSolicitante.Size = new System.Drawing.Size(571, 25);
-            this.tb_NombreSolicitante.TabIndex = 50;
-            this.tb_NombreSolicitante.TabStop = false;
+            this.tb_DetEstado.BackColor = System.Drawing.Color.White;
+            this.tb_DetEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DetEstado.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_DetEstado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetEstado.Enabled = false;
+            this.tb_DetEstado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DetEstado.Location = new System.Drawing.Point(596, 374);
+            this.tb_DetEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DetEstado.Name = "tb_DetEstado";
+            this.tb_DetEstado.ReadOnly = true;
+            this.tb_DetEstado.Size = new System.Drawing.Size(571, 25);
+            this.tb_DetEstado.TabIndex = 50;
+            this.tb_DetEstado.TabStop = false;
             // 
             // panel24
             // 
@@ -1652,6 +1670,7 @@
             this.tb_DetTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetTitulo.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetTitulo.Enabled = false;
             this.tb_DetTitulo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetTitulo.Location = new System.Drawing.Point(17, 41);
             this.tb_DetTitulo.Margin = new System.Windows.Forms.Padding(4);
@@ -1667,6 +1686,7 @@
             this.tb_DetSede.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetSede.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetSede.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetSede.Enabled = false;
             this.tb_DetSede.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetSede.Location = new System.Drawing.Point(17, 374);
             this.tb_DetSede.Margin = new System.Windows.Forms.Padding(4);
@@ -1690,25 +1710,26 @@
             this.label29.Text = "Pabellón";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tb_FechaActualizacion
+            // tb_DetFechaActualizacion
             // 
-            this.tb_FechaActualizacion.BackColor = System.Drawing.Color.White;
-            this.tb_FechaActualizacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_FechaActualizacion.Cursor = System.Windows.Forms.Cursors.No;
-            this.tb_FechaActualizacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_FechaActualizacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_FechaActualizacion.Location = new System.Drawing.Point(596, 41);
-            this.tb_FechaActualizacion.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_FechaActualizacion.Name = "tb_FechaActualizacion";
-            this.tb_FechaActualizacion.ReadOnly = true;
-            this.tb_FechaActualizacion.Size = new System.Drawing.Size(571, 25);
-            this.tb_FechaActualizacion.TabIndex = 41;
-            this.tb_FechaActualizacion.TabStop = false;
+            this.tb_DetFechaActualizacion.BackColor = System.Drawing.Color.White;
+            this.tb_DetFechaActualizacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DetFechaActualizacion.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_DetFechaActualizacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetFechaActualizacion.Enabled = false;
+            this.tb_DetFechaActualizacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DetFechaActualizacion.Location = new System.Drawing.Point(596, 41);
+            this.tb_DetFechaActualizacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DetFechaActualizacion.Name = "tb_DetFechaActualizacion";
+            this.tb_DetFechaActualizacion.ReadOnly = true;
+            this.tb_DetFechaActualizacion.Size = new System.Drawing.Size(571, 25);
+            this.tb_DetFechaActualizacion.TabIndex = 41;
+            this.tb_DetFechaActualizacion.TabStop = false;
             // 
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.Navy;
-            this.panel22.Controls.Add(this.tb_Comentario);
+            this.panel22.Controls.Add(this.tb_DetComentario);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel22.Location = new System.Drawing.Point(596, 169);
             this.panel22.Margin = new System.Windows.Forms.Padding(4);
@@ -1717,21 +1738,22 @@
             this.panel22.Size = new System.Drawing.Size(571, 172);
             this.panel22.TabIndex = 45;
             // 
-            // tb_Comentario
+            // tb_DetComentario
             // 
-            this.tb_Comentario.BackColor = System.Drawing.Color.White;
-            this.tb_Comentario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_Comentario.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tb_Comentario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_Comentario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Comentario.Location = new System.Drawing.Point(3, 2);
-            this.tb_Comentario.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Comentario.Multiline = true;
-            this.tb_Comentario.Name = "tb_Comentario";
-            this.tb_Comentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_Comentario.Size = new System.Drawing.Size(565, 168);
-            this.tb_Comentario.TabIndex = 29;
-            this.tb_Comentario.TabStop = false;
+            this.tb_DetComentario.BackColor = System.Drawing.Color.White;
+            this.tb_DetComentario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DetComentario.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tb_DetComentario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetComentario.Enabled = false;
+            this.tb_DetComentario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DetComentario.Location = new System.Drawing.Point(3, 2);
+            this.tb_DetComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DetComentario.Multiline = true;
+            this.tb_DetComentario.Name = "tb_DetComentario";
+            this.tb_DetComentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tb_DetComentario.Size = new System.Drawing.Size(565, 168);
+            this.tb_DetComentario.TabIndex = 29;
+            this.tb_DetComentario.TabStop = false;
             // 
             // tb_FechaCreacion
             // 
@@ -1739,6 +1761,7 @@
             this.tb_FechaCreacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_FechaCreacion.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_FechaCreacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_FechaCreacion.Enabled = false;
             this.tb_FechaCreacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_FechaCreacion.Location = new System.Drawing.Point(596, 105);
             this.tb_FechaCreacion.Margin = new System.Windows.Forms.Padding(4);
@@ -1765,6 +1788,7 @@
             this.tb_DetTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DetTipo.Cursor = System.Windows.Forms.Cursors.No;
             this.tb_DetTipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetTipo.Enabled = false;
             this.tb_DetTipo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DetTipo.Location = new System.Drawing.Point(17, 105);
             this.tb_DetTipo.Margin = new System.Windows.Forms.Padding(4);
@@ -1888,7 +1912,7 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(571, 25);
             this.label25.TabIndex = 53;
-            this.label25.Text = "Código de Solicitante";
+            this.label25.Text = "Estado";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_DescargarInfo
@@ -1919,9 +1943,9 @@
             this.lb_NumTicket.Location = new System.Drawing.Point(27, 25);
             this.lb_NumTicket.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_NumTicket.Name = "lb_NumTicket";
-            this.lb_NumTicket.Size = new System.Drawing.Size(222, 28);
+            this.lb_NumTicket.Size = new System.Drawing.Size(209, 28);
             this.lb_NumTicket.TabIndex = 6;
-            this.lb_NumTicket.Text = "Detalle del Ticket N°X";
+            this.lb_NumTicket.Text = "Detalle del Ticket N°";
             this.lb_NumTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label23
@@ -1958,7 +1982,7 @@
             this.pnl_MisTecnicos.Location = new System.Drawing.Point(263, 86);
             this.pnl_MisTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_MisTecnicos.Name = "pnl_MisTecnicos";
-            this.pnl_MisTecnicos.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_MisTecnicos.Size = new System.Drawing.Size(1661, 969);
             this.pnl_MisTecnicos.TabIndex = 8;
             // 
             // label19
@@ -1997,7 +2021,7 @@
             this.btn_AsignarTicket.Location = new System.Drawing.Point(32, 57);
             this.btn_AsignarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AsignarTicket.Name = "btn_AsignarTicket";
-            this.btn_AsignarTicket.Size = new System.Drawing.Size(1197, 873);
+            this.btn_AsignarTicket.Size = new System.Drawing.Size(1597, 873);
             this.btn_AsignarTicket.TabIndex = 5;
             // 
             // panel17
@@ -2073,7 +2097,7 @@
             this.btn_VerDetall.Location = new System.Drawing.Point(36, 799);
             this.btn_VerDetall.Margin = new System.Windows.Forms.Padding(4);
             this.btn_VerDetall.Name = "btn_VerDetall";
-            this.btn_VerDetall.Size = new System.Drawing.Size(1117, 44);
+            this.btn_VerDetall.Size = new System.Drawing.Size(1517, 44);
             this.btn_VerDetall.TabIndex = 31;
             this.btn_VerDetall.Text = "VER DETALLE";
             this.btn_VerDetall.UseVisualStyleBackColor = false;
@@ -2090,7 +2114,7 @@
             this.panel23.Margin = new System.Windows.Forms.Padding(4);
             this.panel23.Name = "panel23";
             this.panel23.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel23.Size = new System.Drawing.Size(1123, 722);
+            this.panel23.Size = new System.Drawing.Size(1523, 722);
             this.panel23.TabIndex = 30;
             // 
             // dg_MisTecnicos
@@ -2111,7 +2135,7 @@
             this.dg_MisTecnicos.RowHeadersVisible = false;
             this.dg_MisTecnicos.RowHeadersWidth = 51;
             this.dg_MisTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_MisTecnicos.Size = new System.Drawing.Size(1117, 718);
+            this.dg_MisTecnicos.Size = new System.Drawing.Size(1517, 718);
             this.dg_MisTecnicos.TabIndex = 0;
             this.dg_MisTecnicos.SelectionChanged += new System.EventHandler(this.dg_MisTecnicos_SelectionChanged);
             // 
@@ -2125,12 +2149,14 @@
             this.pnl_AsignarTicket.Location = new System.Drawing.Point(263, 86);
             this.pnl_AsignarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_AsignarTicket.Name = "pnl_AsignarTicket";
-            this.pnl_AsignarTicket.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_AsignarTicket.Size = new System.Drawing.Size(1661, 969);
             this.pnl_AsignarTicket.TabIndex = 7;
             // 
             // panel29
             // 
             this.panel29.BackColor = System.Drawing.Color.White;
+            this.panel29.Controls.Add(this.lb_idTicket);
+            this.panel29.Controls.Add(this.label39);
             this.panel29.Controls.Add(this.panel46);
             this.panel29.Controls.Add(this.btn_CancelarAsignarTick);
             this.panel29.Controls.Add(this.tableLayoutPanel1);
@@ -2141,6 +2167,32 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(1224, 879);
             this.panel29.TabIndex = 6;
+            // 
+            // lb_idTicket
+            // 
+            this.lb_idTicket.AutoSize = true;
+            this.lb_idTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lb_idTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lb_idTicket.Location = new System.Drawing.Point(592, 26);
+            this.lb_idTicket.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_idTicket.Name = "lb_idTicket";
+            this.lb_idTicket.Size = new System.Drawing.Size(23, 25);
+            this.lb_idTicket.TabIndex = 59;
+            this.lb_idTicket.Text = "#";
+            this.lb_idTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label39.Location = new System.Drawing.Point(499, 26);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(85, 25);
+            this.label39.TabIndex = 58;
+            this.label39.Text = "Id Ticket";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel46
             // 
@@ -2176,6 +2228,7 @@
             this.dg_AsignarListaTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_AsignarListaTecnicos.Size = new System.Drawing.Size(425, 632);
             this.dg_AsignarListaTecnicos.TabIndex = 0;
+            this.dg_AsignarListaTecnicos.SelectionChanged += new System.EventHandler(this.dg_AsignarListaTecnicos_SelectionChanged);
             // 
             // btn_CancelarAsignarTick
             // 
@@ -2194,6 +2247,7 @@
             this.btn_CancelarAsignarTick.TabIndex = 56;
             this.btn_CancelarAsignarTick.Text = "CANCELAR";
             this.btn_CancelarAsignarTick.UseVisualStyleBackColor = false;
+            this.btn_CancelarAsignarTick.Click += new System.EventHandler(this.btn_CancelarAsignarTick_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -2203,6 +2257,9 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label53, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel62, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel32, 1, 19);
             this.tableLayoutPanel1.Controls.Add(this.panel33, 0, 19);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigNombreSol, 1, 18);
@@ -2219,24 +2276,23 @@
             this.tableLayoutPanel1.Controls.Add(this.panel37, 0, 13);
             this.tableLayoutPanel1.Controls.Add(this.panel38, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.label35, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.tb_AsigPabellon, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.label36, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigTituloSol, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigSede, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label37, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigUltimaFechaActu, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel40, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigFechaCrea, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel41, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tb_AsigTipoSol, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel42, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.panel43, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label38, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label39, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label40, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label41, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel44, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label42, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cb_AsigPrioridad, 1, 12);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(499, 64);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -2268,6 +2324,46 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(701, 636);
             this.tableLayoutPanel1.TabIndex = 55;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label53.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label53.Location = new System.Drawing.Point(354, 409);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(330, 25);
+            this.label53.TabIndex = 91;
+            this.label53.Text = "Seleccionar Prioridad";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel62
+            // 
+            this.panel62.BackColor = System.Drawing.Color.Navy;
+            this.panel62.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel62.Enabled = false;
+            this.panel62.Location = new System.Drawing.Point(353, 469);
+            this.panel62.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(332, 2);
+            this.panel62.TabIndex = 86;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(354, 169);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(330, 25);
+            this.textBox3.TabIndex = 81;
+            this.textBox3.TabStop = false;
             // 
             // panel32
             // 
@@ -2494,20 +2590,20 @@
             this.label35.Text = "Título de Solicitud";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox7
+            // tb_AsigPabellon
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(17, 438);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(329, 25);
-            this.textBox7.TabIndex = 51;
-            this.textBox7.TabStop = false;
+            this.tb_AsigPabellon.BackColor = System.Drawing.Color.White;
+            this.tb_AsigPabellon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_AsigPabellon.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_AsigPabellon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_AsigPabellon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_AsigPabellon.Location = new System.Drawing.Point(17, 438);
+            this.tb_AsigPabellon.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_AsigPabellon.Name = "tb_AsigPabellon";
+            this.tb_AsigPabellon.ReadOnly = true;
+            this.tb_AsigPabellon.Size = new System.Drawing.Size(329, 25);
+            this.tb_AsigPabellon.TabIndex = 51;
+            this.tb_AsigPabellon.TabStop = false;
             // 
             // label36
             // 
@@ -2581,34 +2677,6 @@
             this.tb_AsigUltimaFechaActu.Size = new System.Drawing.Size(330, 25);
             this.tb_AsigUltimaFechaActu.TabIndex = 41;
             this.tb_AsigUltimaFechaActu.TabStop = false;
-            // 
-            // panel40
-            // 
-            this.panel40.BackColor = System.Drawing.Color.Navy;
-            this.panel40.Controls.Add(this.tb_AsigComenTec);
-            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel40.Location = new System.Drawing.Point(354, 169);
-            this.panel40.Margin = new System.Windows.Forms.Padding(4);
-            this.panel40.Name = "panel40";
-            this.panel40.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel40.Size = new System.Drawing.Size(330, 172);
-            this.panel40.TabIndex = 45;
-            // 
-            // tb_AsigComenTec
-            // 
-            this.tb_AsigComenTec.BackColor = System.Drawing.Color.White;
-            this.tb_AsigComenTec.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_AsigComenTec.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tb_AsigComenTec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_AsigComenTec.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_AsigComenTec.Location = new System.Drawing.Point(3, 2);
-            this.tb_AsigComenTec.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_AsigComenTec.Multiline = true;
-            this.tb_AsigComenTec.Name = "tb_AsigComenTec";
-            this.tb_AsigComenTec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_AsigComenTec.Size = new System.Drawing.Size(324, 168);
-            this.tb_AsigComenTec.TabIndex = 29;
-            this.tb_AsigComenTec.TabStop = false;
             // 
             // tb_AsigFechaCrea
             // 
@@ -2687,20 +2755,6 @@
             this.label38.Text = "Sede";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label39.Location = new System.Drawing.Point(354, 140);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(330, 25);
-            this.label39.TabIndex = 34;
-            this.label39.Text = "Comentario de Técnico";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -2754,6 +2808,17 @@
             this.label42.Text = "Descripción";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cb_AsigPrioridad
+            // 
+            this.cb_AsigPrioridad.Items.AddRange(new object[] {
+            "Alta",
+            "Media",
+            "Baja"});
+            this.cb_AsigPrioridad.Location = new System.Drawing.Point(353, 437);
+            this.cb_AsigPrioridad.Name = "cb_AsigPrioridad";
+            this.cb_AsigPrioridad.Size = new System.Drawing.Size(332, 24);
+            this.cb_AsigPrioridad.TabIndex = 0;
+            // 
             // btn_AsignarTicke
             // 
             this.btn_AsignarTicke.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -2771,6 +2836,7 @@
             this.btn_AsignarTicke.TabIndex = 46;
             this.btn_AsignarTicke.Text = "ASIGNAR TICKET";
             this.btn_AsignarTicke.UseVisualStyleBackColor = false;
+            this.btn_AsignarTicke.Click += new System.EventHandler(this.btn_AsignarTicke_Click);
             // 
             // label44
             // 
@@ -2821,7 +2887,7 @@
             this.pbl_TicketsDeTecnico.Location = new System.Drawing.Point(263, 86);
             this.pbl_TicketsDeTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.pbl_TicketsDeTecnico.Name = "pbl_TicketsDeTecnico";
-            this.pbl_TicketsDeTecnico.Size = new System.Drawing.Size(1261, 969);
+            this.pbl_TicketsDeTecnico.Size = new System.Drawing.Size(1661, 969);
             this.pbl_TicketsDeTecnico.TabIndex = 8;
             // 
             // panel39
@@ -2836,7 +2902,7 @@
             this.panel39.Location = new System.Drawing.Point(32, 61);
             this.panel39.Margin = new System.Windows.Forms.Padding(4);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1224, 879);
+            this.panel39.Size = new System.Drawing.Size(1624, 879);
             this.panel39.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -2853,7 +2919,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1162, 692);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1562, 692);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -2877,7 +2943,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label54, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.panel59, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(585, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(785, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
@@ -2906,7 +2972,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(573, 684);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(773, 684);
             this.tableLayoutPanel2.TabIndex = 55;
             // 
             // panel50
@@ -2917,7 +2983,7 @@
             this.panel50.Location = new System.Drawing.Point(16, 328);
             this.panel50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(541, 2);
+            this.panel50.Size = new System.Drawing.Size(741, 2);
             this.panel50.TabIndex = 73;
             // 
             // tb_DetTicketTecFechaCrea
@@ -2931,7 +2997,7 @@
             this.tb_DetTicketTecFechaCrea.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecFechaCrea.Name = "tb_DetTicketTecFechaCrea";
             this.tb_DetTicketTecFechaCrea.ReadOnly = true;
-            this.tb_DetTicketTecFechaCrea.Size = new System.Drawing.Size(539, 25);
+            this.tb_DetTicketTecFechaCrea.Size = new System.Drawing.Size(739, 25);
             this.tb_DetTicketTecFechaCrea.TabIndex = 71;
             this.tb_DetTicketTecFechaCrea.TabStop = false;
             // 
@@ -2944,7 +3010,7 @@
             this.label47.Location = new System.Drawing.Point(17, 268);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(539, 25);
+            this.label47.Size = new System.Drawing.Size(739, 25);
             this.label47.TabIndex = 70;
             this.label47.Text = "Fecha de Creacion";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2957,7 +3023,7 @@
             this.panel53.Location = new System.Drawing.Point(16, 264);
             this.panel53.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(541, 2);
+            this.panel53.Size = new System.Drawing.Size(741, 2);
             this.panel53.TabIndex = 55;
             // 
             // panel54
@@ -2968,7 +3034,7 @@
             this.panel54.Location = new System.Drawing.Point(16, 200);
             this.panel54.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(541, 2);
+            this.panel54.Size = new System.Drawing.Size(741, 2);
             this.panel54.TabIndex = 54;
             // 
             // label49
@@ -2980,7 +3046,7 @@
             this.label49.Location = new System.Drawing.Point(17, 12);
             this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(539, 25);
+            this.label49.Size = new System.Drawing.Size(739, 25);
             this.label49.TabIndex = 7;
             this.label49.Text = "Nombre de Tecnico";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2996,7 +3062,7 @@
             this.tb_DetTicketTecEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecEspecialidad.Name = "tb_DetTicketTecEspecialidad";
             this.tb_DetTicketTecEspecialidad.ReadOnly = true;
-            this.tb_DetTicketTecEspecialidad.Size = new System.Drawing.Size(539, 25);
+            this.tb_DetTicketTecEspecialidad.Size = new System.Drawing.Size(739, 25);
             this.tb_DetTicketTecEspecialidad.TabIndex = 51;
             this.tb_DetTicketTecEspecialidad.TabStop = false;
             // 
@@ -3011,7 +3077,7 @@
             this.tb_DetTicketTecNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecNombre.Name = "tb_DetTicketTecNombre";
             this.tb_DetTicketTecNombre.ReadOnly = true;
-            this.tb_DetTicketTecNombre.Size = new System.Drawing.Size(539, 25);
+            this.tb_DetTicketTecNombre.Size = new System.Drawing.Size(739, 25);
             this.tb_DetTicketTecNombre.TabIndex = 25;
             this.tb_DetTicketTecNombre.TabStop = false;
             // 
@@ -3026,7 +3092,7 @@
             this.tb_DetTicketTecSede.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecSede.Name = "tb_DetTicketTecSede";
             this.tb_DetTicketTecSede.ReadOnly = true;
-            this.tb_DetTicketTecSede.Size = new System.Drawing.Size(539, 25);
+            this.tb_DetTicketTecSede.Size = new System.Drawing.Size(739, 25);
             this.tb_DetTicketTecSede.TabIndex = 49;
             this.tb_DetTicketTecSede.TabStop = false;
             // 
@@ -3039,7 +3105,7 @@
             this.label51.Location = new System.Drawing.Point(17, 204);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(539, 25);
+            this.label51.Size = new System.Drawing.Size(739, 25);
             this.label51.TabIndex = 11;
             this.label51.Text = "Especialidad";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3052,7 +3118,7 @@
             this.panel56.Location = new System.Drawing.Point(16, 72);
             this.panel56.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(541, 2);
+            this.panel56.Size = new System.Drawing.Size(741, 2);
             this.panel56.TabIndex = 21;
             // 
             // tb_DetTicketTecCodigo
@@ -3066,7 +3132,7 @@
             this.tb_DetTicketTecCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecCodigo.Name = "tb_DetTicketTecCodigo";
             this.tb_DetTicketTecCodigo.ReadOnly = true;
-            this.tb_DetTicketTecCodigo.Size = new System.Drawing.Size(539, 25);
+            this.tb_DetTicketTecCodigo.Size = new System.Drawing.Size(739, 25);
             this.tb_DetTicketTecCodigo.TabIndex = 47;
             this.tb_DetTicketTecCodigo.TabStop = false;
             // 
@@ -3092,7 +3158,7 @@
             this.label54.Location = new System.Drawing.Point(17, 76);
             this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(539, 25);
+            this.label54.Size = new System.Drawing.Size(739, 25);
             this.label54.TabIndex = 8;
             this.label54.Text = "Codigo de Tecnico";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3105,7 +3171,7 @@
             this.panel59.Location = new System.Drawing.Point(16, 136);
             this.panel59.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(541, 2);
+            this.panel59.Size = new System.Drawing.Size(741, 2);
             this.panel59.TabIndex = 23;
             // 
             // panel47
@@ -3117,7 +3183,7 @@
             this.panel47.Margin = new System.Windows.Forms.Padding(4);
             this.panel47.Name = "panel47";
             this.panel47.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel47.Size = new System.Drawing.Size(573, 684);
+            this.panel47.Size = new System.Drawing.Size(773, 684);
             this.panel47.TabIndex = 57;
             // 
             // dg_TicketsDeTecnico
@@ -3140,7 +3206,7 @@
             this.dg_TicketsDeTecnico.RowHeadersVisible = false;
             this.dg_TicketsDeTecnico.RowHeadersWidth = 51;
             this.dg_TicketsDeTecnico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_TicketsDeTecnico.Size = new System.Drawing.Size(567, 679);
+            this.dg_TicketsDeTecnico.Size = new System.Drawing.Size(767, 679);
             this.dg_TicketsDeTecnico.TabIndex = 0;
             // 
             // btn_CerrarDetalleTicketTec
@@ -3156,7 +3222,7 @@
             this.btn_CerrarDetalleTicketTec.Location = new System.Drawing.Point(48, 804);
             this.btn_CerrarDetalleTicketTec.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CerrarDetalleTicketTec.Name = "btn_CerrarDetalleTicketTec";
-            this.btn_CerrarDetalleTicketTec.Size = new System.Drawing.Size(1144, 44);
+            this.btn_CerrarDetalleTicketTec.Size = new System.Drawing.Size(1544, 44);
             this.btn_CerrarDetalleTicketTec.TabIndex = 46;
             this.btn_CerrarDetalleTicketTec.Text = "CERRAR DETALLE";
             this.btn_CerrarDetalleTicketTec.UseVisualStyleBackColor = false;
@@ -3211,7 +3277,7 @@
             this.pnl_Reportes.Location = new System.Drawing.Point(263, 86);
             this.pnl_Reportes.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Reportes.Name = "pnl_Reportes";
-            this.pnl_Reportes.Size = new System.Drawing.Size(1261, 969);
+            this.pnl_Reportes.Size = new System.Drawing.Size(1661, 969);
             this.pnl_Reportes.TabIndex = 9;
             // 
             // panel48
@@ -3451,18 +3517,74 @@
             this.panel61.Size = new System.Drawing.Size(176, 2);
             this.panel61.TabIndex = 4;
             // 
+            // lb_IdTicketDet
+            // 
+            this.lb_IdTicketDet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_IdTicketDet.AutoSize = true;
+            this.lb_IdTicketDet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lb_IdTicketDet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lb_IdTicketDet.Location = new System.Drawing.Point(243, 28);
+            this.lb_IdTicketDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_IdTicketDet.Name = "lb_IdTicketDet";
+            this.lb_IdTicketDet.Size = new System.Drawing.Size(24, 28);
+            this.lb_IdTicketDet.TabIndex = 57;
+            this.lb_IdTicketDet.Text = "#";
+            this.lb_IdTicketDet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label46.Location = new System.Drawing.Point(596, 409);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(571, 25);
+            this.label46.TabIndex = 80;
+            this.label46.Text = "Prioridad";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tb_DetPrioridad
+            // 
+            this.tb_DetPrioridad.BackColor = System.Drawing.Color.White;
+            this.tb_DetPrioridad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DetPrioridad.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_DetPrioridad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetPrioridad.Enabled = false;
+            this.tb_DetPrioridad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DetPrioridad.Location = new System.Drawing.Point(596, 438);
+            this.tb_DetPrioridad.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DetPrioridad.Name = "tb_DetPrioridad";
+            this.tb_DetPrioridad.ReadOnly = true;
+            this.tb_DetPrioridad.Size = new System.Drawing.Size(571, 25);
+            this.tb_DetPrioridad.TabIndex = 81;
+            this.tb_DetPrioridad.TabStop = false;
+            // 
+            // panel40
+            // 
+            this.panel40.BackColor = System.Drawing.Color.Navy;
+            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel40.Enabled = false;
+            this.panel40.Location = new System.Drawing.Point(595, 469);
+            this.panel40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(573, 2);
+            this.panel40.TabIndex = 82;
+            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1524, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_Tickets);
+            this.Controls.Add(this.pnl_AsignarTicket);
+            this.Controls.Add(this.pnl_MisTecnicos);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
-            this.Controls.Add(this.pnl_MisTecnicos);
-            this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_Reportes);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -3471,6 +3593,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SoporTec - Administrador";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormAdministrador_Load);
             this.Sidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).EndInit();
             this.pnl_Filtros.ResumeLayout(false);
@@ -3520,8 +3643,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel36.ResumeLayout(false);
             this.panel36.PerformLayout();
-            this.panel40.ResumeLayout(false);
-            this.panel40.PerformLayout();
             this.pbl_TicketsDeTecnico.ResumeLayout(false);
             this.pbl_TicketsDeTecnico.PerformLayout();
             this.panel39.ResumeLayout(false);
@@ -3614,9 +3735,9 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox tb_DetTitulo;
-        private System.Windows.Forms.TextBox tb_FechaActualizacion;
+        private System.Windows.Forms.TextBox tb_DetFechaActualizacion;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox tb_Comentario;
+        private System.Windows.Forms.TextBox tb_DetComentario;
         private System.Windows.Forms.TextBox tb_FechaCreacion;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.TextBox tb_DetTipo;
@@ -3640,7 +3761,7 @@
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.TextBox tb_DetPabellon;
-        private System.Windows.Forms.TextBox tb_NombreSolicitante;
+        private System.Windows.Forms.TextBox tb_DetEstado;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TextBox tb_DetSede;
         private System.Windows.Forms.Label label29;
@@ -3665,43 +3786,6 @@
         private System.Windows.Forms.Panel pnl_AsignarTicket;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Button btn_CancelarAsignarTick;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.TextBox tb_AsigNombreSol;
-        private System.Windows.Forms.TextBox tb_AsigCodigoSol;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel34;
-        private System.Windows.Forms.TextBox tb_AsigNombreTec;
-        private System.Windows.Forms.TextBox tb_AsigCodigoTec;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel panel36;
-        private System.Windows.Forms.TextBox tb_AsigDescripcion;
-        private System.Windows.Forms.Panel panel37;
-        private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox tb_AsigTituloSol;
-        private System.Windows.Forms.TextBox tb_AsigSede;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox tb_AsigUltimaFechaActu;
-        private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.TextBox tb_AsigComenTec;
-        private System.Windows.Forms.TextBox tb_AsigFechaCrea;
-        private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.TextBox tb_AsigTipoSol;
-        private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Panel panel43;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Panel panel44;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button btn_AsignarTicke;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
@@ -3767,5 +3851,49 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btn_CancelarEdicion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Panel panel62;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.TextBox tb_AsigNombreSol;
+        private System.Windows.Forms.TextBox tb_AsigCodigoSol;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.TextBox tb_AsigNombreTec;
+        private System.Windows.Forms.TextBox tb_AsigCodigoTec;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.TextBox tb_AsigDescripcion;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tb_AsigPabellon;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox tb_AsigTituloSol;
+        private System.Windows.Forms.TextBox tb_AsigSede;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox tb_AsigUltimaFechaActu;
+        private System.Windows.Forms.TextBox tb_AsigFechaCrea;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.TextBox tb_AsigTipoSol;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ComboBox cb_AsigPrioridad;
+        private System.Windows.Forms.Label lb_idTicket;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label lb_IdTicketDet;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.TextBox tb_DetPrioridad;
+        private System.Windows.Forms.Label label46;
     }
 }

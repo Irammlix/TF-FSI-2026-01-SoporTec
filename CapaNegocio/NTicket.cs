@@ -36,5 +36,9 @@ namespace CapaNegocio
         {
             return dTicket.ActualizarTicketTecnico(idTicket, estado, comentario);
         }
+        public string AsignarTicket(int idTecnico, int idTicket, int administradorActualId, string prioridad)
+        {
+            return dTicket.AsignarTicket(idTecnico, idTicket, administradorActualId,prioridad);
+        }
     }
 }
