@@ -18,7 +18,6 @@ namespace CapaDatos
                     admin = context.Administrador
                         .Where(a => a.CAdministrador == codigo)
                         .Where(a => a.DContrasena == contrasena)
-                        .Where(a => a.DActivo == true)
                         .FirstOrDefault();
                 }
                 return admin;

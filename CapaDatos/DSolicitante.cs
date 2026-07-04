@@ -16,7 +16,6 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     solicitantes = context.Solicitante
-                        .Where(s => s.DActivo == true)
                         .ToList();
                 }
                 return solicitantes;
@@ -56,7 +55,6 @@ namespace CapaDatos
                     solicitante = context.Solicitante
                         .Where(s => s.CSolicitante == codigo)
                         .Where(s => s.DContrasena == contrasena)
-                        .Where(s => s.DActivo == true)
                         .FirstOrDefault();
                 }
                 return solicitante;
@@ -76,7 +74,6 @@ namespace CapaDatos
                 {
                     Solicitante solicitante_temporal = context.Solicitante
                         .Where(s => s.CSolicitante == codigo)
-                        .Where(s => s.DActivo == true)
                         .FirstOrDefault();
 
                     if (solicitante_temporal == null)
