@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using System.Data.Entity.Validation;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaDatos
 {
@@ -75,6 +77,10 @@ namespace CapaDatos
                 using (var context = new dbSistema_TecnicoEntities())
                 {
                     LTickets = context.Ticket
+                        .Include(t => t.Pabellon)
+                        .Include(t => t.Sede)
+                        .Include(t => t.TipoSolicitud)
+                        .Include(t => t.Solicitante)
                         .Where(t => t.IdAtendidoPor == idTecnico)
                         .ToList();
 
@@ -210,5 +216,79 @@ namespace CapaDatos
         }
 
         // FIN : TECNICO
+
+        //ADMINISTRADOR
+        public List<TicketVistaAdmin> ListarTodoAdministrador()
+        {
+            List<TicketVistaAdmin> LTickets = new List<TicketVistaAdmin>();
+
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    LTickets = context.Ticket
+                .Include(t => t.Pabellon)
+                .Include(t => t.Sede)
+                .Include(t => t.Solicitante)
+                .Include(t => t.Tecnico)
+                .Select(t => new TicketVistaAdmin
+                {
+                    IdTicket = t.IdTicket,
+                    Titulo = t.DTitulo,
+                    Sede = t.Sede.DNombreSede,
+                    Pabellon = t.Pabellon.DNombrePabellon,
+                    Prioridad = t.DPrioridad,
+                    FCreacion = t.FCreacion,
+                    FActualizacion = t.FActualizacion,
+                    Estado = t.DEstado,
+                    NombreTecnicoAsignado = t.Tecnico.DNombres,
+                })
+                .ToList();
+                }
+
+                return LTickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTickets;
+            }
+        }
+        public List<TicketVistaAdmin> ListarTicketsEstado(string estadoSeleccionado)
+        {
+            List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
+
+            try
+            {
+                LTickets = LTickets.Where(t => t.Estado.Equals(estadoSeleccionado)).ToList();
+
+                return LTickets;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTickets;
+            }
+        }
+        public List<TicketVistaAdmin> ObtenerTitutloOID(string idOTitulo)
+        {
+            List<TicketVistaAdmin> LTickets = ListarTodoAdministrador();
+            try
+            {
+                if (idOTitulo.Equals(""))
+                {
+                    return LTickets;
+                }
+                List<TicketVistaAdmin> TicketsFiltrados = LTickets.Where(t => t.Titulo.Contains(idOTitulo) || t.IdTicket.ToString().StartsWith(idOTitulo)).ToList();
+
+                return TicketsFiltrados;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return LTickets;
+            }
+        }
+
     }
 }

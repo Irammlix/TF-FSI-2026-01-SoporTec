@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace CapaNegocio
 {
     public class NAdmin
     {
+        private DAdmin dAdmin = new DAdmin();
+
+        public Administrador ValidarLogin(string codigo, string contrasena)
+        {
+            return dAdmin.ValidarCredenciales(codigo, contrasena);
+        }
     }
 }
