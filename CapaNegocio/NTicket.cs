@@ -43,13 +43,13 @@ namespace CapaNegocio
         {
             return dTicket.ListarTodoAdministrador();
         }
-        public List<TicketVistaAdmin> ListarTicketsEstado(string estado)
+        public List<TicketVistaAdmin> ListarTicketsEstadoPrioridad(string estado, string prioridad, string NombreOId)
         {
-            return dTicket.ListarTicketsEstado(estado);
+            return dTicket.ListarTicketsEstadoPrioridadNombre(estado,prioridad, NombreOId);
         }
-        public List<TicketVistaAdmin> ObtenerTitutloOID(string idOTitulo)
+        public List<TicketVistaAdmin> ObtenerTitutloOID(string idOTitulo, List<TicketVistaAdmin> lista)
         {
-            return dTicket.ObtenerTitutloOID(idOTitulo);
+            return dTicket.ObtenerTitutloOID(idOTitulo, lista);
         }
         public string ActualizarTicketTecnico(int idTicket, string estado, string comentario)
         {
