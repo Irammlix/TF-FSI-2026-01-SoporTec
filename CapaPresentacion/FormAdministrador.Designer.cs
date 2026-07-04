@@ -94,8 +94,12 @@
             this.pnl_RegistrarTecnico = new System.Windows.Forms.Panel();
             this.pnl_DetalleTicket = new System.Windows.Forms.Panel();
             this.panelcard = new System.Windows.Forms.Panel();
+            this.lb_IdTicketDet = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.tblcolumnas = new System.Windows.Forms.TableLayoutPanel();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.tb_DetPrioridad = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.tb_DetNombreSol = new System.Windows.Forms.TextBox();
@@ -247,10 +251,6 @@
             this.btn_Reporte1 = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
             this.panel61 = new System.Windows.Forms.Panel();
-            this.lb_IdTicketDet = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.tb_DetPrioridad = new System.Windows.Forms.TextBox();
-            this.panel40 = new System.Windows.Forms.Panel();
             this.Sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Hamburguesa)).BeginInit();
             this.pnl_Filtros.SuspendLayout();
@@ -1278,6 +1278,21 @@
             this.panelcard.Size = new System.Drawing.Size(1224, 879);
             this.panelcard.TabIndex = 6;
             // 
+            // lb_IdTicketDet
+            // 
+            this.lb_IdTicketDet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_IdTicketDet.AutoSize = true;
+            this.lb_IdTicketDet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lb_IdTicketDet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lb_IdTicketDet.Location = new System.Drawing.Point(243, 28);
+            this.lb_IdTicketDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_IdTicketDet.Name = "lb_IdTicketDet";
+            this.lb_IdTicketDet.Size = new System.Drawing.Size(24, 28);
+            this.lb_IdTicketDet.TabIndex = 57;
+            this.lb_IdTicketDet.Text = "#";
+            this.lb_IdTicketDet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btn_Cerrar
             // 
             this.btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1376,6 +1391,47 @@
             this.tblcolumnas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblcolumnas.Size = new System.Drawing.Size(1184, 636);
             this.tblcolumnas.TabIndex = 55;
+            // 
+            // panel40
+            // 
+            this.panel40.BackColor = System.Drawing.Color.Navy;
+            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel40.Enabled = false;
+            this.panel40.Location = new System.Drawing.Point(595, 469);
+            this.panel40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(573, 2);
+            this.panel40.TabIndex = 82;
+            // 
+            // tb_DetPrioridad
+            // 
+            this.tb_DetPrioridad.BackColor = System.Drawing.Color.White;
+            this.tb_DetPrioridad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DetPrioridad.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_DetPrioridad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DetPrioridad.Enabled = false;
+            this.tb_DetPrioridad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DetPrioridad.Location = new System.Drawing.Point(596, 438);
+            this.tb_DetPrioridad.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DetPrioridad.Name = "tb_DetPrioridad";
+            this.tb_DetPrioridad.ReadOnly = true;
+            this.tb_DetPrioridad.Size = new System.Drawing.Size(571, 25);
+            this.tb_DetPrioridad.TabIndex = 81;
+            this.tb_DetPrioridad.TabStop = false;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label46.Location = new System.Drawing.Point(596, 409);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(571, 25);
+            this.label46.TabIndex = 80;
+            this.label46.Text = "Prioridad";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel15
             // 
@@ -3517,72 +3573,16 @@
             this.panel61.Size = new System.Drawing.Size(176, 2);
             this.panel61.TabIndex = 4;
             // 
-            // lb_IdTicketDet
-            // 
-            this.lb_IdTicketDet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_IdTicketDet.AutoSize = true;
-            this.lb_IdTicketDet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lb_IdTicketDet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lb_IdTicketDet.Location = new System.Drawing.Point(243, 28);
-            this.lb_IdTicketDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_IdTicketDet.Name = "lb_IdTicketDet";
-            this.lb_IdTicketDet.Size = new System.Drawing.Size(24, 28);
-            this.lb_IdTicketDet.TabIndex = 57;
-            this.lb_IdTicketDet.Text = "#";
-            this.lb_IdTicketDet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label46.Location = new System.Drawing.Point(596, 409);
-            this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(571, 25);
-            this.label46.TabIndex = 80;
-            this.label46.Text = "Prioridad";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tb_DetPrioridad
-            // 
-            this.tb_DetPrioridad.BackColor = System.Drawing.Color.White;
-            this.tb_DetPrioridad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_DetPrioridad.Cursor = System.Windows.Forms.Cursors.No;
-            this.tb_DetPrioridad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_DetPrioridad.Enabled = false;
-            this.tb_DetPrioridad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DetPrioridad.Location = new System.Drawing.Point(596, 438);
-            this.tb_DetPrioridad.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_DetPrioridad.Name = "tb_DetPrioridad";
-            this.tb_DetPrioridad.ReadOnly = true;
-            this.tb_DetPrioridad.Size = new System.Drawing.Size(571, 25);
-            this.tb_DetPrioridad.TabIndex = 81;
-            this.tb_DetPrioridad.TabStop = false;
-            // 
-            // panel40
-            // 
-            this.panel40.BackColor = System.Drawing.Color.Navy;
-            this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel40.Enabled = false;
-            this.panel40.Location = new System.Drawing.Point(595, 469);
-            this.panel40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(573, 2);
-            this.panel40.TabIndex = 82;
-            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_Tickets);
+            this.Controls.Add(this.pnl_RegistrarTecnico);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_MisTecnicos);
-            this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
             this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.Header);
