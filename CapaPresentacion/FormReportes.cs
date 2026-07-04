@@ -30,5 +30,10 @@ namespace CapaPresentacion
                 case 6: pnl_Reporte6.Visible = true; break;
             }
         }
+
+        private void FormReportes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

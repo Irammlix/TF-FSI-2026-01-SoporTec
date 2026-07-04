@@ -55,6 +55,7 @@
     <Compile Include="DClasesAuxiliares.cs" />
     <Compile Include="DEspecialidad.cs" />
     <Compile Include="DPabellon.cs" />
+    <Compile Include="DReporte.cs" />
     <Compile Include="DSede.cs" />
     <Compile Include="DSolicitante.cs" />
     <Compile Include="DTecnico.cs" />
