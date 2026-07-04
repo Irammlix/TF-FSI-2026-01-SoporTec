@@ -20,6 +20,9 @@ namespace CapaDatos
             public Nullable<System.DateTime> FActualizacion { get; set; }
 
             public string NombreTecnicoAsignado { get; set; }
+
+            public int IdTecnico { get; set; }
+            public int IdSolicitante { get; set; }
            
         }
         public class TecnicosVistaAdmin

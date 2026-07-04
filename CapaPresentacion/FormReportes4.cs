@@ -10,7 +10,7 @@ using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaPresentacion
 {
-    public partial class FormReportes : Form
+    public partial class FormReportes4 : Form
     {
         // ======== Paleta (tomada del diseño del formulario) ========
         private static readonly Color ColorNavy = Color.Navy;
@@ -31,14 +31,13 @@ namespace CapaPresentacion
         private Label kpiTotal, kpiPabTop, kpiPabTopCant, kpiPabActivos;
         private List<NReporte.ConteoPabellon> datosActuales = new List<NReporte.ConteoPabellon>();
 
-        public FormReportes()
+        public FormReportes4()
         {
             InitializeComponent();
-            
+           
         }
 
         
-
         // ---------- Bloques de UI ----------
 
         private Panel CrearTitulo()

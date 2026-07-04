@@ -1,6 +1,6 @@
 namespace CapaPresentacion
 {
-    partial class FormReportes
+    partial class FormReportes6
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,12 +17,12 @@ namespace CapaPresentacion
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes6));
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SoporTec = new System.Windows.Forms.Label();
             this.pnl_Bottom = new System.Windows.Forms.Panel();
-            this.pnl_Reporte = new System.Windows.Forms.Panel();
+            this.pnl_Reporte6 = new System.Windows.Forms.Panel();
             this.pnldatagriew = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,7 +65,7 @@ namespace CapaPresentacion
             this.pnl_titulo_reporte = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_Top.SuspendLayout();
-            this.pnl_Reporte.SuspendLayout();
+            this.pnl_Reporte6.SuspendLayout();
             this.pnldatagriew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -130,22 +130,22 @@ namespace CapaPresentacion
             this.pnl_Bottom.Size = new System.Drawing.Size(1683, 10);
             this.pnl_Bottom.TabIndex = 1;
             // 
-            // pnl_Reporte
+            // pnl_Reporte6
             // 
-            this.pnl_Reporte.BackColor = System.Drawing.Color.White;
-            this.pnl_Reporte.Controls.Add(this.pnldatagriew);
-            this.pnl_Reporte.Controls.Add(this.tableLayoutPanel5);
-            this.pnl_Reporte.Controls.Add(this.filtros);
-            this.pnl_Reporte.Controls.Add(this.grafica);
-            this.pnl_Reporte.Controls.Add(this.sdr_botones);
-            this.pnl_Reporte.Controls.Add(this.titulo_indicadores);
-            this.pnl_Reporte.Controls.Add(this.pnl_titulo_reporte);
-            this.pnl_Reporte.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Reporte.Location = new System.Drawing.Point(0, 87);
-            this.pnl_Reporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnl_Reporte.Name = "pnl_Reporte";
-            this.pnl_Reporte.Size = new System.Drawing.Size(1683, 756);
-            this.pnl_Reporte.TabIndex = 5;
+            this.pnl_Reporte6.BackColor = System.Drawing.Color.White;
+            this.pnl_Reporte6.Controls.Add(this.pnldatagriew);
+            this.pnl_Reporte6.Controls.Add(this.tableLayoutPanel5);
+            this.pnl_Reporte6.Controls.Add(this.filtros);
+            this.pnl_Reporte6.Controls.Add(this.grafica);
+            this.pnl_Reporte6.Controls.Add(this.sdr_botones);
+            this.pnl_Reporte6.Controls.Add(this.titulo_indicadores);
+            this.pnl_Reporte6.Controls.Add(this.pnl_titulo_reporte);
+            this.pnl_Reporte6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Reporte6.Location = new System.Drawing.Point(0, 87);
+            this.pnl_Reporte6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl_Reporte6.Name = "pnl_Reporte6";
+            this.pnl_Reporte6.Size = new System.Drawing.Size(1683, 756);
+            this.pnl_Reporte6.TabIndex = 5;
             // 
             // pnldatagriew
             // 
@@ -721,25 +721,25 @@ namespace CapaPresentacion
             this.label1.Text = "Nombre del reporte ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FormReportes
+            // FormReportes6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1683, 853);
-            this.Controls.Add(this.pnl_Reporte);
+            this.Controls.Add(this.pnl_Reporte6);
             this.Controls.Add(this.pnl_Bottom);
             this.Controls.Add(this.pnl_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormReportes";
+            this.Name = "FormReportes6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SoporTec - Reportes";
             this.pnl_Top.ResumeLayout(false);
             this.pnl_Top.PerformLayout();
-            this.pnl_Reporte.ResumeLayout(false);
+            this.pnl_Reporte6.ResumeLayout(false);
             this.pnldatagriew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -775,7 +775,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel pnl_Top;
         private System.Windows.Forms.Panel pnl_Bottom;
         private System.Windows.Forms.Label SoporTec;
-        private System.Windows.Forms.Panel pnl_Reporte;
+        private System.Windows.Forms.Panel pnl_Reporte6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel sdr_botones;
         private System.Windows.Forms.Button btn_MisTickets;

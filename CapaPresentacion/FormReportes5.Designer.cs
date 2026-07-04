@@ -1,6 +1,6 @@
 namespace CapaPresentacion
 {
-    partial class FormReportes
+    partial class FormReportes5
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,7 +17,7 @@ namespace CapaPresentacion
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes5));
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SoporTec = new System.Windows.Forms.Label();
@@ -721,7 +721,7 @@ namespace CapaPresentacion
             this.label1.Text = "Nombre del reporte ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FormReportes
+            // FormReportes5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -734,7 +734,7 @@ namespace CapaPresentacion
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormReportes";
+            this.Name = "FormReportes5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SoporTec - Reportes";
             this.pnl_Top.ResumeLayout(false);

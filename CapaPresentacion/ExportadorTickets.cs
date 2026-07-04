@@ -1,9 +1,10 @@
 ﻿using CapaDatos;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
+using System.Text;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaPresentacion
 {
@@ -35,7 +36,39 @@ namespace CapaPresentacion
 
             File.WriteAllText(rutaArchivo, sb.ToString(), Encoding.Default);
         }
+        public static void ExportarCsvAdministrador(List<TicketVistaAdmin> tickets, string rutaArchivo)
+        {
+            StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine("sep=;");
+            sb.AppendLine("N° Ticket;Título;Sede;Pabellón;Estado;Prioridad;Fecha Creación;Fecha Actualización;Técnico Asignado;ID Técnico;ID Solicitante");
+
+            foreach (TicketVistaAdmin ticket in tickets)
+            {
+                string linea = "";
+
+                linea += ticket.IdTicket + ";";
+                linea += LimpiarTexto(ticket.Titulo) + ";";
+                linea += LimpiarTexto(ticket.Sede) + ";";
+                linea += LimpiarTexto(ticket.Pabellon) + ";";
+                linea += LimpiarTexto(ticket.Estado) + ";";
+
+                linea += (string.IsNullOrEmpty(ticket.Prioridad) ? "Sin Asignar" : LimpiarTexto(ticket.Prioridad)) + ";";
+
+                linea += ticket.FCreacion.ToString("dd/MM/yyyy HH:mm") + ";";
+
+                linea += (ticket.FActualizacion == null ? "00/00/0000 00:00" : ticket.FActualizacion.Value.ToString("dd/MM/yyyy HH:mm")) + ";";
+
+                linea += (string.IsNullOrEmpty(ticket.NombreTecnicoAsignado) ? "Sin Asignar" : LimpiarTexto(ticket.NombreTecnicoAsignado)) + ";";
+                linea += (ticket.IdTecnico <= 0 ? "Sin Asignar" : ticket.IdTecnico.ToString()) + ";";
+
+                linea += ticket.IdSolicitante.ToString();
+
+                sb.AppendLine(linea);
+            }
+
+            File.WriteAllText(rutaArchivo, sb.ToString(), Encoding.Default);
+        }
         private static string LimpiarTexto(string texto)
         {
             if (texto == null)

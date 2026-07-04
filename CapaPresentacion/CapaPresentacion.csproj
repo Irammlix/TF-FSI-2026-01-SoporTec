@@ -75,6 +75,36 @@
     <Compile Include="FormReportes.Designer.cs">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReportes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes2.Designer.cs">
+      <DependentUpon>FormReportes2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes3.Designer.cs">
+      <DependentUpon>FormReportes3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes4.Designer.cs">
+      <DependentUpon>FormReportes4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes5.Designer.cs">
+      <DependentUpon>FormReportes5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes6.Designer.cs">
+      <DependentUpon>FormReportes6.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSolicitante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +137,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes2.resx">
+      <DependentUpon>FormReportes2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes3.resx">
+      <DependentUpon>FormReportes3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes4.resx">
+      <DependentUpon>FormReportes4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes5.resx">
+      <DependentUpon>FormReportes5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes6.resx">
+      <DependentUpon>FormReportes6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSolicitante.resx">
       <DependentUpon>FormSolicitante.cs</DependentUpon>
