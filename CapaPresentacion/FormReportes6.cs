@@ -1,6 +1,6 @@
+using CapaDatos;
 using CapaNegocio;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -12,445 +12,187 @@ namespace CapaPresentacion
 {
     public partial class FormReportes6 : Form
     {
-        // ======== Paleta (tomada del diseño del formulario) ========
-        private static readonly Color ColorNavy = Color.Navy;
-        private static readonly Color ColorFondo = Color.FromArgb(242, 245, 250);
-        private static readonly Color ColorBorde = Color.FromArgb(204, 211, 220);
-        private static readonly Color ColorTituloReporte = Color.FromArgb(74, 127, 199);
-        private static readonly Color ColorBarra = Color.FromArgb(100, 140, 190);
-        private static readonly Color ColorResaltado = Color.FromArgb(192, 57, 43);
 
-        // ======== RF-19: dependencias y controles construidos en runtime ========
-        private readonly NReporte nReporte = new NReporte();
-        private readonly NSede nSede = new NSede();
+        private NReporte nReporte = new NReporte();
 
-        private ComboBox cboSede, cboEstado, cboOrden;
-        private Chart chartPabellones;
-        private DataGridView dgvDetalle;
-        private Label lblSubtitulo, lblGenerado, lblDetalleTitulo;
-        private Label kpiTotal, kpiPabTop, kpiPabTopCant, kpiPabActivos;
-        private List<NReporte.ConteoPabellon> datosActuales = new List<NReporte.ConteoPabellon>();
+        private Label lbl_TituloDetalle;
+
+        private string[] nombresMes =
+        {
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        };
 
         public FormReportes6()
         {
             InitializeComponent();
-        }
 
-        
+            chart_EvolucionMensual.Series["Series1"].Name = "Ingresados";
+            chart_EvolucionMensual.Series["Ingresados"].ChartType = SeriesChartType.Line;
+            chart_EvolucionMensual.Series["Ingresados"].BorderWidth = 3;
+            chart_EvolucionMensual.Series["Ingresados"].Color = Color.Navy;
 
-        // ---------- Bloques de UI ----------
+            Series serieResueltos = new Series("Resueltos")
+            {
+                ChartType = SeriesChartType.Line,
+                ChartArea = "ChartArea1",
+                Legend = "Legend1",
+                BorderWidth = 3,
+                Color = Color.DarkOrange
+            };
+            chart_EvolucionMensual.Series.Add(serieResueltos);
 
-        private Panel CrearTitulo()
-        {
-            Panel cont = new Panel { Dock = DockStyle.Top, Height = 60, BackColor = ColorFondo, Padding = new Padding(0, 0, 0, 6) };
-
-            Label titulo = new Label
+            // Título arriba de dgv_DetalleMes: aclara si lo que se ve son ingresados o resueltos.
+            lbl_TituloDetalle = new Label
             {
                 Dock = DockStyle.Top,
-                Height = 30,
-                Text = "Tickets por Sede y Pabellón",
-                Font = new Font("Segoe UI", 15F, FontStyle.Bold),
-                ForeColor = ColorTituloReporte,
-                TextAlign = ContentAlignment.MiddleCenter,
-                BackColor = Color.White
-            };
-            lblSubtitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 24,
-                Text = "Concentración de incidencias por instalación",
-                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter,
-                BackColor = Color.White
-            };
-            cont.Controls.Add(lblSubtitulo);
-            cont.Controls.Add(titulo);
-            return cont;
-        }
-
-        private TableLayoutPanel CrearFilaKpis()
-        {
-            TableLayoutPanel fila = new TableLayoutPanel
-            {
-                Dock = DockStyle.Top,
-                Height = 98,
-                ColumnCount = 4,
-                RowCount = 1,
-                BackColor = ColorFondo,
-                Padding = new Padding(0, 4, 0, 8)
-            };
-            for (int i = 0; i < 4; i++)
-                fila.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-
-            fila.Controls.Add(CrearTarjetaKpi("Total tickets (sede)", out kpiTotal, ColorNavy), 0, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Pabellón con más incidencias", out kpiPabTop, ColorResaltado), 1, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Tickets en ese pabellón", out kpiPabTopCant, ColorResaltado), 2, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Pabellones activos", out kpiPabActivos, ColorNavy), 3, 0);
-            return fila;
-        }
-
-        private Panel CrearTarjetaKpi(string titulo, out Label valor, Color colorValor)
-        {
-            Panel card = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, Margin = new Padding(4), Padding = new Padding(4) };
-            card.BorderStyle = BorderStyle.FixedSingle;
-
-            Label lblTitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 34,
-                Text = titulo,
-                Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-            valor = new Label
-            {
-                Dock = DockStyle.Fill,
-                Text = "-",
-                Font = new Font("Segoe UI", 14F, FontStyle.Bold),
-                ForeColor = colorValor,
-                TextAlign = ContentAlignment.MiddleCenter,
-                AutoEllipsis = true
-            };
-            card.Controls.Add(valor);
-            card.Controls.Add(lblTitulo);
-            return card;
-        }
-
-        private TableLayoutPanel CrearColumnaGrafico()
-        {
-            TableLayoutPanel col = new TableLayoutPanel
-            {
-                Dock = DockStyle.Fill,
-                ColumnCount = 1,
-                RowCount = 2,
-                BackColor = ColorFondo,
-                Margin = new Padding(0, 0, 6, 0)
-            };
-            col.RowStyles.Add(new RowStyle(SizeType.Percent, 58F));
-            col.RowStyles.Add(new RowStyle(SizeType.Percent, 42F));
-
-            // Gráfico
-            Panel pnlChart = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, Margin = new Padding(0, 0, 0, 6), BorderStyle = BorderStyle.FixedSingle };
-            chartPabellones = new Chart { Dock = DockStyle.Fill, BackColor = Color.White };
-            ChartArea area = new ChartArea("area");
-            area.AxisX.MajorGrid.Enabled = false;
-            area.AxisX.Interval = 1;
-            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 8F);
-            area.AxisY.MajorGrid.LineColor = Color.Gainsboro;
-            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 8F);
-            area.AxisY.Minimum = 0;
-            chartPabellones.ChartAreas.Add(area);
-            Series serie = new Series("Tickets")
-            {
-                ChartType = SeriesChartType.Column,
-                IsValueShownAsLabel = true,
-                Color = ColorBarra,
-                Font = new Font("Segoe UI", 8F, FontStyle.Bold)
-            };
-            chartPabellones.Series.Add(serie);
-            chartPabellones.MouseClick += ChartPabellones_MouseClick;
-            pnlChart.Controls.Add(chartPabellones);
-
-            // Detalle (drill-down)
-            Panel pnlDetalle = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle };
-            lblDetalleTitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 24,
-                Text = "Detalle: (haz clic en una barra)",
-                Font = new Font("Segoe UI", 9.5F, FontStyle.Bold),
-                ForeColor = ColorNavy,
-                Padding = new Padding(6, 4, 0, 0)
-            };
-            dgvDetalle = new DataGridView
-            {
-                Dock = DockStyle.Fill,
-                AllowUserToAddRows = false,
-                AllowUserToDeleteRows = false,
-                ReadOnly = true,
-                RowHeadersVisible = false,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                BackgroundColor = Color.White,
-                BorderStyle = BorderStyle.None,
-                SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            };
-            dgvDetalle.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(237, 239, 242);
-            dgvDetalle.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            dgvDetalle.EnableHeadersVisualStyles = false;
-            pnlDetalle.Controls.Add(dgvDetalle);
-            pnlDetalle.Controls.Add(lblDetalleTitulo);
-
-            col.Controls.Add(pnlChart, 0, 0);
-            col.Controls.Add(pnlDetalle, 0, 1);
-            return col;
-        }
-
-        private Panel CrearColumnaFiltros()
-        {
-            Panel col = new Panel { Dock = DockStyle.Fill, BackColor = ColorFondo, Margin = new Padding(0) };
-
-            // --- Filtros ---
-            Panel pnlFiltros = new Panel { Dock = DockStyle.Top, Height = 180, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Padding = new Padding(10) };
-
-            cboOrden = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList, Margin = new Padding(0, 0, 0, 8) };
-            cboOrden.Items.AddRange(new object[] { "Mayor a menor", "Menor a mayor" });
-            cboOrden.SelectedIndex = 0;
-            cboOrden.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            cboEstado = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList };
-            cboEstado.Items.AddRange(new object[] { "Todos", "Sin Asignar", "Asignado", "En Proceso", "Resuelto" });
-            cboEstado.SelectedIndex = 0;
-            cboEstado.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            cboSede = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList };
-            cboSede.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            // Se agregan de abajo hacia arriba (por el Dock Top)
-            pnlFiltros.Controls.Add(cboOrden);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Ordenar por:"));
-            pnlFiltros.Controls.Add(cboEstado);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Estado (opcional):"));
-            pnlFiltros.Controls.Add(cboSede);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Sede:"));
-            pnlFiltros.Controls.Add(new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 26,
-                Text = "Filtros",
-                Font = new Font("Segoe UI", 11F, FontStyle.Bold)
-            });
-
-            // --- Leyenda ---
-            Panel pnlLeyenda = new Panel { Dock = DockStyle.Top, Height = 104, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Padding = new Padding(12, 10, 12, 10), Margin = new Padding(0, 8, 0, 0) };
-            pnlLeyenda.Controls.Add(CrearItemLeyenda("Mayor cantidad", ColorResaltado));
-            pnlLeyenda.Controls.Add(CrearItemLeyenda("Cantidad de tickets", ColorBarra));
-            pnlLeyenda.Controls.Add(new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 26,
-                Text = "Leyenda",
-                Font = new Font("Segoe UI", 11F, FontStyle.Bold)
-            });
-
-            // --- Fecha de generación ---
-            lblGenerado = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 34,
-                Text = "",
-                Font = new Font("Segoe UI", 8F),
-                ForeColor = Color.Gray,
-                BackColor = Color.White,
-                TextAlign = ContentAlignment.MiddleLeft,
-                Padding = new Padding(8, 0, 0, 0)
-            };
-
-            Panel espacio = new Panel { Dock = DockStyle.Top, Height = 8, BackColor = ColorFondo };
-
-            col.Controls.Add(lblGenerado);
-            col.Controls.Add(espacio);
-            col.Controls.Add(pnlLeyenda);
-            col.Controls.Add(new Panel { Dock = DockStyle.Top, Height = 8, BackColor = ColorFondo });
-            col.Controls.Add(pnlFiltros);
-            return col;
-        }
-
-        private Label CrearEtiquetaFiltro(string texto)
-        {
-            return new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 20,
-                Text = texto,
+                Height = 22,
                 Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                Margin = new Padding(0, 4, 0, 0)
-            };
-        }
-
-        private Panel CrearItemLeyenda(string texto, Color color)
-        {
-            // El item ocupa toda la fila; la etiqueta llena y el cuadro de color
-            // se ancla a la izquierda, ambos centrados verticalmente para que "cuadre".
-            Panel item = new Panel { Dock = DockStyle.Top, Height = 26, BackColor = Color.White };
-
-            Label lbl = new Label
-            {
-                Dock = DockStyle.Fill,
-                Text = texto,
-                Font = new Font("Segoe UI", 9F),
+                ForeColor = Color.Navy,
                 TextAlign = ContentAlignment.MiddleLeft,
-                BackColor = Color.White,
-                Padding = new Padding(26, 0, 0, 0)
+                Text = "Detalle: (haz clic en un punto del gráfico)"
             };
+            panel20.Controls.Add(lbl_TituloDetalle);
 
-            Panel cuadro = new Panel
-            {
-                Dock = DockStyle.Left,
-                Width = 20,
-                BackColor = Color.White
-            };
-            Panel swatch = new Panel
-            {
-                Width = 16,
-                Height = 16,
-                BackColor = color,
-                Location = new Point(2, 5),
-                Anchor = AnchorStyles.Left | AnchorStyles.Top
-            };
-            cuadro.Controls.Add(swatch);
+            chart_EvolucionMensual.MouseClick += ChartEvolucionMensual_MouseClick;
+            cmb_Anio.SelectedIndexChanged += (s, e) => CargarReporte();
+            button23.Click += (s, e) => CargarReporte();          
+            button22.Click += (s, e) => ExportarPdf();            
+            btnLimpiarFiltrosR1.Click += (s, e) => LimpiarFiltros(); 
+            button20.Click += (s, e) => this.Close();             
 
-            item.Controls.Add(lbl);
-            item.Controls.Add(cuadro);
-            return item;
+            this.Load += FormReportes6_Load;
         }
 
-        private Button CrearBotonSidebar(string texto, DockStyle dock, EventHandler onClick)
+        private void FormReportes6_Load(object sender, EventArgs e)
         {
-            Button btn = new Button
-            {
-                Text = texto,
-                Dock = dock,
-                Height = 78,
-                FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.White,
-                BackColor = ColorNavy,
-                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter,
-                Cursor = Cursors.Hand
-            };
-            btn.FlatAppearance.BorderColor = Color.FromArgb(30, 30, 90);
-            btn.FlatAppearance.BorderSize = 1;
-            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 120);
-            btn.Click += onClick;
-            return btn;
+            CargarAnios();
+            CargarReporte();
         }
 
-        // ---------- Lógica de datos ----------
 
-        private void CargarSedes()
+        private void CargarAnios()
         {
-            cboSede.Items.Clear();
-            try
-            {
-                var sedes = nSede.ListarTodo();
-                foreach (var s in sedes)
-                    cboSede.Items.Add(s.DNombreSede);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            var anios = nReporte.ListarAniosConTickets();
+            int anioActual = DateTime.Now.Year;
 
-            if (cboSede.Items.Count > 0)
-                cboSede.SelectedIndex = 0;
+            if (!anios.Contains(anioActual))
+                anios.Insert(0, anioActual);
+
+            cmb_Anio.Items.Clear();
+            foreach (int a in anios)
+                cmb_Anio.Items.Add(a);
+
+            cmb_Anio.SelectedItem = anioActual;
         }
 
         private void CargarReporte()
         {
-            if (cboSede == null || cboSede.SelectedItem == null)
+            if (cmb_Anio.SelectedItem == null)
                 return;
 
-            string sede = cboSede.SelectedItem.ToString();
-            string estado = cboEstado.SelectedItem?.ToString() ?? "Todos";
-            bool descendente = cboOrden.SelectedIndex == 0;
+            int anio = (int)cmb_Anio.SelectedItem;
 
-            datosActuales = nReporte.TicketsPorPabellon(sede, estado, descendente);
+            int[] ingresados = nReporte.ContarIngresadosPorMes(anio);
+            int[] resueltos = nReporte.ContarResueltosPorMes(anio);
 
-            // Subtítulo + fecha de generación
-            lblSubtitulo.Text = "Concentración de incidencias — Sede: " + sede;
-            lblGenerado.Text = "Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            Series serieIngresados = chart_EvolucionMensual.Series["Ingresados"];
+            Series serieResueltos = chart_EvolucionMensual.Series["Resueltos"];
+            serieIngresados.Points.Clear();
+            serieResueltos.Points.Clear();
 
-            // Gráfico
-            Series serie = chartPabellones.Series[0];
-            serie.Points.Clear();
-
-            int idxMax = -1, maxCant = -1;
-            for (int i = 0; i < datosActuales.Count; i++)
+            for (int mes = 0; mes < 12; mes++)
             {
-                int idx = serie.Points.AddY(datosActuales[i].Cantidad);
-                serie.Points[idx].AxisLabel = datosActuales[i].Pabellon;
-                serie.Points[idx].Color = ColorBarra;
-                if (datosActuales[i].Cantidad > maxCant)
-                {
-                    maxCant = datosActuales[i].Cantidad;
-                    idxMax = idx;
-                }
-            }
-            if (idxMax >= 0)
-                serie.Points[idxMax].Color = ColorResaltado;
-
-            // KPIs
-            int total = datosActuales.Sum(d => d.Cantidad);
-            kpiTotal.Text = total.ToString();
-            kpiPabActivos.Text = datosActuales.Count.ToString();
-            if (datosActuales.Count > 0)
-            {
-                var top = datosActuales.OrderByDescending(d => d.Cantidad).First();
-                kpiPabTop.Text = top.Pabellon;
-                kpiPabTopCant.Text = top.Cantidad.ToString();
-            }
-            else
-            {
-                kpiPabTop.Text = "-";
-                kpiPabTopCant.Text = "0";
+                serieIngresados.Points.AddXY(nombresMes[mes], ingresados[mes]);
+                serieResueltos.Points.AddXY(nombresMes[mes], resueltos[mes]);
             }
 
-            // Reset del detalle
-            dgvDetalle.DataSource = null;
-            lblDetalleTitulo.Text = "Detalle: (haz clic en una barra)";
+            int totalIngresados = ingresados.Sum();
+            int totalResueltos = resueltos.Sum();
+
+            lbl_TotalIngresados.Text = totalIngresados.ToString();
+            lbl_TotalResueltos.Text = totalResueltos.ToString();
+            lbl_SaldoPendiente.Text = (totalIngresados - totalResueltos).ToString();
+            lbl_MesPico.Text = nReporte.ObtenerMesPico(anio);
+            lbl_IndicadorTendencia.Text = nReporte.CalcularIndicadorTendencia(totalIngresados, totalResueltos);
+            lbl_FechaGeneracion.Text = "Fecha de Generación de Reporte: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+            dgv_DetalleMes.DataSource = null;
+            lbl_TituloDetalle.Text = "Detalle: (haz clic en un punto del gráfico)";
         }
 
-        private void ChartPabellones_MouseClick(object sender, MouseEventArgs e)
+
+        private void ChartEvolucionMensual_MouseClick(object sender, MouseEventArgs e)
         {
-            HitTestResult h = chartPabellones.HitTest(e.X, e.Y);
-            if (h.ChartElementType != ChartElementType.DataPoint || h.PointIndex < 0)
+            HitTestResult resultado = chart_EvolucionMensual.HitTest(e.X, e.Y);
+            if (resultado.ChartElementType != ChartElementType.DataPoint || resultado.PointIndex < 0)
                 return;
 
-            DataPoint punto = chartPabellones.Series[0].Points[h.PointIndex];
-            string pabellon = punto.AxisLabel;
-            CargarDetalle(pabellon);
+            int mes = resultado.PointIndex + 1;
+            bool esIngresados = resultado.Series == null || resultado.Series.Name == "Ingresados";
+            CargarDetalleMes(mes, esIngresados);
         }
 
-        private void CargarDetalle(string pabellon)
+        private void CargarDetalleMes(int mes, bool esIngresados)
         {
-            string sede = cboSede.SelectedItem.ToString();
-            string estado = cboEstado.SelectedItem?.ToString() ?? "Todos";
+            int anio = (int)cmb_Anio.SelectedItem;
+            var tickets = esIngresados
+                ? nReporte.ListarPorMes(anio, mes)
+                : nReporte.ListarResueltosPorMes(anio, mes);
 
-            List<TicketVistaAdmin> detalle = nReporte.DetalleTicketsPabellon(sede, pabellon, estado);
-
-            var vista = detalle.Select(t => new
+            var vista = tickets.Select(t => new
             {
-                Id = t.IdTicket,
-                Título = t.Titulo,
-                Estado = t.Estado,
-                Prioridad = t.Prioridad,
-                Creación = t.FCreacion.ToString("dd/MM/yyyy")
+                ID = t.IdTicket,
+                Título = t.DTitulo,
+                Estado = t.DEstado,
+                Prioridad = t.DPrioridad,
+                FechaCreacion = t.FCreacion.ToString("dd/MM/yyyy"),
+                FechaActualizacion = t.FActualizacion.HasValue ? t.FActualizacion.Value.ToString("dd/MM/yyyy") : ""
             }).ToList();
 
-            dgvDetalle.DataSource = vista;
-            lblDetalleTitulo.Text = "Detalle: " + pabellon + "  (" + detalle.Count + " tickets)";
+            dgv_DetalleMes.DataSource = vista;
+
+            if (dgv_DetalleMes.Columns.Count >= 6)
+            {
+                dgv_DetalleMes.Columns[0].HeaderText = "ID";
+                dgv_DetalleMes.Columns[1].HeaderText = "Título";
+                dgv_DetalleMes.Columns[2].HeaderText = "Estado";
+                dgv_DetalleMes.Columns[3].HeaderText = "Prioridad";
+                dgv_DetalleMes.Columns[4].HeaderText = "Fecha Creación";
+                dgv_DetalleMes.Columns[5].HeaderText = "Fecha Actualización";
+            }
+
+            string tipo = esIngresados ? "Tickets ingresados en " : "Tickets resueltos en ";
+            lbl_TituloDetalle.Text = tipo + nombresMes[mes - 1] + " " + anio;
         }
 
         private void LimpiarFiltros()
         {
-            cboEstado.SelectedIndex = 0;
-            cboOrden.SelectedIndex = 0;
-            if (cboSede.Items.Count > 0)
-                cboSede.SelectedIndex = 0;
+            int anioActual = DateTime.Now.Year;
+            if (cmb_Anio.Items.Contains(anioActual))
+                cmb_Anio.SelectedItem = anioActual;
+            else if (cmb_Anio.Items.Count > 0)
+                cmb_Anio.SelectedIndex = 0;
+
+            dgv_DetalleMes.DataSource = null;
             CargarReporte();
         }
 
-        // ---------- Exportar a PDF (vista previa -> Microsoft Print to PDF) ----------
+
         private void ExportarPdf()
         {
-            if (datosActuales == null || datosActuales.Count == 0)
+            if (cmb_Anio.SelectedItem == null)
             {
                 MessageBox.Show("No hay datos para exportar.");
                 return;
             }
 
-            PrintDocument doc = new PrintDocument { DocumentName = "Reporte RF-19 - Tickets por Pabellón" };
-            doc.PrintPage += Doc_PrintPage;
+            int anio = (int)cmb_Anio.SelectedItem;
+            int[] ingresados = nReporte.ContarIngresadosPorMes(anio);
+            int[] resueltos = nReporte.ContarResueltosPorMes(anio);
+
+            PrintDocument doc = new PrintDocument { DocumentName = "Reporte RF-21 - Evolución Mensual de Tickets" };
+            doc.PrintPage += (s, e) => Doc_PrintPage(e, anio, ingresados, resueltos);
 
             using (PrintPreviewDialog preview = new PrintPreviewDialog { Document = doc, WindowState = FormWindowState.Maximized })
             {
@@ -458,40 +200,55 @@ namespace CapaPresentacion
             }
         }
 
-        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+
+        private void Doc_PrintPage(PrintPageEventArgs e, int anio, int[] ingresados, int[] resueltos)
         {
             Graphics g = e.Graphics;
             float x = 50, y = 50;
             float ancho = e.PageBounds.Width - 100;
 
-            string sede = cboSede.SelectedItem.ToString();
-
-            g.FillRectangle(new SolidBrush(ColorNavy), x, y, ancho, 46);
-            g.DrawString("SoporTec — Tickets por Sede y Pabellón", new Font("Segoe UI", 16, FontStyle.Bold), Brushes.White, x + 12, y + 10);
+            g.FillRectangle(new SolidBrush(Color.Navy), x, y, ancho, 46);
+            g.DrawString("SoporTec — Evolución Mensual de Tickets", new Font("Segoe UI", 16, FontStyle.Bold), Brushes.White, x + 12, y + 10);
             y += 58;
 
-            g.DrawString("Sede: " + sede, new Font("Segoe UI", 11, FontStyle.Bold), Brushes.Black, x, y);
+            g.DrawString("Año: " + anio, new Font("Segoe UI", 11, FontStyle.Bold), Brushes.Black, x, y);
             g.DrawString("Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"), new Font("Segoe UI", 9), Brushes.Gray, x + ancho - 220, y + 4);
             y += 34;
 
-            int total = datosActuales.Sum(d => d.Cantidad);
-            g.DrawString("Total de tickets en la sede: " + total, new Font("Segoe UI", 10), Brushes.Black, x, y);
+            g.DrawString("Ingresados: " + ingresados.Sum() + "   Resueltos: " + resueltos.Sum() + "   Saldo: " + (ingresados.Sum() - resueltos.Sum()),
+                new Font("Segoe UI", 10), Brushes.Black, x, y);
+            y += 22;
+            g.DrawString(lbl_IndicadorTendencia.Text, new Font("Segoe UI", 10, FontStyle.Italic), Brushes.Black, x, y);
             y += 30;
 
-            // Encabezado tabla
             var fH = new Font("Segoe UI", 10, FontStyle.Bold);
             var fC = new Font("Segoe UI", 10);
             g.FillRectangle(new SolidBrush(Color.FromArgb(237, 239, 242)), x, y, ancho, 26);
-            g.DrawString("Pabellón", fH, Brushes.Black, x + 8, y + 4);
-            g.DrawString("Cantidad de tickets", fH, Brushes.Black, x + ancho - 200, y + 4);
+            g.DrawString("Mes", fH, Brushes.Black, x + 8, y + 4);
+            g.DrawString("Ingresados", fH, Brushes.Black, x + ancho - 300, y + 4);
+            g.DrawString("Resueltos", fH, Brushes.Black, x + ancho - 150, y + 4);
             y += 26;
 
-            foreach (var d in datosActuales)
+            for (int mes = 0; mes < 12; mes++)
             {
-                g.DrawRectangle(Pens.Gainsboro, x, y, ancho, 24);
-                g.DrawString(d.Pabellon, fC, Brushes.Black, x + 8, y + 4);
-                g.DrawString(d.Cantidad.ToString(), fC, Brushes.Black, x + ancho - 200, y + 4);
+                g.DrawRectangle(Pens.Gainsboro, x, y, ancho, 22);
+                g.DrawString(nombresMes[mes], fC, Brushes.Black, x + 8, y + 3);
+                g.DrawString(ingresados[mes].ToString(), fC, Brushes.Black, x + ancho - 300, y + 3);
+                g.DrawString(resueltos[mes].ToString(), fC, Brushes.Black, x + ancho - 150, y + 3);
+                y += 22;
+            }
+
+            if (dgv_DetalleMes.DataSource != null && dgv_DetalleMes.CurrentRow != null)
+            {
+                y += 20;
+                g.DrawString("Detalle del mes seleccionado:", fH, Brushes.Black, x, y);
                 y += 24;
+
+                foreach (DataGridViewColumn col in dgv_DetalleMes.Columns)
+                {
+                    g.DrawString(col.HeaderText + ": " + dgv_DetalleMes.CurrentRow.Cells[col.Index].Value, fC, Brushes.Black, x + 8, y);
+                    y += 18;
+                }
             }
 
             e.HasMorePages = false;

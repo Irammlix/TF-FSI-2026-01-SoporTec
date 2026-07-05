@@ -11,18 +11,18 @@ namespace CapaNegocio
         private DReporte dReporte = new DReporte();
         private NTicket nTicket = new NTicket();
 
-        // Resultado de la agrupación de tickets por pabellón (RF-19)
+        private static string[] NombresMes =
+        {
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        };
+
         public class ConteoPabellon
         {
             public string Pabellon { get; set; }
             public int Cantidad { get; set; }
         }
 
-        // ===================== RF-19: Tickets por sede y pabellón =====================
-
-        // Cuenta los tickets de una sede agrupados por pabellón.
-        // estadoFiltro: "Todos" (o null/vacío) = sin filtro; caso contrario filtra por ese estado.
-        // descendente: true = de mayor a menor cantidad; false = de menor a mayor.
         public List<ConteoPabellon> TicketsPorPabellon(string nombreSede, string estadoFiltro, bool descendente)
         {
             List<TicketVistaAdmin> tickets = nTicket.ListarTodoAdministrador();
@@ -43,7 +43,6 @@ namespace CapaNegocio
                 : conteo.OrderBy(c => c.Cantidad).ToList();
         }
 
-        // Detalle de los tickets de un pabellón concreto dentro de una sede (para el drill-down).
         public List<TicketVistaAdmin> DetalleTicketsPabellon(string nombreSede, string nombrePabellon, string estadoFiltro)
         {
             List<TicketVistaAdmin> tickets = nTicket.ListarTodoAdministrador();
@@ -55,6 +54,69 @@ namespace CapaNegocio
                 query = query.Where(t => t.Estado == estadoFiltro);
 
             return query.OrderByDescending(t => t.FCreacion).ToList();
+        }
+
+        public List<int> ListarAniosConTickets()
+        {
+            return dReporte.ListarAniosConTickets();
+        }
+
+        public int[] ContarIngresadosPorMes(int anio)
+        {
+            return dReporte.ContarIngresadosPorMes(anio);
+        }
+
+        public int[] ContarResueltosPorMes(int anio)
+        {
+            return dReporte.ContarResueltosPorMes(anio);
+        }
+
+        public List<Ticket> ListarPorMes(int anio, int mes)
+        {
+            return dReporte.ListarPorMes(anio, mes);
+        }
+
+        public List<Ticket> ListarResueltosPorMes(int anio, int mes)
+        {
+            return dReporte.ListarResueltosPorMes(anio, mes);
+        }
+
+        // Total anual de ingresados (suma de los 12 meses).
+        public int ContarIngresados(int anio)
+        {
+            return ContarIngresadosPorMes(anio).Sum();
+        }
+
+        // Total anual de resueltos (suma de los 12 meses).
+        public int ContarResueltos(int anio)
+        {
+            return ContarResueltosPorMes(anio).Sum();
+        }
+
+        // Mes con más ingresos, ej. "Marzo (24)", para el KPI lbl_MesPico.
+        public string ObtenerMesPico(int anio)
+        {
+            int[] ingresados = ContarIngresadosPorMes(anio);
+
+            int mesPico = 0;
+            for (int i = 1; i < ingresados.Length; i++)
+            {
+                if (ingresados[i] > ingresados[mesPico])
+                    mesPico = i;
+            }
+
+            return NombresMes[mesPico] + " (" + ingresados[mesPico] + ")";
+        }
+
+        // Texto del indicador de tendencia (lbl_IndicadorTendencia), según la fórmula que se dejó en el documento.
+        public string CalcularIndicadorTendencia(int totalIngresados, int totalResueltos)
+        {
+            if (totalResueltos > totalIngresados)
+                return "El equipo está liquidando el backlog";
+            else if (totalIngresados > totalResueltos)
+                return "El sistema se está acumulando, revisar capacidad";
+            else
+                return "El equipo está en equilibrio inestable";
         }
 
         //REPORTE 1
