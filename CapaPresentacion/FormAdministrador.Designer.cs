@@ -2005,6 +2005,7 @@
             this.btn_DescargarInfo.TabIndex = 46;
             this.btn_DescargarInfo.Text = "DESCARGAR INFORMACIÓN";
             this.btn_DescargarInfo.UseVisualStyleBackColor = false;
+            this.btn_DescargarInfo.Click += new System.EventHandler(this.btn_DescargarInfo_Click);
             // 
             // lb_NumTicket
             // 
@@ -3623,9 +3624,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_Tickets);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pnl_MisTecnicos);
