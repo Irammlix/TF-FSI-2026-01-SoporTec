@@ -8,6 +8,7 @@ namespace CapaNegocio
 {
     public class NReporte
     {
+        private DReporte dReporte = new DReporte();
         private NTicket nTicket = new NTicket();
 
         // Resultado de la agrupación de tickets por pabellón (RF-19)
@@ -55,5 +56,16 @@ namespace CapaNegocio
 
             return query.OrderByDescending(t => t.FCreacion).ToList();
         }
+
+        //REPORTE 1
+
+        public List<Ticket> ListarTicketReporteEstado(string sede)
+        {
+            if (string.IsNullOrWhiteSpace(sede))
+                sede = "Todos";
+            return dReporte.ListarTicketReporteEstado(sede);
+        }
+
+        //FIN REPORTE 1
     }
 }

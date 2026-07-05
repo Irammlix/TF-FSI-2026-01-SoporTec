@@ -195,5 +195,107 @@ namespace CapaPresentacion
 
             documento.Print();
         }
+
+
+        public static void ExportarPdfReporte1(
+        string rutaArchivo,
+        string rutaGrafico,
+        string fecha,
+        string sede,
+        string totalTickets,
+        string sinAsignar,
+        string asignado,
+        string enProceso,
+        string resuelto)
+        {
+            PrintDocument documento = new PrintDocument();
+
+            documento.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+            documento.PrinterSettings.PrintToFile = true;
+            documento.PrinterSettings.PrintFileName = rutaArchivo;
+
+            documento.PrintPage += (sender, e) =>
+            {
+                Graphics g = e.Graphics;
+
+                Font fontTitulo = new Font("Arial", 18, FontStyle.Bold);
+                Font fontSubtitulo = new Font("Arial", 11, FontStyle.Bold);
+                Font fontTexto = new Font("Arial", 10);
+
+                int x = 60;
+                int y = 50;
+                int ancho = 720;
+
+                Brush colorCabecera = new SolidBrush(Color.FromArgb(35, 45, 65));
+
+                // Cabecera
+                g.FillRectangle(colorCabecera, x, y, ancho, 60);
+
+                g.DrawString(
+                    "DISTRIBUCIÓN DE TICKETS POR ESTADO",
+                    fontTitulo,
+                    Brushes.White,
+                    x + 15,
+                    y + 15);
+
+                y += 90;
+
+                // Información general
+                g.DrawString(fecha, fontTexto, Brushes.Black, x, y);
+                y += 25;
+
+                g.DrawString("Sede: " + sede, fontTexto, Brushes.Black, x, y);
+                y += 25;
+
+                g.DrawString("Total de tickets: " + totalTickets, fontTexto, Brushes.Black, x, y);
+                y += 45;
+
+                // Resumen
+                g.DrawString("Resumen del Reporte", fontSubtitulo, Brushes.Black, x, y);
+                y += 30;
+
+                g.DrawString("Sin Asignar: " + sinAsignar, fontTexto, Brushes.Black, x, y);
+                y += 25;
+
+                g.DrawString("Asignado: " + asignado, fontTexto, Brushes.Black, x, y);
+                y += 25;
+
+                g.DrawString("En Proceso: " + enProceso, fontTexto, Brushes.Black, x, y);
+                y += 25;
+
+                g.DrawString("Resuelto: " + resuelto, fontTexto, Brushes.Black, x, y);
+                y += 45;
+
+                // Imagen del gráfico
+                if (File.Exists(rutaGrafico))
+                {
+                    Image grafico = Image.FromFile(rutaGrafico);
+
+                    g.DrawImage(
+                        grafico,
+                        x,
+                        y,
+                        450,
+                        250);
+
+                    grafico.Dispose();
+                }
+
+                y += 280;
+
+                g.DrawLine(Pens.Gray, x, y, x + ancho, y);
+
+                y += 15;
+
+                g.DrawString(
+                    "Sistema de Tickets Universitario",
+                    fontTexto,
+                    Brushes.Gray,
+                    x,
+                    y);
+            };
+
+            documento.Print();
+        }
     }
 }
