@@ -12,490 +12,379 @@ namespace CapaPresentacion
 {
     public partial class FormReportes3 : Form
     {
-        // ======== Paleta (tomada del diseño del formulario) ========
-        private static readonly Color ColorNavy = Color.Navy;
-        private static readonly Color ColorFondo = Color.FromArgb(242, 245, 250);
-        private static readonly Color ColorBorde = Color.FromArgb(204, 211, 220);
-        private static readonly Color ColorTituloReporte = Color.FromArgb(74, 127, 199);
-        private static readonly Color ColorBarra = Color.FromArgb(100, 140, 190);
-        private static readonly Color ColorResaltado = Color.FromArgb(192, 57, 43);
-
-        // ======== RF-19: dependencias y controles construidos en runtime ========
-        private readonly NReporte nReporte = new NReporte();
-        private readonly NSede nSede = new NSede();
-
-        private ComboBox cboSede, cboEstado, cboOrden;
-        private Chart chartPabellones;
-        private DataGridView dgvDetalle;
-        private Label lblSubtitulo, lblGenerado, lblDetalleTitulo;
-        private Label kpiTotal, kpiPabTop, kpiPabTopCant, kpiPabActivos;
-        private List<NReporte.ConteoPabellon> datosActuales = new List<NReporte.ConteoPabellon>();
-
+        private NReporte nReporte = new NReporte();
         public FormReportes3()
         {
             InitializeComponent();
-           
+            lblFechaGeneracion.Text = "Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            MostrarReporteTecnicos();
+            CargarTecnicos();
+            CargarEstados();
         }
-
-        
-
-        // ---------- Bloques de UI ----------
-
-        private Panel CrearTitulo()
+        private void MostrarReporteTecnicos()
         {
-            Panel cont = new Panel { Dock = DockStyle.Top, Height = 60, BackColor = ColorFondo, Padding = new Padding(0, 0, 0, 6) };
 
-            Label titulo = new Label
+            string tecnico = cbTecnico.SelectedItem?.ToString();
+
+            string estado =cbEstado.SelectedItem?.ToString();
+
+            List<ReporteTecnico> lista = nReporte.ObtenerRendimientoPorTecnico(tecnico,estado);
+
+            chartTecnicos.Series.Clear();
+
+            Series serieResueltos = new Series("Resueltos");
+
+            serieResueltos.ChartType = SeriesChartType.StackedColumn;
+
+            serieResueltos.Color = Color.Blue;
+
+            Series seriePendientes = new Series("Pendientes");
+
+            seriePendientes.ChartType = SeriesChartType.StackedColumn;
+
+            seriePendientes.Color = Color.Red;
+
+            int totalResueltos = 0;
+            int totalPendientes = 0;
+
+            string cuelloBotella = "Ninguno";
+
+            int mayorDiferencia = 0;
+
+            foreach (ReporteTecnico r in lista)
             {
-                Dock = DockStyle.Top,
-                Height = 30,
-                Text = "Tickets por Sede y Pabellón",
-                Font = new Font("Segoe UI", 15F, FontStyle.Bold),
-                ForeColor = ColorTituloReporte,
-                TextAlign = ContentAlignment.MiddleCenter,
-                BackColor = Color.White
-            };
-            lblSubtitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 24,
-                Text = "Concentración de incidencias por instalación",
-                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter,
-                BackColor = Color.White
-            };
-            cont.Controls.Add(lblSubtitulo);
-            cont.Controls.Add(titulo);
-            return cont;
-        }
+                serieResueltos.Points.AddXY(
+                    r.NombreTecnico,
+                    r.CantidadResueltos);
 
-        private TableLayoutPanel CrearFilaKpis()
-        {
-            TableLayoutPanel fila = new TableLayoutPanel
-            {
-                Dock = DockStyle.Top,
-                Height = 98,
-                ColumnCount = 4,
-                RowCount = 1,
-                BackColor = ColorFondo,
-                Padding = new Padding(0, 4, 0, 8)
-            };
-            for (int i = 0; i < 4; i++)
-                fila.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                seriePendientes.Points.AddXY(
+                    r.NombreTecnico,
+                    r.CantidadPendientes);
 
-            fila.Controls.Add(CrearTarjetaKpi("Total tickets (sede)", out kpiTotal, ColorNavy), 0, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Pabellón con más incidencias", out kpiPabTop, ColorResaltado), 1, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Tickets en ese pabellón", out kpiPabTopCant, ColorResaltado), 2, 0);
-            fila.Controls.Add(CrearTarjetaKpi("Pabellones activos", out kpiPabActivos, ColorNavy), 3, 0);
-            return fila;
-        }
+                totalResueltos += r.CantidadResueltos;
+                totalPendientes += r.CantidadPendientes;
 
-        private Panel CrearTarjetaKpi(string titulo, out Label valor, Color colorValor)
-        {
-            Panel card = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, Margin = new Padding(4), Padding = new Padding(4) };
-            card.BorderStyle = BorderStyle.FixedSingle;
-
-            Label lblTitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 34,
-                Text = titulo,
-                Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-            valor = new Label
-            {
-                Dock = DockStyle.Fill,
-                Text = "-",
-                Font = new Font("Segoe UI", 14F, FontStyle.Bold),
-                ForeColor = colorValor,
-                TextAlign = ContentAlignment.MiddleCenter,
-                AutoEllipsis = true
-            };
-            card.Controls.Add(valor);
-            card.Controls.Add(lblTitulo);
-            return card;
-        }
-
-        private TableLayoutPanel CrearColumnaGrafico()
-        {
-            TableLayoutPanel col = new TableLayoutPanel
-            {
-                Dock = DockStyle.Fill,
-                ColumnCount = 1,
-                RowCount = 2,
-                BackColor = ColorFondo,
-                Margin = new Padding(0, 0, 6, 0)
-            };
-            col.RowStyles.Add(new RowStyle(SizeType.Percent, 58F));
-            col.RowStyles.Add(new RowStyle(SizeType.Percent, 42F));
-
-            // Gráfico
-            Panel pnlChart = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, Margin = new Padding(0, 0, 0, 6), BorderStyle = BorderStyle.FixedSingle };
-            chartPabellones = new Chart { Dock = DockStyle.Fill, BackColor = Color.White };
-            ChartArea area = new ChartArea("area");
-            area.AxisX.MajorGrid.Enabled = false;
-            area.AxisX.Interval = 1;
-            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 8F);
-            area.AxisY.MajorGrid.LineColor = Color.Gainsboro;
-            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 8F);
-            area.AxisY.Minimum = 0;
-            chartPabellones.ChartAreas.Add(area);
-            Series serie = new Series("Tickets")
-            {
-                ChartType = SeriesChartType.Column,
-                IsValueShownAsLabel = true,
-                Color = ColorBarra,
-                Font = new Font("Segoe UI", 8F, FontStyle.Bold)
-            };
-            chartPabellones.Series.Add(serie);
-            chartPabellones.MouseClick += ChartPabellones_MouseClick;
-            pnlChart.Controls.Add(chartPabellones);
-
-            // Detalle (drill-down)
-            Panel pnlDetalle = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle };
-            lblDetalleTitulo = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 24,
-                Text = "Detalle: (haz clic en una barra)",
-                Font = new Font("Segoe UI", 9.5F, FontStyle.Bold),
-                ForeColor = ColorNavy,
-                Padding = new Padding(6, 4, 0, 0)
-            };
-            dgvDetalle = new DataGridView
-            {
-                Dock = DockStyle.Fill,
-                AllowUserToAddRows = false,
-                AllowUserToDeleteRows = false,
-                ReadOnly = true,
-                RowHeadersVisible = false,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                BackgroundColor = Color.White,
-                BorderStyle = BorderStyle.None,
-                SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            };
-            dgvDetalle.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(237, 239, 242);
-            dgvDetalle.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            dgvDetalle.EnableHeadersVisualStyles = false;
-            pnlDetalle.Controls.Add(dgvDetalle);
-            pnlDetalle.Controls.Add(lblDetalleTitulo);
-
-            col.Controls.Add(pnlChart, 0, 0);
-            col.Controls.Add(pnlDetalle, 0, 1);
-            return col;
-        }
-
-        private Panel CrearColumnaFiltros()
-        {
-            Panel col = new Panel { Dock = DockStyle.Fill, BackColor = ColorFondo, Margin = new Padding(0) };
-
-            // --- Filtros ---
-            Panel pnlFiltros = new Panel { Dock = DockStyle.Top, Height = 180, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Padding = new Padding(10) };
-
-            cboOrden = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList, Margin = new Padding(0, 0, 0, 8) };
-            cboOrden.Items.AddRange(new object[] { "Mayor a menor", "Menor a mayor" });
-            cboOrden.SelectedIndex = 0;
-            cboOrden.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            cboEstado = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList };
-            cboEstado.Items.AddRange(new object[] { "Todos", "Sin Asignar", "Asignado", "En Proceso", "Resuelto" });
-            cboEstado.SelectedIndex = 0;
-            cboEstado.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            cboSede = new ComboBox { Dock = DockStyle.Top, DropDownStyle = ComboBoxStyle.DropDownList };
-            cboSede.SelectedIndexChanged += (s, e) => CargarReporte();
-
-            // Se agregan de abajo hacia arriba (por el Dock Top)
-            pnlFiltros.Controls.Add(cboOrden);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Ordenar por:"));
-            pnlFiltros.Controls.Add(cboEstado);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Estado (opcional):"));
-            pnlFiltros.Controls.Add(cboSede);
-            pnlFiltros.Controls.Add(CrearEtiquetaFiltro("Sede:"));
-            pnlFiltros.Controls.Add(new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 26,
-                Text = "Filtros",
-                Font = new Font("Segoe UI", 11F, FontStyle.Bold)
-            });
-
-            // --- Leyenda ---
-            Panel pnlLeyenda = new Panel { Dock = DockStyle.Top, Height = 104, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Padding = new Padding(12, 10, 12, 10), Margin = new Padding(0, 8, 0, 0) };
-            pnlLeyenda.Controls.Add(CrearItemLeyenda("Mayor cantidad", ColorResaltado));
-            pnlLeyenda.Controls.Add(CrearItemLeyenda("Cantidad de tickets", ColorBarra));
-            pnlLeyenda.Controls.Add(new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 26,
-                Text = "Leyenda",
-                Font = new Font("Segoe UI", 11F, FontStyle.Bold)
-            });
-
-            // --- Fecha de generación ---
-            lblGenerado = new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 34,
-                Text = "",
-                Font = new Font("Segoe UI", 8F),
-                ForeColor = Color.Gray,
-                BackColor = Color.White,
-                TextAlign = ContentAlignment.MiddleLeft,
-                Padding = new Padding(8, 0, 0, 0)
-            };
-
-            Panel espacio = new Panel { Dock = DockStyle.Top, Height = 8, BackColor = ColorFondo };
-
-            col.Controls.Add(lblGenerado);
-            col.Controls.Add(espacio);
-            col.Controls.Add(pnlLeyenda);
-            col.Controls.Add(new Panel { Dock = DockStyle.Top, Height = 8, BackColor = ColorFondo });
-            col.Controls.Add(pnlFiltros);
-            return col;
-        }
-
-        private Label CrearEtiquetaFiltro(string texto)
-        {
-            return new Label
-            {
-                Dock = DockStyle.Top,
-                Height = 20,
-                Text = texto,
-                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                Margin = new Padding(0, 4, 0, 0)
-            };
-        }
-
-        private Panel CrearItemLeyenda(string texto, Color color)
-        {
-            // El item ocupa toda la fila; la etiqueta llena y el cuadro de color
-            // se ancla a la izquierda, ambos centrados verticalmente para que "cuadre".
-            Panel item = new Panel { Dock = DockStyle.Top, Height = 26, BackColor = Color.White };
-
-            Label lbl = new Label
-            {
-                Dock = DockStyle.Fill,
-                Text = texto,
-                Font = new Font("Segoe UI", 9F),
-                TextAlign = ContentAlignment.MiddleLeft,
-                BackColor = Color.White,
-                Padding = new Padding(26, 0, 0, 0)
-            };
-
-            Panel cuadro = new Panel
-            {
-                Dock = DockStyle.Left,
-                Width = 20,
-                BackColor = Color.White
-            };
-            Panel swatch = new Panel
-            {
-                Width = 16,
-                Height = 16,
-                BackColor = color,
-                Location = new Point(2, 5),
-                Anchor = AnchorStyles.Left | AnchorStyles.Top
-            };
-            cuadro.Controls.Add(swatch);
-
-            item.Controls.Add(lbl);
-            item.Controls.Add(cuadro);
-            return item;
-        }
-
-        private Button CrearBotonSidebar(string texto, DockStyle dock, EventHandler onClick)
-        {
-            Button btn = new Button
-            {
-                Text = texto,
-                Dock = dock,
-                Height = 78,
-                FlatStyle = FlatStyle.Flat,
-                ForeColor = Color.White,
-                BackColor = ColorNavy,
-                Font = new Font("Segoe UI", 9F, FontStyle.Bold),
-                TextAlign = ContentAlignment.MiddleCenter,
-                Cursor = Cursors.Hand
-            };
-            btn.FlatAppearance.BorderColor = Color.FromArgb(30, 30, 90);
-            btn.FlatAppearance.BorderSize = 1;
-            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 120);
-            btn.Click += onClick;
-            return btn;
-        }
-
-        // ---------- Lógica de datos ----------
-
-        private void CargarSedes()
-        {
-            cboSede.Items.Clear();
-            try
-            {
-                var sedes = nSede.ListarTodo();
-                foreach (var s in sedes)
-                    cboSede.Items.Add(s.DNombreSede);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            if (cboSede.Items.Count > 0)
-                cboSede.SelectedIndex = 0;
-        }
-
-        private void CargarReporte()
-        {
-            if (cboSede == null || cboSede.SelectedItem == null)
-                return;
-
-            string sede = cboSede.SelectedItem.ToString();
-            string estado = cboEstado.SelectedItem?.ToString() ?? "Todos";
-            bool descendente = cboOrden.SelectedIndex == 0;
-
-            datosActuales = nReporte.TicketsPorPabellon(sede, estado, descendente);
-
-            // Subtítulo + fecha de generación
-            lblSubtitulo.Text = "Concentración de incidencias — Sede: " + sede;
-            lblGenerado.Text = "Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-
-            // Gráfico
-            Series serie = chartPabellones.Series[0];
-            serie.Points.Clear();
-
-            int idxMax = -1, maxCant = -1;
-            for (int i = 0; i < datosActuales.Count; i++)
-            {
-                int idx = serie.Points.AddY(datosActuales[i].Cantidad);
-                serie.Points[idx].AxisLabel = datosActuales[i].Pabellon;
-                serie.Points[idx].Color = ColorBarra;
-                if (datosActuales[i].Cantidad > maxCant)
+                if (r.CantidadPendientes > r.CantidadResueltos)
                 {
-                    maxCant = datosActuales[i].Cantidad;
-                    idxMax = idx;
+                    int diferencia = r.CantidadPendientes - r.CantidadResueltos;
+
+                    if (diferencia > mayorDiferencia)
+                    {
+                        mayorDiferencia = diferencia;
+
+                        cuelloBotella = r.NombreTecnico;
+                    }
                 }
             }
-            if (idxMax >= 0)
-                serie.Points[idxMax].Color = ColorResaltado;
 
-            // KPIs
-            int total = datosActuales.Sum(d => d.Cantidad);
-            kpiTotal.Text = total.ToString();
-            kpiPabActivos.Text = datosActuales.Count.ToString();
-            if (datosActuales.Count > 0)
-            {
-                var top = datosActuales.OrderByDescending(d => d.Cantidad).First();
-                kpiPabTop.Text = top.Pabellon;
-                kpiPabTopCant.Text = top.Cantidad.ToString();
-            }
-            else
-            {
-                kpiPabTop.Text = "-";
-                kpiPabTopCant.Text = "0";
-            }
+            chartTecnicos.Series.Add(serieResueltos);
 
-            // Reset del detalle
-            dgvDetalle.DataSource = null;
-            lblDetalleTitulo.Text = "Detalle: (haz clic en una barra)";
+            chartTecnicos.Series.Add(seriePendientes);
+
+            lblTotalTickets.Text =(totalResueltos + totalPendientes).ToString();
+
+            lblTotalResueltos.Text = totalResueltos.ToString();
+
+            lblTotalPendientes.Text = totalPendientes.ToString();
+
+            lblCuelloBotella.Text = cuelloBotella;
         }
 
-        private void ChartPabellones_MouseClick(object sender, MouseEventArgs e)
+        private void MostrarDetalleTecnico(string tecnico)
         {
-            HitTestResult h = chartPabellones.HitTest(e.X, e.Y);
-            if (h.ChartElementType != ChartElementType.DataPoint || h.PointIndex < 0)
-                return;
+            dgDetalleTecnicos.DataSource =
+                nReporte.ObtenerDetalleTecnico(
+                    tecnico);
+        }
+        private void btnRefrescar_Click_1(object sender, EventArgs e)
+        {
+            MostrarReporteTecnicos();
+            dgDetalleTecnicos.DataSource = null;
 
-            DataPoint punto = chartPabellones.Series[0].Points[h.PointIndex];
-            string pabellon = punto.AxisLabel;
-            CargarDetalle(pabellon);
+            lblFechaGeneracion.Text ="Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
         }
 
-        private void CargarDetalle(string pabellon)
+        private void btnExportarPdf_Click(object sender, EventArgs e)
         {
-            string sede = cboSede.SelectedItem.ToString();
-            string estado = cboEstado.SelectedItem?.ToString() ?? "Todos";
 
-            List<TicketVistaAdmin> detalle = nReporte.DetalleTicketsPabellon(sede, pabellon, estado);
+            PrintDocument doc = new PrintDocument();
 
-            var vista = detalle.Select(t => new
-            {
-                Id = t.IdTicket,
-                Título = t.Titulo,
-                Estado = t.Estado,
-                Prioridad = t.Prioridad,
-                Creación = t.FCreacion.ToString("dd/MM/yyyy")
-            }).ToList();
+            doc.DocumentName ="Reporte Rendimiento Tecnicos";
 
-            dgvDetalle.DataSource = vista;
-            lblDetalleTitulo.Text = "Detalle: " + pabellon + "  (" + detalle.Count + " tickets)";
-        }
-
-        private void LimpiarFiltros()
-        {
-            cboEstado.SelectedIndex = 0;
-            cboOrden.SelectedIndex = 0;
-            if (cboSede.Items.Count > 0)
-                cboSede.SelectedIndex = 0;
-            CargarReporte();
-        }
-
-        // ---------- Exportar a PDF (vista previa -> Microsoft Print to PDF) ----------
-        private void ExportarPdf()
-        {
-            if (datosActuales == null || datosActuales.Count == 0)
-            {
-                MessageBox.Show("No hay datos para exportar.");
-                return;
-            }
-
-            PrintDocument doc = new PrintDocument { DocumentName = "Reporte RF-19 - Tickets por Pabellón" };
             doc.PrintPage += Doc_PrintPage;
 
-            using (PrintPreviewDialog preview = new PrintPreviewDialog { Document = doc, WindowState = FormWindowState.Maximized })
-            {
-                preview.ShowDialog();
-            }
+            PrintPreviewDialog vista =
+                new PrintPreviewDialog();
+
+            vista.Document = doc;
+
+            vista.WindowState =
+                FormWindowState.Maximized;
+
+            vista.ShowDialog();
+
         }
 
-        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        private void Doc_PrintPage(object sender,PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            float x = 50, y = 50;
+
+            float x = 50;
+            float y = 50;
             float ancho = e.PageBounds.Width - 100;
 
-            string sede = cboSede.SelectedItem.ToString();
+            Color colorNavy = Color.Navy;
+            Color colorGris = Color.FromArgb(237, 239, 242);
 
-            g.FillRectangle(new SolidBrush(ColorNavy), x, y, ancho, 46);
-            g.DrawString("SoporTec — Tickets por Sede y Pabellón", new Font("Segoe UI", 16, FontStyle.Bold), Brushes.White, x + 12, y + 10);
-            y += 58;
+            Font titulo = new Font("Segoe UI", 16, FontStyle.Bold);
+            Font subtitulo = new Font("Segoe UI", 11, FontStyle.Bold);
+            Font normal = new Font("Segoe UI", 9);
 
-            g.DrawString("Sede: " + sede, new Font("Segoe UI", 11, FontStyle.Bold), Brushes.Black, x, y);
-            g.DrawString("Generado: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"), new Font("Segoe UI", 9), Brushes.Gray, x + ancho - 220, y + 4);
-            y += 34;
+            // Encabezado
 
-            int total = datosActuales.Sum(d => d.Cantidad);
-            g.DrawString("Total de tickets en la sede: " + total, new Font("Segoe UI", 10), Brushes.Black, x, y);
+            g.FillRectangle(
+                new SolidBrush(colorNavy),
+                x,
+                y,
+                ancho,
+                50);
+
+            g.DrawString(
+                "SOPORTEC",
+                titulo,
+                Brushes.White,
+                x + 12,
+                y + 10);
+
+            y += 70;
+
+            g.DrawString(
+                "Reporte de rendimiento por técnico",
+                subtitulo,
+                Brushes.Black,
+                x,
+                y);
+
             y += 30;
 
-            // Encabezado tabla
-            var fH = new Font("Segoe UI", 10, FontStyle.Bold);
-            var fC = new Font("Segoe UI", 10);
-            g.FillRectangle(new SolidBrush(Color.FromArgb(237, 239, 242)), x, y, ancho, 26);
-            g.DrawString("Pabellón", fH, Brushes.Black, x + 8, y + 4);
-            g.DrawString("Cantidad de tickets", fH, Brushes.Black, x + ancho - 200, y + 4);
-            y += 26;
+            g.DrawString(
+                lblFechaGeneracion.Text,
+                normal,
+                Brushes.Gray,
+                x,
+                y);
 
-            foreach (var d in datosActuales)
+            y += 35;
+
+            // Resumen
+
+            g.DrawString(
+                "Resumen General",
+                subtitulo,
+                Brushes.Navy,
+                x,
+                y);
+
+            y += 25;
+
+            g.FillRectangle(
+                new SolidBrush(colorGris),
+                x,
+                y,
+                ancho,
+                35);
+
+            g.DrawString(
+                "Total Tickets: " +
+                lblTotalTickets.Text,
+                normal,
+                Brushes.Black,
+                x + 10,
+                y + 10);
+
+            g.DrawString(
+                "Resueltos: " +
+                lblTotalResueltos.Text,
+                normal,
+                Brushes.Black,
+                x + 180,
+                y + 10);
+
+            g.DrawString(
+                "Pendientes: " +
+                lblTotalPendientes.Text,
+                normal,
+                Brushes.Black,
+                x + 330,
+                y + 10);
+
+            y += 55;
+
+            Bitmap grafico = new Bitmap(chartTecnicos.Width,chartTecnicos.Height);
+
+            chartTecnicos.DrawToBitmap(
+                grafico,
+                new Rectangle(
+                    0,
+                    0,
+                    chartTecnicos.Width,
+                    chartTecnicos.Height));
+
+            g.DrawImage(
+                grafico,
+                x,
+                y,
+                500,
+                220);
+
+            y += 240;
+
+            g.DrawString(
+                "Posible cuello de botella: " +
+                lblCuelloBotella.Text,
+                subtitulo,
+                Brushes.Black,
+                x,
+                y);
+
+            y += 30;
+
+            g.DrawLine(
+                Pens.Navy,
+                x,
+                y,
+                x + ancho,
+                y);
+
+            y += 25;
+
+            // Detalle
+
+            g.DrawString(
+                "Detalle de tickets",
+                subtitulo,
+                Brushes.Navy,
+                x,
+                y);
+
+            y += 30;
+
+            g.FillRectangle(
+                new SolidBrush(colorGris),
+                x,
+                y,
+                ancho,
+                25);
+
+            g.DrawString("ID", normal, Brushes.Black, x + 10, y + 5);
+            g.DrawString("Título", normal, Brushes.Black, x + 70, y + 5);
+            g.DrawString("Estado", normal, Brushes.Black, x + 320, y + 5);
+            g.DrawString("Prioridad", normal, Brushes.Black, x + 450, y + 5);
+            g.DrawString("Fecha", normal, Brushes.Black, x + 580, y + 5);
+
+            y += 30;
+
+            foreach (DataGridViewRow fila in dgDetalleTecnicos.Rows)
             {
-                g.DrawRectangle(Pens.Gainsboro, x, y, ancho, 24);
-                g.DrawString(d.Pabellon, fC, Brushes.Black, x + 8, y + 4);
-                g.DrawString(d.Cantidad.ToString(), fC, Brushes.Black, x + ancho - 200, y + 4);
-                y += 24;
-            }
+                if (fila.IsNewRow)
+                    continue;
 
+                g.DrawString(
+                    fila.Cells[0].Value?.ToString(),
+                    normal,
+                    Brushes.Black,
+                    x + 10,
+                    y);
+
+                g.DrawString(
+                    fila.Cells[1].Value?.ToString(),
+                    normal,
+                    Brushes.Black,
+                    x + 70,
+                    y);
+
+                g.DrawString(
+                    fila.Cells[4].Value?.ToString(),
+                    normal,
+                    Brushes.Black,
+                    x + 320,
+                    y);
+
+                g.DrawString(
+                    fila.Cells[3].Value?.ToString(),
+                    normal,
+                    Brushes.Black,
+                    x + 450,
+                    y);
+
+                g.DrawString(
+                    fila.Cells[5].Value?.ToString(),
+                    normal,
+                    Brushes.Black,
+                    x + 580,
+                    y);
+
+                y += 22;
+            }
             e.HasMorePages = false;
+        }
+
+        private void btnLimpiarFiltros_Click_1(object sender, EventArgs e)
+        {
+            cbTecnico.SelectedIndex = 0;
+            cbEstado.SelectedIndex = 0;
+            dgDetalleTecnicos.DataSource = null;
+            MostrarReporteTecnicos();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void chartTecnicos_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            HitTestResult resultado =
+                chartTecnicos.HitTest(
+                    e.X,
+                    e.Y);
+
+            if (resultado.PointIndex >= 0)
+            {
+                string tecnico =
+                    resultado.Series
+                    .Points[resultado.PointIndex]
+                    .AxisLabel;
+
+                MostrarDetalleTecnico(
+                    tecnico);
+            }
+        }
+        private void CargarTecnicos()
+        {
+            cbTecnico.DataSource =
+                nReporte.ObtenerTecnicos();
+        }
+        private void CargarEstados()
+        {
+            cbEstado.Items.Clear();
+
+            cbEstado.Items.Add("Todos");
+            cbEstado.Items.Add("Asignado");
+            cbEstado.Items.Add("En Proceso");
+            cbEstado.Items.Add("Resuelto");
+
+            cbEstado.SelectedIndex = 0;
+        }
+
+        private void cbTecnico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarReporteTecnicos();
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarReporteTecnicos();
         }
     }
 }
