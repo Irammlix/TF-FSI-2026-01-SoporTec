@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -92,6 +93,44 @@ namespace CapaPresentacion
         private void cb_FiltroSede_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarReporte2();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+
+            save.Filter = "PDF (*.pdf)|*.pdf";
+            save.Title = "Guardar Reporte PDF";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                string rutaGrafico = Path.Combine(
+                    Application.StartupPath,
+                    "graficoReporte1.png");
+
+                chartReporte2.SaveImage(
+                    rutaGrafico,
+                    ChartImageFormat.Png);
+
+                ExportadorTickets.ExportarPdfReporte2(
+                    save.FileName,
+                    rutaGrafico,
+                    lblFechaGenerado.Text,
+                    cb_FiltroSede.Text,
+                    cb_FiltroEstado.Text,
+                    lblNumerodeTickets.Text,
+                    lblNumBaja.Text + " (" + lblPorcentajeBaja.Text + ")",
+                    lblNumMedia.Text + " (" + lblPorcentajeMedia.Text + ")",
+                    lblNumAlta.Text + " (" + lblPorcentajeAlta.Text + ")"
+
+                );
+
+                MessageBox.Show(
+                    "Reporte exportado correctamente.",
+                    "PDF",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         // REPORTE 1
