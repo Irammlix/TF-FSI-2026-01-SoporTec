@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\MAFER\Documents\SoporTec-FSI-2026-01\TF-FSI-2026-01-SoporTec\CapaDatos\ModelEF.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\MAFER\Documents\SoporTec-FSI\TF-FSI-2026-01-SoporTec\CapaDatos\ModelEF.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

@@ -61,11 +61,11 @@ namespace CapaPresentacion
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFechaGenerado = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.pnl_titulo_reporte = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblFechaGenerado = new System.Windows.Forms.Label();
             this.pnl_Top.SuspendLayout();
             this.pnl_Reporte.SuspendLayout();
             this.pnldatagriew.SuspendLayout();
@@ -84,8 +84,8 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnl_titulo_reporte.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.pnl_titulo_reporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Top
@@ -682,6 +682,49 @@ namespace CapaPresentacion
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.lblFechaGenerado, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1567, 37);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // lblFechaGenerado
+            // 
+            this.lblFechaGenerado.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblFechaGenerado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFechaGenerado.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.lblFechaGenerado.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lblFechaGenerado.Location = new System.Drawing.Point(4, 18);
+            this.lblFechaGenerado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaGenerado.Name = "lblFechaGenerado";
+            this.lblFechaGenerado.Size = new System.Drawing.Size(1559, 19);
+            this.lblFechaGenerado.TabIndex = 8;
+            this.lblFechaGenerado.Text = "Fecha de Generacion de Reporte: ";
+            this.lblFechaGenerado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(1113, 18);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Este reporte muestra la distribucion actual de los tickets Asignados o En Proceso" +
+    ", segun su prioridad, permitiendo verificar cuales tienen prioridad Alta, Media " +
+    "y Baja";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnl_titulo_reporte
             // 
             this.pnl_titulo_reporte.BackColor = System.Drawing.Color.Transparent;
@@ -706,49 +749,6 @@ namespace CapaPresentacion
             this.label1.TabIndex = 5;
             this.label1.Text = "Distribucion de Tickets por Prioridad";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.lblFechaGenerado, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1567, 37);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1113, 18);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Este reporte muestra la distribucion actual de los tickets Asignados o En Proceso" +
-    ", segun su prioridad, permitiendo verificar cuales tienen prioridad Alta, Media " +
-    "y Baja";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFechaGenerado
-            // 
-            this.lblFechaGenerado.BackColor = System.Drawing.Color.SteelBlue;
-            this.lblFechaGenerado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaGenerado.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.lblFechaGenerado.ForeColor = System.Drawing.Color.GhostWhite;
-            this.lblFechaGenerado.Location = new System.Drawing.Point(4, 18);
-            this.lblFechaGenerado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaGenerado.Name = "lblFechaGenerado";
-            this.lblFechaGenerado.Size = new System.Drawing.Size(1559, 19);
-            this.lblFechaGenerado.TabIndex = 8;
-            this.lblFechaGenerado.Text = "Fecha de Generacion de Reporte: ";
-            this.lblFechaGenerado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormReportes2
             // 
@@ -792,10 +792,10 @@ namespace CapaPresentacion
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnl_titulo_reporte.ResumeLayout(false);
-            this.pnl_titulo_reporte.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.pnl_titulo_reporte.ResumeLayout(false);
+            this.pnl_titulo_reporte.PerformLayout();
             this.ResumeLayout(false);
 
         }
