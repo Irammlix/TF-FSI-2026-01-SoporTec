@@ -47,9 +47,9 @@ namespace CapaPresentacion
             this.panel22 = new System.Windows.Forms.Panel();
             this.chartReporte1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnSalirR1 = new System.Windows.Forms.Button();
             this.btnLimpiarFiltrosR1 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnExportarPdf = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFechaGenerado = new System.Windows.Forms.Label();
@@ -181,6 +181,7 @@ namespace CapaPresentacion
             this.dgReporte1.RowTemplate.Height = 24;
             this.dgReporte1.Size = new System.Drawing.Size(764, 330);
             this.dgReporte1.TabIndex = 0;
+            this.dgReporte1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgReporte1_CellFormatting);
             // 
             // tableLayoutPanel46
             // 
@@ -403,6 +404,7 @@ namespace CapaPresentacion
             this.cbSedeReporte1.Name = "cbSedeReporte1";
             this.cbSedeReporte1.Size = new System.Drawing.Size(754, 24);
             this.cbSedeReporte1.TabIndex = 5;
+            this.cbSedeReporte1.SelectedIndexChanged += new System.EventHandler(this.cbSedeReporte1_SelectedIndexChanged);
             // 
             // label79
             // 
@@ -447,9 +449,9 @@ namespace CapaPresentacion
             this.tableLayoutPanel49.BackColor = System.Drawing.Color.Navy;
             this.tableLayoutPanel49.ColumnCount = 1;
             this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel49.Controls.Add(this.button20, 0, 3);
+            this.tableLayoutPanel49.Controls.Add(this.btnSalirR1, 0, 3);
             this.tableLayoutPanel49.Controls.Add(this.btnLimpiarFiltrosR1, 0, 2);
-            this.tableLayoutPanel49.Controls.Add(this.button22, 0, 1);
+            this.tableLayoutPanel49.Controls.Add(this.btnExportarPdf, 0, 1);
             this.tableLayoutPanel49.Controls.Add(this.button23, 0, 0);
             this.tableLayoutPanel49.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel49.Name = "tableLayoutPanel49";
@@ -461,24 +463,25 @@ namespace CapaPresentacion
             this.tableLayoutPanel49.Size = new System.Drawing.Size(114, 756);
             this.tableLayoutPanel49.TabIndex = 1;
             // 
-            // button20
+            // btnSalirR1
             // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ForeColor = System.Drawing.Color.White;
-            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
-            this.button20.Location = new System.Drawing.Point(4, 571);
-            this.button20.Margin = new System.Windows.Forms.Padding(4);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.button20.Size = new System.Drawing.Size(106, 181);
-            this.button20.TabIndex = 6;
-            this.button20.Text = "Salir";
-            this.button20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnSalirR1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalirR1.FlatAppearance.BorderSize = 0;
+            this.btnSalirR1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalirR1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirR1.ForeColor = System.Drawing.Color.White;
+            this.btnSalirR1.Image = ((System.Drawing.Image)(resources.GetObject("btnSalirR1.Image")));
+            this.btnSalirR1.Location = new System.Drawing.Point(4, 571);
+            this.btnSalirR1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalirR1.Name = "btnSalirR1";
+            this.btnSalirR1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnSalirR1.Size = new System.Drawing.Size(106, 181);
+            this.btnSalirR1.TabIndex = 6;
+            this.btnSalirR1.Text = "Salir";
+            this.btnSalirR1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalirR1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalirR1.UseVisualStyleBackColor = true;
+            this.btnSalirR1.Click += new System.EventHandler(this.btnSalirR1_Click);
             // 
             // btnLimpiarFiltrosR1
             // 
@@ -498,25 +501,27 @@ namespace CapaPresentacion
             this.btnLimpiarFiltrosR1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLimpiarFiltrosR1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLimpiarFiltrosR1.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltrosR1.Click += new System.EventHandler(this.btnLimpiarFiltrosR1_Click_1);
             // 
-            // button22
+            // btnExportarPdf
             // 
-            this.button22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.ForeColor = System.Drawing.Color.White;
-            this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
-            this.button22.Location = new System.Drawing.Point(4, 193);
-            this.button22.Margin = new System.Windows.Forms.Padding(4);
-            this.button22.Name = "button22";
-            this.button22.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.button22.Size = new System.Drawing.Size(106, 181);
-            this.button22.TabIndex = 4;
-            this.button22.Text = "Exportar PDF";
-            this.button22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnExportarPdf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExportarPdf.FlatAppearance.BorderSize = 0;
+            this.btnExportarPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportarPdf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPdf.ForeColor = System.Drawing.Color.White;
+            this.btnExportarPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarPdf.Image")));
+            this.btnExportarPdf.Location = new System.Drawing.Point(4, 193);
+            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportarPdf.Name = "btnExportarPdf";
+            this.btnExportarPdf.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnExportarPdf.Size = new System.Drawing.Size(106, 181);
+            this.btnExportarPdf.TabIndex = 4;
+            this.btnExportarPdf.Text = "Exportar PDF";
+            this.btnExportarPdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExportarPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExportarPdf.UseVisualStyleBackColor = true;
+            this.btnExportarPdf.Click += new System.EventHandler(this.btnExportarPdf_Click);
             // 
             // button23
             // 
@@ -536,6 +541,7 @@ namespace CapaPresentacion
             this.button23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // tableLayoutPanel50
             // 
@@ -1011,10 +1017,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartReporte1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel49;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnSalirR1;
         private System.Windows.Forms.Button btnLimpiarFiltrosR1;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button btnExportarPdf;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel50;
         private System.Windows.Forms.Label lblFechaGenerado;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel51;
@@ -1041,5 +1046,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Button button23;
     }
 }

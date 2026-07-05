@@ -8,9 +8,8 @@ namespace CapaNegocio
 {
     public class NReporte
     {
-        private NTicket nTicket = new NTicket();
-
         private DReporte dReporte = new DReporte();
+        private NTicket nTicket = new NTicket();
 
         private static string[] NombresMes =
         {
@@ -56,7 +55,6 @@ namespace CapaNegocio
 
             return query.OrderByDescending(t => t.FCreacion).ToList();
         }
-
 
         public List<int> ListarAniosConTickets()
         {
@@ -119,6 +117,27 @@ namespace CapaNegocio
                 return "El sistema se está acumulando, revisar capacidad";
             else
                 return "El equipo está en equilibrio inestable";
+        }
+
+        //REPORTE 1
+
+        public List<Ticket> ListarTicketReporteEstado(string sede)
+        {
+            if (string.IsNullOrWhiteSpace(sede))
+                sede = "Todos";
+            return dReporte.ListarTicketReporteEstado(sede);
+        }
+
+        //FIN REPORTE 1
+
+        // REPORTE 2
+        public List<Ticket> ListarTicketReportePrioridad(string estado, string sede)
+        {
+            return dReporte.ListarTicketReportePrioridad(estado, sede);
+        }
+        public int CantidadPrioridades(string prioridad, string estado, string sede)
+        {
+            return dReporte.CantidadPrioridades(prioridad, estado, sede);
         }
     }
 }

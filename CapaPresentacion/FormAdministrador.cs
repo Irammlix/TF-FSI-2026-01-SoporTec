@@ -800,5 +800,31 @@ namespace CapaPresentacion
             FormReportes6 fr = new FormReportes6();
             fr.ShowDialog();
         }
+
+        private void btn_DescargarInfo_Click(object sender, EventArgs e)
+        {
+
+
+            int idTicketActual = int.Parse(lb_IdTicketDet.Text);
+            Ticket objTicket = nTicket.ObtenerPorId(idTicketActual);
+            
+
+            if (objTicket == null)
+            {
+                MessageBox.Show("No se encontró el ticket");
+                return;
+            }
+
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.Filter = "Archivo PDF|*.pdf";
+            guardar.Title = "Guardar ficha del ticket";
+            guardar.FileName = "Ficha_Ticket_" + idTicketActual + ".pdf";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                ExportadorTickets.ExportarPdfTicketAdmin(objTicket, guardar.FileName);
+                MessageBox.Show("PDF descargado correctamente");
+            }
+        }
     }
 }

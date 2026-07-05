@@ -1104,11 +1104,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 985);
-            this.Controls.Add(this.pnl_TicketsAsignados);
             this.Controls.Add(this.pnl_DetalleTicket);
+            this.Controls.Add(this.pnl_TicketsAsignados);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "FormTecnico";
