@@ -150,6 +150,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportes2.resx">
       <DependentUpon>FormReportes2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportes3.resx">
       <DependentUpon>FormReportes3.cs</DependentUpon>

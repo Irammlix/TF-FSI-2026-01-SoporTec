@@ -67,5 +67,15 @@ namespace CapaNegocio
         }
 
         //FIN REPORTE 1
+
+        // REPORTE 2
+        public List<Ticket> ListarTicketReportePrioridad(string estado, string sede)
+        {
+            return dReporte.ListarTicketReportePrioridad(estado, sede);
+        }
+        public int CantidadPrioridades(string prioridad, string estado, string sede)
+        {
+            return dReporte.CantidadPrioridades(prioridad, estado, sede);
+        }
     }
 }
