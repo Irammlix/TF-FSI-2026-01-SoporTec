@@ -23,7 +23,8 @@ namespace CapaDatos
 
             public int IdTecnico { get; set; }
             public int IdSolicitante { get; set; }
-           
+            public string TipoSolicitud { get; set; }
+
         }
         public class TecnicosVistaAdmin
         {
@@ -33,8 +34,30 @@ namespace CapaDatos
             public string SedeTecnico { get; set; }
             public string Especialidad { get; set; }
             public string Correo { get; set; }
-           
+
             //
+        }
+        public class ReporteTecnico
+        {
+            public string NombreTecnico { get; set; }
+
+            public int CantidadResueltos { get; set; }
+
+            public int CantidadPendientes { get; set; }
+        }
+        public class DetalleTecnico
+        {
+            public int IdTicket { get; set; }
+
+            public string Titulo { get; set; }
+
+            public string TipoSolicitud { get; set; }
+
+            public string Prioridad { get; set; }
+
+            public string Estado { get; set; }
+
+            public DateTime FechaCreacion { get; set; }
         }
     }
 }

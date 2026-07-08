@@ -230,7 +230,8 @@ namespace CapaDatos
                 .Include(t => t.Pabellon)
                 .Include(t => t.Sede)
                 .Include(t => t.Solicitante)
-                .Include(t => t.Tecnico).ToList()
+                .Include(t => t.Tecnico)
+                .Include(t => t.TipoSolicitud).ToList()
                 .Select(t => new TicketVistaAdmin
                 {
                     IdTicket = t.IdTicket,
@@ -243,8 +244,9 @@ namespace CapaDatos
                     Estado = t.DEstado,
                     NombreTecnicoAsignado = t.Tecnico == null ? "" : t.Tecnico.DNombres,
                     IdSolicitante = t.IdCreadoPor,
-                    IdTecnico = t.IdAtendidoPor.GetValueOrDefault(-1)
-                 
+                    IdTecnico = t.IdAtendidoPor.GetValueOrDefault(-1),
+                    TipoSolicitud = t.TipoSolicitud == null ? "" : t.TipoSolicitud.DNombre
+
                 })
                 .ToList();
                 }

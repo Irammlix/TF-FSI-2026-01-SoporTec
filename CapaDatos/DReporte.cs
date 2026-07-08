@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity;
 using CapaDatos;
+using static CapaDatos.DClasesAuxiliares;
 
 namespace CapaDatos
 {
@@ -220,5 +221,89 @@ namespace CapaDatos
             }
         }
         //FIN REPORTE 1
+
+        // REPORTE 3 - RF-18: Rendimiento por tecnico
+        public List<ReporteTecnico> ObtenerRendimientoPorTecnico(string tecnico, string estado)
+        {
+            using (var context = new dbSistema_TecnicoEntities())
+            {
+                var tickets = context.Ticket
+                    .Include(t => t.Tecnico)
+                    .Where(t => t.IdAtendidoPor != null);
+
+                if (!string.IsNullOrEmpty(tecnico)
+                    && tecnico != "Todos")
+                {
+                    tickets = tickets.Where(
+                        t => t.Tecnico.DNombres == tecnico);
+                }
+
+                if (!string.IsNullOrEmpty(estado)
+                    && estado != "Todos")
+                {
+                    tickets = tickets.Where(
+                        t => t.DEstado == estado);
+                }
+
+                return tickets.ToList()
+                    .GroupBy(t => t.Tecnico.DNombres)
+                    .Select(g => new ReporteTecnico
+                    {
+                        NombreTecnico = g.Key,
+                        CantidadResueltos = g.Count(t => t.DEstado == "Resuelto"),
+                        CantidadPendientes = g.Count(t =>
+                                t.DEstado != "Resuelto")
+                    })
+                    .ToList();
+            }
+        }
+
+        public List<DetalleTecnico> ObtenerDetalleTecnico(string tecnico)
+        {
+            List<DetalleTecnico> lista = new List<DetalleTecnico>();
+            try
+            {
+                using (var context = new dbSistema_TecnicoEntities())
+                {
+                    lista = context.Ticket
+                        .Include(t => t.TipoSolicitud)
+                        .Include(t => t.Tecnico)
+                        .Where(t => t.Tecnico.DNombres == tecnico)
+                        .Select(t => new DetalleTecnico
+                        {
+                            IdTicket = t.IdTicket,
+                            Titulo = t.DTitulo,
+                            TipoSolicitud = t.TipoSolicitud.DNombre,
+                            Prioridad = t.DPrioridad,
+                            Estado = t.DEstado,
+                            FechaCreacion = t.FCreacion
+                        })
+                        .ToList();
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return lista;
+            }
+        }
+        public List<string> ObtenerTecnicos()
+        {
+            using (var context =
+                new dbSistema_TecnicoEntities())
+            {
+                List<string> lista =
+                    context.Tecnico
+                    .Select(t => t.DNombres)
+                    .Distinct()
+                    .ToList();
+
+                lista.Insert(0, "Todos");
+
+                return lista;
+            }
+        }
+        // FIN REPORTE 3
     }
 }
