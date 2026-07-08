@@ -59,6 +59,7 @@ namespace CapaPresentacion
 
             DecorarTarjetasReporte();
 
+            MostrarPanel(pnl_Tickets);
             cb_FiltrarPrioridad.SelectedIndex = 0;
             cb_FiltroEstado.SelectedIndex = 0;
             MostrarTickets();
@@ -568,65 +569,43 @@ namespace CapaPresentacion
 
         private void btn_VerDetalle_Click(object sender, EventArgs e)
         {
-            if(dg_Tickets.Rows.Count == 0)
-            {
+            if (dg_Tickets.Rows.Count == 0)
                 return;
-            }
-            if(dg_Tickets.SelectedRows.Count<1)
+
+            if (dg_Tickets.SelectedRows.Count < 1)
             {
-                
                 MessageBox.Show("Seleccione una fila ticket para ver el detalle");
                 return;
             }
-            
-            lb_IdTicketDet.Text = "" + dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString();
-            int IdSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
-            Ticket ticket = nTicket.ObtenerPorId(IdSeleccionadoTicket);
-            if(ticket.IdAtendidoPor==null)
-            {
-                pnl_DetalleTicket.Visible = true;
-                pnl_DetalleTicket.BringToFront();
-                tb_DetTitulo.Text = ticket.DTitulo;
-                tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
-                tb_DetDescripcion.Text = ticket.DDescripcion;
-                tb_DetSede.Text = ticket.Sede.DNombreSede;
-                tb_DetPabellon.Text = ticket.Pabellon.DNombrePabellon;
-                tb_DetCodigoTec.Text = "Ticket Sin Asignar";
-                tb_DetCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
-                tb_DetFechaActualizacion.Text = ticket.FActualizacion.ToString();
-                tb_FechaCreacion.Text = ticket.FActualizacion.ToString();
-                tb_DetComentario.Text = "Ticket Sin Asignar";
-                tb_DetPrioridad.Text = "Ticket Sin Asignar";
-                tb_DetCodigoSol.Text = ticket.IdCreadoPor.ToString();
-                tb_DetNombreTec.Text = "Ticket Sin Asignar";
-                tb_DetNombreSol.Text = ticket.Solicitante.DNombres;
-                tb_DetEstado.Text = ticket.DEstado;
-                return;
-            }
+
+            int idSeleccionadoTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
+            Ticket ticket = nTicket.ObtenerPorId(idSeleccionadoTicket);
+
+            lb_IdTicketDet.Text = ticket.IdTicket.ToString();
+
             pnl_DetalleTicket.Visible = true;
             pnl_DetalleTicket.BringToFront();
+
             tb_DetTitulo.Text = ticket.DTitulo;
             tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
             tb_DetDescripcion.Text = ticket.DDescripcion;
             tb_DetSede.Text = ticket.Sede.DNombreSede;
             tb_DetPabellon.Text = ticket.Pabellon.DNombrePabellon;
-            tb_DetCodigoTec.Text = ticket.Tecnico.IdTecnico.ToString();
-            tb_DetCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
-            tb_DetFechaActualizacion.Text = ticket.FActualizacion.ToString();
-            tb_DetPrioridad.Text = ticket.DPrioridad;
-            tb_FechaCreacion.Text = ticket.FActualizacion.ToString();
-            tb_DetComentario.Text=ticket.DComentario;
-            tb_DetCodigoSol.Text = ticket.IdCreadoPor.ToString();
-            tb_DetNombreTec.Text = ticket.Tecnico.DNombres;
+            tb_DetCodigoSol.Text = ticket.Solicitante.CSolicitante; // ajusta el nombre de propiedad si es distinto
             tb_DetNombreSol.Text = ticket.Solicitante.DNombres;
+            tb_DetFechaActualizacion.Text = ticket.FActualizacion.ToString();
+            tb_FechaCreacion.Text = ticket.FActualizacion.ToString();
             tb_DetEstado.Text = ticket.DEstado;
 
+            bool sinAsignar = ticket.IdAtendidoPor == null;
 
-
-
+            tb_DetCodigoTec.Text = sinAsignar ? "Ticket Sin Asignar" : ticket.Tecnico.CTecnico;
+            tb_DetNombreTec.Text = sinAsignar ? "Ticket Sin Asignar" : ticket.Tecnico.DNombres;
+            tb_DetPrioridad.Text = sinAsignar ? "Ticket Sin Asignar" : ticket.DPrioridad;
+            tb_DetComentario.Text = sinAsignar ? "Ticket Sin Asignar" : ticket.DComentario;
         }
 
-  
+
 
         private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -3625,8 +3625,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.pnl_DetalleTicket);
-            this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_Tickets);
+            this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_RegistrarTecnico);
             this.Controls.Add(this.pnl_MisTecnicos);
