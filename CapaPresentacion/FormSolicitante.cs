@@ -218,7 +218,7 @@ namespace CapaPresentacion
             }
             int idTicket = int.Parse(dg_Tickets.SelectedRows[0].Cells["IdTicket"].Value.ToString());
             Ticket ticket = nTicket.ObtenerPorId(idTicket);
-
+            lb_NumTicket.Text = "Detalle del Ticket N°" + ticket.IdTicket.ToString();
             //llenamos el panel de detalle con esos datos6
             CargarDetalleTicket(ticket);
 
@@ -229,6 +229,7 @@ namespace CapaPresentacion
         //pnl_detalleTicket
         private void CargarDetalleTicket(Ticket ticket)
         {
+            lb_NumTicket.Text = "Detalle del Ticket N°" + ticket.IdTicket.ToString();
             tb_DetTitulo.Text = ticket.DTitulo;
             tb_DetTipo.Text = ticket.TipoSolicitud.DNombre;
             tb_DetDescripcion.Text = ticket.DDescripcion;
@@ -237,6 +238,7 @@ namespace CapaPresentacion
             tb_FechaActualizacion.Text = ticket.FActualizacion.ToString();
             tb_FechaCreacion.Text = ticket.FCreacion.ToString();
             tb_Comentario.Text = ticket.DComentario;
+            tb_EstadoActual.Text = ticket.DEstado;
 
             if (ticket.Tecnico == null)
             {
@@ -252,7 +254,7 @@ namespace CapaPresentacion
 
             ActualizarVisibilidadBotonCancelar();
         }
-        ////el resto de eventos click va aqui
+        ////el resto de eventos click va aquii
 
         private void btn_RegistrarSolicitud_Click(object sender, EventArgs e)
         {

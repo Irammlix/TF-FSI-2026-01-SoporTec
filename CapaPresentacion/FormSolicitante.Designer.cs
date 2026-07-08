@@ -1297,9 +1297,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 884);
+            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_NuevaSolicitud);
             this.Controls.Add(this.pnl_MisTickets);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
             this.Margin = new System.Windows.Forms.Padding(4);
