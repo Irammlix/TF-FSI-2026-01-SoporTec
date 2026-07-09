@@ -141,16 +141,16 @@ namespace CapaNegocio
         }
 
         // REPORTE 3 - RF-18: Rendimiento por tecnico
-        public List<ReporteTecnico> ObtenerRendimientoPorTecnico(string tecnico, string estado)
+        public List<ReporteTecnico> ObtenerRendimientoPorTecnico(int? tecnico, string estado)
         {
             return dReporte.ObtenerRendimientoPorTecnico(tecnico, estado);
         }
 
-        public List<DetalleTecnico> ObtenerDetalleTecnico(string tecnico)
+        public List<DetalleTecnico> ObtenerDetalleTecnico(int? tecnico)
         {
             return dReporte.ObtenerDetalleTecnico(tecnico);
         }
-        public List<string> ObtenerTecnicos()
+        public List<TecnicoFiltroItem> ObtenerTecnicos()
         {
             return dReporte.ObtenerTecnicos();
         }

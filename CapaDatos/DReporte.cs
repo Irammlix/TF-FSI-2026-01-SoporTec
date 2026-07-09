@@ -223,7 +223,7 @@ namespace CapaDatos
         //FIN REPORTE 1
 
         // REPORTE 3 - RF-18: Rendimiento por tecnico
-        public List<ReporteTecnico> ObtenerRendimientoPorTecnico(string tecnico, string estado)
+        public List<ReporteTecnico> ObtenerRendimientoPorTecnico(int? idTecnico, string estado)
         {
             using (var context = new dbSistema_TecnicoEntities())
             {
@@ -231,44 +231,48 @@ namespace CapaDatos
                     .Include(t => t.Tecnico)
                     .Where(t => t.IdAtendidoPor != null);
 
-                if (!string.IsNullOrEmpty(tecnico)
-                    && tecnico != "Todos")
+                if (idTecnico.HasValue)
                 {
-                    tickets = tickets.Where(
-                        t => t.Tecnico.DNombres == tecnico);
+                    tickets = tickets.Where(t => t.IdAtendidoPor == idTecnico.Value);
                 }
 
-                if (!string.IsNullOrEmpty(estado)
-                    && estado != "Todos")
+                if (!string.IsNullOrEmpty(estado) && estado != "Todos")
                 {
-                    tickets = tickets.Where(
-                        t => t.DEstado == estado);
+                    tickets = tickets.Where(t => t.DEstado == estado);
                 }
 
                 return tickets.ToList()
-                    .GroupBy(t => t.Tecnico.DNombres)
+                    .GroupBy(t => t.Tecnico.IdTecnico)
                     .Select(g => new ReporteTecnico
                     {
-                        NombreTecnico = g.Key,
+                        IdTecnico = g.Key,
+                        CodigoTecnico = g.First().Tecnico.CTecnico,
+                        NombreTecnico = g.First().Tecnico.DNombres,
                         CantidadResueltos = g.Count(t => t.DEstado == "Resuelto"),
-                        CantidadPendientes = g.Count(t =>
-                                t.DEstado != "Resuelto")
+                        CantidadPendientes = g.Count(t => t.DEstado != "Resuelto")
                     })
                     .ToList();
             }
         }
 
-        public List<DetalleTecnico> ObtenerDetalleTecnico(string tecnico)
+        public List<DetalleTecnico> ObtenerDetalleTecnico(int? idTecnico)
         {
             List<DetalleTecnico> lista = new List<DetalleTecnico>();
             try
             {
                 using (var context = new dbSistema_TecnicoEntities())
                 {
-                    lista = context.Ticket
+                    var query = context.Ticket
                         .Include(t => t.TipoSolicitud)
                         .Include(t => t.Tecnico)
-                        .Where(t => t.Tecnico.DNombres == tecnico)
+                        .Where(t => t.IdAtendidoPor != null);
+
+                    if (idTecnico.HasValue)
+                    {
+                        query = query.Where(t => t.IdAtendidoPor == idTecnico.Value);
+                    }
+
+                    lista = query
                         .Select(t => new DetalleTecnico
                         {
                             IdTicket = t.IdTicket,
@@ -288,22 +292,24 @@ namespace CapaDatos
                 return lista;
             }
         }
-        public List<string> ObtenerTecnicos()
+
+        public List<TecnicoFiltroItem> ObtenerTecnicos()
         {
-            using (var context =
-                new dbSistema_TecnicoEntities())
+            using (var context = new dbSistema_TecnicoEntities())
             {
-                List<string> lista =
-                    context.Tecnico
-                    .Select(t => t.DNombres)
-                    .Distinct()
+                List<TecnicoFiltroItem> lista = context.Tecnico
+                    .Select(t => new TecnicoFiltroItem
+                    {
+                        IdTecnico = t.IdTecnico,
+                        Codigo = t.CTecnico
+                    })
                     .ToList();
 
-                lista.Insert(0, "Todos");
-
+                lista.Insert(0, new TecnicoFiltroItem { IdTecnico = null, Codigo = "Todos" });
                 return lista;
             }
         }
+        // FIN REPORTE 3
         // FIN REPORTE 3
     }
 }

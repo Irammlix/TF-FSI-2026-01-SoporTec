@@ -169,7 +169,7 @@ namespace CapaPresentacion
             this.contenido.Location = new System.Drawing.Point(109, 0);
             this.contenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contenido.Name = "contenido";
-            this.contenido.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.contenido.Padding = new System.Windows.Forms.Padding(12);
             this.contenido.Size = new System.Drawing.Size(1574, 756);
             this.contenido.TabIndex = 1;
             // 
@@ -320,7 +320,7 @@ namespace CapaPresentacion
             this.pnlLeyenda.Margin = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.pnlLeyenda.Name = "pnlLeyenda";
             this.pnlLeyenda.Padding = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.pnlLeyenda.Size = new System.Drawing.Size(527, 104);
+            this.pnlLeyenda.Size = new System.Drawing.Size(527, 110);
             this.pnlLeyenda.TabIndex = 2;
             // 
             // itemLeyenda2
@@ -569,9 +569,9 @@ namespace CapaPresentacion
             this.kpiCard1.Controls.Add(this.lblKpiCard1Titulo);
             this.kpiCard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kpiCard1.Location = new System.Drawing.Point(4, 8);
-            this.kpiCard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard1.Margin = new System.Windows.Forms.Padding(4);
             this.kpiCard1.Name = "kpiCard1";
-            this.kpiCard1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard1.Padding = new System.Windows.Forms.Padding(4);
             this.kpiCard1.Size = new System.Drawing.Size(379, 79);
             this.kpiCard1.TabIndex = 0;
             // 
@@ -607,9 +607,9 @@ namespace CapaPresentacion
             this.kpiCard2.Controls.Add(this.lblKpiCard2Titulo);
             this.kpiCard2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kpiCard2.Location = new System.Drawing.Point(391, 8);
-            this.kpiCard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard2.Margin = new System.Windows.Forms.Padding(4);
             this.kpiCard2.Name = "kpiCard2";
-            this.kpiCard2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard2.Padding = new System.Windows.Forms.Padding(4);
             this.kpiCard2.Size = new System.Drawing.Size(379, 79);
             this.kpiCard2.TabIndex = 1;
             // 
@@ -645,9 +645,9 @@ namespace CapaPresentacion
             this.kpiCard3.Controls.Add(this.lblKpiCard3Titulo);
             this.kpiCard3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kpiCard3.Location = new System.Drawing.Point(778, 8);
-            this.kpiCard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard3.Margin = new System.Windows.Forms.Padding(4);
             this.kpiCard3.Name = "kpiCard3";
-            this.kpiCard3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard3.Padding = new System.Windows.Forms.Padding(4);
             this.kpiCard3.Size = new System.Drawing.Size(379, 79);
             this.kpiCard3.TabIndex = 2;
             // 
@@ -683,9 +683,9 @@ namespace CapaPresentacion
             this.kpiCard4.Controls.Add(this.lblKpiCard4Titulo);
             this.kpiCard4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kpiCard4.Location = new System.Drawing.Point(1165, 8);
-            this.kpiCard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard4.Margin = new System.Windows.Forms.Padding(4);
             this.kpiCard4.Name = "kpiCard4";
-            this.kpiCard4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpiCard4.Padding = new System.Windows.Forms.Padding(4);
             this.kpiCard4.Size = new System.Drawing.Size(381, 79);
             this.kpiCard4.TabIndex = 3;
             // 
@@ -815,7 +815,7 @@ namespace CapaPresentacion
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(4, 571);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnSalir.Size = new System.Drawing.Size(101, 181);
@@ -838,7 +838,7 @@ namespace CapaPresentacion
             this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarFiltros.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarFiltros.Image")));
             this.btnLimpiarFiltros.Location = new System.Drawing.Point(4, 382);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(101, 181);
@@ -861,7 +861,7 @@ namespace CapaPresentacion
             this.btnExportarPdf.ForeColor = System.Drawing.Color.White;
             this.btnExportarPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarPdf.Image")));
             this.btnExportarPdf.Location = new System.Drawing.Point(4, 193);
-            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportarPdf.Name = "btnExportarPdf";
             this.btnExportarPdf.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnExportarPdf.Size = new System.Drawing.Size(101, 181);
@@ -884,7 +884,7 @@ namespace CapaPresentacion
             this.btnRefrescar.ForeColor = System.Drawing.Color.White;
             this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
             this.btnRefrescar.Location = new System.Drawing.Point(4, 4);
-            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnRefrescar.Size = new System.Drawing.Size(101, 181);
@@ -905,7 +905,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pnl_Bottom);
             this.Controls.Add(this.pnl_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormReportes4";

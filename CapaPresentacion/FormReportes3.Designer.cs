@@ -28,8 +28,6 @@ namespace CapaPresentacion
             this.pnl_Reporte = new System.Windows.Forms.Panel();
             this.pnldatagriew = new System.Windows.Forms.Panel();
             this.dgDetalleTecnicos = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
             this.filtros = new System.Windows.Forms.TableLayoutPanel();
             this.filtros_especificos = new System.Windows.Forms.TableLayoutPanel();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -45,32 +43,43 @@ namespace CapaPresentacion
             this.btnExportarPdf = new System.Windows.Forms.Button();
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.titulo_indicadores = new System.Windows.Forms.TableLayoutPanel();
-            this.indicadores = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblTotalTickets = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalResueltos = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalPendientes = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblCuelloBotella = new System.Windows.Forms.Label();
             this.titulo_metricas = new System.Windows.Forms.Label();
             this.pnl_titulo_reporte = new System.Windows.Forms.Panel();
             this.lblFechaGeneracion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
+            this.label80 = new System.Windows.Forms.Label();
+            this.lblCuelloBotella = new System.Windows.Forms.Label();
+            this.lblNumAlta = new System.Windows.Forms.Label();
+            this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTotalPendientes = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.lblNumMedia = new System.Windows.Forms.Label();
+            this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
+            this.label84 = new System.Windows.Forms.Label();
+            this.lblTicketa = new System.Windows.Forms.Label();
+            this.lblTotalResueltos = new System.Windows.Forms.Label();
+            this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
+            this.label86 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.lblTotalTickets = new System.Windows.Forms.Label();
             this.pnl_Top.SuspendLayout();
             this.pnl_Reporte.SuspendLayout();
             this.pnldatagriew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleTecnicos)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
             this.filtros.SuspendLayout();
             this.filtros_especificos.SuspendLayout();
             this.grafica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTecnicos)).BeginInit();
             this.sdr_botones.SuspendLayout();
             this.titulo_indicadores.SuspendLayout();
-            this.indicadores.SuspendLayout();
             this.pnl_titulo_reporte.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel52.SuspendLayout();
+            this.tableLayoutPanel53.SuspendLayout();
+            this.tableLayoutPanel54.SuspendLayout();
+            this.tableLayoutPanel55.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Top
@@ -122,7 +131,6 @@ namespace CapaPresentacion
             // 
             this.pnl_Reporte.BackColor = System.Drawing.Color.White;
             this.pnl_Reporte.Controls.Add(this.pnldatagriew);
-            this.pnl_Reporte.Controls.Add(this.tableLayoutPanel5);
             this.pnl_Reporte.Controls.Add(this.filtros);
             this.pnl_Reporte.Controls.Add(this.grafica);
             this.pnl_Reporte.Controls.Add(this.sdr_botones);
@@ -138,10 +146,10 @@ namespace CapaPresentacion
             // pnldatagriew
             // 
             this.pnldatagriew.Controls.Add(this.dgDetalleTecnicos);
-            this.pnldatagriew.Location = new System.Drawing.Point(903, 411);
+            this.pnldatagriew.Location = new System.Drawing.Point(903, 304);
             this.pnldatagriew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnldatagriew.Name = "pnldatagriew";
-            this.pnldatagriew.Size = new System.Drawing.Size(764, 330);
+            this.pnldatagriew.Size = new System.Drawing.Size(764, 437);
             this.pnldatagriew.TabIndex = 8;
             // 
             // dgDetalleTecnicos
@@ -157,38 +165,12 @@ namespace CapaPresentacion
             this.dgDetalleTecnicos.ReadOnly = true;
             this.dgDetalleTecnicos.RowHeadersWidth = 51;
             this.dgDetalleTecnicos.RowTemplate.Height = 24;
-            this.dgDetalleTecnicos.Size = new System.Drawing.Size(764, 330);
+            this.dgDetalleTecnicos.Size = new System.Drawing.Size(764, 437);
             this.dgDetalleTecnicos.TabIndex = 0;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(904, 334);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(765, 60);
-            this.tableLayoutPanel5.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(87, 60);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Leyenda:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // filtros
             // 
+            this.filtros.BackColor = System.Drawing.Color.OldLace;
             this.filtros.ColumnCount = 1;
             this.filtros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.filtros.Controls.Add(this.filtros_especificos, 0, 1);
@@ -226,6 +208,7 @@ namespace CapaPresentacion
             // cbEstado
             // 
             this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstado.BackColor = System.Drawing.Color.Wheat;
             this.cbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Location = new System.Drawing.Point(382, 44);
@@ -240,11 +223,11 @@ namespace CapaPresentacion
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label12.Location = new System.Drawing.Point(382, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 42);
+            this.label12.Size = new System.Drawing.Size(50, 42);
             this.label12.TabIndex = 3;
             this.label12.Text = "Estado";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,11 +237,11 @@ namespace CapaPresentacion
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 42);
+            this.label11.Size = new System.Drawing.Size(57, 42);
             this.label11.TabIndex = 2;
             this.label11.Text = "Técnico";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,6 +249,7 @@ namespace CapaPresentacion
             // cbTecnico
             // 
             this.cbTecnico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTecnico.BackColor = System.Drawing.Color.Wheat;
             this.cbTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTecnico.FormattingEnabled = true;
             this.cbTecnico.Location = new System.Drawing.Point(3, 44);
@@ -280,10 +264,10 @@ namespace CapaPresentacion
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 29);
+            this.label10.Size = new System.Drawing.Size(60, 29);
             this.label10.TabIndex = 1;
             this.label10.Text = "Filtros:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -294,7 +278,7 @@ namespace CapaPresentacion
             this.grafica.Location = new System.Drawing.Point(125, 197);
             this.grafica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grafica.Name = "grafica";
-            this.grafica.Size = new System.Drawing.Size(765, 544);
+            this.grafica.Size = new System.Drawing.Size(750, 544);
             this.grafica.TabIndex = 5;
             // 
             // chartTecnicos
@@ -303,14 +287,14 @@ namespace CapaPresentacion
             this.chartTecnicos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartTecnicos.Legends.Add(legend1);
-            this.chartTecnicos.Location = new System.Drawing.Point(-4, 2);
+            this.chartTecnicos.Location = new System.Drawing.Point(0, 2);
             this.chartTecnicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartTecnicos.Name = "chartTecnicos";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartTecnicos.Series.Add(series1);
-            this.chartTecnicos.Size = new System.Drawing.Size(765, 538);
+            this.chartTecnicos.Size = new System.Drawing.Size(746, 538);
             this.chartTecnicos.TabIndex = 0;
             this.chartTecnicos.Text = "chart1";
             this.chartTecnicos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartTecnicos_MouseClick_1);
@@ -344,7 +328,7 @@ namespace CapaPresentacion
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(4, 571);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnSalir.Size = new System.Drawing.Size(107, 181);
@@ -364,7 +348,7 @@ namespace CapaPresentacion
             this.btnLimpiarFiltros.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarFiltros.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarFiltros.Image")));
             this.btnLimpiarFiltros.Location = new System.Drawing.Point(4, 382);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(107, 181);
@@ -384,7 +368,7 @@ namespace CapaPresentacion
             this.btnExportarPdf.ForeColor = System.Drawing.Color.White;
             this.btnExportarPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarPdf.Image")));
             this.btnExportarPdf.Location = new System.Drawing.Point(4, 193);
-            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportarPdf.Name = "btnExportarPdf";
             this.btnExportarPdf.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnExportarPdf.Size = new System.Drawing.Size(107, 181);
@@ -404,7 +388,7 @@ namespace CapaPresentacion
             this.btnRefrescar.ForeColor = System.Drawing.Color.White;
             this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
             this.btnRefrescar.Location = new System.Drawing.Point(4, 4);
-            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnRefrescar.Size = new System.Drawing.Size(107, 181);
@@ -418,155 +402,33 @@ namespace CapaPresentacion
             // titulo_indicadores
             // 
             this.titulo_indicadores.ColumnCount = 1;
-            this.titulo_indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.titulo_indicadores.Controls.Add(this.indicadores, 0, 1);
+            this.titulo_indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.titulo_indicadores.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.titulo_indicadores.Controls.Add(this.titulo_metricas, 0, 0);
             this.titulo_indicadores.Location = new System.Drawing.Point(112, 52);
             this.titulo_indicadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.titulo_indicadores.Name = "titulo_indicadores";
             this.titulo_indicadores.RowCount = 2;
-            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40741F));
-            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.59259F));
+            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.titulo_indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.titulo_indicadores.Size = new System.Drawing.Size(1573, 133);
             this.titulo_indicadores.TabIndex = 4;
-            // 
-            // indicadores
-            // 
-            this.indicadores.ColumnCount = 4;
-            this.indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.indicadores.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.indicadores.Controls.Add(this.label2, 0, 0);
-            this.indicadores.Controls.Add(this.lblTotalTickets, 0, 1);
-            this.indicadores.Controls.Add(this.label4, 1, 0);
-            this.indicadores.Controls.Add(this.lblTotalResueltos, 1, 1);
-            this.indicadores.Controls.Add(this.label6, 2, 0);
-            this.indicadores.Controls.Add(this.lblTotalPendientes, 2, 1);
-            this.indicadores.Controls.Add(this.label8, 3, 0);
-            this.indicadores.Controls.Add(this.lblCuelloBotella, 3, 1);
-            this.indicadores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.indicadores.Location = new System.Drawing.Point(3, 45);
-            this.indicadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.indicadores.Name = "indicadores";
-            this.indicadores.RowCount = 2;
-            this.indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.indicadores.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.indicadores.Size = new System.Drawing.Size(1567, 86);
-            this.indicadores.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(385, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total de tickets";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // lblTotalTickets
-            // 
-            this.lblTotalTickets.AutoSize = true;
-            this.lblTotalTickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTickets.Location = new System.Drawing.Point(3, 34);
-            this.lblTotalTickets.Name = "lblTotalTickets";
-            this.lblTotalTickets.Size = new System.Drawing.Size(385, 52);
-            this.lblTotalTickets.TabIndex = 1;
-            this.lblTotalTickets.Text = "label3";
-            this.lblTotalTickets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(394, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(385, 34);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Total de tickets resueltos";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // lblTotalResueltos
-            // 
-            this.lblTotalResueltos.AutoSize = true;
-            this.lblTotalResueltos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalResueltos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalResueltos.ForeColor = System.Drawing.Color.Navy;
-            this.lblTotalResueltos.Location = new System.Drawing.Point(394, 34);
-            this.lblTotalResueltos.Name = "lblTotalResueltos";
-            this.lblTotalResueltos.Size = new System.Drawing.Size(385, 52);
-            this.lblTotalResueltos.TabIndex = 3;
-            this.lblTotalResueltos.Text = "label5";
-            this.lblTotalResueltos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(785, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(385, 34);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Total tickets pendientes";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // lblTotalPendientes
-            // 
-            this.lblTotalPendientes.AutoSize = true;
-            this.lblTotalPendientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPendientes.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblTotalPendientes.Location = new System.Drawing.Point(785, 34);
-            this.lblTotalPendientes.Name = "lblTotalPendientes";
-            this.lblTotalPendientes.Size = new System.Drawing.Size(385, 52);
-            this.lblTotalPendientes.TabIndex = 5;
-            this.lblTotalPendientes.Text = "label7";
-            this.lblTotalPendientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1176, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(388, 34);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Cuello de botella";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // lblCuelloBotella
-            // 
-            this.lblCuelloBotella.AutoSize = true;
-            this.lblCuelloBotella.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCuelloBotella.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuelloBotella.Location = new System.Drawing.Point(1176, 34);
-            this.lblCuelloBotella.Name = "lblCuelloBotella";
-            this.lblCuelloBotella.Size = new System.Drawing.Size(388, 52);
-            this.lblCuelloBotella.TabIndex = 7;
-            this.lblCuelloBotella.Text = "label9";
-            this.lblCuelloBotella.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // titulo_metricas
             // 
             this.titulo_metricas.AutoSize = true;
+            this.titulo_metricas.BackColor = System.Drawing.Color.LightCyan;
             this.titulo_metricas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titulo_metricas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo_metricas.ForeColor = System.Drawing.Color.Black;
+            this.titulo_metricas.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo_metricas.ForeColor = System.Drawing.Color.Navy;
             this.titulo_metricas.Location = new System.Drawing.Point(4, 0);
             this.titulo_metricas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titulo_metricas.Name = "titulo_metricas";
-            this.titulo_metricas.Size = new System.Drawing.Size(1565, 43);
+            this.titulo_metricas.Size = new System.Drawing.Size(1565, 26);
             this.titulo_metricas.TabIndex = 6;
-            this.titulo_metricas.Text = "Visualiza el rendimiento de los técnicos mediante la comparación de tickets resue" +
-    "ltos y pendientes, facilitando la identificación de sobrecarga operativa y posib" +
-    "les cuellos de botella.";
+            this.titulo_metricas.Text = "   Visualiza el rendimiento de los técnicos mediante la comparación de tickets re" +
+    "sueltos y pendientes, facilitando la identificación de sobrecarga operativa y po" +
+    "sibles cuellos de botella.";
             this.titulo_metricas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_titulo_reporte
@@ -584,7 +446,7 @@ namespace CapaPresentacion
             // lblFechaGeneracion
             // 
             this.lblFechaGeneracion.AutoSize = true;
-            this.lblFechaGeneracion.Location = new System.Drawing.Point(1324, 21);
+            this.lblFechaGeneracion.Location = new System.Drawing.Point(1310, 21);
             this.lblFechaGeneracion.Name = "lblFechaGeneracion";
             this.lblFechaGeneracion.Size = new System.Drawing.Size(44, 16);
             this.lblFechaGeneracion.TabIndex = 6;
@@ -606,6 +468,274 @@ namespace CapaPresentacion
             this.label1.Text = "Rendimiento de Técnicos: Tickets asignados vs Resueltos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel52, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel53, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel54, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel55, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1567, 103);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // tableLayoutPanel52
+            // 
+            this.tableLayoutPanel52.BackColor = System.Drawing.Color.MistyRose;
+            this.tableLayoutPanel52.ColumnCount = 1;
+            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel52.Controls.Add(this.label80, 0, 0);
+            this.tableLayoutPanel52.Controls.Add(this.lblCuelloBotella, 0, 1);
+            this.tableLayoutPanel52.Controls.Add(this.lblNumAlta, 0, 2);
+            this.tableLayoutPanel52.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel52.Location = new System.Drawing.Point(1176, 3);
+            this.tableLayoutPanel52.Name = "tableLayoutPanel52";
+            this.tableLayoutPanel52.RowCount = 3;
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel52.Size = new System.Drawing.Size(388, 97);
+            this.tableLayoutPanel52.TabIndex = 12;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.BackColor = System.Drawing.Color.MistyRose;
+            this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label80.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(36)))), ((int)(((byte)(43)))));
+            this.label80.Location = new System.Drawing.Point(3, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(382, 21);
+            this.label80.TabIndex = 0;
+            this.label80.Text = "Cuello de Botella";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCuelloBotella
+            // 
+            this.lblCuelloBotella.AutoSize = true;
+            this.lblCuelloBotella.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(36)))), ((int)(((byte)(43)))));
+            this.lblCuelloBotella.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCuelloBotella.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCuelloBotella.ForeColor = System.Drawing.Color.White;
+            this.lblCuelloBotella.Location = new System.Drawing.Point(3, 21);
+            this.lblCuelloBotella.Name = "lblCuelloBotella";
+            this.lblCuelloBotella.Size = new System.Drawing.Size(382, 53);
+            this.lblCuelloBotella.TabIndex = 4;
+            this.lblCuelloBotella.Text = "30%";
+            this.lblCuelloBotella.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumAlta
+            // 
+            this.lblNumAlta.AutoSize = true;
+            this.lblNumAlta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNumAlta.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNumAlta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(36)))), ((int)(((byte)(43)))));
+            this.lblNumAlta.Location = new System.Drawing.Point(3, 74);
+            this.lblNumAlta.Name = "lblNumAlta";
+            this.lblNumAlta.Size = new System.Drawing.Size(382, 23);
+            this.lblNumAlta.TabIndex = 1;
+            this.lblNumAlta.Text = "Tecnicos";
+            this.lblNumAlta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel53
+            // 
+            this.tableLayoutPanel53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(235)))));
+            this.tableLayoutPanel53.ColumnCount = 1;
+            this.tableLayoutPanel53.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel53.Controls.Add(this.lblTotalPendientes, 0, 1);
+            this.tableLayoutPanel53.Controls.Add(this.label82, 0, 0);
+            this.tableLayoutPanel53.Controls.Add(this.lblNumMedia, 0, 2);
+            this.tableLayoutPanel53.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel53.Location = new System.Drawing.Point(785, 3);
+            this.tableLayoutPanel53.Name = "tableLayoutPanel53";
+            this.tableLayoutPanel53.RowCount = 3;
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel53.Size = new System.Drawing.Size(385, 97);
+            this.tableLayoutPanel53.TabIndex = 11;
+            // 
+            // lblTotalPendientes
+            // 
+            this.lblTotalPendientes.AutoSize = true;
+            this.lblTotalPendientes.BackColor = System.Drawing.Color.Gold;
+            this.lblTotalPendientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPendientes.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPendientes.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPendientes.Location = new System.Drawing.Point(3, 21);
+            this.lblTotalPendientes.Name = "lblTotalPendientes";
+            this.lblTotalPendientes.Size = new System.Drawing.Size(379, 53);
+            this.lblTotalPendientes.TabIndex = 3;
+            this.lblTotalPendientes.Text = "30%";
+            this.lblTotalPendientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label82.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label82.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label82.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label82.Location = new System.Drawing.Point(3, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(379, 21);
+            this.label82.TabIndex = 0;
+            this.label82.Text = "Estado Pendiente General";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNumMedia
+            // 
+            this.lblNumMedia.AutoSize = true;
+            this.lblNumMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblNumMedia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNumMedia.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNumMedia.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblNumMedia.Location = new System.Drawing.Point(3, 74);
+            this.lblNumMedia.Name = "lblNumMedia";
+            this.lblNumMedia.Size = new System.Drawing.Size(379, 23);
+            this.lblNumMedia.TabIndex = 1;
+            this.lblNumMedia.Text = "Tickets";
+            this.lblNumMedia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel54
+            // 
+            this.tableLayoutPanel54.BackColor = System.Drawing.Color.GreenYellow;
+            this.tableLayoutPanel54.ColumnCount = 1;
+            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel54.Controls.Add(this.label84, 0, 0);
+            this.tableLayoutPanel54.Controls.Add(this.lblTicketa, 0, 2);
+            this.tableLayoutPanel54.Controls.Add(this.lblTotalResueltos, 0, 1);
+            this.tableLayoutPanel54.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel54.Location = new System.Drawing.Point(394, 3);
+            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
+            this.tableLayoutPanel54.Padding = new System.Windows.Forms.Padding(1);
+            this.tableLayoutPanel54.RowCount = 3;
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.63158F));
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.10526F));
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.26316F));
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel54.Size = new System.Drawing.Size(385, 97);
+            this.tableLayoutPanel54.TabIndex = 10;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.BackColor = System.Drawing.Color.Transparent;
+            this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label84.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label84.ForeColor = System.Drawing.Color.Green;
+            this.label84.Location = new System.Drawing.Point(4, 1);
+            this.label84.Name = "label84";
+            this.label84.Padding = new System.Windows.Forms.Padding(1);
+            this.label84.Size = new System.Drawing.Size(377, 26);
+            this.label84.TabIndex = 0;
+            this.label84.Text = "Estado Resuelto";
+            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTicketa
+            // 
+            this.lblTicketa.AutoSize = true;
+            this.lblTicketa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTicketa.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.lblTicketa.ForeColor = System.Drawing.Color.Green;
+            this.lblTicketa.Location = new System.Drawing.Point(4, 66);
+            this.lblTicketa.Name = "lblTicketa";
+            this.lblTicketa.Padding = new System.Windows.Forms.Padding(1);
+            this.lblTicketa.Size = new System.Drawing.Size(377, 30);
+            this.lblTicketa.TabIndex = 1;
+            this.lblTicketa.Text = "Tickets";
+            this.lblTicketa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalResueltos
+            // 
+            this.lblTotalResueltos.AutoSize = true;
+            this.lblTotalResueltos.BackColor = System.Drawing.Color.Green;
+            this.lblTotalResueltos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalResueltos.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalResueltos.ForeColor = System.Drawing.Color.White;
+            this.lblTotalResueltos.Location = new System.Drawing.Point(4, 27);
+            this.lblTotalResueltos.Name = "lblTotalResueltos";
+            this.lblTotalResueltos.Size = new System.Drawing.Size(377, 39);
+            this.lblTotalResueltos.TabIndex = 2;
+            this.lblTotalResueltos.Text = "30%";
+            this.lblTotalResueltos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel55
+            // 
+            this.tableLayoutPanel55.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.tableLayoutPanel55.ColumnCount = 1;
+            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel55.Controls.Add(this.label86, 0, 0);
+            this.tableLayoutPanel55.Controls.Add(this.button21, 0, 1);
+            this.tableLayoutPanel55.Controls.Add(this.lblTotalTickets, 0, 2);
+            this.tableLayoutPanel55.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel55.Name = "tableLayoutPanel55";
+            this.tableLayoutPanel55.RowCount = 3;
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.81632F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.36735F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.81632F));
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel55.Size = new System.Drawing.Size(385, 97);
+            this.tableLayoutPanel55.TabIndex = 9;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label86.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label86.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label86.Location = new System.Drawing.Point(3, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(379, 39);
+            this.label86.TabIndex = 0;
+            this.label86.Text = "N° de Tickets";
+            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.Goldenrod;
+            this.button21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.ForeColor = System.Drawing.Color.White;
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button21.Location = new System.Drawing.Point(4, 46);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
+            this.button21.Name = "button21";
+            this.button21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.button21.Size = new System.Drawing.Size(377, 6);
+            this.button21.TabIndex = 4;
+            this.button21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // lblTotalTickets
+            // 
+            this.lblTotalTickets.AutoSize = true;
+            this.lblTotalTickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalTickets.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalTickets.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblTotalTickets.Location = new System.Drawing.Point(3, 56);
+            this.lblTotalTickets.Name = "lblTotalTickets";
+            this.lblTotalTickets.Size = new System.Drawing.Size(379, 41);
+            this.lblTotalTickets.TabIndex = 1;
+            this.lblTotalTickets.Text = "10";
+            this.lblTotalTickets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormReportes3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,7 +746,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pnl_Bottom);
             this.Controls.Add(this.pnl_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormReportes3";
@@ -627,8 +757,6 @@ namespace CapaPresentacion
             this.pnl_Reporte.ResumeLayout(false);
             this.pnldatagriew.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleTecnicos)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.filtros.ResumeLayout(false);
             this.filtros.PerformLayout();
             this.filtros_especificos.ResumeLayout(false);
@@ -638,10 +766,17 @@ namespace CapaPresentacion
             this.sdr_botones.ResumeLayout(false);
             this.titulo_indicadores.ResumeLayout(false);
             this.titulo_indicadores.PerformLayout();
-            this.indicadores.ResumeLayout(false);
-            this.indicadores.PerformLayout();
             this.pnl_titulo_reporte.ResumeLayout(false);
             this.pnl_titulo_reporte.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel52.ResumeLayout(false);
+            this.tableLayoutPanel52.PerformLayout();
+            this.tableLayoutPanel53.ResumeLayout(false);
+            this.tableLayoutPanel53.PerformLayout();
+            this.tableLayoutPanel54.ResumeLayout(false);
+            this.tableLayoutPanel54.PerformLayout();
+            this.tableLayoutPanel55.ResumeLayout(false);
+            this.tableLayoutPanel55.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -661,7 +796,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel pnl_titulo_reporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel titulo_indicadores;
-        private System.Windows.Forms.TableLayoutPanel indicadores;
         private System.Windows.Forms.Label titulo_metricas;
         private System.Windows.Forms.Panel grafica;
         private System.Windows.Forms.TableLayoutPanel filtros;
@@ -669,21 +803,28 @@ namespace CapaPresentacion
         private System.Windows.Forms.TableLayoutPanel filtros_especificos;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbTecnico;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel pnldatagriew;
         private System.Windows.Forms.DataGridView dgDetalleTecnicos;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTecnicos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblTotalTickets;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTotalResueltos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTotalPendientes;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblCuelloBotella;
         private System.Windows.Forms.Label lblFechaGeneracion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label lblCuelloBotella;
+        private System.Windows.Forms.Label lblNumAlta;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel53;
+        private System.Windows.Forms.Label lblTotalPendientes;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label lblNumMedia;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label lblTicketa;
+        private System.Windows.Forms.Label lblTotalResueltos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Label lblTotalTickets;
     }
 }

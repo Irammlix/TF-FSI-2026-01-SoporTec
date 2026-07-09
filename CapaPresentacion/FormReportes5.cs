@@ -85,7 +85,7 @@ namespace CapaPresentacion
                 int idx = serie.Points.AddY(c.Cantidad);
                 double porcentaje = total > 0 ? c.Cantidad * 100.0 / total : 0;
                 serie.Points[idx].AxisLabel = c.TipoSolicitud;
-                serie.Points[idx].Label = c.TipoSolicitud + ": " + c.Cantidad + " (" + porcentaje.ToString("0.#") + "%)";
+                serie.Points[idx].Label = porcentaje.ToString("0.#") + "%";
                 serie.Points[idx].Color = ObtenerColorTipo(c.TipoSolicitud);
             }
 

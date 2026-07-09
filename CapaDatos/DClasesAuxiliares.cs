@@ -39,10 +39,10 @@ namespace CapaDatos
         }
         public class ReporteTecnico
         {
+            public int IdTecnico { get; set; }
+            public string CodigoTecnico { get; set; }
             public string NombreTecnico { get; set; }
-
             public int CantidadResueltos { get; set; }
-
             public int CantidadPendientes { get; set; }
         }
         public class DetalleTecnico
@@ -58,6 +58,12 @@ namespace CapaDatos
             public string Estado { get; set; }
 
             public DateTime FechaCreacion { get; set; }
+        }
+
+        public class TecnicoFiltroItem
+        {
+            public int? IdTecnico { get; set; }
+            public string Codigo { get; set; }
         }
     }
 }
