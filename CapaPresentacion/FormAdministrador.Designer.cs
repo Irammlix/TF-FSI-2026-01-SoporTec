@@ -320,7 +320,7 @@
             this.Sidebar.Location = new System.Drawing.Point(0, 0);
             this.Sidebar.Margin = new System.Windows.Forms.Padding(4);
             this.Sidebar.Name = "Sidebar";
-            this.Sidebar.Size = new System.Drawing.Size(263, 1055);
+            this.Sidebar.Size = new System.Drawing.Size(329, 1055);
             this.Sidebar.TabIndex = 0;
             // 
             // btn_CerrarSesion
@@ -355,9 +355,9 @@
             this.btn_MisTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_MisTecnicos.Name = "btn_MisTecnicos";
             this.btn_MisTecnicos.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btn_MisTecnicos.Size = new System.Drawing.Size(332, 86);
+            this.btn_MisTecnicos.Size = new System.Drawing.Size(317, 77);
             this.btn_MisTecnicos.TabIndex = 3;
-            this.btn_MisTecnicos.Text = "     Mis Tecnicos";
+            this.btn_MisTecnicos.Text = "    Mis Tecnicos";
             this.btn_MisTecnicos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_MisTecnicos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_MisTecnicos.UseVisualStyleBackColor = true;
@@ -543,10 +543,10 @@
             this.Header.Controls.Add(this.lb_Codigo);
             this.Header.Controls.Add(this.pictureBox2);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Header.Location = new System.Drawing.Point(263, 0);
+            this.Header.Location = new System.Drawing.Point(329, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1661, 86);
+            this.Header.Size = new System.Drawing.Size(1668, 108);
             this.Header.TabIndex = 1;
             // 
             // SoporTec
@@ -567,7 +567,7 @@
             this.lb_Codigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Codigo.AutoSize = true;
             this.lb_Codigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lb_Codigo.Location = new System.Drawing.Point(1504, 31);
+            this.lb_Codigo.Location = new System.Drawing.Point(1741, 31);
             this.lb_Codigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Codigo.Name = "lb_Codigo";
             this.lb_Codigo.Size = new System.Drawing.Size(133, 28);
@@ -579,7 +579,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1440, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1677, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 86);
@@ -594,10 +594,10 @@
             this.pnl_Tickets.Controls.Add(this.panel6);
             this.pnl_Tickets.Controls.Add(this.panel7);
             this.pnl_Tickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Tickets.Location = new System.Drawing.Point(263, 86);
+            this.pnl_Tickets.Location = new System.Drawing.Point(329, 108);
             this.pnl_Tickets.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Tickets.Name = "pnl_Tickets";
-            this.pnl_Tickets.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_Tickets.Size = new System.Drawing.Size(1668, 947);
             this.pnl_Tickets.TabIndex = 3;
             // 
             // label9
@@ -638,7 +638,7 @@
             this.panel7.Location = new System.Drawing.Point(32, 57);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1597, 873);
+            this.panel7.Size = new System.Drawing.Size(1834, 1035);
             this.panel7.TabIndex = 5;
             // 
             // btn_TicketsDescargarListado
@@ -652,10 +652,10 @@
             this.btn_TicketsDescargarListado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TicketsDescargarListado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TicketsDescargarListado.ForeColor = System.Drawing.Color.Navy;
-            this.btn_TicketsDescargarListado.Location = new System.Drawing.Point(36, 810);
+            this.btn_TicketsDescargarListado.Location = new System.Drawing.Point(36, 972);
             this.btn_TicketsDescargarListado.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TicketsDescargarListado.Name = "btn_TicketsDescargarListado";
-            this.btn_TicketsDescargarListado.Size = new System.Drawing.Size(1517, 44);
+            this.btn_TicketsDescargarListado.Size = new System.Drawing.Size(1681, 44);
             this.btn_TicketsDescargarListado.TabIndex = 35;
             this.btn_TicketsDescargarListado.Text = "DESCARGAR LISTADO (EXCEL)";
             this.btn_TicketsDescargarListado.UseVisualStyleBackColor = false;
@@ -670,10 +670,10 @@
             this.btn_AsignarTick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AsignarTick.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AsignarTick.ForeColor = System.Drawing.Color.White;
-            this.btn_AsignarTick.Location = new System.Drawing.Point(1173, 18);
+            this.btn_AsignarTick.Location = new System.Drawing.Point(1205, 13);
             this.btn_AsignarTick.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AsignarTick.Name = "btn_AsignarTick";
-            this.btn_AsignarTick.Size = new System.Drawing.Size(383, 44);
+            this.btn_AsignarTick.Size = new System.Drawing.Size(335, 44);
             this.btn_AsignarTick.TabIndex = 33;
             this.btn_AsignarTick.Text = "ASIGNAR TICKET";
             this.btn_AsignarTick.UseVisualStyleBackColor = false;
@@ -689,10 +689,10 @@
             this.btn_VerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerDetalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_VerDetalle.ForeColor = System.Drawing.Color.White;
-            this.btn_VerDetalle.Location = new System.Drawing.Point(36, 761);
+            this.btn_VerDetalle.Location = new System.Drawing.Point(36, 923);
             this.btn_VerDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.btn_VerDetalle.Name = "btn_VerDetalle";
-            this.btn_VerDetalle.Size = new System.Drawing.Size(1517, 44);
+            this.btn_VerDetalle.Size = new System.Drawing.Size(1681, 44);
             this.btn_VerDetalle.TabIndex = 31;
             this.btn_VerDetalle.Text = "VER DETALLE";
             this.btn_VerDetalle.UseVisualStyleBackColor = false;
@@ -705,11 +705,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Navy;
             this.panel8.Controls.Add(this.dg_Tickets);
-            this.panel8.Location = new System.Drawing.Point(33, 69);
+            this.panel8.Location = new System.Drawing.Point(35, 77);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Size = new System.Drawing.Size(1523, 682);
+            this.panel8.Size = new System.Drawing.Size(1505, 800);
             this.panel8.TabIndex = 30;
             // 
             // dg_Tickets
@@ -732,7 +732,7 @@
             this.dg_Tickets.RowHeadersVisible = false;
             this.dg_Tickets.RowHeadersWidth = 51;
             this.dg_Tickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_Tickets.Size = new System.Drawing.Size(1517, 678);
+            this.dg_Tickets.Size = new System.Drawing.Size(1499, 796);
             this.dg_Tickets.TabIndex = 0;
             this.dg_Tickets.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dg_Tickets_CellFormatting);
             // 
@@ -772,7 +772,7 @@
             this.pnl_Card.Location = new System.Drawing.Point(32, 57);
             this.pnl_Card.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Card.Name = "pnl_Card";
-            this.pnl_Card.Size = new System.Drawing.Size(1597, 873);
+            this.pnl_Card.Size = new System.Drawing.Size(1834, 1035);
             this.pnl_Card.TabIndex = 5;
             // 
             // btn_CancelarEdicion
@@ -789,7 +789,7 @@
             this.btn_CancelarEdicion.Location = new System.Drawing.Point(27, 759);
             this.btn_CancelarEdicion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CancelarEdicion.Name = "btn_CancelarEdicion";
-            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1517, 44);
+            this.btn_CancelarEdicion.Size = new System.Drawing.Size(1681, 44);
             this.btn_CancelarEdicion.TabIndex = 47;
             this.btn_CancelarEdicion.Text = "CANCELAR EDICIÓN";
             this.btn_CancelarEdicion.UseVisualStyleBackColor = false;
@@ -804,7 +804,7 @@
             this.tb_ApellidosTecnico.Location = new System.Drawing.Point(35, 198);
             this.tb_ApellidosTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.tb_ApellidosTecnico.Name = "tb_ApellidosTecnico";
-            this.tb_ApellidosTecnico.Size = new System.Drawing.Size(964, 22);
+            this.tb_ApellidosTecnico.Size = new System.Drawing.Size(1128, 22);
             this.tb_ApellidosTecnico.TabIndex = 46;
             // 
             // panel18
@@ -819,7 +819,7 @@
             this.panel18.Location = new System.Drawing.Point(35, 225);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(964, 2);
+            this.panel18.Size = new System.Drawing.Size(1128, 2);
             this.panel18.TabIndex = 45;
             // 
             // textBox4
@@ -831,7 +831,7 @@
             this.textBox4.Location = new System.Drawing.Point(0, 5);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(964, 22);
+            this.textBox4.Size = new System.Drawing.Size(1055, 22);
             this.textBox4.TabIndex = 28;
             // 
             // panel21
@@ -843,7 +843,7 @@
             this.panel21.Location = new System.Drawing.Point(0, 32);
             this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(964, 2);
+            this.panel21.Size = new System.Drawing.Size(1055, 2);
             this.panel21.TabIndex = 27;
             // 
             // label20
@@ -889,7 +889,7 @@
             this.btn_ModificarTecnico.Location = new System.Drawing.Point(27, 704);
             this.btn_ModificarTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ModificarTecnico.Name = "btn_ModificarTecnico";
-            this.btn_ModificarTecnico.Size = new System.Drawing.Size(1517, 44);
+            this.btn_ModificarTecnico.Size = new System.Drawing.Size(1681, 44);
             this.btn_ModificarTecnico.TabIndex = 43;
             this.btn_ModificarTecnico.Text = "MODIFICAR TECNICO";
             this.btn_ModificarTecnico.UseVisualStyleBackColor = false;
@@ -901,7 +901,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label2.Location = new System.Drawing.Point(1006, 45);
+            this.label2.Location = new System.Drawing.Point(1170, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 28);
@@ -914,7 +914,7 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Navy;
             this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Location = new System.Drawing.Point(1008, 81);
+            this.panel5.Location = new System.Drawing.Point(1172, 81);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -952,7 +952,7 @@
             this.tb_Contraseña.Location = new System.Drawing.Point(35, 441);
             this.tb_Contraseña.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Contraseña.Name = "tb_Contraseña";
-            this.tb_Contraseña.Size = new System.Drawing.Size(964, 22);
+            this.tb_Contraseña.Size = new System.Drawing.Size(1128, 22);
             this.tb_Contraseña.TabIndex = 40;
             // 
             // panel11
@@ -964,7 +964,7 @@
             this.panel11.Location = new System.Drawing.Point(35, 464);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(964, 2);
+            this.panel11.Size = new System.Drawing.Size(1128, 2);
             this.panel11.TabIndex = 39;
             // 
             // label10
@@ -991,7 +991,7 @@
             this.tb_Correo.Location = new System.Drawing.Point(32, 359);
             this.tb_Correo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Correo.Name = "tb_Correo";
-            this.tb_Correo.Size = new System.Drawing.Size(964, 22);
+            this.tb_Correo.Size = new System.Drawing.Size(1128, 22);
             this.tb_Correo.TabIndex = 37;
             // 
             // panel9
@@ -1003,7 +1003,7 @@
             this.panel9.Location = new System.Drawing.Point(32, 383);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(964, 2);
+            this.panel9.Size = new System.Drawing.Size(1128, 2);
             this.panel9.TabIndex = 36;
             // 
             // label6
@@ -1030,7 +1030,7 @@
             this.tb_CodigoTecnico.Location = new System.Drawing.Point(32, 279);
             this.tb_CodigoTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.tb_CodigoTecnico.Name = "tb_CodigoTecnico";
-            this.tb_CodigoTecnico.Size = new System.Drawing.Size(964, 22);
+            this.tb_CodigoTecnico.Size = new System.Drawing.Size(1128, 22);
             this.tb_CodigoTecnico.TabIndex = 34;
             // 
             // panel2
@@ -1042,7 +1042,7 @@
             this.panel2.Location = new System.Drawing.Point(32, 304);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(964, 2);
+            this.panel2.Size = new System.Drawing.Size(1128, 2);
             this.panel2.TabIndex = 33;
             // 
             // label5
@@ -1073,7 +1073,7 @@
             this.btn_RegistrarSolicitud.Location = new System.Drawing.Point(27, 653);
             this.btn_RegistrarSolicitud.Margin = new System.Windows.Forms.Padding(4);
             this.btn_RegistrarSolicitud.Name = "btn_RegistrarSolicitud";
-            this.btn_RegistrarSolicitud.Size = new System.Drawing.Size(1517, 44);
+            this.btn_RegistrarSolicitud.Size = new System.Drawing.Size(1681, 44);
             this.btn_RegistrarSolicitud.TabIndex = 31;
             this.btn_RegistrarSolicitud.Text = "REGISTRAR TECNICO";
             this.btn_RegistrarSolicitud.UseVisualStyleBackColor = false;
@@ -1090,7 +1090,7 @@
             this.cb_Especialidad.Location = new System.Drawing.Point(33, 586);
             this.cb_Especialidad.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Especialidad.Name = "cb_Especialidad";
-            this.cb_Especialidad.Size = new System.Drawing.Size(967, 29);
+            this.cb_Especialidad.Size = new System.Drawing.Size(1131, 29);
             this.cb_Especialidad.TabIndex = 28;
             // 
             // panel4
@@ -1102,7 +1102,7 @@
             this.panel4.Location = new System.Drawing.Point(33, 619);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(964, 2);
+            this.panel4.Size = new System.Drawing.Size(1128, 2);
             this.panel4.TabIndex = 27;
             // 
             // cb_Sede
@@ -1116,7 +1116,7 @@
             this.cb_Sede.Location = new System.Drawing.Point(33, 508);
             this.cb_Sede.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Sede.Name = "cb_Sede";
-            this.cb_Sede.Size = new System.Drawing.Size(967, 29);
+            this.cb_Sede.Size = new System.Drawing.Size(1131, 29);
             this.cb_Sede.TabIndex = 26;
             // 
             // panel3
@@ -1128,7 +1128,7 @@
             this.panel3.Location = new System.Drawing.Point(33, 540);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(964, 2);
+            this.panel3.Size = new System.Drawing.Size(1128, 2);
             this.panel3.TabIndex = 25;
             // 
             // tb_NombreTec
@@ -1140,7 +1140,7 @@
             this.tb_NombreTec.Location = new System.Drawing.Point(33, 123);
             this.tb_NombreTec.Margin = new System.Windows.Forms.Padding(4);
             this.tb_NombreTec.Name = "tb_NombreTec";
-            this.tb_NombreTec.Size = new System.Drawing.Size(964, 22);
+            this.tb_NombreTec.Size = new System.Drawing.Size(1128, 22);
             this.tb_NombreTec.TabIndex = 25;
             // 
             // panel1
@@ -1155,7 +1155,7 @@
             this.panel1.Location = new System.Drawing.Point(33, 150);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 2);
+            this.panel1.Size = new System.Drawing.Size(1128, 2);
             this.panel1.TabIndex = 21;
             // 
             // textBox2
@@ -1167,7 +1167,7 @@
             this.textBox2.Location = new System.Drawing.Point(0, 5);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(964, 22);
+            this.textBox2.Size = new System.Drawing.Size(1055, 22);
             this.textBox2.TabIndex = 28;
             // 
             // panel16
@@ -1179,7 +1179,7 @@
             this.panel16.Location = new System.Drawing.Point(0, 32);
             this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(964, 2);
+            this.panel16.Size = new System.Drawing.Size(1055, 2);
             this.panel16.TabIndex = 27;
             // 
             // label18
@@ -1262,10 +1262,10 @@
             this.pnl_RegistrarTecnico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.pnl_RegistrarTecnico.Controls.Add(this.pnl_Card);
             this.pnl_RegistrarTecnico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_RegistrarTecnico.Location = new System.Drawing.Point(263, 86);
+            this.pnl_RegistrarTecnico.Location = new System.Drawing.Point(329, 108);
             this.pnl_RegistrarTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_RegistrarTecnico.Name = "pnl_RegistrarTecnico";
-            this.pnl_RegistrarTecnico.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_RegistrarTecnico.Size = new System.Drawing.Size(1668, 947);
             this.pnl_RegistrarTecnico.TabIndex = 2;
             // 
             // pnl_DetalleTicket
@@ -1275,10 +1275,10 @@
             this.pnl_DetalleTicket.Controls.Add(this.label23);
             this.pnl_DetalleTicket.Controls.Add(this.panel20);
             this.pnl_DetalleTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_DetalleTicket.Location = new System.Drawing.Point(263, 86);
+            this.pnl_DetalleTicket.Location = new System.Drawing.Point(329, 108);
             this.pnl_DetalleTicket.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_DetalleTicket.Name = "pnl_DetalleTicket";
-            this.pnl_DetalleTicket.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_DetalleTicket.Size = new System.Drawing.Size(1668, 947);
             this.pnl_DetalleTicket.TabIndex = 5;
             // 
             // panelcard
@@ -2053,10 +2053,10 @@
             this.pnl_MisTecnicos.Controls.Add(this.panel19);
             this.pnl_MisTecnicos.Controls.Add(this.btn_AsignarTicket);
             this.pnl_MisTecnicos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_MisTecnicos.Location = new System.Drawing.Point(263, 86);
+            this.pnl_MisTecnicos.Location = new System.Drawing.Point(329, 108);
             this.pnl_MisTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_MisTecnicos.Name = "pnl_MisTecnicos";
-            this.pnl_MisTecnicos.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_MisTecnicos.Size = new System.Drawing.Size(1668, 947);
             this.pnl_MisTecnicos.TabIndex = 8;
             // 
             // label19
@@ -2095,7 +2095,7 @@
             this.btn_AsignarTicket.Location = new System.Drawing.Point(32, 57);
             this.btn_AsignarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AsignarTicket.Name = "btn_AsignarTicket";
-            this.btn_AsignarTicket.Size = new System.Drawing.Size(1597, 873);
+            this.btn_AsignarTicket.Size = new System.Drawing.Size(1834, 1035);
             this.btn_AsignarTicket.TabIndex = 5;
             // 
             // panel17
@@ -2169,10 +2169,10 @@
             this.btn_VerDetall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerDetall.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_VerDetall.ForeColor = System.Drawing.Color.White;
-            this.btn_VerDetall.Location = new System.Drawing.Point(36, 799);
+            this.btn_VerDetall.Location = new System.Drawing.Point(36, 961);
             this.btn_VerDetall.Margin = new System.Windows.Forms.Padding(4);
             this.btn_VerDetall.Name = "btn_VerDetall";
-            this.btn_VerDetall.Size = new System.Drawing.Size(1517, 44);
+            this.btn_VerDetall.Size = new System.Drawing.Size(1681, 44);
             this.btn_VerDetall.TabIndex = 31;
             this.btn_VerDetall.Text = "VER DETALLE";
             this.btn_VerDetall.UseVisualStyleBackColor = false;
@@ -2189,7 +2189,7 @@
             this.panel23.Margin = new System.Windows.Forms.Padding(4);
             this.panel23.Name = "panel23";
             this.panel23.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel23.Size = new System.Drawing.Size(1523, 722);
+            this.panel23.Size = new System.Drawing.Size(1687, 884);
             this.panel23.TabIndex = 30;
             // 
             // dg_MisTecnicos
@@ -2210,7 +2210,7 @@
             this.dg_MisTecnicos.RowHeadersVisible = false;
             this.dg_MisTecnicos.RowHeadersWidth = 51;
             this.dg_MisTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_MisTecnicos.Size = new System.Drawing.Size(1517, 718);
+            this.dg_MisTecnicos.Size = new System.Drawing.Size(1681, 880);
             this.dg_MisTecnicos.TabIndex = 0;
             this.dg_MisTecnicos.SelectionChanged += new System.EventHandler(this.dg_MisTecnicos_SelectionChanged);
             // 
@@ -2221,10 +2221,10 @@
             this.pnl_AsignarTicket.Controls.Add(this.label45);
             this.pnl_AsignarTicket.Controls.Add(this.panel45);
             this.pnl_AsignarTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_AsignarTicket.Location = new System.Drawing.Point(263, 86);
+            this.pnl_AsignarTicket.Location = new System.Drawing.Point(329, 108);
             this.pnl_AsignarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_AsignarTicket.Name = "pnl_AsignarTicket";
-            this.pnl_AsignarTicket.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_AsignarTicket.Size = new System.Drawing.Size(1668, 947);
             this.pnl_AsignarTicket.TabIndex = 7;
             // 
             // panel29
@@ -2961,10 +2961,10 @@
             this.pbl_TicketsDeTecnico.Controls.Add(this.label58);
             this.pbl_TicketsDeTecnico.Controls.Add(this.panel60);
             this.pbl_TicketsDeTecnico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbl_TicketsDeTecnico.Location = new System.Drawing.Point(263, 86);
+            this.pbl_TicketsDeTecnico.Location = new System.Drawing.Point(329, 108);
             this.pbl_TicketsDeTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.pbl_TicketsDeTecnico.Name = "pbl_TicketsDeTecnico";
-            this.pbl_TicketsDeTecnico.Size = new System.Drawing.Size(1661, 969);
+            this.pbl_TicketsDeTecnico.Size = new System.Drawing.Size(1668, 947);
             this.pbl_TicketsDeTecnico.TabIndex = 8;
             // 
             // panel39
@@ -2979,7 +2979,7 @@
             this.panel39.Location = new System.Drawing.Point(32, 62);
             this.panel39.Margin = new System.Windows.Forms.Padding(4);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(1624, 879);
+            this.panel39.Size = new System.Drawing.Size(1861, 1041);
             this.panel39.TabIndex = 6;
             // 
             // tableLayoutPanel3
@@ -2997,7 +2997,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1563, 692);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1727, 854);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -3021,7 +3021,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label54, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.panel59, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(785, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(867, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
@@ -3050,7 +3050,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(774, 684);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(856, 846);
             this.tableLayoutPanel2.TabIndex = 55;
             // 
             // panel50
@@ -3061,7 +3061,7 @@
             this.panel50.Location = new System.Drawing.Point(16, 328);
             this.panel50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(742, 2);
+            this.panel50.Size = new System.Drawing.Size(824, 2);
             this.panel50.TabIndex = 73;
             // 
             // tb_DetTicketTecFechaCrea
@@ -3075,7 +3075,7 @@
             this.tb_DetTicketTecFechaCrea.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecFechaCrea.Name = "tb_DetTicketTecFechaCrea";
             this.tb_DetTicketTecFechaCrea.ReadOnly = true;
-            this.tb_DetTicketTecFechaCrea.Size = new System.Drawing.Size(740, 25);
+            this.tb_DetTicketTecFechaCrea.Size = new System.Drawing.Size(822, 25);
             this.tb_DetTicketTecFechaCrea.TabIndex = 71;
             this.tb_DetTicketTecFechaCrea.TabStop = false;
             // 
@@ -3088,7 +3088,7 @@
             this.label47.Location = new System.Drawing.Point(17, 268);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(740, 25);
+            this.label47.Size = new System.Drawing.Size(822, 25);
             this.label47.TabIndex = 70;
             this.label47.Text = "Fecha de Creacion";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3101,7 +3101,7 @@
             this.panel53.Location = new System.Drawing.Point(16, 264);
             this.panel53.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(742, 2);
+            this.panel53.Size = new System.Drawing.Size(824, 2);
             this.panel53.TabIndex = 55;
             // 
             // panel54
@@ -3112,7 +3112,7 @@
             this.panel54.Location = new System.Drawing.Point(16, 200);
             this.panel54.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel54.Name = "panel54";
-            this.panel54.Size = new System.Drawing.Size(742, 2);
+            this.panel54.Size = new System.Drawing.Size(824, 2);
             this.panel54.TabIndex = 54;
             // 
             // label49
@@ -3124,7 +3124,7 @@
             this.label49.Location = new System.Drawing.Point(17, 12);
             this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(740, 25);
+            this.label49.Size = new System.Drawing.Size(822, 25);
             this.label49.TabIndex = 7;
             this.label49.Text = "Nombre de Tecnico";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3140,7 +3140,7 @@
             this.tb_DetTicketTecEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecEspecialidad.Name = "tb_DetTicketTecEspecialidad";
             this.tb_DetTicketTecEspecialidad.ReadOnly = true;
-            this.tb_DetTicketTecEspecialidad.Size = new System.Drawing.Size(740, 25);
+            this.tb_DetTicketTecEspecialidad.Size = new System.Drawing.Size(822, 25);
             this.tb_DetTicketTecEspecialidad.TabIndex = 51;
             this.tb_DetTicketTecEspecialidad.TabStop = false;
             // 
@@ -3155,7 +3155,7 @@
             this.tb_DetTicketTecNombre.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecNombre.Name = "tb_DetTicketTecNombre";
             this.tb_DetTicketTecNombre.ReadOnly = true;
-            this.tb_DetTicketTecNombre.Size = new System.Drawing.Size(740, 25);
+            this.tb_DetTicketTecNombre.Size = new System.Drawing.Size(822, 25);
             this.tb_DetTicketTecNombre.TabIndex = 25;
             this.tb_DetTicketTecNombre.TabStop = false;
             // 
@@ -3170,7 +3170,7 @@
             this.tb_DetTicketTecSede.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecSede.Name = "tb_DetTicketTecSede";
             this.tb_DetTicketTecSede.ReadOnly = true;
-            this.tb_DetTicketTecSede.Size = new System.Drawing.Size(740, 25);
+            this.tb_DetTicketTecSede.Size = new System.Drawing.Size(822, 25);
             this.tb_DetTicketTecSede.TabIndex = 49;
             this.tb_DetTicketTecSede.TabStop = false;
             // 
@@ -3183,7 +3183,7 @@
             this.label51.Location = new System.Drawing.Point(17, 204);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(740, 25);
+            this.label51.Size = new System.Drawing.Size(822, 25);
             this.label51.TabIndex = 11;
             this.label51.Text = "Especialidad";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3196,7 +3196,7 @@
             this.panel56.Location = new System.Drawing.Point(16, 72);
             this.panel56.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(742, 2);
+            this.panel56.Size = new System.Drawing.Size(824, 2);
             this.panel56.TabIndex = 21;
             // 
             // tb_DetTicketTecCodigo
@@ -3210,7 +3210,7 @@
             this.tb_DetTicketTecCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DetTicketTecCodigo.Name = "tb_DetTicketTecCodigo";
             this.tb_DetTicketTecCodigo.ReadOnly = true;
-            this.tb_DetTicketTecCodigo.Size = new System.Drawing.Size(740, 25);
+            this.tb_DetTicketTecCodigo.Size = new System.Drawing.Size(822, 25);
             this.tb_DetTicketTecCodigo.TabIndex = 47;
             this.tb_DetTicketTecCodigo.TabStop = false;
             // 
@@ -3236,7 +3236,7 @@
             this.label54.Location = new System.Drawing.Point(17, 76);
             this.label54.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(740, 25);
+            this.label54.Size = new System.Drawing.Size(822, 25);
             this.label54.TabIndex = 8;
             this.label54.Text = "Codigo de Tecnico";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3249,7 +3249,7 @@
             this.panel59.Location = new System.Drawing.Point(16, 136);
             this.panel59.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(742, 2);
+            this.panel59.Size = new System.Drawing.Size(824, 2);
             this.panel59.TabIndex = 23;
             // 
             // panel47
@@ -3261,7 +3261,7 @@
             this.panel47.Margin = new System.Windows.Forms.Padding(4);
             this.panel47.Name = "panel47";
             this.panel47.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel47.Size = new System.Drawing.Size(773, 684);
+            this.panel47.Size = new System.Drawing.Size(855, 846);
             this.panel47.TabIndex = 57;
             // 
             // dg_TicketsDeTecnico
@@ -3284,7 +3284,7 @@
             this.dg_TicketsDeTecnico.RowHeadersVisible = false;
             this.dg_TicketsDeTecnico.RowHeadersWidth = 51;
             this.dg_TicketsDeTecnico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_TicketsDeTecnico.Size = new System.Drawing.Size(767, 679);
+            this.dg_TicketsDeTecnico.Size = new System.Drawing.Size(813, 841);
             this.dg_TicketsDeTecnico.TabIndex = 0;
             // 
             // btn_CerrarDetalleTicketTec
@@ -3297,10 +3297,10 @@
             this.btn_CerrarDetalleTicketTec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CerrarDetalleTicketTec.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CerrarDetalleTicketTec.ForeColor = System.Drawing.Color.White;
-            this.btn_CerrarDetalleTicketTec.Location = new System.Drawing.Point(48, 804);
+            this.btn_CerrarDetalleTicketTec.Location = new System.Drawing.Point(48, 966);
             this.btn_CerrarDetalleTicketTec.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CerrarDetalleTicketTec.Name = "btn_CerrarDetalleTicketTec";
-            this.btn_CerrarDetalleTicketTec.Size = new System.Drawing.Size(1544, 44);
+            this.btn_CerrarDetalleTicketTec.Size = new System.Drawing.Size(1708, 44);
             this.btn_CerrarDetalleTicketTec.TabIndex = 46;
             this.btn_CerrarDetalleTicketTec.Text = "CERRAR DETALLE";
             this.btn_CerrarDetalleTicketTec.UseVisualStyleBackColor = false;
@@ -3352,10 +3352,10 @@
             this.pnl_Reportes.Controls.Add(this.label56);
             this.pnl_Reportes.Controls.Add(this.panel61);
             this.pnl_Reportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Reportes.Location = new System.Drawing.Point(263, 86);
+            this.pnl_Reportes.Location = new System.Drawing.Point(329, 108);
             this.pnl_Reportes.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Reportes.Name = "pnl_Reportes";
-            this.pnl_Reportes.Size = new System.Drawing.Size(1661, 969);
+            this.pnl_Reportes.Size = new System.Drawing.Size(1668, 947);
             this.pnl_Reportes.TabIndex = 9;
             // 
             // panel48
@@ -3624,12 +3624,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.pnl_DetalleTicket);
             this.Controls.Add(this.pnl_Tickets);
+            this.Controls.Add(this.pnl_DetalleTicket);
+            this.Controls.Add(this.pnl_MisTecnicos);
             this.Controls.Add(this.pnl_Reportes);
             this.Controls.Add(this.pnl_AsignarTicket);
             this.Controls.Add(this.pnl_RegistrarTecnico);
-            this.Controls.Add(this.pnl_MisTecnicos);
             this.Controls.Add(this.pbl_TicketsDeTecnico);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);

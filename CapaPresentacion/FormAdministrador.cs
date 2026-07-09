@@ -737,10 +737,31 @@ namespace CapaPresentacion
 
         private void dg_Tickets_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dg_Tickets.Columns[e.ColumnIndex].Name == "IdTecnico" && e.Value?.ToString() == "-1")
+            string columna = dg_Tickets.Columns[e.ColumnIndex].Name;
+            string valor = e.Value?.ToString();
+
+            bool esVacioONulo = string.IsNullOrWhiteSpace(valor) || valor == "-1";
+
+            if (!esVacioONulo)
+                return;
+
+            switch (columna)
             {
-                e.Value = "";
-                e.FormattingApplied = true;
+                case "IdTecnico":
+                case "NombreTecnicoAsignado":
+                    e.Value = "Sin asignar";
+                    e.FormattingApplied = true;
+                    break;
+
+                case "Prioridad":
+                    e.Value = "Sin prioridad";
+                    e.FormattingApplied = true;
+                    break;
+
+                case "IdSolicitante":
+                    e.Value = "Sin asignar";
+                    e.FormattingApplied = true;
+                    break;
             }
         }
 
