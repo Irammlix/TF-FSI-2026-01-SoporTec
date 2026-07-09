@@ -266,7 +266,7 @@ namespace CapaPresentacion
                 })
                 .ToList();
 
-            btn_VerDetall.Enabled = false;
+            btnVerDetalleMisTecnicos.Enabled = false;
         }
 
         private void tb_BuscarNombre_TextChanged_1(object sender, EventArgs e)
@@ -280,10 +280,10 @@ namespace CapaPresentacion
 
         private void dg_MisTecnicos_SelectionChanged(object sender, EventArgs e)
         {
-            btn_VerDetall.Enabled = dg_MisTecnicos.SelectedRows.Count > 0;
+            btnVerDetalleMisTecnicos.Enabled = dg_MisTecnicos.SelectedRows.Count > 0;
         }
 
-        private void btn_VerDetall_Click(object sender, EventArgs e)
+        private void btnVerDetalleMisTecnicos_Click(object sender, EventArgs e)
         {
             if (dg_MisTecnicos.SelectedRows.Count == 0)
                 return;
@@ -298,7 +298,6 @@ namespace CapaPresentacion
             pbl_TicketsDeTecnico.Visible = true;
             CargarDetalleTecnico(tecnico);
             CargarTicketsDeTecnico(tecnico.IdTecnico);
-           
         }
         //=========== para panel tickets de tecnicos
         private void CargarDetalleTecnico(Tecnico tecnico)
@@ -605,8 +604,6 @@ namespace CapaPresentacion
             tb_DetComentario.Text = sinAsignar ? "Ticket Sin Asignar" : ticket.DComentario;
         }
 
-
-
         private void cb_FiltroEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -648,8 +645,8 @@ namespace CapaPresentacion
             tb_AsigDescripcion.Text = ticket.DDescripcion;
             tb_AsigSede.Text=ticket.Sede.DNombreSede;
             tb_AsigPabellon.Text = ticket.Pabellon.DNombrePabellon;
-            tb_AsigCodigoTec.Text = ticket.IdAtendidoPor.ToString();
-            tb_AsigCodigoSol.Text = ticket.Solicitante.IdSolicitante.ToString();
+            tb_AsigCodigoTec.Text = ""; // aún no hay técnico seleccionado en este punto
+            tb_AsigCodigoSol.Text = ticket.Solicitante.CSolicitante;
             tb_AsigNombreSol.Text = ticket.Solicitante.DNombres;
 
             dg_AsignarListaTecnicos.DataSource = nTecnico.AsigListarTecnicos();
@@ -669,7 +666,7 @@ namespace CapaPresentacion
                 int idTecnico = int.Parse(dg_AsignarListaTecnicos.SelectedRows[0].Cells["IdTecnico"].Value.ToString());
                 Tecnico tecnico=nTecnico.ObtenerPorId(idTecnico);
                 tb_AsigNombreTec.Text = tecnico.DNombres;
-                tb_AsigCodigoTec.Text = tecnico.IdTecnico.ToString();
+                tb_AsigCodigoTec.Text = tecnico.CTecnico;
             }
         }
 
@@ -826,5 +823,6 @@ namespace CapaPresentacion
                 MessageBox.Show("PDF descargado correctamente");
             }
         }
+
     }
 }
