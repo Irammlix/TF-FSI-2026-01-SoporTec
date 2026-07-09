@@ -14,25 +14,8 @@ namespace CapaPresentacion
 {
     public partial class FormReportes2 : Form
     {
-        // ======== Paleta (tomada del diseño del formulario) ========
         private static readonly Color ColorNavy = Color.Navy;
-        private static readonly Color ColorFondo = Color.FromArgb(242, 245, 250);
-        private static readonly Color ColorBorde = Color.FromArgb(204, 211, 220);
-        private static readonly Color ColorTituloReporte = Color.FromArgb(74, 127, 199);
-        private static readonly Color ColorBarra = Color.FromArgb(100, 140, 190);
-        private static readonly Color ColorResaltado = Color.FromArgb(192, 57, 43);
-
-        // ======== RF-19: dependencias y controles construidos en runtime ========
         private readonly NReporte nReporte = new NReporte();
-        private readonly NSede nSede = new NSede();
-
-        private ComboBox cboSede, cboEstado, cboOrden;
-        private Chart chartPabellones;
-        private DataGridView dgvDetalle;
-        private Label lblSubtitulo, lblGenerado, lblDetalleTitulo;
-        private Label kpiTotal, kpiPabTop, kpiPabTopCant, kpiPabActivos;
-        private List<NReporte.ConteoPabellon> datosActuales = new List<NReporte.ConteoPabellon>();
-
         public FormReportes2()
         {
             InitializeComponent();
@@ -133,10 +116,6 @@ namespace CapaPresentacion
             }
         }
 
-        // REPORTE 1
-
-        //private void dg_Reporte2_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
-
         private double CalcularPorcentaje(int cantidad, int total)
         {
             if (total == 0)
@@ -185,6 +164,10 @@ namespace CapaPresentacion
             chartReporte2.ChartAreas.Clear();
             chartReporte2.Legends.Clear();
 
+            chartReporte2.BorderlineColor = ColorNavy;
+            chartReporte2.BorderlineWidth = 2;
+            chartReporte2.BorderlineDashStyle = ChartDashStyle.Solid;
+
             ChartArea area = new ChartArea();
             area.BackColor = System.Drawing.Color.White;
             area.AxisX.MajorGrid.Enabled = false;
@@ -199,24 +182,24 @@ namespace CapaPresentacion
             double porcBaja = CalcularPorcentaje(baja, total);
             double porcMedia = CalcularPorcentaje(media, total);
             double porcAlta = CalcularPorcentaje(alta, total);
-           
 
-            int p1 = serie.Points.AddXY("Baja",baja);
+            int p1 = serie.Points.AddXY("Baja", baja);
             serie.Points[p1].Label = porcBaja == 0 ? "" : porcBaja + "%";
-            serie.Points[p1].ToolTip = $"Sin Asignar: {baja} tickets - {porcBaja}%";
+            serie.Points[p1].ToolTip = $"Baja: {baja} tickets - {porcBaja}%";
             serie.Points[p1].Color = System.Drawing.Color.DodgerBlue;
+            serie.Points[p1].LabelForeColor = System.Drawing.Color.White; 
 
-            int p2 = serie.Points.AddXY("Media",media);
+            int p2 = serie.Points.AddXY("Media", media);
             serie.Points[p2].Label = porcMedia == 0 ? "" : porcMedia + "%";
-            serie.Points[p2].ToolTip = $"Asignado: {media} tickets - {porcMedia}%";
+            serie.Points[p2].ToolTip = $"Media: {media} tickets - {porcMedia}%";
             serie.Points[p2].Color = System.Drawing.Color.Gold;
 
-            int p3 = serie.Points.AddXY("Alta",alta);
+            int p3 = serie.Points.AddXY("Alta", alta);
             serie.Points[p3].Label = porcAlta == 0 ? "" : porcAlta + "%";
-            serie.Points[p3].ToolTip = $"En Proceso: {alta} tickets - {porcAlta}%";
-            serie.Points[p3].Color = System.Drawing.Color.Firebrick;
+            serie.Points[p3].ToolTip = $"Alta: {alta} tickets - {porcAlta}%";
+            serie.Points[p3].Color = System.Drawing.Color.FromArgb(227, 36, 43); 
+            serie.Points[p3].LabelForeColor = System.Drawing.Color.White;
 
-           
             chartReporte2.Series.Add(serie);
         }
 
