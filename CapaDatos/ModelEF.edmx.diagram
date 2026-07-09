@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="781c85877d4a4f01a7030371679ec12d" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Administrador" Width="1.5" PointX="3.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Especialidad" Width="1.5" PointX="1.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Pabellon" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Sede" Width="1.5" PointX="1.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Solicitante" Width="1.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Tecnico" Width="1.5" PointX="3.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.Ticket" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbSistema_TecnicoModel.TipoSolicitud" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_Administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Tecnico_Especialidad" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_Pabellon" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Tecnico_Sede" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_Sede" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_Solicitante" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_Tecnico" ManuallyRouted="false" />
+        <AssociationConnector Association="dbSistema_TecnicoModel.FK_Ticket_TipoSolicitud" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
