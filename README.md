@@ -211,34 +211,34 @@ El esquema organiza la información necesaria para la gestión del sistema, esta
 | **Git & GitHub**                   | Control de versiones y gestión colaborativa del proyecto.                                         |
 | **Visual Studio 2022**             | Entorno de desarrollo integrado (IDE) utilizado para el desarrollo y depuración de la aplicación. |
 
-## Instalación
+
+##  Instalación
 
 ### Requisitos
 
-Antes de ejecutar el proyecto, asegúrate de contar con los siguientes componentes instalados:
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-* Visual Studio 2022
-* .NET Framework 4.8
-* SQL Server
-* SQL Server Management Studio (SSMS)
+- Visual Studio 2022
+- .NET Framework 4.8
+- SQL Server 2022
+- SQL Server Management Studio (SSMS)
 
-### Pasos para ejecutar el proyecto
+### Pasos para la ejecución
 
-1. Clonar el repositorio:
+1. Clonar el repositorio.
 
 ```bash
-git clone https://github.com/Irammlix/TF-FSI-2026-01-SoporTec.git
+https://github.com/Irammlix/SoporTec-ServiceDesk.git
 ```
 
-2. Abrir la solución (`.sln`) en Visual Studio 2022.
+2. Abrir la solución **SoporTec.sln** con Visual Studio 2022.
 
-3. Restaurar los paquetes NuGet del proyecto.
+3. Abrir **SQL Server Management Studio (SSMS)**, conectarse a una instancia local de **SQL Server 2022** y ejecutar el script **`Database/SoporTec.sql`** para crear la base de datos.
 
-4. Crear la base de datos ejecutando el script SQL incluido en el repositorio.
+4. Configurar la cadena de conexión (`ConnectionString`) en el proyecto para que apunte a la instancia local de SQL Server.
 
-5. Actualizar la cadena de conexión (`ConnectionString`) según la configuración local de SQL Server.
+5. Restaurar los paquetes NuGet (si Visual Studio no lo hace automáticamente).
 
 6. Establecer **CapaPresentacion** como proyecto de inicio.
 
 7. Compilar y ejecutar la solución.
-
