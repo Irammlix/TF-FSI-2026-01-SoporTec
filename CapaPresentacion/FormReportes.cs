@@ -671,6 +671,10 @@ namespace CapaPresentacion
             chartReporte1.ChartAreas.Clear();
             chartReporte1.Legends.Clear();
 
+            chartReporte1.BorderlineColor = ColorNavy;
+            chartReporte1.BorderlineWidth = 2;
+            chartReporte1.BorderlineDashStyle = ChartDashStyle.Solid;
+
             ChartArea area = new ChartArea();
             area.BackColor = System.Drawing.Color.White;
             chartReporte1.ChartAreas.Add(area);
@@ -694,6 +698,7 @@ namespace CapaPresentacion
             serie.Points[p2].Label = porcAsignado == 0 ? "" : porcAsignado + "%";
             serie.Points[p2].ToolTip = $"Asignado: {asignado} tickets - {porcAsignado}%";
             serie.Points[p2].Color = System.Drawing.Color.DarkBlue;
+            serie.Points[p2].LabelForeColor = System.Drawing.Color.White; 
 
             int p3 = serie.Points.AddY(enProceso);
             serie.Points[p3].Label = porcEnProceso == 0 ? "" : porcEnProceso + "%";

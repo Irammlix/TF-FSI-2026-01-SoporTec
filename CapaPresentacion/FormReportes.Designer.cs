@@ -483,7 +483,7 @@ namespace CapaPresentacion
             this.btnSalirR1.ForeColor = System.Drawing.Color.White;
             this.btnSalirR1.Image = ((System.Drawing.Image)(resources.GetObject("btnSalirR1.Image")));
             this.btnSalirR1.Location = new System.Drawing.Point(4, 571);
-            this.btnSalirR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalirR1.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalirR1.Name = "btnSalirR1";
             this.btnSalirR1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnSalirR1.Size = new System.Drawing.Size(107, 181);
@@ -503,7 +503,7 @@ namespace CapaPresentacion
             this.btnLimpiarFiltrosR1.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarFiltrosR1.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarFiltrosR1.Image")));
             this.btnLimpiarFiltrosR1.Location = new System.Drawing.Point(4, 382);
-            this.btnLimpiarFiltrosR1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarFiltrosR1.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltrosR1.Name = "btnLimpiarFiltrosR1";
             this.btnLimpiarFiltrosR1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnLimpiarFiltrosR1.Size = new System.Drawing.Size(107, 181);
@@ -523,7 +523,7 @@ namespace CapaPresentacion
             this.btnExportarPdf.ForeColor = System.Drawing.Color.White;
             this.btnExportarPdf.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarPdf.Image")));
             this.btnExportarPdf.Location = new System.Drawing.Point(4, 193);
-            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportarPdf.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportarPdf.Name = "btnExportarPdf";
             this.btnExportarPdf.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnExportarPdf.Size = new System.Drawing.Size(107, 181);
@@ -543,7 +543,7 @@ namespace CapaPresentacion
             this.button23.ForeColor = System.Drawing.Color.White;
             this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
             this.button23.Location = new System.Drawing.Point(4, 4);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button23.Margin = new System.Windows.Forms.Padding(4);
             this.button23.Name = "button23";
             this.button23.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.button23.Size = new System.Drawing.Size(107, 181);
@@ -894,7 +894,7 @@ namespace CapaPresentacion
             this.button21.ForeColor = System.Drawing.Color.White;
             this.button21.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button21.Location = new System.Drawing.Point(4, 40);
-            this.button21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
             this.button21.Name = "button21";
             this.button21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.button21.Size = new System.Drawing.Size(174, 7);
@@ -968,7 +968,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pnl_Bottom);
             this.Controls.Add(this.pnl_Top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormReportes";
